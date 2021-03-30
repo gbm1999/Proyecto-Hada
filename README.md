@@ -8,9 +8,9 @@ Nuestro grupo está dividido en distintas fases que son:
 -
 -Diseño de la intefaz encargado: 
 -
--Desarrollo Capa EN y validación encargado: 
+-Desarrollo Capa EN y validación encargado: Izan Ayllon (Posible)
 -
--Desarrollo Capa CAD y gestión de errores encargado: 
+-Desarrollo Capa CAD y gestión de errores encargado: Izan Ayllon.
 -
--Documentación del código encargado: 
+-Documentación del código encargado: Izan Ayllon (Posible)
 -
