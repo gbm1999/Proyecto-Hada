@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HadaPopWeb", "HadaPopWeb\HadaPopWeb.csproj", "{47DD03FD-7258-40A7-AF42-486D0E3E0EF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "library", "library\library.csproj", "{C1943EEE-F560-4929-B9FA-6C28B12D6C2D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "library", "library\library.csproj", "{B9CF40A9-CAEA-4B1F-9070-71E9C1829F5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{47DD03FD-7258-40A7-AF42-486D0E3E0EF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47DD03FD-7258-40A7-AF42-486D0E3E0EF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47DD03FD-7258-40A7-AF42-486D0E3E0EF0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C1943EEE-F560-4929-B9FA-6C28B12D6C2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1943EEE-F560-4929-B9FA-6C28B12D6C2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1943EEE-F560-4929-B9FA-6C28B12D6C2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C1943EEE-F560-4929-B9FA-6C28B12D6C2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9CF40A9-CAEA-4B1F-9070-71E9C1829F5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9CF40A9-CAEA-4B1F-9070-71E9C1829F5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9CF40A9-CAEA-4B1F-9070-71E9C1829F5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9CF40A9-CAEA-4B1F-9070-71E9C1829F5B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
