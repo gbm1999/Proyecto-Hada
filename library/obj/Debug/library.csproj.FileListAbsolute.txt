@@ -1,4 +1,3 @@
-C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\library\obj\Debug\library.csprojAssemblyReference.cache
 C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\library\obj\Debug\library.csproj.CoreCompileInputs.cache
 C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\library\bin\Debug\library.dll
 C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\library\bin\Debug\library.pdb

@@ -56,4 +56,3 @@ C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\HadaPopWeb\obj\Debug\HadaPopWeb.c
 C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\HadaPopWeb\obj\Debug\HadaPopWeb.csproj.CopyComplete
 C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\HadaPopWeb\obj\Debug\HadaPopWeb.dll
 C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\HadaPopWeb\obj\Debug\HadaPopWeb.pdb
-C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\HadaPopWeb\obj\Debug\HadaPopWeb.csprojAssemblyReference.cache
