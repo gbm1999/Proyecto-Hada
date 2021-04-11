@@ -64,6 +64,8 @@ Un administrador podrá:
 	ENAnuncio. Jorge
 	ENCategoría. German
 	ENReporte. Izan
+	ENCategoría. German
 
-
-
+# Listado de tareas de diseño página web:
+	Componentes: Daniel y Francisco.
+	Queda por decidir que servicios realizan.
