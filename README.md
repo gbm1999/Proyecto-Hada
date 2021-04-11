@@ -54,4 +54,16 @@ Un administrador podrá:
 	-Un seguro de garantía por un precio extra.
 	-Un mapa interactivo donde se vean los artículos.
 
+# Listado de servicios y entidades a realizar:
+	ENAdministrador. Germán
+	ENComprador.Izan
+	ENVendedor. Jorge
+	ENArtículo. Izan
+	ENCiudad. Jorge
+	ENMonedero. German
+	ENAnuncio. Jorge
+	ENCategoría. German
+	ENReporte. Izan
+
+
 
