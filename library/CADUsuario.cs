@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace library
 {
@@ -17,6 +14,7 @@ namespace library
             connection = ConfigurationManager.ConnectionStrings["Database"].ToString();
             connectBD = new SqlConnection(connection);
         }
+        //Inserta un usuario en la BD
         public bool createUsuario(ENUsuario usu)
         {
             bool entra = false;
@@ -37,6 +35,7 @@ namespace library
             }
             return entra;
         }
+        //Busca un usuario en la BD
         public bool readUsuario(ENUsuario usu)
         {
             bool entra = false;
@@ -46,7 +45,7 @@ namespace library
                 SqlCommand command = new SqlCommand("Select * from Usuario", connectBD);
                 SqlDataReader dataReader = command.ExecuteReader();
 
-                while (dataReader.Read())
+                while (!entra && dataReader.Read())
                 {
                     if (dataReader["Nif"].ToString().Equals(usu.NIFUsuario))
                     {
@@ -72,6 +71,7 @@ namespace library
             }
             return entra;
         }
+        //Actualiza un usuario en la BD
         public bool updateUsuario(ENUsuario usu)
         {
             int response = 0;
@@ -110,6 +110,7 @@ namespace library
             }
             return entra;
         }
+        //Borra un usuario en la BD
         public bool deleteUsuario(ENUsuario usu)
         {
             int response = 0;
@@ -137,6 +138,7 @@ namespace library
             }
             return entra;
         }
+        //Comprueba si el email y la contraseña son correctos para iniciar sesión
         public bool InicioSesion(ENUsuario usu)
         {
             bool entra = false;
@@ -146,7 +148,7 @@ namespace library
                 connectBD.Open();
                 SqlCommand command = new SqlCommand("Select * from Usuario ", connectBD);
                 SqlDataReader dataReader = command.ExecuteReader();
-                while (dataReader.Read())
+                while (!entra && dataReader.Read())
                 {
                     if (usu.emailUsuario == dataReader["Email"].ToString() && usu.contrasenaUsuario == dataReader["Contrasena"].ToString())
                     {
