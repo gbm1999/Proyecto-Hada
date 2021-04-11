@@ -65,6 +65,7 @@ Un administrador podrá:
 	ENCategoría. German
 	ENReporte. Izan
 	ENOpiniones. Jorge
+	Creación BD&documentación. Izan
 
 # Listado de tareas de diseño página web:
 	Componentes: Daniel y Francisco.
