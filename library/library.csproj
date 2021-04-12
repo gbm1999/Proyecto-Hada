@@ -43,9 +43,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CADAdmin.cs" />
+<<<<<<< HEAD
     <Compile Include="CADUsuario.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="ENAdmin.cs" />
+=======
+    <Compile Include="CADCategoria.cs" />
+    <Compile Include="CADMonedero.cs" />
+    <Compile Include="CADUsuario.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="ENAdmin.cs" />
+    <Compile Include="ENCategoria.cs" />
+    <Compile Include="ENMonedero.cs" />
+>>>>>>> 4d75f20 (Creación de Categoria en BD y EN/CAD de Categoria)
     <Compile Include="ENUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
