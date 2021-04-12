@@ -82,7 +82,9 @@ namespace library
             try
             {
                 connectBD.Open();
-                SqlCommand command = new SqlCommand("UPDATE Usuarios SET nombre = @nombre, edad = @edad where nif = @nif", connectBD);
+                SqlCommand command = new SqlCommand("UPDATE Usuario SET Nif = @Nif,Nombre = @Nombre,Email = @Email," +
+                                                    "Telefono = @Telefono,Admin = @Admin, Edad = @Edad, Contrasena = @Contrasena," +
+                                                    "TarjetaCred = @TarjetaCred where nif = @nif", connectBD);
                 command.Parameters.AddWithValue("@Nif", usu.NIFUsuario);
                 command.Parameters.AddWithValue("@Nombre", usu.nombreUsuario);
                 command.Parameters.AddWithValue("@Email", usu.emailUsuario);
@@ -121,7 +123,7 @@ namespace library
             try
             {
                 connectBD.Open();
-                SqlCommand command = new SqlCommand("Delete from Usuarios where nif = @Nif", connectBD);
+                SqlCommand command = new SqlCommand("Delete from Usuario where Nif = @Nif", connectBD);
                 command.Parameters.AddWithValue("@Nif", usu.NIFUsuario);
                 response = command.ExecuteNonQuery();
 

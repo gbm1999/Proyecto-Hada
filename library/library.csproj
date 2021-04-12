@@ -43,9 +43,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CADAdmin.cs" />
+    <Compile Include="CADMonedero.cs" />
     <Compile Include="CADUsuario.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="ENAdmin.cs" />
+    <Compile Include="ENMonedero.cs" />
     <Compile Include="ENUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
