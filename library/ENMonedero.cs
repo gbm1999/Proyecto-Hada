@@ -44,6 +44,12 @@ namespace library
                 Saldo = value;
             }
         }
+        public ENMonedero()
+        {
+            Tarjeta = null;
+            Contrasena = 0;
+            Saldo = 0;
+        }
         public ENMonedero(string Tarjeta, int Contrasena, float Saldo)
         {
             this.Tarjeta = Tarjeta;
