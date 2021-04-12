@@ -56,6 +56,18 @@ namespace library
                 contrasena = value;
             }
         }
+        private int tarjeta;
+        public int tarjetaUsuario
+        {
+            get
+            {
+                return tarjeta;
+            }
+            set
+            {
+                tarjeta = value;
+            }
+        }
         private int edad;
         public int edadUsuario
         {
@@ -101,8 +113,9 @@ namespace library
             admin = false;
             edad = 0;
             contrasena = null;
+            tarjeta = 0;
         }
-        public ENUsuario(string NIF, string nombre, string email,int telefono, bool admin, int edad, string contrasena)
+        public ENUsuario(string NIF, string nombre, string email,int telefono, bool admin, int edad, string contrasena, int tarjeta)
         {
             this.NIF = NIF;
             this.nombre = nombre;
@@ -111,6 +124,7 @@ namespace library
             this.admin = admin;
             this.edad = edad;
             this.contrasena = contrasena;
+            this.tarjeta = tarjeta;
         }
         public bool createUsuario()
         {

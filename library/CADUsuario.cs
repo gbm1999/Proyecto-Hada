@@ -56,6 +56,7 @@ namespace library
                         usu.adminUsuario = (bool)dataReader["Admin"];
                         usu.edadUsuario = (int)dataReader["Edad"];
                         usu.contrasenaUsuario = dataReader["Contrasena"].ToString();
+                        usu.tarjetaUsuario = (int)dataReader["TarjetaCred"];
                         entra = true;
                     }
                 }
@@ -89,6 +90,7 @@ namespace library
                 command.Parameters.AddWithValue("@Admin", usu.adminUsuario);
                 command.Parameters.AddWithValue("@Edad", usu.edadUsuario);
                 command.Parameters.AddWithValue("@Contrasena", usu.contrasenaUsuario);
+                command.Parameters.AddWithValue("@TarjetaCred", usu.tarjetaUsuario);
                 response = command.ExecuteNonQuery();
 
                 if (response == 1)
