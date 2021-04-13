@@ -1,0 +1,10 @@
+C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\HadaPopWeb\bin\HadaPopWeb.dll.config
+C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\HadaPopWeb\bin\HadaPopWeb.dll
+C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\HadaPopWeb\bin\HadaPopWeb.pdb
+C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\HadaPopWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\HadaPopWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\HadaPopWeb\obj\Debug\HadaPopWeb.csproj.CoreCompileInputs.cache
+C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\HadaPopWeb\obj\Debug\HadaPopWeb.csproj.CopyComplete
+C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\HadaPopWeb\obj\Debug\HadaPopWeb.dll
+C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\HadaPopWeb\obj\Debug\HadaPopWeb.pdb
+C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\HadaPopWeb\obj\Debug\HadaPopWeb.csprojAssemblyReference.cache
