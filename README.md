@@ -57,16 +57,13 @@ Un administrador podrá:
 # Listado de servicios y entidades a realizar:
 	ENAdministrador. Germán
 	ENUsuario. German
-	ENVendedor. Jorge
 	ENArtículo. Izan
-	ENCiudad. Jorge
 	ENMonedero. German
-	ENAnuncio. Jorge
 	ENCategoría. German
 	ENReporte. Izan
-	ENOpiniones. Jorge
+	ENComentarios. Izan
 	Creación BD&documentación. Izan
 
 # Listado de tareas de diseño página web:
-	Componentes: Daniel y Francisco.
+	Componentes: Daniel, Francisco y Jorge.
 	Queda por decidir que servicios realizan.
