@@ -62,8 +62,8 @@ Un administrador podrá:
 	ENCategoría. German
 	ENReporte. Izan
 	ENComentarios. Izan
-	Creación BD&documentación. Izan
+	Creación BD y documentación en rama master (BBDD.pdf). Izan
 
 # Listado de tareas de diseño página web:
-	Componentes: Daniel, Francisco y Jorge.
-	Queda por decidir que servicios realizan.
+	Diseño Web Página Principal: Daniel y Jorge
+	Diseño Opciones: Francisco
