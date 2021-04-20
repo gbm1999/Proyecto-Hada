@@ -5,7 +5,7 @@
 
 Vuestra propuesta de HADAPOP me parece estupenda, puede dar mucho de si y es un proyecto apasionante.
 
-Respecto de los requisitos de esta primera entrega, esta todo correcto y cumple con las especificaciones.
+Respecto de los requisitos de esta primera entrega, esta todo correcto y cumple con las especificaciones, sólamente faltaria el DNI.
 
 Respecto de las entidades, en principio no encuentro ningún problema y todas son correctas.
 
