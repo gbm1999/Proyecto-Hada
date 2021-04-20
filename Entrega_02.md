@@ -7,6 +7,7 @@
 
 ## EN
 - Las EN están implementadas y llaman a las CAD. Buen trabajo,
+- Recodad que todas las EN tiene que tener los atributos correspondientes.
 
 ## Esquema de la BBDD
 - No veo dónde se van a guardar las compras o las ventas. No sé como tenéis pensado hacer esto pero echo en falta alguna tabla donde se guarden las compras o las ventas.
