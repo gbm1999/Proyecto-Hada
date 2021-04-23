@@ -61,7 +61,8 @@ Un administrador podrá:
 	ENMonedero. German
 	ENCategoría. German
 	ENReporte. Izan
-	ENComentarios. Izan
+	ENComentarios. Jorge
+	ENReporte. Izan
 	Creación BD y documentación en rama master (BBDD.pdf). Izan
 
 # Listado de tareas de diseño página web:
