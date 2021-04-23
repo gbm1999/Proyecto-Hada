@@ -8,3 +8,13 @@ C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\HadaPopWeb\obj\Debug\HadaPopWeb.c
 C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\HadaPopWeb\obj\Debug\HadaPopWeb.dll
 C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\HadaPopWeb\obj\Debug\HadaPopWeb.pdb
 C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\HadaPopWeb\obj\Debug\HadaPopWeb.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\proyect\Proyecto-Hada\HadaPopWeb\bin\HadaPopWeb.dll.config
+C:\Users\Usuario\Desktop\proyect\Proyecto-Hada\HadaPopWeb\bin\HadaPopWeb.dll
+C:\Users\Usuario\Desktop\proyect\Proyecto-Hada\HadaPopWeb\bin\HadaPopWeb.pdb
+C:\Users\Usuario\Desktop\proyect\Proyecto-Hada\HadaPopWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Usuario\Desktop\proyect\Proyecto-Hada\HadaPopWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Usuario\Desktop\proyect\Proyecto-Hada\HadaPopWeb\obj\Debug\HadaPopWeb.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\proyect\Proyecto-Hada\HadaPopWeb\obj\Debug\HadaPopWeb.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\proyect\Proyecto-Hada\HadaPopWeb\obj\Debug\HadaPopWeb.csproj.CopyComplete
+C:\Users\Usuario\Desktop\proyect\Proyecto-Hada\HadaPopWeb\obj\Debug\HadaPopWeb.dll
+C:\Users\Usuario\Desktop\proyect\Proyecto-Hada\HadaPopWeb\obj\Debug\HadaPopWeb.pdb

@@ -128,7 +128,9 @@ namespace library
         public ENArticulo()
         {
             CADArticulo aux = new CADArticulo();
-            aux.imgDefault(ref imagen);
+
+            //Futura mejora
+            //aux.imgDefault(ref imagen);   
 
             codigo = -1;
             nombre = null;
