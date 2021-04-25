@@ -9,12 +9,38 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body>
+<body style="height: 519px">
     <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
-        </div>
+        
+            <div style="height: 0px; margin-bottom: 413px;">
+                    <h1 style ="background-color:#FE856B;padding:20px; height: 427px;">
+                        <!-- <img alt="" class="auto-style1" src="images/logo.jpg" />&nbsp; -->
+                      
+                        &nbsp;&nbsp;
+                        HadaPop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        
+                            <asp:DropDownList ID="categoria" runat="server" OnSelectedIndexChanged="categoria_SelectedIndexChanged" Height="31px" style="margin-top: 0px; margin-left: 23px;" Width="128px" AutoPostBack="True"> 
+                                <asp:ListItem Selected="True" Value="categoria"> Artículos </asp:ListItem>
+                                <asp:ListItem Value="Pantalones.aspx"> Pantalones </asp:ListItem>
+                                <asp:ListItem Value="Camisetas.aspx"> Camisetas </asp:ListItem>
+                                <asp:ListItem Value="Zapatillas.aspx"> Zapatillas </asp:ListItem>
+                            </asp:DropDownList>
+
+                            <asp:Button ID="login"  runat="server" Text="Iniciar sesión" Width="101px" OnClick="onClickIniciarSesion" Height="21px" style="margin-left: 831px; margin-bottom: 0px" />
+                            <asp:Button ID="registro" runat="server" Text="Registrarse" Width="90px" OnClick="onClickRegistro" Height="20px" style="margin-left: 0px" />
+
+                    
+                        </h1>
+
+                        <div style="text-align: center;" OnClick="onClickInicio">
+                            <button style="position: absolute;top: 29%; left: 138px; height: 22px; width: 82px;">Inicio</button>
+                        </div>
+
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+
+                    
+            </div>
     </form>
 </body>
 </html>
