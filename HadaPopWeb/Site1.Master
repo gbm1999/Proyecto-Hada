@@ -6,41 +6,112 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
+    <link rel="stylesheet" href="Site1.css" />
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body style="height: 519px">
     <form id="form1" runat="server">
         
-            <div style="height: 0px; margin-bottom: 413px;">
-                    <h1 style ="background-color:#FE856B;padding:20px; height: 427px;">
-                        <!-- <img alt="" class="auto-style1" src="images/logo.jpg" />&nbsp; -->
-                      
-                        &nbsp;&nbsp;
-                        HadaPop&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        
-                            <asp:DropDownList ID="categoria" runat="server" OnSelectedIndexChanged="categoria_SelectedIndexChanged" Height="31px" style="margin-top: 0px; margin-left: 23px;" Width="128px" AutoPostBack="True"> 
-                                <asp:ListItem Selected="True" Value="categoria"> Artículos </asp:ListItem>
-                                <asp:ListItem Value="Pantalones.aspx"> Pantalones </asp:ListItem>
-                                <asp:ListItem Value="Camisetas.aspx"> Camisetas </asp:ListItem>
-                                <asp:ListItem Value="Zapatillas.aspx"> Zapatillas </asp:ListItem>
-                            </asp:DropDownList>
+           <!--     <div class="center-container">
+            <div class="left-container">
+                <div class="texto-logo">
+                    Welcome
+                    <br />
+                    to<br />
+                    HadaPop</div>
 
-                            <asp:Button ID="login"  runat="server" Text="Iniciar sesión" Width="101px" OnClick="onClickIniciarSesion" Height="21px" style="margin-left: 831px; margin-bottom: 0px" />
-                            <asp:Button ID="registro" runat="server" Text="Registrarse" Width="90px" OnClick="onClickRegistro" Height="20px" style="margin-left: 0px" />
+                <div class="texto-min">
+                    Bienvenido a la página lider en compra y venta de productos online. Unete a la familia.</div>
 
-                    
-                        </h1>
+                <div class="logo">
+                     
+                     <img src="images/logo_small.png" />
+                </div>
 
-                        <div style="text-align: center;" OnClick="onClickInicio">
-                            <button style="position: absolute;top: 29%; left: 138px; height: 22px; width: 82px;">Inicio</button>
+            </div>
+
+
+            <div class="rigth-container">
+                <div class="campos-left">
+                    <div class="campo">
+                        <div class="texto">
+                            Nombre:
+                         
+                                <input type="text" class="parametro-introducido" name="name" id="name"/>
+                           
                         </div>
+
+                    </div>
+
+                    <div class="campo">
+                        <div class="texto">
+                            NIF:
+                                <input type="text" class="parametro-introducido" name="NIF" id="NIF"/>
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <div class="texto">
+                            Contraseña:
+                                <input type="text" class="parametro-introducido" name="password" id="password"/>
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <div class="texto">
+                            Edad:
+                                <input type="text" class="parametro-introducido" name="age" id="age"/>
+                        </div>
+                    </div>
+
+                </div>
+
+                
+                <div class="campos-right">
+                    <div class="campo">
+                        <div class="texto">
+                            Admin:
+                            <input type="text" class="parametro-introducido" name="admin" id="admin"/>
+                        </div>
+
+                    </div>
+
+                    <div class="campo">
+                        <div class="texto">
+                            Teléfono:
+                            <input type="text" class="parametro-introducido" name="phone" id="phone"/>
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <div class="texto">
+                            Confirmar contraseña:
+                            <input type="text" class="parametro-introducido" name="c_password" id="c_password"/>
+                        </div>
+                    </div>
+
+                    <div class="campo">
+                        <div class="texto">
+                            email:
+                            <input type="text" class="parametro-introducido" name="email" id="email"/>
+                        </div>
+                    </div>
+
+                </div> 
+
+                <div class="register">
+                    <button type="submit" class="boton">Register</button>
+
+                </div>
+            </div>
+        </div>    -->
 
                         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                         </asp:ContentPlaceHolder>
 
-                    
-            </div>
+          
     </form>
 </body>
 </html>
