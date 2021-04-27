@@ -1,0 +1,81 @@
+﻿body {
+    background-image: url("images/fondo_register.jpg");
+}
+
+.center-container {
+    position: absolute;
+    top: 16%;
+    left: 20%;
+    background-color: #78f0f2;
+    border-radius: 30px;
+    width: 60%;
+    height: 70%;
+}
+
+
+
+.campo {
+    position: relative;
+    height: 25%;
+    width: 90%;
+    top: 11px;
+    left: 11px;
+}
+
+.texto {
+    position: relative;
+    top: 13%;
+    height: 24%;
+    font-size: 140%;
+    width: 39%;
+    left: 339px;
+}
+
+.parametro-introducido {
+    position: absolute;
+    top: 39%;
+    width: 22%;
+    height: 16%;
+    border-bottom: 1px solid #000;
+    outline: none;
+    left: 24px;
+}
+
+
+
+.precio {
+    position: absolute;
+    height: 6%;
+    top: 49%;
+    width: 14%;
+    left: 8%;
+    text-align: center;
+    color: black;
+    font-size: 120%;
+}
+
+.ciudad {
+    position: absolute;
+    height: 6%;
+    top: 64%;
+    width: 14%;
+    left: 8%;
+    text-align: center;
+    color: black;
+    font-size: 120%;
+}
+
+.foto {
+    position: absolute;
+    height: 21%;
+    width: 15%;
+    overflow: hidden;
+    top: 50px;
+    left: 5%;
+}
+
+.foto img {
+        width: 112px;
+        height: 100%;
+        display: block;
+}

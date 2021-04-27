@@ -1,0 +1,14 @@
+﻿body {
+}
+
+.logo {
+    position: absolute;
+    height: 13%;
+    width: 8%;
+    overflow: hidden;
+    top: 102px;
+    left: 6%;
+    margin-top: 3px;
+}
+
+
