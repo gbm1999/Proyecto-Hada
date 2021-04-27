@@ -1,0 +1,23 @@
+﻿body 
+{
+
+}
+
+.imagenbox 
+{
+    position: absolute;
+    margin-top: 5%;
+    width: 30%;
+    height: 40%;
+    overflow: hidden;
+    border-radius: 30%;
+    
+}
+
+.imagen 
+{
+    height: auto;
+    width: auto;
+    display: block;
+    object-fit: contain; 
+}
