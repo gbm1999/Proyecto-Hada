@@ -7,106 +7,24 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <link rel="stylesheet" href="Site1.css" />
-
+    <link rel="stylesheet" href="Navegador.css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body style="height: 519px">
     <form id="form1" runat="server">
-        
-           <!--     <div class="center-container">
-            <div class="left-container">
-                <div class="texto-logo">
-                    Welcome
-                    <br />
-                    to<br />
-                    HadaPop</div>
-
-                <div class="texto-min">
-                    Bienvenido a la página lider en compra y venta de productos online. Unete a la familia.</div>
-
-                <div class="logo">
-                     
-                     <img src="images/logo_small.png" />
-                </div>
-
-            </div>
-
-
-            <div class="rigth-container">
-                <div class="campos-left">
-                    <div class="campo">
-                        <div class="texto">
-                            Nombre:
-                         
-                                <input type="text" class="parametro-introducido" name="name" id="name"/>
-                           
-                        </div>
-
-                    </div>
-
-                    <div class="campo">
-                        <div class="texto">
-                            NIF:
-                                <input type="text" class="parametro-introducido" name="NIF" id="NIF"/>
-                        </div>
-                    </div>
-
-                    <div class="campo">
-                        <div class="texto">
-                            Contraseña:
-                                <input type="text" class="parametro-introducido" name="password" id="password"/>
-                        </div>
-                    </div>
-
-                    <div class="campo">
-                        <div class="texto">
-                            Edad:
-                                <input type="text" class="parametro-introducido" name="age" id="age"/>
-                        </div>
-                    </div>
-
-                </div>
-
+        <div class="navegador">
+            <ul>
+                <li><a href="#">Iniciar sesión</a></li>
+                <li><a href="#">Registro</a></li>
+                <li><a href="#">Articulos</a></li>
+                <li><a href="#">Perfil</a></li>
+                <li><a href="#">Monedero</a></li>
                 
-                <div class="campos-right">
-                    <div class="campo">
-                        <div class="texto">
-                            Admin:
-                            <input type="text" class="parametro-introducido" name="admin" id="admin"/>
-                        </div>
 
-                    </div>
-
-                    <div class="campo">
-                        <div class="texto">
-                            Teléfono:
-                            <input type="text" class="parametro-introducido" name="phone" id="phone"/>
-                        </div>
-                    </div>
-
-                    <div class="campo">
-                        <div class="texto">
-                            Confirmar contraseña:
-                            <input type="text" class="parametro-introducido" name="c_password" id="c_password"/>
-                        </div>
-                    </div>
-
-                    <div class="campo">
-                        <div class="texto">
-                            email:
-                            <input type="text" class="parametro-introducido" name="email" id="email"/>
-                        </div>
-                    </div>
-
-                </div> 
-
-                <div class="register">
-                    <button type="submit" class="boton">Register</button>
-
-                </div>
+            </ul>
             </div>
-        </div>    -->
+           
 
                         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                         </asp:ContentPlaceHolder>

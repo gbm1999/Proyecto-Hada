@@ -12,27 +12,40 @@
     <link rel="stylesheet" href="ShowArticle.css" />
 
      <div class="center-container">
+         <div class="foto">
+             <img src="images/depositphotos_324611040-stock-illustration-no-image-vector-icon-no.jpg" />
+         </div>
 
-                <div class="ciudad">
-                    Ciudad</div>
-
-                <div class="foto">
-                     
-                     <img src="images/logo_small.png" />
-                </div>
-
-                <div class="precio">
-                    Precio</div>
-
-                <div class="texto">
-                    Descripción:&nbsp;
-                </div>
-
-                <div class="texto">
-                    Vendedor:&nbsp;
-                </div>
+         <div class="debajo-imagen">
+             <div class="campos-izq">
+                 PRECIO:
+                 <input type="text" class="parametro-introducido" name="Precio" id="Precio"/>
 
              </div>
+
+             <div class="campos-izq">
+                 CIUDAD:
+                 <input type="text" class="parametro-introducido" name="Ciudad" id="Ciudad"/>
+
+             </div>
+
+         </div>
+
+         <div class="descripcion">
+             <textarea  class="AddDescription text-cuadro" name="description" id="description"> </textarea>
+         </div>
+
+         <div class="vendedor">
+             <div class="campos-izq">
+                 VENDEDOR:
+                 <input type="text" class="parametro-introducido" name="Vendedor" id="Vendedor"/>
+
+             </div>
+
+         </div>
+        
+
+     </div>
 
 </asp:Content>
 
