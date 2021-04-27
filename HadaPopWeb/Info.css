@@ -1,4 +1,5 @@
 ﻿body {
+    background-image: url("images/fondo_info.jpg");
 }
 
 .logo {
@@ -6,9 +7,91 @@
     height: 13%;
     width: 8%;
     overflow: hidden;
-    top: 102px;
-    left: 6%;
+    top: 11px;
+    left: 2%;
     margin-top: 3px;
 }
 
+.seguridad {
+    position: absolute;
+    height: 157%;
+    width: 17%;
+    overflow: hidden;
+    top: 184px;
+    left: 116%;
+    margin-top: 3px;
+    margin-right: 0px;
+}
 
+.atencion {
+    position: absolute;
+    height: 157%;
+    width: 17%;
+    overflow: hidden;
+    top: 179px;
+    left: -44%;
+    margin-top: 3px;
+    margin-right: 0px;
+}
+
+.texto_atencion {
+    position: absolute;
+    height: 231%;
+    top: 435%;
+    width: 29%;
+    left: -49%;
+    text-align: center;
+    color: black;
+    font-size: 80%;
+    font-weight: bold;
+    back
+}
+
+.texto_seguridad {
+    position: absolute;
+    height: 231%;
+    top: 420%;
+    width: 29%;
+    left: 110%;
+    text-align: center;
+    color: black;
+    font-size: 80%;
+    font-weight: bold;
+}
+
+
+.titulo {
+    position: absolute;
+    height: 8%;
+    top: 6%;
+    width: 16%;
+    left: 40%;
+    text-align: center;
+    color: black;
+    font-size: 200%;
+    font-weight: bold;
+}
+
+.texto {
+    position: absolute;
+    height: 8%;
+    top: 19%;
+    width: 43%;
+    left: 27%;
+    text-align: center;
+    color: black;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.descripcion {
+    position: absolute;
+    height: 473%;
+    top: 206%;
+    width: 85%;
+    left: 6%;
+    text-align: center;
+    color: black;
+    font-size: 120%;
+    font-weight: bold;
+}

@@ -73,6 +73,9 @@
     <Content Include="App_Data\Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <Content Include="images\logo_atencion.png" />
+    <Content Include="images\57584.png" />
+    <Content Include="images\fondo_info.jpg" />
     <Content Include="images\fondo_register.jpg" />
     <Content Include="images\login.jpg" />
     <Content Include="images\logo_small.png" />
