@@ -79,6 +79,7 @@
     <Content Include="Info.aspx" />
     <Content Include="Info.css" />
     <Content Include="Login.css" />
+    <Content Include="Navegador.css" />
     <Content Include="Registro.aspx" />
     <Content Include="Registro.css" />
     <Content Include="ShowArticle.aspx" />
