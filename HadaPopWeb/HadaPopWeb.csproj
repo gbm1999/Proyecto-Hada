@@ -73,6 +73,9 @@
     <Content Include="App_Data\Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <Content Include="articles.aspx" />
+    <Content Include="articles.css" />
+    <Content Include="images\depositphotos_324611040-stock-illustration-no-image-vector-icon-no.jpg" />
     <Content Include="images\fondo_register.jpg" />
     <Content Include="images\login.jpg" />
     <Content Include="images\logo_small.png" />
@@ -95,6 +98,13 @@
     </Compile>
     <Compile Include="AddArticle.aspx.designer.cs">
       <DependentUpon>AddArticle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="articles.aspx.cs">
+      <DependentUpon>articles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="articles.aspx.designer.cs">
+      <DependentUpon>articles.aspx</DependentUpon>
     </Compile>
     <Compile Include="Info.aspx.cs">
       <DependentUpon>Info.aspx</DependentUpon>

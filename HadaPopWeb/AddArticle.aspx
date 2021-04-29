@@ -10,6 +10,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        
         <div>
             <div class="centro">
                 <div class="titulo">
@@ -64,6 +65,7 @@
 
                 </div>
                 
+            </div>
             </div>
         
     </form>
