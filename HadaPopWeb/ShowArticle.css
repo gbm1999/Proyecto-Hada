@@ -6,10 +6,11 @@
     position: absolute;
     top: 16%;
     left: 20%;
-    background-color: #78f0f2;
+    background-color: white;
     border-radius: 30px;
     width: 60%;
     height: 70%;
+   
 }
 
 
@@ -67,15 +68,79 @@
 
 .foto {
     position: absolute;
-    height: 21%;
-    width: 15%;
+    height: 60%;
+    width: 35%;
+    top: 5%;
+    background-color: forestgreen;
     overflow: hidden;
-    top: 50px;
     left: 5%;
 }
 
 .foto img {
-        width: 112px;
-        height: 100%;
+        width: 100%;
+        height: auto;
         display: block;
 }
+
+.debajo-imagen{
+    position: absolute;
+    width: 30%;
+    top: 70%;
+    
+    height: 25%;
+    left: 10%;
+}
+
+.campos-izq {
+    position: relative;
+    top: 0%;
+    height: 50%;
+    font-size: 140%;
+    width: 100%;
+}
+
+.parametro-introducido {
+    position: relative;
+    float: right;
+    width: 50%;
+    transform: translateX(-20%) translateY(-80%);
+    border-radius: 20px;
+    height: 40%;
+}
+
+
+.descripcion{
+    position: absolute;
+    top: 10%;
+    width: 40%;
+    left: 50%;
+    height: 50%;
+    border-radius: 20px;
+}
+
+.AddDescription {
+    position: absolute;
+    border: 1px solid #000;
+    border-radius: 20px;
+    width: 90%;
+    height: 90%;  
+    outline: none;
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    resize: none;
+}
+
+
+.vendedor {
+    position: absolute;
+    width: 40%;
+    top: 70%;
+    height: 25%;
+    left: 50%;
+    
+}
+
+
+
+

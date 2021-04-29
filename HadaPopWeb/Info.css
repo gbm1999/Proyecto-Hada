@@ -1,14 +1,129 @@
 ﻿body {
+    background-image: url("images/fondo_info.jpg");
+}
+
+.center-container {
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    background-color: lightblue;
+    border-radius: 30px;
+    width: 64%;
+    height: 76%;
+}
+
+.seguridad-container {
+    position: absolute;
+    top: 44%;
+    left: 78%;
+    background-color: orange;
+    border-radius: 30px;
+    width: 21%;
+    height: 38%;
+}
+
+.atencion-container {
+    position: absolute;
+    top: 44%;
+    left: 1%;
+    background-color: orange;
+    border-radius: 30px;
+    width: 21%;
+    height: 38%;
 }
 
 .logo {
     position: absolute;
-    height: 13%;
-    width: 8%;
+    height: 17%;
+    width: 13%;
     overflow: hidden;
-    top: 102px;
-    left: 6%;
+    top: 11px;
+    left: 2%;
     margin-top: 3px;
 }
 
+.seguridad {
+    position: absolute;
+    height: 51%;
+    width: 58%;
+    overflow: hidden;
+    top: 49px;
+    left: 30%;
+    margin-top: 3px;
+    margin-right: 0px;
+}
 
+.atencion {
+    position: absolute;
+    height: 43%;
+    width: 53%;
+    overflow: hidden;
+    top: 48px;
+    left: 27%;
+    margin-top: 3px;
+    margin-right: 0px;
+}
+
+.texto_atencion {
+    position: absolute;
+    height: 45%;
+    top: 56%;
+    width: 84%;
+    left: 9%;
+    text-align: center;
+    color: black;
+    font-size: 80%;
+    font-weight: bold;
+    back;
+    margin-top: 0px;
+}
+
+.texto_seguridad {
+    position: absolute;
+    height: 46%;
+    top: 52%;
+    width: 96%;
+    left: 4%;
+    text-align: center;
+    color: black;
+    font-size: 80%;
+    font-weight: bold;
+}
+
+
+.titulo {
+    position: absolute;
+    height: 9%;
+    top: 6%;
+    width: 20%;
+    left: 40%;
+    text-align: center;
+    color: black;
+    font-size: 200%;
+    font-weight: bold;
+}
+
+.texto {
+    position: absolute;
+    height: 16%;
+    top: 27%;
+    width: 46%;
+    left: 26%;
+    text-align: center;
+    color: black;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.descripcion {
+    position: absolute;
+    height: 34%;
+    top: 46%;
+    width: 55%;
+    left: 22%;
+    text-align: center;
+    color: black;
+    font-size: 120%;
+    font-weight: bold;
+    margin-top: 0px;
+}
