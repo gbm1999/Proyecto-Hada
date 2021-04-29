@@ -3,21 +3,65 @@
 
 }
 
-.imagenbox 
+.imgperfbox 
 {
-    position: absolute;
-    margin-top: 5%;
     width: 30%;
-    height: 40%;
-    overflow: hidden;
-    border-radius: 30%;
+    height: 20%;
     
 }
-
-.imagen 
+.CuadroExt
 {
-    height: auto;
-    width: auto;
-    display: block;
-    object-fit: contain; 
+    width: 100%;
+    height: 100%;
+}
+img 
+{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+
+}
+
+.butteditar
+{
+    float: right;
+}
+.labtext
+{
+    width: 80%;
+    height: fit-content();
+    position: absolute;
+}
+.separadorvert{
+    width: 1px;
+    height: 50px;
+
+}
+.separadorhor{
+    width: 20px;
+    height: 1px;
+}
+.textboxes
+{
+    float: right;
+}
+.divimgdatos
+{
+    width: 100%;
+    height: 60%;
+
+}
+.Articulos
+{
+    width: 100%;
+    height:40%;
+}
+.datosusu 
+{
+    left: 35%;
+    position:absolute;
+    width: 25%;
+    height: fit-content();
+    float: right;
+    top: 25px;
 }

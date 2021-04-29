@@ -11,88 +11,61 @@ namespace HadaPopWeb
 {
 
 
-    public partial class Profile
+    public partial class Credit
     {
 
         /// <summary>
-        /// Control NumVentas.
+        /// Control Depositar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl NumVentas;
+        protected global::System.Web.UI.WebControls.Button Depositar;
 
         /// <summary>
-        /// Control NumCompras.
+        /// Control Retirar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl NumCompras;
+        protected global::System.Web.UI.WebControls.Button Retirar;
 
         /// <summary>
-        /// Control TBNombre.
+        /// Control NombreC1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText TBNombre;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText NombreC1;
 
         /// <summary>
-        /// Control TBEmail.
+        /// Control Cuenta1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText TBEmail;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText Cuenta1;
 
         /// <summary>
-        /// Control TBNif.
+        /// Control EditarC1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText TBNif;
+        protected global::System.Web.UI.WebControls.Button EditarC1;
 
         /// <summary>
-        /// Control TBEdad.
+        /// Control EditarC2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText TBEdad;
-
-        /// <summary>
-        /// Control TBTelefono.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText TBTelefono;
-
-        /// <summary>
-        /// Control Butt_Edit.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Butt_Edit;
-
-        /// <summary>
-        /// Control Butt_Env.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Butt_Env;
+        protected global::System.Web.UI.WebControls.Button EditarC2;
     }
 }

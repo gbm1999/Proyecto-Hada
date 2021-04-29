@@ -1,0 +1,86 @@
+﻿.body 
+{
+    background-image: url("images/fondo_register.jpg");
+    width:100%;
+    height:100%;
+}
+.contentbody
+{
+    left: 10%;
+    top: 10%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+label
+{
+    color:antiquewhite;
+}
+.Balance
+{
+    height: 30%;
+    width: 100%;
+}
+.DineroBalance
+{
+    width: auto;
+    height:50%;
+}
+.divBotones
+{
+    height:50%;
+    width: 35%;
+}
+.Botones
+{
+    height: 50%;
+    width: 45%;
+}
+.Title
+{
+   font-size:xx-large;
+}
+.Title2
+{
+    font-style: italic;
+    font-size: x-large;
+}
+.TransyCuentas
+{
+    width: 100%;
+    height: 70%;
+
+}
+.Transacciones
+{
+    width: 35%;
+    height: 90%;
+    float: left;
+}
+.divCuentas
+{
+    width: 50%;
+    height: fit-content();
+    float: right;
+}
+.divBotonesCuentas
+{
+    height: 20%;
+}
+.BotonesCuentas
+{
+    height: 50%;
+    width: 20%;
+}
+.textboxes
+{
+    float: right;
+}
+.InfoCuentas
+{
+    width: 35%;
+}
+.separador
+{
+    height:10px;
+}
