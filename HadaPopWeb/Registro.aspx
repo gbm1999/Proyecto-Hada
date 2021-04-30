@@ -90,7 +90,7 @@
                     <div class="campo">
                         <div class="texto">
                             email:
-                            <input type="text" class="parametro-introducido" name="email" id="email"/>
+                            <input type="text" class="parametro-introducido" name="email"  id="email"/>
                         </div>
                     </div>
 

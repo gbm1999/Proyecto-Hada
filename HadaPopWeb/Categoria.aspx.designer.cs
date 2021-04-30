@@ -11,7 +11,7 @@ namespace HadaPopWeb
 {
 
 
-    public partial class AddArticle
+    public partial class Categoria
     {
     }
 }

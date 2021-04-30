@@ -73,12 +73,17 @@
     <Content Include="App_Data\Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
-    <Content Include="articles.aspx" />
-    <Content Include="articles.css" />
-    <Content Include="images\depositphotos_324611040-stock-illustration-no-image-vector-icon-no.jpg" />
+    <Content Include="Categoria.aspx" />
+    <Content Include="categoria.css" />
+    <Content Include="images\HRTrends-que-es-el-empowerment-en-una-empresa.jpg" />
+    <Content Include="images\logo_atencion.png" />
+    <Content Include="images\logo_seguridad.png" />
+    <Content Include="images\fondo_info.jpg" />
     <Content Include="images\fondo_register.jpg" />
     <Content Include="images\login.jpg" />
     <Content Include="images\logo_small.png" />
+    <Content Include="images\oficinas.jpg" />
+    <Content Include="images\unnamed.jpg" />
     <Content Include="Info.aspx" />
     <Content Include="Info.css" />
     <Content Include="Login.css" />
@@ -99,12 +104,12 @@
     <Compile Include="AddArticle.aspx.designer.cs">
       <DependentUpon>AddArticle.aspx</DependentUpon>
     </Compile>
-    <Compile Include="articles.aspx.cs">
-      <DependentUpon>articles.aspx</DependentUpon>
+    <Compile Include="Categoria.aspx.cs">
+      <DependentUpon>Categoria.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="articles.aspx.designer.cs">
-      <DependentUpon>articles.aspx</DependentUpon>
+    <Compile Include="Categoria.aspx.designer.cs">
+      <DependentUpon>Categoria.aspx</DependentUpon>
     </Compile>
     <Compile Include="Info.aspx.cs">
       <DependentUpon>Info.aspx</DependentUpon>
