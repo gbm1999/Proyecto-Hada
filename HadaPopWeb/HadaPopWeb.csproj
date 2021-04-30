@@ -73,6 +73,9 @@
     <Content Include="App_Data\Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <Content Include="articulos.aspx" />
+    <Content Include="categoria-articulos.css" />
+    <Content Include="categoria.aspx" />
     <Content Include="Credit.aspx" />
     <Content Include="Credit.css" />
     <Content Include="images\fondo_register.jpg" />
@@ -98,6 +101,20 @@
     </Compile>
     <Compile Include="AddArticle.aspx.designer.cs">
       <DependentUpon>AddArticle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="articulos.aspx.cs">
+      <DependentUpon>articulos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="articulos.aspx.designer.cs">
+      <DependentUpon>articulos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="categoria.aspx.cs">
+      <DependentUpon>categoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="categoria.aspx.designer.cs">
+      <DependentUpon>categoria.aspx</DependentUpon>
     </Compile>
     <Compile Include="Credit.aspx.cs">
       <DependentUpon>Credit.aspx</DependentUpon>

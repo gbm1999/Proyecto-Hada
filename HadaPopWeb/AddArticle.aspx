@@ -1,16 +1,16 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddArticle.aspx.cs" Inherits="HadaPopWeb.AddArticle" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="AddArticle.aspx.cs" Inherits="HadaPopWeb.AddArticle" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .Precio {
+            height: 21px;
+            width: 85px;
+        }
+    </style>
+</asp:Content>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Add Article</title>
-    <link rel="stylesheet" href="AddArticle.css" />
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+        
+            <link rel="stylesheet" href="AddArticle.css" />
             <div class="centro">
                 <div class="titulo">
                     AÑADIR PRODUCTO
@@ -42,11 +42,18 @@
 
                         </div>
                 </div>
+                
                     
                <div class="parametros-der">
                    <div class="texto">
                             PRECIO:
                             <input type="text" class="input" name="precio" id="precio"/>
+
+                        </div>
+
+                   <div class="texto">
+                            CATEGORÍA:
+                            <input type="text" class="input" name="categoria" id="categoria"/>
 
                         </div>
 
@@ -60,12 +67,16 @@
 
                         
 
-               </div>
+              </div>
 
-                </div>
-                
             </div>
-        
-    </form>
-</body>
-</html>
+              
+                
+           
+                <div class="Create">
+                    <button type="submit" class="boton">Create</button>
+                </div>   
+
+                  </div>
+
+</asp:Content>
