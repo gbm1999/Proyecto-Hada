@@ -73,21 +73,16 @@
     <Content Include="App_Data\Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
-    <Content Include="Categoria.aspx" />
-    <Content Include="categoria.css" />
-    <Content Include="images\HRTrends-que-es-el-empowerment-en-una-empresa.jpg" />
-    <Content Include="images\logo_atencion.png" />
-    <Content Include="images\logo_seguridad.png" />
-    <Content Include="images\fondo_info.jpg" />
+    <Content Include="Credit.aspx" />
+    <Content Include="Credit.css" />
     <Content Include="images\fondo_register.jpg" />
     <Content Include="images\login.jpg" />
     <Content Include="images\logo_small.png" />
-    <Content Include="images\oficinas.jpg" />
-    <Content Include="images\unnamed.jpg" />
     <Content Include="Info.aspx" />
     <Content Include="Info.css" />
     <Content Include="Login.css" />
-    <Content Include="Navegador.css" />
+    <Content Include="Profile.aspx" />
+    <Content Include="Profile.css" />
     <Content Include="Registro.aspx" />
     <Content Include="Registro.css" />
     <Content Include="ShowArticle.aspx" />
@@ -104,12 +99,12 @@
     <Compile Include="AddArticle.aspx.designer.cs">
       <DependentUpon>AddArticle.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Categoria.aspx.cs">
-      <DependentUpon>Categoria.aspx</DependentUpon>
+    <Compile Include="Credit.aspx.cs">
+      <DependentUpon>Credit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Categoria.aspx.designer.cs">
-      <DependentUpon>Categoria.aspx</DependentUpon>
+    <Compile Include="Credit.aspx.designer.cs">
+      <DependentUpon>Credit.aspx</DependentUpon>
     </Compile>
     <Compile Include="Info.aspx.cs">
       <DependentUpon>Info.aspx</DependentUpon>
@@ -117,6 +112,13 @@
     </Compile>
     <Compile Include="Info.aspx.designer.cs">
       <DependentUpon>Info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registro.aspx.cs">
