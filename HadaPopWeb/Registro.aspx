@@ -34,7 +34,7 @@
                         <div class="texto">
                             Nombre:
                          
-                                <input type="text" class="parametro-introducido" name="name" id="name"/>
+                                <asp:TextBox ID="name" runat="server" name="name" />
                            
                         </div>
 
@@ -43,21 +43,21 @@
                     <div class="campo">
                         <div class="texto">
                             NIF:
-                                <input type="text" class="parametro-introducido" name="NIF" id="NIF"/>
+                                <asp:TextBox ID="NIF" runat="server" name="nif" />
                         </div>
                     </div>
 
                     <div class="campo">
                         <div class="texto">
                             Contraseña:
-                                <input type="text" class="parametro-introducido" name="password" id="password"/>
+                                <asp:TextBox ID="password" runat="server" name="password" />
                         </div>
                     </div>
 
                     <div class="campo">
                         <div class="texto">
                             Edad:
-                                <input type="text" class="parametro-introducido" name="age" id="age"/>
+                                <asp:TextBox ID="age" runat="server" name="age" />
                         </div>
                     </div>
 
@@ -68,7 +68,7 @@
                     <div class="campo">
                         <div class="texto">
                             Admin:
-                            <input type="text" class="parametro-introducido" name="admin" id="admin"/>
+                            <asp:TextBox ID="admin" runat="server" name="admin" />
                         </div>
 
                     </div>
@@ -76,28 +76,35 @@
                     <div class="campo">
                         <div class="texto">
                             Teléfono:
-                            <input type="text" class="parametro-introducido" name="phone" id="phone"/>
+                            <asp:TextBox ID="phone" runat="server" name="phone" />
                         </div>
                     </div>
 
                     <div class="campo">
                         <div class="texto">
                             Confirmar contraseña:
-                            <input type="text" class="parametro-introducido" name="c_password" id="c_password"/>
+                            <asp:TextBox ID="password2" runat="server" name="password2" />
                         </div>
                     </div>
 
                     <div class="campo">
                         <div class="texto">
                             email:
-                            <input type="text" class="parametro-introducido" name="email"  id="email"/>
+                            <asp:TextBox ID="email" runat="server" name="email" />
                         </div>
                     </div>
 
                 </div> 
 
                 <div class="register">
-                    <button type="submit" class="boton">Register</button>
+                   
+
+                     <asp:Button id="register"
+                           Text="Register"
+                           class="boton"
+                           CommandName="Submit"
+                           
+                           runat="server"/>
 
                 </div>
             </div>
