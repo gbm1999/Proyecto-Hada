@@ -6,8 +6,8 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" href="Profile.css" />
-
-    <div class ="CuadroExt">
+    <div class="body">
+        <div class ="CuadroExt">
             <div class="divimgdatos">
                 <div class = "imgperfbox">
                     <div class="img">
@@ -28,35 +28,35 @@
 
                     <div class = "labtext"> <!-- Nombre -->
                         <label class="labels">Nombre: </label>
-                        <input ID="TBNombre" type="text" runat="server" class="textboxes" />
+                        <asp:TextBox ID="TBNombre" class="textboxes" runat="server"></asp:TextBox>
                     </div>
 
                     <div class="separadorvert"></div>
 
                      <div class = "labtext"> <!-- Email -->
                         <label class="labels">Email: </label>
-                        <input id="TBEmail" type="text" runat="server" class="textboxes" />
+                        <asp:TextBox ID="TBEmail" class="textboxes" runat="server"></asp:TextBox>
                     </div>  
 
                     <div class="separadorvert"></div>
 
                      <div class = "labtext"> <!-- NIF -->
                         <label class="labels">NIF: </label>
-                        <input id="TBNif" type="text" runat="server" class="textboxes" />
+                        <asp:TextBox ID="TBNif" class="textboxes" runat="server"></asp:TextBox>
                     </div> 
 
                     <div class="separadorvert"></div>
 
                      <div class = "labtext"> <!-- Edad -->
                         <label class="labels">Edad: </label>
-                        <input id="TBEdad" runat="server" type="text" class="textboxes" />
+                        <asp:TextBox ID="TBEdad" class="textboxes" runat="server"></asp:TextBox>
                     </div> 
 
                     <div class="separadorvert"></div>
 
                      <div class = "labtext"> <!-- Tlfno -->
                         <label class="labels">Teléfono: </label>
-                        <input id="TBTelefono" runat="server" type="text" class="textboxes" />
+                        <asp:TextBox ID="TBTelefono" class="textboxes" runat="server"></asp:TextBox>
                     </div> 
                     <!-- FIN DATOSUSU -->
                     <div class="separadorvert"></div>
@@ -67,9 +67,28 @@
 
                 </div>
         </div>
-            
-            <div class ="Articulos">
-                
+<!-- Por el momento y dado que es solo la interfaz, hemos puesto ejemplos de prueba sobre como se verían algunas funciones-->
+            <div class ="ComentArticulos">
+                <div class="Articulos">
+                    <h2>Artículos del usuario: </h2>
+                    <div class="Articulo">
+                        <div class="ArtImgDiv">
+                            <label class="TitleUsu"> Artículo1</label>
+                            <asp:Image ID="Article1Img" CssClass="ImgArticle" ImageUrl="~/images/depositphotos_324611040-stock-illustration-no-image-vector-icon-no.jpg" runat="server" />
+                        </div>
+                            <p class="Coment">Esta es la descripción del Artículo</p>
+                    </div>
+
+                </div>
+                <div class="Comentarios">   
+                    <h2>Comentarios del Usuario:</h2>
+                    <div>
+                       <label class="TitleUsu">Usuario1:</label>
+                       <label class="TitleAccion">Vendió [Artículo 1] [5/5]</label>
+                       <p class="Coment">Esto es un comentario de Ejemplo Sobre como funcionan los comentarios en nuestra Web</p>
+                    </div>
+                    </div>
             </div>
+        </div>
     </div>
 </asp:Content>
