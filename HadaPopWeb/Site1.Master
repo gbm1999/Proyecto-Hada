@@ -15,13 +15,13 @@
     <form id="form1" runat="server">
         <div class="navegador">
             <ul>
-                <li><a href="#">Iniciar sesión</a></li>
-                <li><a href="#">Registro</a></li>
-                <li><a href="#">Articulos</a></li>
-                <li><a href="#">Perfil</a></li>
+                <li><a href="Login.aspx">Iniciar sesión</a></li>
+                <li><a href="Registro.aspx">Registro</a></li>
+                <li><a href="articulos.aspx">Articulos</a></li>
+                <li><a href="Profile.aspx">Perfil</a></li>
                 <li><a href="#">Monedero</a></li>
-                <li><a href="#">Información</a></li>
-                <li><a href="#">Categorías</a></li>
+                <li><a href="Info.aspx">Información</a></li>
+                <li><a href="categoria.aspx">Categorías</a></li>
 
             
             </ul>

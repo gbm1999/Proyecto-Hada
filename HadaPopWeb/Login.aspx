@@ -22,7 +22,13 @@
                         </label>
 
                         
-                            <button type="submit" class="boton-register">Register</button>
+                            
+                        <asp:Button id="register"
+                           Text="Register"
+                           class="boton-register"
+                           CommandName="Submit"
+                           
+                           runat="server"/>
                         
                     </div>
 
@@ -42,14 +48,14 @@
                             <div class="texto">
                                Email
                             </div>
-                             <input type="text" class="input" name="email" id="email"/>
+                              <asp:TextBox ID="email" runat="server" name="email" class="input"/>
                         </div>
 
                         <div class="div-parametro">
                             <div class="texto">
                                Password
                             </div>
-                             <input type="password" class="input" name="password" id="password"/>
+                              <asp:TextBox ID="password" runat="server" name="password" class="input"/>
 
 
                         </div>
@@ -58,7 +64,14 @@
 
                     </div>
 
-                     <button type="submit" class="boton-login">Login</button>
+                    
+
+                    <asp:Button id="login"
+                           Text="Login"
+                           class="boton-login"
+                           CommandName="Submit"
+                           
+                           runat="server"/>
 
                 </div>
 

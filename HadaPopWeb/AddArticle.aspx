@@ -1,11 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="AddArticle.aspx.cs" Inherits="HadaPopWeb.AddArticle" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-        .Precio {
-            height: 21px;
-            width: 85px;
-        }
-    </style>
+    
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -20,13 +15,15 @@
                     <div class="parametros-izq">
                         <div class="texto">
                             NOMBRE:
-                            <input type="text" class="input" name="nombre" id="nombre"/>
+                            <asp:TextBox ID="name" runat="server" CssClass="input" name="name" />
+
+                            
 
                         </div>
 
                         <div class="texto">
                             CIUDAD:
-                            <input type="text" class="input" name="ciudad1" id="ciudad1"/>
+                            <asp:TextBox ID="ciudad" runat="server" class="input" name="ciudad" />
                             
 
                         </div>
@@ -47,13 +44,13 @@
                <div class="parametros-der">
                    <div class="texto">
                             PRECIO:
-                            <input type="text" class="input" name="precio" id="precio"/>
+                            <asp:TextBox ID="precio" class="input" runat="server" name="precio" />
 
                         </div>
 
                    <div class="texto">
                             CATEGORÍA:
-                            <input type="text" class="input" name="categoria" id="categoria"/>
+                            <asp:TextBox ID="categoria" class="input" runat="server" name="categoria" />
 
                         </div>
 
@@ -61,22 +58,42 @@
 
                         <div class="texto">
                             FOTO:
-                            <input type="file" class="inputPhoto" name="file" id="file" />
+                            
+                           
+                           
+                            
                            
                         </div>
 
-                        
+                   <div class="esp-boton">
+                         <asp:Button id="create"
+                           Text="Create"
+                           
+                           CommandName="Submit"
+                           
+                           runat="server"/>
+                    </div>
 
+                        
+                   
               </div>
+
+                    
+
+
+                    
 
             </div>
               
                 
            
-                <div class="Create">
-                    <button type="submit" class="boton">Create</button>
-                </div>   
+                 
 
-                  </div>
+           </div>
+           
+           
+                 
+                          
+               
 
 </asp:Content>
