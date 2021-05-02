@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class CADMonedero
+    public class CADMonedero
     {
         private string connection;
         private SqlConnection connectBD;

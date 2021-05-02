@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace library
 {
-    class CADArticulo
+    public class CADArticulo
     {
         private string connection;
         private SqlConnection connectBD;

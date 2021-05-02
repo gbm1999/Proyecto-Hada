@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class CADAdmin
+    public class CADAdmin
     {
         ArrayList lista = new ArrayList();
         private string connection;
