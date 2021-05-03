@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class ENComentario
+    public class ENComentario
     {
         private string nifusuario;
         public string NifUsuario

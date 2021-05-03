@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class ENCategoria
+    public class ENCategoria
     {
         private int Id;
         public int IdCategoria
