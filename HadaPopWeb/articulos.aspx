@@ -12,4 +12,11 @@
 
         </div>
     </div>
+    <div class="plus">
+        <a href="AddArticle.aspx" rel="create">
+        <img src="images/add.png" />
+            </a>
+            
+    </div>
+
 </asp:Content>

@@ -15,6 +15,7 @@ namespace HadaPopWeb
 
         }
 
+        /*
         protected void add_article(object sender, EventArgs e)
         {
             bool seCrea = false;
@@ -41,6 +42,6 @@ namespace HadaPopWeb
                 Label1.Text = " ";
                 Label2.Text = "**Error** El articulo ya existe";
             }
-        }
+        }*/
     }
 }
