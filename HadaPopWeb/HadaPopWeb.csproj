@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="AddArticle.aspx" />
     <Content Include="AddArticle.css" />
+    <Content Include="AddCategoria.aspx" />
     <Content Include="App_Data\Database.mdf" />
     <Content Include="App_Data\Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
@@ -78,12 +79,15 @@
     <Content Include="categoria.aspx" />
     <Content Include="Credit.aspx" />
     <Content Include="Credit.css" />
+    <Content Include="images\add.png" />
     <Content Include="images\fondo_register.jpg" />
     <Content Include="images\login.jpg" />
     <Content Include="images\logo_small.png" />
+    <Content Include="images\plus.png" />
     <Content Include="Info.aspx" />
     <Content Include="Info.css" />
     <Content Include="Login.css" />
+    <Content Include="menu.css" />
     <Content Include="Profile.aspx" />
     <Content Include="Profile.css" />
     <Content Include="Registro.aspx" />
@@ -101,6 +105,13 @@
     </Compile>
     <Compile Include="AddArticle.aspx.designer.cs">
       <DependentUpon>AddArticle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddCategoria.aspx.cs">
+      <DependentUpon>AddCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddCategoria.aspx.designer.cs">
+      <DependentUpon>AddCategoria.aspx</DependentUpon>
     </Compile>
     <Compile Include="articulos.aspx.cs">
       <DependentUpon>articulos.aspx</DependentUpon>
@@ -179,6 +190,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Themes\Tema1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\library\library.csproj">
+      <Project>{bfd76f11-ebbe-4660-a061-3588ac22b994}</Project>
+      <Name>library</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

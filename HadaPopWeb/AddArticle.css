@@ -15,6 +15,7 @@
     
 }
 
+
 .titulo{
     position: absolute;
     width: 100%;
@@ -86,24 +87,61 @@
     resize: none;
 }
 
-.Create{
-    position: absolute;
-    top: 85%;
-    left: 35%;
-    width: 30%;
-    height: 10%;
-}
+
 
 .boton {
-    position: absolute;
-    width: 40%;
- 
-    height: 60%;
-    top: 30%;
+   
+    
     background: #469B4B;
     color: white;
     text-align: center;
     border-radius: 20px;
     font-size: 150%;
+    width: 100%;
+    
+    
 }
 
+
+
+.esp-boton{
+    position: absolute;
+    top: 105%;
+    width: 20%;
+    left: 40%;
+
+}
+
+
+.categoria{
+    position: absolute;
+    left: 10%;
+    width: 80%;
+    height: 60%;
+    top: 25%;
+}
+
+.nombre-categoria{
+    font-size: 200%;
+
+}
+
+
+.input-cat {
+    position: relative;
+    width: 40%;
+    height: 40%;
+    border: 0;
+    border-bottom: 1px solid #000;
+    outline: none;
+    font-size: 100%;
+    color: grey;
+}
+
+.area-cat{
+    position: relative;
+    
+    top: 5%;
+    width: 90%;
+    height: 50%;
+}
