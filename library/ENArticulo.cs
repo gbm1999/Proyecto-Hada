@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class ENArticulo
+    public class ENArticulo
     {
         private int codigo;
         public int codigoArticulo
@@ -128,7 +128,9 @@ namespace library
         public ENArticulo()
         {
             CADArticulo aux = new CADArticulo();
-            aux.imgDefault(ref imagen);
+
+            //Futura mejora
+            //aux.imgDefault(ref imagen);   
 
             codigo = -1;
             nombre = null;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class ENMonedero
+    public class ENMonedero
     {
         private string Tarjeta;
         public string numTarjeta

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class ENAdmin
+    public class ENAdmin
     {
         public ArrayList MostrarUsuarios()
         {

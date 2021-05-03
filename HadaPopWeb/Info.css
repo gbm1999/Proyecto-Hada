@@ -1,0 +1,153 @@
+﻿body {
+    background-size: cover;
+    background-image: url('images/login.jpg');
+}
+
+.center-container {
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    background-color: white;
+    border-radius: 30px;
+    width: 60%;
+    height: 70%;
+}
+
+
+
+
+
+
+.foto {
+    position: absolute;
+    height: 30%;
+    width: 15%;
+    top: 5%;
+
+    
+    overflow: hidden;
+    
+}
+
+    .foto img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+.seguridad-container{
+    position: absolute;
+    height: 10%;
+    width: 10%;
+    top: 80%;
+    overflow: hidden;
+    left: 10%;
+}
+
+    .seguridad-container img {
+        width: auto;
+        height: 100%;
+        display: block;
+    }
+
+
+.atencion-container {
+    position: absolute;
+    height: 10%;
+    width: 10%;
+    top: 80%;
+    overflow: hidden;
+    left: 20%;
+ 
+}
+
+    .atencion-container img {
+        width: auto;
+        height: 100%;
+        display: block;
+    }
+
+.atencion {
+    position: absolute;
+    height: 43%;
+    width: 53%;
+    overflow: hidden;
+    top: 48px;
+    left: 27%;
+    margin-top: 3px;
+    margin-right: 0px;
+}
+
+
+
+.titulo {
+    position: absolute;
+    height: 9%;
+    top: 6%;
+    width: 20%;
+    left: 20%;
+    text-align: center;
+    color: blue;
+    font-size: 250%;
+    font-family: Roboto;
+    font-weight: 600;
+}
+
+.texto {
+    position: absolute;
+    height: 16%;
+    top: 35%;
+    width: 50%;
+    left: 5%;
+    text-align: justify;
+    color: black;
+    font-size: 100%;
+    font-family: Roboto;
+    font-weight: 700;
+}
+
+.descripcion {
+    position: absolute;
+    height: 34%;
+    top: 45%;
+    width: 50%;
+    left: 5%;
+    text-align: justify;
+    color: black;
+    font-size: 100%;
+    font-weight: bold;
+    font-family: Roboto;
+}
+
+.foto-empresa {
+    position: absolute;
+    height: 35%;
+    width: 30%;
+    top: 55%;
+    overflow: hidden;
+    left: 65%;
+    border-radius: 20px;
+}
+
+    .foto-empresa img {
+        width: auto;
+        height: 100%;
+        display: block;
+    }
+
+
+.oficinas {
+    position: absolute;
+    height: 35%;
+    width: 30%;
+    top: 15%;
+    overflow: hidden;
+    left: 65%;
+    border-radius: 20px;
+}
+
+    .oficinas img {
+        width: auto;
+        height: 100%;
+        display: block;
+    }

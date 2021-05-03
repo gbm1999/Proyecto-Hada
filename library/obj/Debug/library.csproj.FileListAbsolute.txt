@@ -9,9 +9,3 @@ C:\Users\PC_\Source\Repos\gbm1999\Proyecto-Hada\library\obj\Debug\library.csproj
 C:\Users\PC_\Source\Repos\gbm1999\Proyecto-Hada\library\obj\Debug\library.csproj.CoreCompileInputs.cache
 C:\Users\PC_\Source\Repos\gbm1999\Proyecto-Hada\library\obj\Debug\library.dll
 C:\Users\PC_\Source\Repos\gbm1999\Proyecto-Hada\library\obj\Debug\library.pdb
-C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\library\bin\Debug\library.dll
-C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\library\bin\Debug\library.pdb
-C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\library\obj\Debug\library.csprojAssemblyReference.cache
-C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\library\obj\Debug\library.csproj.CoreCompileInputs.cache
-C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\library\obj\Debug\library.dll
-C:\Users\germa\Desktop\HADA\HadaPop\HadaPopWeb\library\obj\Debug\library.pdb
