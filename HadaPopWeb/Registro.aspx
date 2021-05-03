@@ -50,7 +50,7 @@
                     <div class="campo">
                         <div class="texto">
                             Contraseña:
-                                <asp:TextBox ID="password" runat="server" name="password" />
+                            <asp:TextBox ID="password" type="password" runat="server" name="password" />
                         </div>
                     </div>
 
@@ -68,7 +68,8 @@
                     <div class="campo">
                         <div class="texto">
                             Admin:
-                            <asp:TextBox ID="admin" runat="server" name="admin" />
+                            <br />
+                            <asp:CheckBox ID="admin" runat="server" />
                         </div>
 
                     </div>
@@ -98,13 +99,15 @@
 
                 <div class="register">
                    
-
+                     
                      <asp:Button id="register"
                            Text="Register"
                            class="boton"
                            CommandName="Submit"
                            
                            runat="server"/>
+                         
+                         
 
                 </div>
             </div>

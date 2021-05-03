@@ -34,7 +34,7 @@
                         </div>
 
                          <div class="areaDesc">
-                            <textarea  class="AddDescription text-cuadro" name="description" id="description"> </textarea>
+                            <asp:TextBox runat="server"  class="AddDescription text-cuadro" name="description" id="description"> </asp:TextBox>
                         
 
                         </div>
@@ -54,25 +54,15 @@
 
                         </div>
 
-                  
+                   
 
                         <div class="texto">
                             FOTO:
                             
-                           
-                           
-                            
-                           
+                            <asp:FileUpload ID="photo" runat="server" />
                         </div>
 
-                   <div class="esp-boton">
-                         <asp:Button id="create"
-                           Text="Create"
-                           
-                           CommandName="Submit"
-                           
-                           runat="server"/>
-                    </div>
+                  
 
                         
                    
@@ -84,6 +74,14 @@
                     
 
             </div>
+
+                 <div class="esp-boton">
+                         <asp:Button id="create"
+                           Text="Create"
+                           CommandName="Submit"
+                           class="boton"
+                           runat="server"/>
+                    </div>
               
                 
            

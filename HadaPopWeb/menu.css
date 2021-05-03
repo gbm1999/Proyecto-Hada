@@ -1,0 +1,53 @@
+﻿
+
+div.menu ul {
+    margin: 0px 0px 0px 0px;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    min-width: 100%;
+}
+
+    div.menu ul li a {
+        background-color: Black;
+        border: 0px Gray solid;
+        color: White;
+        display: table-cell;
+        padding: 10px 10px;
+        text-decoration: none;
+        margin: 0px 0px 0px 0px;
+    }
+
+div.menu li {
+    text-align: center;
+}
+
+div.menu ul li a:hover {
+    background-color: #B5B5B5;
+    color: Black;
+    text-decoration: none;
+}
+
+div.menu ul li a:active {
+    background-color: Gray;
+    color: Black;
+    text-decoration: none;
+}
+
+div.menu ul li .selected {
+    background-color: #646464;
+    color: Black;
+    text-decoration: none;
+}
+
+}
+
+
+.menu {
+    width: 100%;
+    background: white;
+}
+
+    .menu ul li {
+        width: 14%;
+    }
