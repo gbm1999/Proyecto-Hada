@@ -27,7 +27,7 @@
                            Text="Register"
                            class="boton-register"
                            CommandName="Submit"
-                           
+                           OnClick ="register_Click"
                            runat="server"/>
                         
                     </div>
@@ -70,8 +70,8 @@
                            Text="Login"
                            class="boton-login"
                            CommandName="Submit"
-                           
-                           runat="server"/>
+                           OnClick="register_Click"
+                           runat="server" />
 
                 </div>
 
