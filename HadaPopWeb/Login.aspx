@@ -57,17 +57,11 @@
                        
 
                     </div>
-                     <button type="submit" class="boton-login">Login</button>
                      
-                    <!--<div class="boton-login">
-                        <asp:LinkButton ID="LinkButton1" runat="server" href="Site1.Master">Login</asp:LinkButton>
-
-                    </div>-->
-                    <!--<ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/Site.aspx">Login</a>
-                        </li>
-                    </ul>-->
+                    <div class="boton-login">
+                        <asp:LinkButton  runat="server" ID="boton" href="articulos.aspx"> Login </asp:LinkButton>
+                    </div>
+                   
                 </div>
                 
             </div>
