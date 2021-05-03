@@ -187,3 +187,5 @@ C:\Users\PC_\Source\Repos\gbm1999\Proyecto-Hada\HadaPopWeb\obj\Debug\HadaPopWeb.
 C:\Users\PC_\Source\Repos\gbm1999\Proyecto-Hada\HadaPopWeb\obj\Debug\HadaPopWeb.csproj.CopyComplete
 C:\Users\PC_\Source\Repos\gbm1999\Proyecto-Hada\HadaPopWeb\obj\Debug\HadaPopWeb.dll
 C:\Users\PC_\Source\Repos\gbm1999\Proyecto-Hada\HadaPopWeb\obj\Debug\HadaPopWeb.pdb
+C:\Users\Usuario\Desktop\proyecto\Proyecto-Hada\HadaPopWeb\bin\library.dll
+C:\Users\Usuario\Desktop\proyecto\Proyecto-Hada\HadaPopWeb\bin\library.pdb
