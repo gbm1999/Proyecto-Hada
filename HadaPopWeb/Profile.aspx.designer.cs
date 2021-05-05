@@ -39,7 +39,7 @@ namespace HadaPopWeb
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText TBNombre;
+        protected global::System.Web.UI.WebControls.TextBox TBNombre;
 
         /// <summary>
         /// Control TBEmail.
@@ -48,7 +48,7 @@ namespace HadaPopWeb
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText TBEmail;
+        protected global::System.Web.UI.WebControls.TextBox TBEmail;
 
         /// <summary>
         /// Control TBNif.
@@ -57,7 +57,7 @@ namespace HadaPopWeb
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText TBNif;
+        protected global::System.Web.UI.WebControls.TextBox TBNif;
 
         /// <summary>
         /// Control TBEdad.
@@ -66,7 +66,7 @@ namespace HadaPopWeb
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText TBEdad;
+        protected global::System.Web.UI.WebControls.TextBox TBEdad;
 
         /// <summary>
         /// Control TBTelefono.
@@ -75,7 +75,7 @@ namespace HadaPopWeb
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText TBTelefono;
+        protected global::System.Web.UI.WebControls.TextBox TBTelefono;
 
         /// <summary>
         /// Control Butt_Edit.
@@ -94,5 +94,14 @@ namespace HadaPopWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Butt_Env;
+
+        /// <summary>
+        /// Control Article1Img.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Article1Img;
     }
 }

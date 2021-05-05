@@ -1,16 +1,16 @@
 ﻿.body 
 {
-    background-image: url("images/fondo_register.jpg");
+    background-color:dimgray;
     width:100%;
+    position:absolute;
     height:100%;
 }
-.contentbody
-{
-    left: 10%;
+.contentbody {
     top: 10%;
     width: 90%;
     height: 100%;
     position: absolute;
+
 }
 label
 {

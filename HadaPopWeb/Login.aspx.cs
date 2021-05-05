@@ -13,5 +13,10 @@ namespace HadaPopWeb
         {
 
         }
+
+        protected void register_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Info.aspx");
+        }
     }
 }
