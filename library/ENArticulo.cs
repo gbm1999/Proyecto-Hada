@@ -177,5 +177,11 @@ namespace library
             CADArticulo arti = new CADArticulo();
             return arti.deleteArticulo(this);
         }
+
+        public bool showArticles()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.deleteArticulo(this);
+        }
     }
 }

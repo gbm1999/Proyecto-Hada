@@ -152,5 +152,32 @@ namespace library
             }
             return entra;
         }
+
+        public bool showArticles(ENArticulo arti)
+        {
+            int response = 0;
+            bool entra = false;
+
+            try
+            {
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("Select * from articulos", connectBD);
+                response = command.ExecuteNonQuery();
+
+                if (response == 1)
+                {
+                    entra = true;
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Article operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+            return entra;
+        }
     }
 }
