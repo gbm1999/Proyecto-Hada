@@ -151,5 +151,15 @@ namespace library
             CADUsuario user = new CADUsuario();
             return user.InicioSesion(this);
         }
+        public int CountSales()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.CountSales(this);
+        }
+        public int CountBuys()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.CountBuys(this);
+        }
     }
 }

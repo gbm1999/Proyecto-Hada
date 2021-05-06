@@ -161,7 +161,7 @@ namespace library
             try
             {
                 connectBD.Open();
-                SqlCommand command = new SqlCommand("Select * from articulos", connectBD);
+                SqlCommand command = new SqlCommand("Select * from Articulo", connectBD);
                 response = command.ExecuteNonQuery();
 
                 if (response == 1)
@@ -178,6 +178,62 @@ namespace library
                 connectBD.Close();
             }
             return entra;
+        }
+        public int CountSales(ENUsuario usu)
+        {
+            int count = 0;
+
+            try
+            {
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("Select * from Articulo ", connectBD);
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    if (usu.NIFUsuario == dataReader["Vendedor"].ToString())
+                    {
+                        count++;
+                    }
+                }
+                dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+            return count;
+        }
+        public int CountBuys(ENUsuario usu)
+        {
+            int count = 0;
+
+            try
+            {
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("Select * from Articulo ", connectBD);
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    if (usu.NIFUsuario == dataReader["comprador"].ToString())
+                    {
+                        count++;
+                    }
+                }
+                dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+            return count;
         }
     }
 }

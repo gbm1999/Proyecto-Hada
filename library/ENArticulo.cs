@@ -160,19 +160,19 @@ namespace library
             return arti.createArticulo(this);
         }
 
-        public bool readUsuario()
+        public bool readArticulo()
         {
             CADArticulo arti = new CADArticulo();
             return arti.readArticulo(this);
         }
 
-        public bool updateUsuario()
+        public bool updateArticulo()
         {
             CADArticulo arti = new CADArticulo();
             return arti.updateArticulo(this);
         }
 
-        public bool deleteUsuario()
+        public bool deleteArticulo()
         {
             CADArticulo arti = new CADArticulo();
             return arti.deleteArticulo(this);
@@ -181,7 +181,7 @@ namespace library
         public bool showArticles()
         {
             CADArticulo arti = new CADArticulo();
-            return arti.deleteArticulo(this);
+            return arti.showArticles(this);
         }
     }
 }
