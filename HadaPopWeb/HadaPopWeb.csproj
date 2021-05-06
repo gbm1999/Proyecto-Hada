@@ -67,20 +67,115 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddArticle.aspx" />
+    <Content Include="AddArticle.css" />
+    <Content Include="AddCategoria.aspx" />
     <Content Include="App_Data\Database.mdf" />
     <Content Include="App_Data\Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <Content Include="articulos.aspx" />
+    <Content Include="categoria-articulos.css" />
+    <Content Include="categoria.aspx" />
+    <Content Include="Credit.aspx" />
+    <Content Include="Credit.css" />
+    <Content Include="images\add.png" />
+    <Content Include="images\fondo_register.jpg" />
+    <Content Include="images\login.jpg" />
+    <Content Include="images\logo_small.png" />
+    <Content Include="images\plus.png" />
+    <Content Include="Info.aspx" />
+    <Content Include="Info.css" />
+    <Content Include="Login.css" />
+    <Content Include="menu.css" />
+    <Content Include="Profile.aspx" />
+    <Content Include="Profile.css" />
+    <Content Include="Registro.aspx" />
+    <Content Include="Registro.css" />
+    <Content Include="ShowArticle.aspx" />
+    <Content Include="ShowArticle.css" />
+    <Content Include="Site1.css" />
     <Content Include="Web.config" />
+    <Content Include="Login.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddArticle.aspx.cs">
+      <DependentUpon>AddArticle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddArticle.aspx.designer.cs">
+      <DependentUpon>AddArticle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddCategoria.aspx.cs">
+      <DependentUpon>AddCategoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddCategoria.aspx.designer.cs">
+      <DependentUpon>AddCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="articulos.aspx.cs">
+      <DependentUpon>articulos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="articulos.aspx.designer.cs">
+      <DependentUpon>articulos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="categoria.aspx.cs">
+      <DependentUpon>categoria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="categoria.aspx.designer.cs">
+      <DependentUpon>categoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Credit.aspx.cs">
+      <DependentUpon>Credit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Credit.aspx.designer.cs">
+      <DependentUpon>Credit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Info.aspx.cs">
+      <DependentUpon>Info.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Info.aspx.designer.cs">
+      <DependentUpon>Info.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registro.aspx.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registro.aspx.designer.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowArticle.aspx.cs">
+      <DependentUpon>ShowArticle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowArticle.aspx.designer.cs">
+      <DependentUpon>ShowArticle.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -92,6 +187,15 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Themes\Tema1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\library\library.csproj">
+      <Project>{bfd76f11-ebbe-4660-a061-3588ac22b994}</Project>
+      <Name>library</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

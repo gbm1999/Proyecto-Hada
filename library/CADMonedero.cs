@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class CADMonedero
+    public class CADMonedero
     {
         private string connection;
         private SqlConnection connectBD;
