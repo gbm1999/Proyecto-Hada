@@ -43,16 +43,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CADAdmin.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="CADArticulo.cs" />
+    <Compile Include="CADComentario.cs" />
+    <Compile Include="CADReporte.cs" />
+>>>>>>> bdaaac1e41de243b643bfd2c82ddd99dd1e426b8
     <Compile Include="CADUsuario.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="ENAdmin.cs" />
     <Compile Include="CADCategoria.cs" />
     <Compile Include="CADMonedero.cs" />
-    <Compile Include="CADUsuario.cs" />
-    <Compile Include="Class1.cs" />
-    <Compile Include="ENAdmin.cs" />
+    <Compile Include="ENArticulo.cs" />
     <Compile Include="ENCategoria.cs" />
+    <Compile Include="ENComentario.cs" />
     <Compile Include="ENMonedero.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="ENReporte.cs" />
+>>>>>>> bdaaac1e41de243b643bfd2c82ddd99dd1e426b8
     <Compile Include="ENUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
