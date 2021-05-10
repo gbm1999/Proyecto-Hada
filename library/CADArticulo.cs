@@ -30,7 +30,7 @@ namespace library
             try
             {
                 connectBD.Open();
-                SqlCommand command = new SqlCommand("Insert into Artiuclo(codigo, Nombre, Descripcion, Categoria, Precio, Imagen, Ciudad, Comprador, Vendedor) VALUES ('" + arti.codigoArticulo + "', '" + arti.nombreArticulo + "', '" + arti.descripcionArticulo + "', '" + arti.categoriaArticulo + "', '" + arti.precioArticulo + "', '" + arti.imagenArticulo + "', '" + arti.ciudadArticulo + "', '" + arti.compradorArticulo +"', '" + arti.vendedorArticulo + "' )", connectBD);
+                SqlCommand command = new SqlCommand("Insert into Articulo(codigo, Nombre, Descripcion, Categoria, Precio, Imagen, Ciudad, Comprador, Vendedor) VALUES ('" + arti.codigoArticulo + "', '" + arti.nombreArticulo + "', '" + arti.descripcionArticulo + "', '" + arti.categoriaArticulo + "', '" + arti.precioArticulo + "', '" + arti.imagenArticulo + "', '" + arti.ciudadArticulo + "', '" + arti.compradorArticulo +"', '" + arti.vendedorArticulo + "' )", connectBD);
                 command.ExecuteNonQuery();
                 entra = true;
             }
@@ -155,6 +155,146 @@ namespace library
                 connectBD.Close();
             }
             return entra;
+        }
+
+        public bool showArticles(ENArticulo arti)
+        {
+            int response = 0;
+            bool entra = false;
+
+            try
+            {
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("Select * from Articulo", connectBD);
+                response = command.ExecuteNonQuery();
+
+                if (response == 1)
+                {
+                    entra = true;
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Article operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+            return entra;
+        }
+        public int CountSales(ENUsuario usu)
+        {
+            int count = 0;
+
+            try
+            {
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("Select * from Articulo ", connectBD);
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    if (usu.NIFUsuario == dataReader["Vendedor"].ToString())
+                    {
+                        count++;
+                    }
+                }
+                dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+            return count;
+        }
+        public int CountBuys(ENUsuario usu)
+        {
+            int count = 0;
+
+            try
+            {
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("Select * from Articulo ", connectBD);
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    if (usu.NIFUsuario == dataReader["comprador"].ToString())
+                    {
+                        count++;
+                    }
+                }
+                dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+            return count;
+        }
+        public void GuardarImagen(ENArticulo art, byte[] imagen)
+        {
+            try
+            {
+                int response = 0;
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("UPDATE Articulo SET Imagen = @Imagen where codigo = @codigo", connectBD);
+                SqlParameter imageParam = command.Parameters.Add("@Imagen", System.Data.SqlDbType.Image);
+                command.Parameters.AddWithValue("@codigo", art.codigoArticulo);
+                response = command.ExecuteNonQuery();
+
+                if (response == 1)
+                {
+                    imageParam.Value = imagen;
+                }
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Article operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+        }
+        public byte[] GetImagenByArticle(ENArticulo art)
+        {
+            byte[] Imagen = null;
+            try
+            {
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("SELECT Imagen FROM Articulo where codigo = @codigo", connectBD);
+                command.Parameters.AddWithValue("@codigo", art.codigoArticulo);
+                SqlDataReader dataReader = command.ExecuteReader();
+                if (dataReader.Read())
+                {
+                    Imagen = (byte[])dataReader["Imagen"];
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Article operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+            return Imagen;
+        }
+        public string ConnectString
+        {
+            get { return connection; }
+            set { connection = value; }
         }
     }
 }
