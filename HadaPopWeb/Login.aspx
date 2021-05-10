@@ -40,7 +40,6 @@
                     </div>
                     <div class="logo">
                         <img src="images/logo_small.png" />
-
                     </div>
 
                     <div class="div-parametros">
@@ -48,13 +47,24 @@
                             <div class="texto">
                                Email
                             </div>
-                              <asp:TextBox ID="email" runat="server" name="email" class="input"/>
-                        </div>
+                           <div class="separadorvertical"></div>
+                            <div class="errorbox">
+                                <label id="errorname" runat ="server" class="errortext">Esto no deberías poder verlo :(</label>
+                            </div>
+                             
 
+                            <asp:TextBox ID="email" runat="server" name="email" class="input"/>
+                        </div>
+                        <div class="separadorvertical"></div>
                         <div class="div-parametro">
                             <div class="texto">
                                Password
                             </div>
+                            <div class="separadorvertical"></div>
+                            <div class="errorbox">
+                                <label id="errorpass" runat ="server" class="errortext">Esto no deberías poder verlo :(</label>
+                            </div>
+
                               <asp:TextBox ID="password" runat="server" name="password" class="input"/>
 
 
