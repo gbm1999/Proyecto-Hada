@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -104,6 +105,18 @@ namespace library
                 admin = value;
             }
         }
+        private byte[] imagen;
+        public byte[] imagenUsuario
+        {
+            get
+            {
+                return imagen;
+            }
+            set
+            {
+                imagen = value;
+            }
+        }
         public ENUsuario()
         {
             NIF = null;
@@ -114,8 +127,9 @@ namespace library
             edad = 0;
             contrasena = null;
             tarjeta = 0;
+            imagen = null;
         }
-        public ENUsuario(string NIF, string nombre, string email,int telefono, bool admin, int edad, string contrasena, int tarjeta)
+        public ENUsuario(string NIF, string nombre, string email,int telefono, bool admin, int edad, string contrasena, int tarjeta, byte[] imagen)
         {
             this.NIF = NIF;
             this.nombre = nombre;
@@ -125,6 +139,7 @@ namespace library
             this.edad = edad;
             this.contrasena = contrasena;
             this.tarjeta = tarjeta;
+            this.imagen = imagen;
         }
         public bool createUsuario()
         {
@@ -150,6 +165,26 @@ namespace library
         {
             CADUsuario user = new CADUsuario();
             return user.InicioSesion(this);
+        }
+        public int CountSales()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.CountSales(this);
+        }
+        public int CountBuys()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.CountBuys(this);
+        }
+        public void guardaImagen(byte[] imagen)
+        {
+            CADUsuario user = new CADUsuario();
+            user.GuardarImagen(this,imagen); ;
+        }
+        public byte[] getImagen()
+        {
+            CADUsuario user = new CADUsuario();
+            return user.GetImagenByUser(this); ;
         }
     }
 }

@@ -27,7 +27,7 @@
                            Text="Register"
                            class="boton-register"
                            CommandName="Submit"
-                           
+                           OnClick ="register_Click"
                            runat="server"/>
                         
                     </div>
@@ -65,15 +65,13 @@
                     </div>
 
                     
-                    
+
                     <asp:Button id="login"
                            Text="Login"
-                           
-                           Cssclass="boton-login"
+                           class="boton-login"
                            CommandName="Submit"
-                           
-                           runat="server"/>
-                        </>
+                           OnClick="register_Click"
+                           runat="server" />
 
                 </div>
 

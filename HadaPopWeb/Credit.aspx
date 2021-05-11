@@ -31,12 +31,13 @@
                             <div class="separador"></div>
                             <div class ="InfoCuentas">
                                  <label class="labels">Nombre: </label>
-                                 <input ID="NombreC1" type="text" runat="server" class="textboxes" />
+                                 <asp:TextBox ID="TBNombre" runat="server" CssClass="textboxes"></asp:TextBox>
                             </div>
                             <div class="separador"></div>
                             <div class ="InfoCuentas">
                                  <label class="labels">Nº Cuenta: </label>
-                                 <input ID="Cuenta1" type="text" runat="server" class="textboxes" />
+                                 <asp:TextBox ID="Cuenta1" runat="server" CssClass="textboxes"></asp:TextBox>
+
                             </div>
                             <div class ="separador"></div>
                             <div class ="divBotonesCuentas">

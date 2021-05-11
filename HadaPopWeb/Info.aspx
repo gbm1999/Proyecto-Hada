@@ -27,26 +27,22 @@
         Nosotros proporcionamos la plataforma, la seguridad, privacidad de datos y la gestión del transporte de los productos.</div>
 
    
-    
-    
     <div class="seguridad-container">
-        <img src="images/logo_seguridad.png" ></div>
+        <asp:Image runat="server" src="images/logo_seguridad.png" /> </div>
    
        
     
     <div class="atencion-container">
-      
-        <img src="images/logo_atencion.png"/>
-     
+        <asp:Image runat="server" src="images/logo_atencion.png" />
        
     </div> 
 
     <div class="foto-empresa">
-        <img src="images/HRTrends-que-es-el-empowerment-en-una-empresa.jpg" />
+        <asp:Image runat="server" src="images/HRTrends-que-es-el-empowerment-en-una-empresa.jpg" />
     </div>
 
     <div class="oficinas">
-        <img src="images/oficinas.jpg" />
+        <asp:Image runat="server" src="images/oficinas.jpg" />
     </div>"
     
 

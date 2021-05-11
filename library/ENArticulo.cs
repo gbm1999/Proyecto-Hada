@@ -73,7 +73,7 @@ namespace library
             }
         }
 
-        private byte[] imagen = new byte[999];
+        private byte[] imagen;
         public byte[] imagenArticulo
         {
             get
@@ -160,22 +160,38 @@ namespace library
             return arti.createArticulo(this);
         }
 
-        public bool readUsuario()
+        public bool readArticulo()
         {
             CADArticulo arti = new CADArticulo();
             return arti.readArticulo(this);
         }
 
-        public bool updateUsuario()
+        public bool updateArticulo()
         {
             CADArticulo arti = new CADArticulo();
             return arti.updateArticulo(this);
         }
 
-        public bool deleteUsuario()
+        public bool deleteArticulo()
         {
             CADArticulo arti = new CADArticulo();
             return arti.deleteArticulo(this);
+        }
+
+        public bool showArticles()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.showArticles(this);
+        }
+        public void guardaImagen(byte[] imagen)
+        {
+            CADArticulo arti = new CADArticulo();
+            arti.GuardarImagen(this, imagen); ;
+        }
+        public byte[] getImagen()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.GetImagenByArticle(this); ;
         }
     }
 }

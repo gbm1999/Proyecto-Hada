@@ -33,13 +33,13 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.Button Retirar;
 
         /// <summary>
-        /// Control NombreC1.
+        /// Control TBNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText NombreC1;
+        protected global::System.Web.UI.WebControls.TextBox TBNombre;
 
         /// <summary>
         /// Control Cuenta1.
@@ -48,7 +48,7 @@ namespace HadaPopWeb
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText Cuenta1;
+        protected global::System.Web.UI.WebControls.TextBox Cuenta1;
 
         /// <summary>
         /// Control EditarC1.

@@ -22,7 +22,7 @@
         orientation="Horizontal"
         font-names="Arial" 
         width="100%"
-        target="_white"  
+         
         font-size="140%"
         CssClass="menu" 
         
