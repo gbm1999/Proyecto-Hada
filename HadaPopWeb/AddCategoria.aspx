@@ -16,40 +16,17 @@
                         <br />
                         DESCRIPCIÓN:
                     </div>
-                    
-
-                   
-
                     <div class="area-cat">
                             <asp:TextBox runat="server"  class="AddDescription text-cuadro" name="description" id="description"> </asp:TextBox>
-                        
-
                         </div>
-
-                    
-
                 </div>
-
-                
-
-                    
-
-
-                    
-
-          
-
                  <div class="esp-boton">
                          <asp:Button id="create"
                            Text="Create"
-                           CommandName="Submit"
+                           OnClick="boton_crear"
                            class="boton"
                            runat="server"/>
                     </div>
-              
-                
-           
-                 
-
            </div>
+           <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
 </asp:Content>
