@@ -11,7 +11,7 @@ namespace library
         private SqlConnection connectBD;
         public CADUsuario()
         {
-            connection = ConfigurationManager.ConnectionStrings["Database"].ToString();
+            connection = ConfigurationManager.ConnectionStrings["connectionString"].ToString();
             connectBD = new SqlConnection(connection);
         }
         //Inserta un usuario en la BD

@@ -13,34 +13,71 @@ namespace HadaPopWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            errorname.Visible = false;
-            errorpass.Visible = false;
+            ResetErrores();
 
         }
+        protected void Register_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Registro.aspx");
+        }
+        protected void Volver_Click(object sender, EventArgs e)
+        {
+            if (PreviousPage != null)
+                Response.Redirect(PreviousPage.ToString());
+            else
+                errorname.Visible = true;
+        }
 
-        protected void register_Click(object sender, EventArgs e)
+        protected void Login_Click(object sender, EventArgs e)
         {
             string name, pass;
             name = pass = "";
-            
 
+            ResetErrores();
             name = email.Text;
             pass = password.Text;
 
-            if (!CampoVálidoUser(name))
+                if (!CampoVálidoUser(name))
+                {
+                    errorname.Visible = true;
+                    errorname.InnerText = "El email Introducido es Incorrecto";
+                }
+                if(!CampoVálidoPass(pass))                                    // Comprobradores de Normalización Datos
+                {
+                    errorpass.Visible = true;
+                    errorpass.InnerText = "7 a 16 Caracteres y al menos 1 Mayúscula Símbolo y Número.";
+                }
+            if( CampoVálidoUser(name) && CampoVálidoPass(pass) )
             {
-                errorname.Visible = true;
-                errorname.InnerText = "El Email Introducido es Incorrecto";
-            }
-            if(!CampoVálidoPass(pass))
-            {
-                errorpass.Visible = true;
-                errorpass.InnerText = "7-16 Caracteres y al menos 1 Mayúscula Símbolo y Número.";
-            }
+                ENUsuario user = new ENUsuario();
 
-            //Response.Redirect("Info.aspx");
+                user.emailUsuario = name;
+
+               if( user.readUsuario() )     //  Existe? -> Es Correcto? -> Logeado
+                {
+                    if(user.contrasenaUsuario == pass)
+                    {
+                        Session.Clear();
+                        Session.Add("user", user.nombreUsuario);
+                        Session.Add("nif", user.NIFUsuario);
+                        Response.Redirect("articulos.aspx");
+                    }
+                    else
+                    {
+                        errorpass.Visible = true;
+                        errorpass.InnerText = "Vaya! Parece que esa contraseña no era :/";
+                    }
+
+                }
+                else
+                {
+                    errorname.Visible = true;
+                    errorname.InnerText = "Vaya! No hemos encontrado ese Usuario :O";
+                }
+
+            }
         }
-        private bool CampoVálidoUser(string check) //Comprueba si la cadena pasada es válida para ser nombre de Usuario
+        private bool CampoVálidoUser(string check) //Comprueba si la cadena pasada es válida para ser mail de Usuario
         {                                      // Para ser válida debe: -Estar entre 6 y 30 caracteres
                                                 //                      - Contener un @ y .
                                                 //                      - El . no ser el último dígito
@@ -51,7 +88,7 @@ namespace HadaPopWeb
             {
                 valido = false;
             }
-            else if (!r.IsMatch(check))  // Comprueba Email
+            else if (!r.IsMatch(check))  // Comprueba email
                 valido = false;
             else if (check[check.Length-1] == '.')
                 valido = false;
@@ -76,6 +113,15 @@ namespace HadaPopWeb
                 valido = false;
 
             return valido;
+        }
+    
+        private void ResetErrores()
+        {
+            errorname.Visible = false;
+            errorname.InnerText = "";
+            errorpass.Visible = false;
+            errorpass.InnerText = "";
+            
         }
     }
 }

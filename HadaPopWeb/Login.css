@@ -67,6 +67,18 @@
     font-size: 120%;
     border: 2px solid #FFFF;
 }
+.boton-volver {
+    position: relative;
+    height: 20%;
+    width: 100%;
+    top: 10%;
+    border-radius: 20px;
+    background-color: transparent;
+    color: white;
+    font-weight: 200;
+    font-size: 70%;
+    border: 2px solid #FFFF;
+}
 
 .lateral-div-izq{
     position: relative;
