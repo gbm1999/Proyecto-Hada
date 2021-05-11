@@ -140,6 +140,7 @@ namespace library
             ciudad = null;
             comprador = null;
             vendedor = null;
+            imagen = null;
         }
         public ENArticulo(int codigo, string nombre, string descripcion, int categoria, float precio, string ciudad, string comprador, string vendedor, byte[] imagen)
         {
@@ -164,6 +165,21 @@ namespace library
         {
             CADArticulo arti = new CADArticulo();
             return arti.readArticulo(this);
+        }
+        public bool readFirstArticulo()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.readFirstArticulo(this);
+        }
+        public bool readPrevArticulo()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.readPrevArticulo(this);
+        }
+        public bool readNextArticulo()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.readNextArticulo(this);
         }
 
         public bool updateArticulo()
