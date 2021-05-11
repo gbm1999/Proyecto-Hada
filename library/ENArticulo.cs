@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -194,10 +195,15 @@ namespace library
             return arti.deleteArticulo(this);
         }
 
-        public bool showArticles()
+        public ArrayList showArticles()
         {
             CADArticulo arti = new CADArticulo();
-            return arti.showArticles(this);
+            return arti.showArticles();
+        }
+        public ArrayList showArticlesFromCategory(ENCategoria cate)
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.showArticlesFromCategory(cate);
         }
         public void guardaImagen(byte[] imagen)
         {

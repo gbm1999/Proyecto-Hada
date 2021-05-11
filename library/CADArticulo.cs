@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Collections;
 
 namespace library
 {
@@ -12,6 +13,7 @@ namespace library
     {
         private string connection;
         private SqlConnection connectBD;
+        ArrayList lista = new ArrayList();
         public CADArticulo()
         {
             connection = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
@@ -53,7 +55,7 @@ namespace library
 
                 while (!entra && dataReader.Read())
                 {
-                    if (dataReader["codigo"].ToString().Equals(arti.codigoArticulo))
+                    if (dataReader["codigo"].ToString().Equals(arti.codigoArticulo) || dataReader["nombre"].ToString().Equals(arti.nombreArticulo))
                     {
                         arti.codigoArticulo = (int)dataReader["codigo"];
                         arti.nombreArticulo = dataReader["Nombre"].ToString();
@@ -127,7 +129,7 @@ namespace library
 
                 while (!encontrado && dataReader.Read())
                 {
-                    if (dataReader["codigo"].ToString().Equals(arti.codigoArticulo))
+                    if (dataReader["codigo"].ToString().Equals(arti.codigoArticulo) || dataReader["nombre"].ToString().Equals(arti.nombreArticulo))
                     {
                         encontrado = true;
                     }
@@ -174,7 +176,7 @@ namespace library
 
                 while (!encontrado && dataReader.Read())
                 {
-                    if (dataReader["codigo"].ToString().Equals(article.codigoArticulo))
+                    if (dataReader["codigo"].ToString().Equals(arti.codigoArticulo) || dataReader["nombre"].ToString().Equals(arti.nombreArticulo))
                     {
                         encontrado = true;
                     }
@@ -307,21 +309,31 @@ namespace library
             return entra;
         }
 
-        public bool showArticles(ENArticulo arti)
+        public ArrayList showArticles()
         {
-            int response = 0;
-            bool entra = false;
-
             try
             {
                 connectBD.Open();
                 SqlCommand command = new SqlCommand("Select * from Articulo", connectBD);
-                response = command.ExecuteNonQuery();
+                SqlDataReader dataReader = command.ExecuteReader();
 
-                if (response == 1)
+                while (dataReader.Read())
                 {
-                    entra = true;
+                    ENArticulo arti = new ENArticulo();
+                    arti.codigoArticulo = (int)dataReader["codigo"];
+                    arti.nombreArticulo = dataReader["Nombre"].ToString();
+                    arti.descripcionArticulo = dataReader["Descripcion"].ToString();
+                    arti.categoriaArticulo = (int)dataReader["Categoria"];
+                    arti.precioArticulo = (float)dataReader["Precio"];
+                    arti.imagenArticulo = (byte[])dataReader["Imagen"];
+                    arti.ciudadArticulo = dataReader["Ciudad"].ToString();
+                    arti.compradorArticulo = dataReader["Comprador"].ToString();
+                    arti.vendedorArticulo = dataReader["vendedor"].ToString();
+
+                    lista.Add(arti);
                 }
+                dataReader.Close();
+                connectBD.Close();
             }
             catch (SqlException ex)
             {
@@ -331,7 +343,44 @@ namespace library
             {
                 connectBD.Close();
             }
-            return entra;
+            return lista;
+        }
+        public ArrayList showArticlesFromCategory(ENCategoria cate)
+        {
+            try
+            {
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("Select * from Articulo where Categoria = @Id", connectBD);
+                command.Parameters.AddWithValue("@Id", cate.IdCategoria);
+                SqlDataReader dataReader = command.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    ENArticulo arti = new ENArticulo();
+                    arti.codigoArticulo = (int)dataReader["codigo"];
+                    arti.nombreArticulo = dataReader["Nombre"].ToString();
+                    arti.descripcionArticulo = dataReader["Descripcion"].ToString();
+                    arti.categoriaArticulo = (int)dataReader["Categoria"];
+                    arti.precioArticulo = (float)dataReader["Precio"];
+                    arti.imagenArticulo = (byte[])dataReader["Imagen"];
+                    arti.ciudadArticulo = dataReader["Ciudad"].ToString();
+                    arti.compradorArticulo = dataReader["Comprador"].ToString();
+                    arti.vendedorArticulo = dataReader["vendedor"].ToString();
+
+                    lista.Add(arti);
+                }
+                dataReader.Close();
+                connectBD.Close();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Article operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+            return lista;
         }
         public int CountSales(ENUsuario usu)
         {
