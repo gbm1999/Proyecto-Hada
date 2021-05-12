@@ -23,7 +23,7 @@
     top: 5%;
 }
 
-.tabla{
+.tabla {
     position: absolute;
     top: 25%;
     height: 69%;
@@ -31,9 +31,16 @@
     width: 80%;
     background-color: #eeee;
     border-radius: 20px;
-    
 }
 
+.parametro{
+    position: absolute; 
+    width: 100%;
+    border-radius: 20px;
+    border: 1px;
+    background-color: black;
+
+}
 
 .plus {
     position: absolute;
@@ -42,14 +49,12 @@
     overflow: hidden;
     top: 87%;
     left: 47%;
-   
 }
 
     .plus img {
         width: 100%;
         height: auto;
         display: block;
-       
     }
 
-
+  

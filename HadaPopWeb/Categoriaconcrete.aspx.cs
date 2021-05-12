@@ -4,16 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using library;
 
 namespace HadaPopWeb
 {
-    public partial class categoria : System.Web.UI.Page
+    public partial class Categoriaconcrete : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-    
+
         }
     }
 }

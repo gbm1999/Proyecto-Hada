@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -140,6 +141,7 @@ namespace library
             ciudad = null;
             comprador = null;
             vendedor = null;
+            imagen = null;
         }
         public ENArticulo(int codigo, string nombre, string descripcion, string categoria, float precio, string ciudad, string comprador, string vendedor, byte[] imagen)
         {
@@ -165,6 +167,21 @@ namespace library
             CADArticulo arti = new CADArticulo();
             return arti.readArticulo(this);
         }
+        public bool readFirstArticulo()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.readFirstArticulo(this);
+        }
+        public bool readPrevArticulo()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.readPrevArticulo(this);
+        }
+        public bool readNextArticulo()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.readNextArticulo(this);
+        }
 
         public bool updateArticulo()
         {
@@ -178,10 +195,15 @@ namespace library
             return arti.deleteArticulo(this);
         }
 
-        public bool showArticles()
+        public ArrayList showArticles()
         {
             CADArticulo arti = new CADArticulo();
-            return arti.showArticles(this);
+            return arti.showArticles();
+        }
+        public ArrayList showArticlesFromCategory(ENCategoria cate)
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.showArticlesFromCategory(cate);
         }
         public void guardaImagen(byte[] imagen)
         {
