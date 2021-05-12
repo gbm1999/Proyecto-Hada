@@ -137,7 +137,7 @@ namespace library
             nombre = null;
             descripcion = null;
             categoria = -1;
-            precio = -1;
+            precio = -1.0f;
             ciudad = null;
             comprador = null;
             vendedor = null;
