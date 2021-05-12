@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace library
 {
-<<<<<<< HEAD
-    class ENReporte
-=======
     public class ENReporte
->>>>>>> bdaaac1e41de243b643bfd2c82ddd99dd1e426b8
     {
         private string nifusuario;
         public string NifUsuario

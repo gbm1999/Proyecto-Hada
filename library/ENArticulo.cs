@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace library
 {
-<<<<<<< HEAD
-    class ENArticulo
-=======
     public class ENArticulo
->>>>>>> bdaaac1e41de243b643bfd2c82ddd99dd1e426b8
     {
         private int codigo;
         public int codigoArticulo
@@ -51,8 +47,8 @@ namespace library
             }
         }
 
-        private int categoria;
-        public int categoriaArticulo
+        private string categoria;
+        public string categoriaArticulo
         {
             get
             {
@@ -132,24 +128,20 @@ namespace library
         public ENArticulo()
         {
             CADArticulo aux = new CADArticulo();
-<<<<<<< HEAD
-            aux.imgDefault(ref imagen);
-=======
-
+            //aux.imgDefault(ref imagen);
             //Futura mejora
             //aux.imgDefault(ref imagen);   
->>>>>>> bdaaac1e41de243b643bfd2c82ddd99dd1e426b8
 
             codigo = -1;
             nombre = null;
             descripcion = null;
-            categoria = -1;
+            categoria = null;
             precio = -1;
             ciudad = null;
             comprador = null;
             vendedor = null;
         }
-        public ENArticulo(int codigo, string nombre, string descripcion, int categoria, float precio, string ciudad, string comprador, string vendedor, byte[] imagen)
+        public ENArticulo(int codigo, string nombre, string descripcion, string categoria, float precio, string ciudad, string comprador, string vendedor, byte[] imagen)
         {
             this.codigo = codigo;
             this.nombre = nombre;

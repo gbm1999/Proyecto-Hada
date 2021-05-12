@@ -32,10 +32,11 @@ namespace library
                 usu.nombreUsuario = dataReader["Nombre"].ToString();
                 usu.emailUsuario = dataReader["Email"].ToString();
                 usu.telefonoUsuario = (int)dataReader["Telefono"];
-                usu.adminUsuario = (bool)dataReader["Admin"];
                 usu.edadUsuario = (int)dataReader["Edad"];
                 usu.contrasenaUsuario = dataReader["Contrasena"].ToString();
-
+                usu.tarjetaUsuario = (int)dataReader["TarjetaCred"];
+                usu.imagenUsuario = (byte[])dataReader["Imagen"];
+                usu.balance = (float)dataReader["Balance"];
                 lista.Add(usu);
             }
             dataReader.Close();

@@ -13,13 +13,9 @@
                     <div class="img">
                         <img src="images/sinperfil.png"/>
                 
-                        &nbsp
                         <label id ="NumVentas" runat ="server">0</label>
-                        &nbsp
                         <label>Ventas</label>
-                        &nbsp&nbsp
                         <label id ="NumCompras" runat ="server">0</label>
-                        &nbsp
                         <label>Compras</label>
                     </div>
                 </div>

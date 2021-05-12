@@ -8,11 +8,7 @@ using System.Data.SqlClient;
 
 namespace library
 {
-<<<<<<< HEAD
-    class CADArticulo
-=======
     public class CADArticulo
->>>>>>> bdaaac1e41de243b643bfd2c82ddd99dd1e426b8
     {
         private string connection;
         private SqlConnection connectBD;
@@ -62,7 +58,7 @@ namespace library
                         arti.codigoArticulo = (int)dataReader["codigo"];
                         arti.nombreArticulo = dataReader["Nombre"].ToString();
                         arti.descripcionArticulo = dataReader["Descripcion"].ToString();
-                        arti.categoriaArticulo = (int)dataReader["Categoria"];
+                        arti.categoriaArticulo = dataReader["Categoria"].ToString();
                         arti.precioArticulo = (float)dataReader["Precio"];
                         arti.imagenArticulo = (byte[])dataReader["Imagen"];
                         arti.ciudadArticulo = dataReader["Ciudad"].ToString();
