@@ -19,24 +19,51 @@ namespace HadaPopWeb
 
             bool ok = false;
 
-            if(ok)
+            if (!ok/*user.readUsuario()*/)
             {
                 Balance.Text = user.balance.ToString() + "€";
             }
             else
             {
-                
+                PopupNoLogin.Show();
             }
         }
-        
-        protected void Depositar_Click(object sender, EventArgs e)
+
+        protected void PopUpAceptarDepositar(object sender, EventArgs e)
         {
-            
+            ENUsuario user = new ENUsuario();
+
+            user.NIFUsuario = (string)Session["nif"];
+
+            user.balance = (user.balance + float.Parse(DepositarTextBox.Text));
+
+            bool ok = false;
+
+            if(!ok/*!user.updateUsuario()*/)
+            {
+                ErrorTransacciones.Text = "No se ha podido añadir el importe asignado, por favor vuelva a intentarlo";
+            }
         }
 
-        protected void Retirar_Click(object sender, EventArgs e)
+        protected void PopUpAceptarRetirar(object sender, EventArgs e)
         {
+            ENUsuario user = new ENUsuario();
 
+            user.NIFUsuario = (string)Session["nif"];
+
+            bool ok = false;
+
+            user.balance = (user.balance + float.Parse(RetirarTextBox.Text));
+
+            if (!ok/*!user.updateUsuario()*/)
+            {
+                ErrorTransacciones.Text = "No se ha podido eliminar el importe asignado, por favor vuelva a intentarlo";
+            }
+        }
+
+        protected void PopUpLogin(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
         }
     }
 }

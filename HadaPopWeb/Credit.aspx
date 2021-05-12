@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Credit.aspx.cs" Inherits="HadaPopWeb.Credit" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 
@@ -11,10 +13,71 @@
                     <label class ="Title">Balance Total:</label>
                     <br />
                     <asp:Label id = "Balance" runat ="server" class="Title"> 00.00€</asp:Label>
+
+                    <ajaxToolkit:ModalPopupExtender ID="PopupNoLogin" runat="server" Enabled="true" TargetControlID="Balance" PopupControlID="PanelPopUpNoLogin" BackgroundCssClass="fondoPopup"></ajaxToolkit:ModalPopupExtender>
+                   
+                    <asp:Panel ID="PanelPopUpNoLogin" runat="server" stile="display: none;background-color: white;width: auto;height: auto">
+                        
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="PopupTitleNoLogin">Error, no se puede operar de ninguna forma sin iniciar sesion.</h5>
+                        </div>
+                        <div class="modal-body">
+                            Por favor inicie sesion para poder acceder a esta parte.
+                        </div>
+                        <div class="modal-footer">
+                          <asp:Button class="btn PopupAceptar" runat="server" Text="Login" OnClick="PopUpLogin"></asp:Button>
+                        </div>
+                   
+                    </asp:Panel>
+                    
                 </div>
+                <asp:Label ID="ErrorTransacciones" runat="server"></asp:Label>
                 <div class ="divBotones">
-                    <asp:Button class="Botones" ID="Depositar" runat="server" Text="Depositar" OnClick="Depositar_Click" />
-                    <asp:Button class="Botones" ID="Retirar" runat="server" Text="Retirar" OnClick="Retirar_Click" />
+                    <asp:Button class="Botones" ID="Depositar" runat="server" Text="Depositar" />
+
+                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+                    
+                    <ajaxToolkit:ModalPopupExtender ID="PopupDepositar" runat="server" Enabled="true" TargetControlID="Depositar" PopupControlID="PanelPopUpDepositar" BackgroundCssClass="fondoPopup"></ajaxToolkit:ModalPopupExtender>
+                   
+                    <asp:Panel ID="PanelPopUpDepositar" runat="server" stile="display: none;background-color: white;width: auto;height: auto">
+                        
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="PopupTitleDepositar">Ingrese el importe que quiera ingresar en su cuenta</h5>
+                            <asp:Button type="button" class="close" data-dismiss="modal" runat="server" Text="X">
+                            </asp:Button>
+                        </div>
+                        <div class="modal-body">
+                            <asp:Label ID="DepositarLabel" runat="server" Text="Ingrese la cantidad"></asp:Label>
+                            <asp:TextBox ID="DepositarTextBox" runat="server"></asp:TextBox>
+                        </div>
+                        <div class="modal-footer">
+                          <asp:Button class="btn PopupCerrar" data-dismiss="modal" runat="server" Text="Close"></asp:Button>
+                          <asp:Button class="btn PopupAceptar" runat="server" Text="Aceptar" OnClick="PopUpAceptarDepositar"></asp:Button>
+                        </div>
+                   
+                    </asp:Panel>
+                    
+                    <asp:Button class="Botones" ID="Retirar" runat="server" Text="Retirar" />
+
+                    <ajaxToolkit:ModalPopupExtender ID="PopupRetirar" runat="server" Enabled="true" TargetControlID="Retirar" PopupControlID="PanelPopUpRetirar" BackgroundCssClass="fondoPopup"></ajaxToolkit:ModalPopupExtender>
+                   
+                    <asp:Panel ID="PanelPopUpRetirar" runat="server" stile="display: none;background-color: white;width: auto;height: auto">
+                        
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="PopupTitleRetirar">Ingrese el importe que quiera retirar en su cuenta</h5>
+                            <asp:Button type="button" class="close" data-dismiss="modal" runat="server" Text="X">
+                            </asp:Button>
+                        </div>
+                        <div class="modal-body">
+                            <asp:Label ID="RetirarLabel" runat="server" Text="Ingrese la cantidad"></asp:Label>
+                            <asp:TextBox ID="RetirarTextBox" runat="server"></asp:TextBox>
+                        </div>
+                        <div class="modal-footer">
+                          <asp:Button class="btn PopupCerrar" data-dismiss="modal" runat="server" Text="Close"></asp:Button>
+                          <asp:Button class="btn PopupAceptar" runat="server" Text="Aceptar" OnClick="PopUpAceptarRetirar"></asp:Button>
+                        </div>
+                   
+                    </asp:Panel>
                 </div>
             </div>
             <div class ="TransyCuentas">
