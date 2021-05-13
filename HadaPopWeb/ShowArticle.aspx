@@ -19,8 +19,8 @@
          <div class="debajo-imagen">
              <div class="campos-izq">
                  PRECIO:
-                 <input type="text" class="parametro-introducido" name="Precio" id="Precio"/>
-
+                 <!--<input type="text" class="parametro-introducido" name="Precio" id="Precio"/>-->
+                 <asp:TextBox id="Label2" runat="server"></asp:TextBox>
              </div>
 
              <div class="campos-izq">
@@ -28,7 +28,6 @@
                  <input type="text" class="parametro-introducido" name="Ciudad" id="Ciudad"/>
 
              </div>
-
          </div>
 
          <div class="descripcion">
@@ -46,6 +45,6 @@
         
 
      </div>
-
+    <asp:Label ID="Label1" runat="server"></asp:Label>
 </asp:Content>
 

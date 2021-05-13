@@ -345,6 +345,44 @@ namespace library
             }
             return lista;
         }
+
+        public ENArticulo showOneArticle(ENArticulo art)
+        {
+            ENArticulo arti = new ENArticulo();
+            try
+            {
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("Select * from Articulo where codigo = @cod", connectBD);
+                command.Parameters.AddWithValue("@cod", art.codigoArticulo);
+                SqlDataReader dataReader = command.ExecuteReader();
+
+                if (dataReader.Read())
+                {
+                    arti.codigoArticulo = (int)dataReader["codigo"];
+                    arti.nombreArticulo = dataReader["Nombre"].ToString();
+                    arti.descripcionArticulo = dataReader["Descripcion"].ToString();
+                    arti.categoriaArticulo = (int)dataReader["Categoria"];
+                    arti.precioArticulo = (float)dataReader["Precio"];
+                    arti.imagenArticulo = (byte[])dataReader["Imagen"];
+                    arti.ciudadArticulo = dataReader["Ciudad"].ToString();
+                    arti.compradorArticulo = dataReader["Comprador"].ToString();
+                    arti.vendedorArticulo = dataReader["vendedor"].ToString();
+
+                }
+                dataReader.Close();
+                connectBD.Close();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Article operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+            return arti;
+        }
+
         public ArrayList showArticlesFromCategory(ENCategoria cate)
         {
             try

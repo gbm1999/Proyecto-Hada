@@ -200,6 +200,13 @@ namespace library
             CADArticulo arti = new CADArticulo();
             return arti.showArticles();
         }
+
+        public ENArticulo showOneArticle()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.showOneArticle(this);
+        }
+
         public ArrayList showArticlesFromCategory(ENCategoria cate)
         {
             CADArticulo arti = new CADArticulo();
