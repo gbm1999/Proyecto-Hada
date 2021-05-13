@@ -48,8 +48,8 @@ namespace library
             }
         }
 
-        private int categoria;
-        public int categoriaArticulo
+        private String categoria;
+        public String categoriaArticulo
         {
             get
             {
@@ -136,14 +136,14 @@ namespace library
             codigo = -1;
             nombre = null;
             descripcion = null;
-            categoria = -1;
+            categoria = null;
             precio = -1.0f;
             ciudad = null;
             comprador = null;
             vendedor = null;
             imagen = null;
         }
-        public ENArticulo(int codigo, string nombre, string descripcion, int categoria, float precio, string ciudad, string comprador, string vendedor, byte[] imagen)
+        public ENArticulo(int codigo, string nombre, string descripcion, String categoria, float precio, string ciudad, string comprador, string vendedor, byte[] imagen)
         {
             this.codigo = codigo;
             this.nombre = nombre;
@@ -166,6 +166,11 @@ namespace library
         {
             CADArticulo arti = new CADArticulo();
             return arti.readArticulo(this);
+        }
+        public ArrayList searchArticulo()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.searchArticulo(this);
         }
         public bool readFirstArticulo()
         {
