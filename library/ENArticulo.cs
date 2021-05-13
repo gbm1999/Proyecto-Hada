@@ -48,13 +48,9 @@ namespace library
             }
         }
 
-<<<<<<< HEAD
-        private String categoria;
-        public String categoriaArticulo
-=======
+
         private string categoria;
         public string categoriaArticulo
->>>>>>> 807aac7bb5bf14b47077a641153a0d4481a25d54
         {
             get
             {
@@ -142,21 +138,14 @@ namespace library
             nombre = null;
             descripcion = null;
             categoria = null;
-<<<<<<< HEAD
             precio = -1.0f;
-=======
             precio = -1;
->>>>>>> 807aac7bb5bf14b47077a641153a0d4481a25d54
             ciudad = null;
             comprador = null;
             vendedor = null;
             imagen = null;
         }
-<<<<<<< HEAD
-        public ENArticulo(int codigo, string nombre, string descripcion, String categoria, float precio, string ciudad, string comprador, string vendedor, byte[] imagen)
-=======
         public ENArticulo(int codigo, string nombre, string descripcion, string categoria, float precio, string ciudad, string comprador, string vendedor, byte[] imagen)
->>>>>>> 807aac7bb5bf14b47077a641153a0d4481a25d54
         {
             this.codigo = codigo;
             this.nombre = nombre;

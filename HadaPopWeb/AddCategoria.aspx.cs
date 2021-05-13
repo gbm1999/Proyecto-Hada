@@ -21,7 +21,7 @@ namespace HadaPopWeb
         {
             Random n = new Random();
             ENCategoria cat_new = new ENCategoria();
-            cat_new.IdCategoria = n.Next(0, 10000);
+            //cat_new.IdCategoria = n.Next(0, 10000);
             cat_new.NombreCategoria = nombre.Text;
             cat_new.DescripCategoria = description.Text;
 

@@ -61,16 +61,13 @@ namespace library
                         arti.nombreArticulo = dataReader["Nombre"].ToString();
                         arti.descripcionArticulo = dataReader["Descripcion"].ToString();
                         arti.categoriaArticulo = dataReader["Categoria"].ToString();
-<<<<<<< HEAD
                         arti.precioArticulo = (float)Convert.ToDouble(dataReader["Precio"]);
                         if (dataReader["Imagen"] != System.DBNull.Value)
                         {
                             arti.imagenArticulo = (byte[])dataReader["Imagen"];
                         }
-=======
                         arti.precioArticulo = (float)dataReader["Precio"];
                         arti.imagenArticulo = (byte[])dataReader["Imagen"];
->>>>>>> 807aac7bb5bf14b47077a641153a0d4481a25d54
                         arti.ciudadArticulo = dataReader["Ciudad"].ToString();
                         arti.compradorArticulo = dataReader["Comprador"].ToString();
                         arti.vendedorArticulo = dataReader["vendedor"].ToString();
@@ -140,18 +137,12 @@ namespace library
                     arti.codigoArticulo = (int)dataReader["codigo"];
                     arti.nombreArticulo = dataReader["Nombre"].ToString();
                     arti.descripcionArticulo = dataReader["Descripcion"].ToString();
-<<<<<<< HEAD
                     arti.categoriaArticulo = dataReader["Categoria"].ToString();
                     arti.precioArticulo = (float)Convert.ToDouble(dataReader["Precio"]);
                     if (dataReader["Imagen"] != System.DBNull.Value)
                     {
                         arti.imagenArticulo = (byte[])dataReader["Imagen"];
                     }
-=======
-                    arti.categoriaArticulo = (string)dataReader["Categoria"];
-                    arti.precioArticulo = (float)dataReader["Precio"];
-                    arti.imagenArticulo = (byte[])dataReader["Imagen"];
->>>>>>> 807aac7bb5bf14b47077a641153a0d4481a25d54
                     arti.ciudadArticulo = dataReader["Ciudad"].ToString();
                     arti.compradorArticulo = dataReader["Comprador"].ToString();
                     arti.vendedorArticulo = dataReader["vendedor"].ToString();
@@ -194,18 +185,15 @@ namespace library
                     arti.codigoArticulo = (int)dataReader["codigo"];
                     arti.nombreArticulo = dataReader["Nombre"].ToString();
                     arti.descripcionArticulo = dataReader["Descripcion"].ToString();
-<<<<<<< HEAD
                     arti.categoriaArticulo = dataReader["Categoria"].ToString();
                     arti.precioArticulo = (float)Convert.ToDouble(dataReader["Precio"]);
                     if (dataReader["Imagen"] != System.DBNull.Value)
                     {
                         arti.imagenArticulo = (byte[])dataReader["Imagen"];
                     }
-=======
                     arti.categoriaArticulo = (string)dataReader["Categoria"];
                     arti.precioArticulo = (float)dataReader["Precio"];
                     arti.imagenArticulo = (byte[])dataReader["Imagen"];
->>>>>>> 807aac7bb5bf14b47077a641153a0d4481a25d54
                     arti.ciudadArticulo = dataReader["Ciudad"].ToString();
                     arti.compradorArticulo = dataReader["Comprador"].ToString();
                     arti.vendedorArticulo = dataReader["vendedor"].ToString();
@@ -248,18 +236,15 @@ namespace library
                         arti.codigoArticulo = (int)dataReader["codigo"];
                         arti.nombreArticulo = dataReader["Nombre"].ToString();
                         arti.descripcionArticulo = dataReader["Descripcion"].ToString();
-<<<<<<< HEAD
                         arti.categoriaArticulo = dataReader["Categoria"].ToString();
                         arti.precioArticulo = (float)Convert.ToDouble(dataReader["Precio"]);
                         if (dataReader["Imagen"] != System.DBNull.Value)
                         {
                             arti.imagenArticulo = (byte[])dataReader["Imagen"];
                         }
-=======
                         arti.categoriaArticulo = (string)dataReader["Categoria"];
                         arti.precioArticulo = (float)dataReader["Precio"];
                         arti.imagenArticulo = (byte[])dataReader["Imagen"];
->>>>>>> 807aac7bb5bf14b47077a641153a0d4481a25d54
                         arti.ciudadArticulo = dataReader["Ciudad"].ToString();
                         arti.compradorArticulo = dataReader["Comprador"].ToString();
                         arti.vendedorArticulo = dataReader["vendedor"].ToString();
@@ -395,18 +380,12 @@ namespace library
                     arti.codigoArticulo = (int)dataReader["codigo"];
                     arti.nombreArticulo = dataReader["Nombre"].ToString();
                     arti.descripcionArticulo = dataReader["Descripcion"].ToString();
-<<<<<<< HEAD
                     arti.categoriaArticulo = dataReader["Categoria"].ToString();
                     arti.precioArticulo = (float)Convert.ToDouble(dataReader["Precio"]);
                     if (dataReader["Imagen"] != System.DBNull.Value)
                     {
                         arti.imagenArticulo = (byte[])dataReader["Imagen"];
                     }
-=======
-                    arti.categoriaArticulo = (string)dataReader["Categoria"];
-                    arti.precioArticulo = (float)dataReader["Precio"];
-                    arti.imagenArticulo = (byte[])dataReader["Imagen"];
->>>>>>> 807aac7bb5bf14b47077a641153a0d4481a25d54
                     arti.ciudadArticulo = dataReader["Ciudad"].ToString();
                     arti.compradorArticulo = dataReader["Comprador"].ToString();
                     arti.vendedorArticulo = dataReader["vendedor"].ToString();
@@ -441,18 +420,12 @@ namespace library
                     arti.codigoArticulo = (int)dataReader["codigo"];
                     arti.nombreArticulo = dataReader["Nombre"].ToString();
                     arti.descripcionArticulo = dataReader["Descripcion"].ToString();
-<<<<<<< HEAD
                     arti.categoriaArticulo = dataReader["Categoria"].ToString();
                     arti.precioArticulo = (float)Convert.ToDouble(dataReader["Precio"]);
                     if (dataReader["Imagen"] != System.DBNull.Value)
                     {
                         arti.imagenArticulo = (byte[])dataReader["Imagen"];
                     }
-=======
-                    arti.categoriaArticulo = (string)dataReader["Categoria"];
-                    arti.precioArticulo = (float)dataReader["Precio"];
-                    arti.imagenArticulo = (byte[])dataReader["Imagen"];
->>>>>>> 807aac7bb5bf14b47077a641153a0d4481a25d54
                     arti.ciudadArticulo = dataReader["Ciudad"].ToString();
                     arti.compradorArticulo = dataReader["Comprador"].ToString();
                     arti.vendedorArticulo = dataReader["vendedor"].ToString();
