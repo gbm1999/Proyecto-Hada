@@ -57,10 +57,9 @@ label
     height: 90%;
     float: left;
 }
-.divCuentas
-{
+.divCuentas {
     width: 50%;
-    height: fit-content();
+    height: 90%;
     float: right;
 }
 .divBotonesCuentas

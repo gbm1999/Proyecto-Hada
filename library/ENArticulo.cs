@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -47,8 +48,9 @@ namespace library
             }
         }
 
-        private int categoria;
-        public int categoriaArticulo
+
+        private string categoria;
+        public string categoriaArticulo
         {
             get
             {
@@ -128,21 +130,22 @@ namespace library
         public ENArticulo()
         {
             CADArticulo aux = new CADArticulo();
-
+            //aux.imgDefault(ref imagen);
             //Futura mejora
             //aux.imgDefault(ref imagen);   
 
             codigo = -1;
             nombre = null;
             descripcion = null;
-            categoria = -1;
+            categoria = null;
+            precio = -1.0f;
             precio = -1;
             ciudad = null;
             comprador = null;
             vendedor = null;
             imagen = null;
         }
-        public ENArticulo(int codigo, string nombre, string descripcion, int categoria, float precio, string ciudad, string comprador, string vendedor, byte[] imagen)
+        public ENArticulo(int codigo, string nombre, string descripcion, string categoria, float precio, string ciudad, string comprador, string vendedor, byte[] imagen)
         {
             this.codigo = codigo;
             this.nombre = nombre;
@@ -165,6 +168,11 @@ namespace library
         {
             CADArticulo arti = new CADArticulo();
             return arti.readArticulo(this);
+        }
+        public ArrayList searchArticulo()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.searchArticulo(this);
         }
         public bool readFirstArticulo()
         {
@@ -194,10 +202,15 @@ namespace library
             return arti.deleteArticulo(this);
         }
 
-        public bool showArticles()
+        public ArrayList showArticles()
         {
             CADArticulo arti = new CADArticulo();
-            return arti.showArticles(this);
+            return arti.showArticles();
+        }
+        public ArrayList showArticlesFromCategory(ENCategoria cate)
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.showArticlesFromCategory(cate);
         }
         public void guardaImagen(byte[] imagen)
         {

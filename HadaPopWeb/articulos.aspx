@@ -6,83 +6,68 @@
     <div class="centro">
         <div class="titulo">
             ARTICULOS
+            <asp:DropDownList ID="DropDownList1" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" AutoPostBack="true">
+                <asp:ListItem>Select</asp:ListItem>
+            </asp:DropDownList>
+            <asp:TextBox ID="nombreArt" runat="server"></asp:TextBox>
+            <asp:Button ID="btnBuscar" runat="server" Text="Buscar" onClick="BtnBuscar_Click"/>
+
         </div>
 
         <div class="tabla">
             <div style="width:106px; float:left;">
-            <img id="Image1" alt="" src="" runat="server" style="height: 53px; width: 108px; margin-left: 0px"/>
+    <asp:ImageButton ID="ImageButton0" CssClass="img-circle img img-rounded" runat="server" Height="53px" Width="108px"  OnClick="imgArticle0_Click"></asp:ImageButton>
                 <br>
             <asp:Label ID="Label0"
-           Text="Article1:"
            runat="server">
-            </asp:Label>
-                <asp:Button ID="Button1" runat="server" Text="Button" />
-                <img id="Img1" alt="" src="" runat="server" style="height: 53px; width: 108px; margin-left: 0px"/> <br>
+            </asp:Label><br><br>
+    <asp:ImageButton ID="ImageButton1" CssClass="img-circle img img-rounded" runat="server" Height="53px" Width="108px"  OnClick="imgArticle1_Click"></asp:ImageButton> <br>
             <asp:Label ID="Label1"
-           Text="Article2:"
            runat="server">
-            </asp:Label>
-                <asp:Button ID="Button2" runat="server" Text="Button" />
-                <img id="Img2" alt="" src="" runat="server" style="height: 53px; width: 108px; margin-left: 0px"/> <br>
+            </asp:Label><br><br>
+    <asp:ImageButton ID="ImageButton2" CssClass="img-circle img img-rounded" runat="server" Height="53px" Width="108px"  OnClick="imgArticle2_Click"></asp:ImageButton> <br>
             <asp:Label ID="Label2"
-           Text="Article3:"
            runat="server">
-            </asp:Label>
-                <asp:Button ID="Button3" runat="server" Text="Button" />
-            </div><div style="width:106px; float:left; margin-left: 56px;"><img id="Img3" alt="" src="" runat="server" style="height: 53px; width: 108px; margin-left: 0px"/> <br>
+            </asp:Label><br><br>
+            </div><div style="width:106px; float:left; margin-left: 56px;">
+            <asp:ImageButton ID="ImageButton3" CssClass="img-circle img img-rounded" runat="server" Height="53px" Width="108px"  OnClick="imgArticle3_Click"></asp:ImageButton> <br>
             <asp:Label ID="Label3"
-           Text="Article4:"
            runat="server">
-            </asp:Label>
-                <asp:Button ID="Button4" runat="server" Text="Button" />
-                <img id="Img4" alt="" src="" runat="server" style="height: 53px; width: 108px; margin-left: 0px"/> <br>
+            </asp:Label><br><br>
+           <asp:ImageButton ID="ImageButton4" CssClass="img-circle img img-rounded" runat="server" Height="53px" Width="108px"  OnClick="imgArticle4_Click"></asp:ImageButton> <br>
             <asp:Label ID="Label4"
-           Text="Article5:"
            runat="server">
-            </asp:Label>
-                <asp:Button ID="Button5" runat="server" Text="Button" />
-                <img id="Img5" alt="" src="" runat="server" style="height: 53px; width: 108px; margin-left: 0px"/> <br>
+            </asp:Label><br><br>
+                <asp:ImageButton ID="ImageButton5" CssClass="img-circle img img-rounded" runat="server" Height="53px" Width="108px"  OnClick="imgArticle5_Click"></asp:ImageButton> <br>
             <asp:Label ID="Label5"
-           Text="Article6:"
            runat="server">
-            </asp:Label>
-                <asp:Button ID="Button6" runat="server" Text="Button" />
-            </div><div style="width:106px; float:left; margin-left: 56px;"><img id="Img6" alt="" src="" runat="server" style="height: 53px; width: 108px; margin-left: 0px"/> <br>
+            </asp:Label><br><br>
+            </div><div style="width:106px; float:left; margin-left: 56px;"> 
+                <asp:ImageButton ID="ImageButton6" CssClass="img-circle img img-rounded" runat="server" Height="53px" Width="108px"  OnClick="imgArticle6_Click"></asp:ImageButton> <br>
             <asp:Label ID="Label6"
-           Text="Article7:"
            runat="server">
-            </asp:Label>
-                <asp:Button ID="Button7" runat="server" Text="Button" />
-                <img id="Img7" alt="" src="" runat="server" style="height: 53px; width: 108px; margin-left: 0px"/> <br>
+            </asp:Label><br><br>
+                    <asp:ImageButton ID="ImageButton7" CssClass="img-circle img img-rounded" runat="server" Height="53px" Width="108px"  OnClick="imgArticle7_Click"></asp:ImageButton> <br>
             <asp:Label ID="Label7"
-           Text="Article8:"
            runat="server">
-            </asp:Label>
-                <asp:Button ID="Button8" runat="server" Text="Button" />
-                <img id="Img8" alt="" src="" runat="server" style="height: 53px; width: 108px; margin-left: 0px"/> <br>
+            </asp:Label><br><br>
+                    <asp:ImageButton ID="ImageButton8" CssClass="img-circle img img-rounded" runat="server" Height="53px" Width="108px"  OnClick="imgArticle8_Click"></asp:ImageButton> <br>
             <asp:Label ID="Label8"
-           Text="Article9:"
            runat="server">
-            </asp:Label>
-                <asp:Button ID="Button9" runat="server" Text="Button" />
-            </div><div style="width:106px; float:left; margin-left: 56px;"><img id="Img9" alt="" src="" runat="server" style="height: 53px; width: 108px; margin-left: 0px"/> <br>
+            </asp:Label><br><br>
+            </div><div style="width:106px; float:left; margin-left: 56px;">  
+                <asp:ImageButton ID="ImageButton9" CssClass="img-circle img img-rounded" runat="server" Height="53px" Width="108px"  OnClick="imgArticle9_Click"></asp:ImageButton> <br>
             <asp:Label ID="Label9"
-           Text="Article10:"
            runat="server">
-            </asp:Label>
-                <asp:Button ID="Button10" runat="server" Text="Button" />
-                <img id="Img10" alt="" src="" runat="server" style="height: 53px; width: 108px; margin-left: 0px"/> <br>
+            </asp:Label><br><br>
+                    <asp:ImageButton ID="ImageButton10" CssClass="img-circle img img-rounded" runat="server" Height="53px" Width="108px"  OnClick="imgArticle10_Click"></asp:ImageButton> <br>
             <asp:Label ID="Label10"
-           Text="Article11:"
            runat="server">
-            </asp:Label>
-                <asp:Button ID="Button11" runat="server" Text="Button" />
-                <img id="Img11" alt="" src="" runat="server" style="height: 53px; width: 108px; margin-left: 0px"/> <br>
+            </asp:Label><br><br>
+                    <asp:ImageButton ID="ImageButton11" CssClass="img-circle img img-rounded" runat="server" Height="53px" Width="108px"  OnClick="imgArticle11_Click"></asp:ImageButton> <br>
             <asp:Label ID="Label11"
-           Text="Article12:"
            runat="server">
-            </asp:Label>
-                <asp:Button ID="Button12" runat="server" Text="Button" />
-            </div></div><div class="plus">
+            </asp:Label><br><br>
+            </div></div></div><div class="plus">
         <a href="AddArticle.aspx" rel="create">
         <img src="images/add.png" /> </a></div></asp:Content>
