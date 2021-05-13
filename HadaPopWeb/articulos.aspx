@@ -67,7 +67,11 @@
                     <asp:ImageButton ID="ImageButton11" CssClass="img-circle img img-rounded" runat="server" Height="53px" Width="108px"  OnClick="imgArticle11_Click"></asp:ImageButton> <br>
             <asp:Label ID="Label11"
            runat="server">
-            </asp:Label><br><br>
+            </asp:Label><br><br><br>
+                    <div style="width:300px; float:left;">
+                    <asp:Button ID="PrevButton" Text="Anterior" runat="server"  OnClick="Prev_Click" Width="70px"></asp:Button>
+                    <asp:Button ID="NextButton" Text="Siguiente" runat="server" OnClick="Next_Click" Width="70px"></asp:Button>
+                    </div>
             </div></div></div><div class="plus">
         <a href="AddArticle.aspx" rel="create">
         <img src="images/add.png" /> </a></div></asp:Content>
