@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -47,8 +48,9 @@ namespace library
             }
         }
 
-        private int categoria;
-        public int categoriaArticulo
+
+        private string categoria;
+        public string categoriaArticulo
         {
             get
             {
@@ -73,7 +75,7 @@ namespace library
             }
         }
 
-        private byte[] imagen = new byte[999];
+        private byte[] imagen;
         public byte[] imagenArticulo
         {
             get
@@ -128,20 +130,22 @@ namespace library
         public ENArticulo()
         {
             CADArticulo aux = new CADArticulo();
-
+            //aux.imgDefault(ref imagen);
             //Futura mejora
             //aux.imgDefault(ref imagen);   
 
             codigo = -1;
             nombre = null;
             descripcion = null;
-            categoria = -1;
+            categoria = null;
+            precio = -1.0f;
             precio = -1;
             ciudad = null;
             comprador = null;
             vendedor = null;
+            imagen = null;
         }
-        public ENArticulo(int codigo, string nombre, string descripcion, int categoria, float precio, string ciudad, string comprador, string vendedor, byte[] imagen)
+        public ENArticulo(int codigo, string nombre, string descripcion, string categoria, float precio, string ciudad, string comprador, string vendedor, byte[] imagen)
         {
             this.codigo = codigo;
             this.nombre = nombre;
@@ -160,22 +164,63 @@ namespace library
             return arti.createArticulo(this);
         }
 
-        public bool readUsuario()
+        public bool readArticulo()
         {
             CADArticulo arti = new CADArticulo();
             return arti.readArticulo(this);
         }
+        public ArrayList searchArticulo()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.searchArticulo(this);
+        }
+        public bool readFirstArticulo()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.readFirstArticulo(this);
+        }
+        public bool readPrevArticulo()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.readPrevArticulo(this);
+        }
+        public bool readNextArticulo()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.readNextArticulo(this);
+        }
 
-        public bool updateUsuario()
+        public bool updateArticulo()
         {
             CADArticulo arti = new CADArticulo();
             return arti.updateArticulo(this);
         }
 
-        public bool deleteUsuario()
+        public bool deleteArticulo()
         {
             CADArticulo arti = new CADArticulo();
             return arti.deleteArticulo(this);
+        }
+
+        public ArrayList showArticles()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.showArticles();
+        }
+        public ArrayList showArticlesFromCategory(ENCategoria cate)
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.showArticlesFromCategory(cate);
+        }
+        public void guardaImagen(byte[] imagen)
+        {
+            CADArticulo arti = new CADArticulo();
+            arti.GuardarImagen(this, imagen); ;
+        }
+        public byte[] getImagen()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.GetImagenByArticle(this); ;
         }
     }
 }

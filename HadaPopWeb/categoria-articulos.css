@@ -26,11 +26,12 @@
 .tabla{
     position: absolute;
     top: 25%;
-    height: 65%;
+    height: 69%;
     left: 10%;
     width: 80%;
     background-color: #eeee;
     border-radius: 20px;
+    
 }
 
 

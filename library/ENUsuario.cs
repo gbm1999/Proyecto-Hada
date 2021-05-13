@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -92,16 +93,29 @@ namespace library
                 telefono = value;
             }
         }
-        private bool admin;
-        public bool adminUsuario
+
+        private byte[] imagen;
+        public byte[] imagenUsuario
         {
             get
             {
-                return admin;
+                return imagen;
             }
             set
             {
-                admin = value;
+                imagen = value;
+            }
+        }
+        private float Balance;
+        public float balance
+        {
+            get
+            {
+                return Balance;
+            }
+            set
+            {
+                Balance = value;
             }
         }
         public ENUsuario()
@@ -110,21 +124,23 @@ namespace library
             nombre = null;
             email = null;
             telefono = 0;
-            admin = false;
             edad = 0;
             contrasena = null;
             tarjeta = 0;
+            imagen = null;
+            Balance = 0;
         }
-        public ENUsuario(string NIF, string nombre, string email,int telefono, bool admin, int edad, string contrasena, int tarjeta)
+        public ENUsuario(string NIF, string nombre, string email,int telefono, int edad, string contrasena, int tarjeta, byte[] imagen, float balance)
         {
             this.NIF = NIF;
             this.nombre = nombre;
             this.email = email;
             this.telefono = telefono;
-            this.admin = admin;
             this.edad = edad;
             this.contrasena = contrasena;
             this.tarjeta = tarjeta;
+            this.imagen = imagen;
+            this.Balance = balance;
         }
         public bool createUsuario()
         {
@@ -150,6 +166,31 @@ namespace library
         {
             CADUsuario user = new CADUsuario();
             return user.InicioSesion(this);
+        }
+        public int CountSales()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.CountSales(this);
+        }
+        public int CountBuys()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.CountBuys(this);
+        }
+        public void guardaImagen(byte[] imagen)
+        {
+            CADUsuario user = new CADUsuario();
+            user.GuardarImagen(this,imagen); ;
+        }
+        public byte[] getImagen()
+        {
+            CADUsuario user = new CADUsuario();
+            return user.GetImagenByUser(this); ;
+        }
+        public int CountBan()
+        {
+            CADModerador mod = new CADModerador();
+            return mod.CountBan(this);
         }
     }
 }

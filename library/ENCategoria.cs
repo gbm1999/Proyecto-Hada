@@ -9,18 +9,6 @@ namespace library
 {
     public class ENCategoria
     {
-        private int Id;
-        public int IdCategoria
-        {
-            get
-            {
-                return Id;
-            }
-            set
-            {
-                Id = value;
-            }
-        }
         private string Nombre;
         public string NombreCategoria
         {
@@ -47,13 +35,11 @@ namespace library
         }
         public ENCategoria()
         {
-            Id = -1;
             Nombre = null;
             Descripcion = null;
         }
-        public ENCategoria(int Id, string Nombre, string Descripcion)
+        public ENCategoria(string Nombre, string Descripcion)
         {
-            this.Id = Id;
             this.Nombre = Nombre;
             this.Descripcion = Descripcion;
         }

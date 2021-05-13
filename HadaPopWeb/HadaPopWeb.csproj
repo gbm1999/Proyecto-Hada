@@ -44,6 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -77,6 +78,8 @@
     <Content Include="articulos.aspx" />
     <Content Include="categoria-articulos.css" />
     <Content Include="categoria.aspx" />
+    <Content Include="Categoriaconcrete.aspx" />
+    <Content Include="categorias.css" />
     <Content Include="Credit.aspx" />
     <Content Include="Credit.css" />
     <Content Include="images\add.png" />
@@ -126,6 +129,13 @@
     </Compile>
     <Compile Include="categoria.aspx.designer.cs">
       <DependentUpon>categoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Categoriaconcrete.aspx.cs">
+      <DependentUpon>Categoriaconcrete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Categoriaconcrete.aspx.designer.cs">
+      <DependentUpon>Categoriaconcrete.aspx</DependentUpon>
     </Compile>
     <Compile Include="Credit.aspx.cs">
       <DependentUpon>Credit.aspx</DependentUpon>

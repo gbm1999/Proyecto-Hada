@@ -151,14 +151,31 @@
 
 .boton-login {
     position: absolute;
-    top: 85%;
+    top: 83%;
     width: 40%;
     height: 8%;
-    left: 30%;
+    left: 21%;
     text-align: center;
     border-radius: 20px;
     background-color: #469B4B;
     color: white;
     font-size: 140%;
+    margin-left: 2px;
+    margin-bottom: 6px;
+    margin-top: 0px;
 }
 
+.boton {
+    position: absolute;
+    top: -3%;
+    width: 69%;
+    height: 100%;
+    left: 18%;
+    text-align: center;
+    border-radius: 20px;
+    background-color: #469B4B;
+    color: white;
+    font-size: 140%;
+    margin-left: 2px;
+    margin-bottom: 6px;
+}
