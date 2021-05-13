@@ -13,57 +13,197 @@ namespace HadaPopWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ENUsuario user = new ENUsuario();
-
-            user.NIFUsuario = (string)Session["nif"];
-
-            bool ok = false;
-
-            if (!ok/*user.readUsuario()*/)
+            if(!IsPostBack)
             {
-                Balance.Text = user.balance.ToString() + "€";
-            }
-            else
-            {
-                PopupNoLogin.Show();
+                ENUsuario user = obtencionNif();
+
+                bool ok = false;
+
+                if (!ok/*user.readUsuario()*/)
+                {
+                    Balance.Text = user.balance.ToString() + "€";
+                    //IniciarLlenadoDropDown();
+                }
+                else
+                {
+                    PopupNoLogin.Show();
+                }
             }
         }
 
-        protected void PopUpAceptarDepositar(object sender, EventArgs e)
+        protected ENUsuario obtencionNif()
         {
             ENUsuario user = new ENUsuario();
 
             user.NIFUsuario = (string)Session["nif"];
 
-            user.balance = (user.balance + float.Parse(DepositarTextBox.Text));
+            return (user);
+        }
 
-            bool ok = false;
+        protected void PopUpAceptarDepositar(object sender, EventArgs e)
+        {
+            ENUsuario user = obtencionNif();
 
-            if(!ok/*!user.updateUsuario()*/)
+            bool dato = true;
+
+            if(DepositarTextBox.Text == "")
             {
-                ErrorTransacciones.Text = "No se ha podido añadir el importe asignado, por favor vuelva a intentarlo";
+                dato = false;
+            }
+            else if(float.Parse(DepositarTextBox.Text) < 0)
+            {
+                DepositarTextBox.Text = "";
+                dato = false;
+            }
+
+
+            if(dato)
+            {
+                user.balance = (user.balance + float.Parse(DepositarTextBox.Text));
+
+                bool ok = false;
+
+                if (!ok/*!user.updateUsuario()*/)
+                {
+                    ErrorTransacciones.Text = "No se ha podido añadir el importe asignado, por favor vuelva a intentarlo";
+                }
+                else
+                {
+                    Balance.Text = user.balance.ToString() + "€";
+                }
             }
         }
 
         protected void PopUpAceptarRetirar(object sender, EventArgs e)
         {
-            ENUsuario user = new ENUsuario();
+            ENUsuario user = obtencionNif();
 
-            user.NIFUsuario = (string)Session["nif"];
+            bool dato = true;
 
-            bool ok = false;
-
-            user.balance = (user.balance + float.Parse(RetirarTextBox.Text));
-
-            if (!ok/*!user.updateUsuario()*/)
+            if (DepositarTextBox.Text == "")
             {
-                ErrorTransacciones.Text = "No se ha podido eliminar el importe asignado, por favor vuelva a intentarlo";
+                dato = false;
+            }
+            else if (float.Parse(DepositarTextBox.Text) < 0)
+            {
+                DepositarTextBox.Text = "";
+                dato = false;
+            }
+
+            if(dato)
+            {
+                bool ok = false;
+
+                user.balance = (user.balance - float.Parse(RetirarTextBox.Text));
+
+                if (!ok/*!user.updateUsuario()*/)
+                {
+                    ErrorTransacciones.Text = "No se ha podido eliminar el importe asignado, por favor vuelva a intentarlo";
+                }
+                else
+                {
+                    Balance.Text = user.balance.ToString() + "€";
+                }
             }
         }
 
         protected void PopUpLogin(object sender, EventArgs e)
         {
             Response.Redirect("Login.aspx");
+        }
+        /*
+        private void IniciarLlenadoDropDown()
+        {
+            ENMonedero Monedero = new ENMonedero();
+            TBNombre.DataSource = Monedero.MostrarTarjetas();
+            TBNombre.DataTextField = "Tajeta";
+            TBNombre.DataValueField = "numTarjerta";
+            TBNombre.DataBind();
+            TBNombre.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
+        }
+        */
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ENMonedero monedero = new ENMonedero
+            {
+                numTarjeta = TBNombre.Items[TBNombre.SelectedIndex].Text,
+                ContrasenaTarjeta = 5,
+                SaldoTarjeta = 0
+            };
+        }
+
+        protected void Añadir(object sender, EventArgs e)
+        {
+            ENUsuario user = obtencionNif();
+            ENMonedero monedero = new ENMonedero();
+
+            monedero.numTarjeta = TBNombre.SelectedValue;
+
+            if(Contraseña.Text == "")
+            {
+                Contraseña.Text = "0";
+            }
+
+            monedero.ContrasenaTarjeta = int.Parse(Contraseña.Text);
+
+            bool ok = false;
+
+            if (ok/*monedero.AccesoSaldo()*/)
+            {
+                user.balance = (user.balance + monedero.SaldoTarjeta);
+
+                bool ok1 = false;
+
+                if (!ok1/*!user.updateUsuario()*/)
+                {
+                    ErrorTransacciones.Text = "No se ha podido añadir el importe asignado, por favor vuelva a intentarlo";
+                }
+                else
+                {
+                    Balance.Text = user.balance.ToString() + "€";
+                }
+            }
+            else
+            {
+                ErrorTarjetas.Text = "Alguno de los campos es incorrecto por favor vuelva aintroducirlos.";
+            }
+        }
+
+        protected void Eliminar(object sender, EventArgs e)
+        {
+            ENUsuario user = obtencionNif();
+            ENMonedero monedero = new ENMonedero();
+
+            monedero.numTarjeta = TBNombre.SelectedValue;
+            
+            if (Contraseña.Text == "")
+            {
+                Contraseña.Text = "0";
+            }
+
+            monedero.ContrasenaTarjeta = int.Parse(Contraseña.Text);
+
+            bool ok = false;
+
+            if (ok/*monedero.AccesoSaldo()*/)
+            {
+                user.balance = (user.balance - monedero.SaldoTarjeta);
+
+                bool ok1 = false;
+
+                if (!ok1/*!user.updateUsuario()*/)
+                {
+                    ErrorTransacciones.Text = "No se ha podido añadir el importe asignado, por favor vuelva a intentarlo";
+                }
+                else
+                {
+                    Balance.Text = user.balance.ToString() + "€";
+                }
+            }
+            else
+            {
+                ErrorTarjetas.Text = "Alguno de los campos es incorrecto por favor vuelva aintroducirlos.";
+            }
         }
     }
 }

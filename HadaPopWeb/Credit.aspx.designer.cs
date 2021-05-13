@@ -156,16 +156,25 @@ namespace HadaPopWeb
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TBNombre;
+        protected global::System.Web.UI.WebControls.DropDownList TBNombre;
 
         /// <summary>
-        /// Control Cuenta1.
+        /// Control Contraseña.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Cuenta1;
+        protected global::System.Web.UI.WebControls.TextBox Contraseña;
+
+        /// <summary>
+        /// Control ErrorTarjetas.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ErrorTarjetas;
 
         /// <summary>
         /// Control EditarC1.

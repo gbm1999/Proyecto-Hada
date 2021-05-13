@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -80,6 +81,15 @@ namespace library
         {
             CADMonedero monedero = new CADMonedero();
             return monedero.AccesoSaldo(this);
+        }
+
+        public ArrayList MostrarTarjetas()
+        {
+            ArrayList lista = new ArrayList();
+            CADMonedero Monedero = new CADMonedero();
+            lista = Monedero.MostrarTarjetas();
+
+            return lista;
         }
     }
 }

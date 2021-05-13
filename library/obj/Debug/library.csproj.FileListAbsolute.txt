@@ -1,26 +1,6 @@
-C:\Users\Usuario\Desktop\proyect\Proyecto-Hada\library\obj\Debug\library.csproj.CoreCompileInputs.cache
-C:\Users\Usuario\Desktop\proyect\Proyecto-Hada\library\obj\Debug\library.dll
-C:\Users\Usuario\Desktop\proyect\Proyecto-Hada\library\obj\Debug\library.pdb
-C:\Users\Usuario\Desktop\proyect\Proyecto-Hada\library\bin\Debug\library.dll
-C:\Users\Usuario\Desktop\proyect\Proyecto-Hada\library\bin\Debug\library.pdb
-C:\Users\Usuario\Desktop\proyectt\Proyecto-Hada\library\bin\Debug\library.dll
-C:\Users\Usuario\Desktop\proyectt\Proyecto-Hada\library\bin\Debug\library.pdb
-C:\Users\Usuario\Desktop\proyectt\Proyecto-Hada\library\obj\Debug\library.csprojAssemblyReference.cache
-C:\Users\Usuario\Desktop\proyectt\Proyecto-Hada\library\obj\Debug\library.csproj.CoreCompileInputs.cache
-C:\Users\Usuario\Desktop\proyectt\Proyecto-Hada\library\obj\Debug\library.dll
-C:\Users\Usuario\Desktop\proyectt\Proyecto-Hada\library\obj\Debug\library.pdb
-<<<<<<< HEAD
-C:\Users\Usuario\Desktop\Proyectos_VS\hada-grupo\Nueva\Proyecto-Hada\library\obj\Debug\library.csprojAssemblyReference.cache
-C:\Users\Usuario\Desktop\Proyectos_VS\hada-grupo\Nueva\Proyecto-Hada\library\obj\Debug\library.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Desktop\Proyectos_VS\hada-grupo\Nueva\Proyecto-Hada\library\bin\Debug\library.dll
 C:\Users\Usuario\Desktop\Proyectos_VS\hada-grupo\Nueva\Proyecto-Hada\library\bin\Debug\library.pdb
+C:\Users\Usuario\Desktop\Proyectos_VS\hada-grupo\Nueva\Proyecto-Hada\library\obj\Debug\library.csprojAssemblyReference.cache
+C:\Users\Usuario\Desktop\Proyectos_VS\hada-grupo\Nueva\Proyecto-Hada\library\obj\Debug\library.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\Desktop\Proyectos_VS\hada-grupo\Nueva\Proyecto-Hada\library\obj\Debug\library.dll
 C:\Users\Usuario\Desktop\Proyectos_VS\hada-grupo\Nueva\Proyecto-Hada\library\obj\Debug\library.pdb
-=======
-C:\Users\PC_\Source\Repos\gbm1999\Proyecto-Hada\library\bin\Debug\library.dll
-C:\Users\PC_\Source\Repos\gbm1999\Proyecto-Hada\library\bin\Debug\library.pdb
-C:\Users\PC_\Source\Repos\gbm1999\Proyecto-Hada\library\obj\Debug\library.csprojAssemblyReference.cache
-C:\Users\PC_\Source\Repos\gbm1999\Proyecto-Hada\library\obj\Debug\library.csproj.CoreCompileInputs.cache
-C:\Users\PC_\Source\Repos\gbm1999\Proyecto-Hada\library\obj\Debug\library.dll
-C:\Users\PC_\Source\Repos\gbm1999\Proyecto-Hada\library\obj\Debug\library.pdb
->>>>>>> a42916da46f7ec09629b364bfd3eff1b57a986f6

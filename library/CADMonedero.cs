@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -147,6 +148,7 @@ namespace library
                 {
                     if (mon.numTarjeta == dataReader["TarjetaC"].ToString() && mon.ContrasenaTarjeta == (int)dataReader["Contrasena"])
                     {
+                        mon.SaldoTarjeta = (float)dataReader["Saldo"];
                         entra = true;
                     }
                 }
@@ -162,6 +164,38 @@ namespace library
             }
             return entra;
 
+        }
+        public ArrayList MostrarTarjetas()
+        {
+            ArrayList lista = new ArrayList();
+
+            try
+            {
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("Select * from Monedero", connectBD);
+                SqlDataReader dataReader = command.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    ENMonedero monedero = new ENMonedero();
+                    monedero.numTarjeta = dataReader["TarjetaC"].ToString();
+                    monedero.ContrasenaTarjeta = (int)dataReader["Contrasena"];
+                    monedero.SaldoTarjeta = (float)dataReader["Saldo"];
+
+                    lista.Add(monedero);
+                }
+                dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Wallet operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+
+            return lista;
         }
         public string ConnectString
         {

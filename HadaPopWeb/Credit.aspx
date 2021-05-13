@@ -31,7 +31,7 @@
                     </asp:Panel>
                     
                 </div>
-                <asp:Label ID="ErrorTransacciones" runat="server"></asp:Label>
+                <asp:Label ID="ErrorTransacciones" runat="server" Class="ErrorTransaciones"></asp:Label>
                 <div class ="divBotones">
                     <asp:Button class="Botones" ID="Depositar" runat="server" Text="Depositar" />
 
@@ -91,19 +91,23 @@
                             <label>Cuenta1</label>
                             <div class="separador"></div>
                             <div class ="InfoCuentas">
-                                 <label class="labels">Nombre: </label>
-                                 <asp:TextBox ID="TBNombre" runat="server" CssClass="textboxes"></asp:TextBox>
+                                 <label class="labels">Nº Tarjeta: </label>
+                                <asp:DropDownList ID="TBNombre" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" Class="textboxes">
+                                    <asp:ListItem >Select</asp:ListItem>
+                                </asp:DropDownList>
                             </div>
                             <div class="separador"></div>
                             <div class ="InfoCuentas">
-                                 <label class="labels">Nº Cuenta: </label>
-                                 <asp:TextBox ID="Cuenta1" runat="server" CssClass="textboxes"></asp:TextBox>
+                                 <label class="labels">Contraseña: </label>
+                                 <asp:TextBox ID="Contraseña" runat="server" Class="textboxes"></asp:TextBox>
 
                             </div>
                             <div class ="separador"></div>
+                                <asp:label ID="ErrorTarjetas"  runat="server" Class="ErrorTarjetas"></asp:label>
+                            <div class="separador"></div>
                             <div class ="divBotonesCuentas">
-                                <asp:Button class="BotonesCuentas" ID="EditarC1" runat="server" Text="Editar" />
-                                <asp:Button class="BotonesCuentas" ID="EditarC2" runat="server" Text="Eliminar" />
+                                <asp:Button class="BotonesCuentas" ID="EditarC1" runat="server" Text="Añadir" OnClick="Añadir" />
+                                <asp:Button class="BotonesCuentas" ID="EditarC2" runat="server" Text="Eliminar" OnClick="Eliminar" />
                             </div>
                         </div>
                     </div>
