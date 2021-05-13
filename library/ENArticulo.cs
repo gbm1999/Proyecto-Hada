@@ -48,6 +48,7 @@ namespace library
             }
         }
 
+
         private string categoria;
         public string categoriaArticulo
         {
@@ -137,6 +138,7 @@ namespace library
             nombre = null;
             descripcion = null;
             categoria = null;
+            precio = -1.0f;
             precio = -1;
             ciudad = null;
             comprador = null;
@@ -166,6 +168,11 @@ namespace library
         {
             CADArticulo arti = new CADArticulo();
             return arti.readArticulo(this);
+        }
+        public ArrayList searchArticulo()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.searchArticulo(this);
         }
         public bool readFirstArticulo()
         {

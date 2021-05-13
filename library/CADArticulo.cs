@@ -61,6 +61,11 @@ namespace library
                         arti.nombreArticulo = dataReader["Nombre"].ToString();
                         arti.descripcionArticulo = dataReader["Descripcion"].ToString();
                         arti.categoriaArticulo = dataReader["Categoria"].ToString();
+                        arti.precioArticulo = (float)Convert.ToDouble(dataReader["Precio"]);
+                        if (dataReader["Imagen"] != System.DBNull.Value)
+                        {
+                            arti.imagenArticulo = (byte[])dataReader["Imagen"];
+                        }
                         arti.precioArticulo = (float)dataReader["Precio"];
                         arti.imagenArticulo = (byte[])dataReader["Imagen"];
                         arti.ciudadArticulo = dataReader["Ciudad"].ToString();
@@ -81,6 +86,43 @@ namespace library
             }
             return entra;
         }
+        public ArrayList searchArticulo(ENArticulo arti)
+        {
+            try
+            {
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("Select * from Articulo WHERE Nombre LIKE @Nombre", connectBD);
+                command.Parameters.AddWithValue("@Nombre", "%" + arti.nombreArticulo + "%");
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    arti = new ENArticulo();
+                    arti.codigoArticulo = (int)dataReader["codigo"];
+                    arti.nombreArticulo = dataReader["Nombre"].ToString();
+                    arti.descripcionArticulo = dataReader["Descripcion"].ToString();
+                    arti.categoriaArticulo = dataReader["Categoria"].ToString();
+                    arti.precioArticulo = (float)Convert.ToDouble(dataReader["Precio"]);
+                    if (dataReader["Imagen"] != System.DBNull.Value)
+                    {
+                        arti.imagenArticulo = (byte[])dataReader["Imagen"];
+                    }
+                    arti.ciudadArticulo = dataReader["Ciudad"].ToString();
+                    arti.compradorArticulo = dataReader["Comprador"].ToString();
+                    arti.vendedorArticulo = dataReader["vendedor"].ToString();
+
+                    lista.Add(arti);
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Article operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+            return lista;
+        }
         public bool readFirstArticulo(ENArticulo arti)
         {
             bool entra = false;
@@ -95,9 +137,12 @@ namespace library
                     arti.codigoArticulo = (int)dataReader["codigo"];
                     arti.nombreArticulo = dataReader["Nombre"].ToString();
                     arti.descripcionArticulo = dataReader["Descripcion"].ToString();
-                    arti.categoriaArticulo = (string)dataReader["Categoria"];
-                    arti.precioArticulo = (float)dataReader["Precio"];
-                    arti.imagenArticulo = (byte[])dataReader["Imagen"];
+                    arti.categoriaArticulo = dataReader["Categoria"].ToString();
+                    arti.precioArticulo = (float)Convert.ToDouble(dataReader["Precio"]);
+                    if (dataReader["Imagen"] != System.DBNull.Value)
+                    {
+                        arti.imagenArticulo = (byte[])dataReader["Imagen"];
+                    }
                     arti.ciudadArticulo = dataReader["Ciudad"].ToString();
                     arti.compradorArticulo = dataReader["Comprador"].ToString();
                     arti.vendedorArticulo = dataReader["vendedor"].ToString();
@@ -140,6 +185,12 @@ namespace library
                     arti.codigoArticulo = (int)dataReader["codigo"];
                     arti.nombreArticulo = dataReader["Nombre"].ToString();
                     arti.descripcionArticulo = dataReader["Descripcion"].ToString();
+                    arti.categoriaArticulo = dataReader["Categoria"].ToString();
+                    arti.precioArticulo = (float)Convert.ToDouble(dataReader["Precio"]);
+                    if (dataReader["Imagen"] != System.DBNull.Value)
+                    {
+                        arti.imagenArticulo = (byte[])dataReader["Imagen"];
+                    }
                     arti.categoriaArticulo = (string)dataReader["Categoria"];
                     arti.precioArticulo = (float)dataReader["Precio"];
                     arti.imagenArticulo = (byte[])dataReader["Imagen"];
@@ -185,6 +236,12 @@ namespace library
                         arti.codigoArticulo = (int)dataReader["codigo"];
                         arti.nombreArticulo = dataReader["Nombre"].ToString();
                         arti.descripcionArticulo = dataReader["Descripcion"].ToString();
+                        arti.categoriaArticulo = dataReader["Categoria"].ToString();
+                        arti.precioArticulo = (float)Convert.ToDouble(dataReader["Precio"]);
+                        if (dataReader["Imagen"] != System.DBNull.Value)
+                        {
+                            arti.imagenArticulo = (byte[])dataReader["Imagen"];
+                        }
                         arti.categoriaArticulo = (string)dataReader["Categoria"];
                         arti.precioArticulo = (float)dataReader["Precio"];
                         arti.imagenArticulo = (byte[])dataReader["Imagen"];
@@ -323,9 +380,12 @@ namespace library
                     arti.codigoArticulo = (int)dataReader["codigo"];
                     arti.nombreArticulo = dataReader["Nombre"].ToString();
                     arti.descripcionArticulo = dataReader["Descripcion"].ToString();
-                    arti.categoriaArticulo = (string)dataReader["Categoria"];
-                    arti.precioArticulo = (float)dataReader["Precio"];
-                    arti.imagenArticulo = (byte[])dataReader["Imagen"];
+                    arti.categoriaArticulo = dataReader["Categoria"].ToString();
+                    arti.precioArticulo = (float)Convert.ToDouble(dataReader["Precio"]);
+                    if (dataReader["Imagen"] != System.DBNull.Value)
+                    {
+                        arti.imagenArticulo = (byte[])dataReader["Imagen"];
+                    }
                     arti.ciudadArticulo = dataReader["Ciudad"].ToString();
                     arti.compradorArticulo = dataReader["Comprador"].ToString();
                     arti.vendedorArticulo = dataReader["vendedor"].ToString();
@@ -350,8 +410,8 @@ namespace library
             try
             {
                 connectBD.Open();
-                SqlCommand command = new SqlCommand("Select * from Articulo where Categoria = @Id", connectBD);
-                command.Parameters.AddWithValue("@Id", cate.IdCategoria);
+                SqlCommand command = new SqlCommand("Select * from Articulo where Categoria = @Nombre", connectBD);
+                command.Parameters.AddWithValue("@Nombre", cate.NombreCategoria);
                 SqlDataReader dataReader = command.ExecuteReader();
 
                 while (dataReader.Read())
@@ -360,9 +420,12 @@ namespace library
                     arti.codigoArticulo = (int)dataReader["codigo"];
                     arti.nombreArticulo = dataReader["Nombre"].ToString();
                     arti.descripcionArticulo = dataReader["Descripcion"].ToString();
-                    arti.categoriaArticulo = (string)dataReader["Categoria"];
-                    arti.precioArticulo = (float)dataReader["Precio"];
-                    arti.imagenArticulo = (byte[])dataReader["Imagen"];
+                    arti.categoriaArticulo = dataReader["Categoria"].ToString();
+                    arti.precioArticulo = (float)Convert.ToDouble(dataReader["Precio"]);
+                    if (dataReader["Imagen"] != System.DBNull.Value)
+                    {
+                        arti.imagenArticulo = (byte[])dataReader["Imagen"];
+                    }
                     arti.ciudadArticulo = dataReader["Ciudad"].ToString();
                     arti.compradorArticulo = dataReader["Comprador"].ToString();
                     arti.vendedorArticulo = dataReader["vendedor"].ToString();
