@@ -14,7 +14,9 @@
                     <br />
                     <asp:Label id = "Balance" runat ="server" class="Title"> 00.00€</asp:Label>
 
-                    <ajaxToolkit:ModalPopupExtender ID="PopupNoLogin" runat="server" Enabled="true" TargetControlID="Balance" PopupControlID="PanelPopUpNoLogin" BackgroundCssClass="fondoPopup"></ajaxToolkit:ModalPopupExtender>
+                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+                    <ajaxToolkit:ModalPopupExtender ID="PopupNoLogin" runat="server" Enabled="true" TargetControlID="Controltarget" PopupControlID="PanelPopUpNoLogin" BackgroundCssClass="fondoPopup"></ajaxToolkit:ModalPopupExtender>
                    
                     <asp:Panel ID="PanelPopUpNoLogin" runat="server" stile="display: none;background-color: white;width: auto;height: auto">
                         
@@ -31,64 +33,20 @@
                     </asp:Panel>
                     
                 </div>
-                <asp:Label ID="ErrorTransacciones" runat="server" Class="ErrorTransaciones"></asp:Label>
-                <div class ="divBotones">
-                    <asp:Button class="Botones" ID="Depositar" runat="server" Text="Depositar" />
+                <asp:Label ID="ErrorTransacciones" runat="server" Class="ErrorTransaciones" ForeColor="red"></asp:Label>
+                <asp:Label ID="Controltarget" runat="server" Text=""></asp:Label>
 
-                    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-                    
-                    <ajaxToolkit:ModalPopupExtender ID="PopupDepositar" runat="server" Enabled="true" TargetControlID="Depositar" PopupControlID="PanelPopUpDepositar" BackgroundCssClass="fondoPopup"></ajaxToolkit:ModalPopupExtender>
-                   
-                    <asp:Panel ID="PanelPopUpDepositar" runat="server" stile="display: none;background-color: white;width: auto;height: auto">
-                        
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="PopupTitleDepositar">Ingrese el importe que quiera ingresar en su cuenta</h5>
-                            <asp:Button type="button" class="close" data-dismiss="modal" runat="server" Text="X">
-                            </asp:Button>
-                        </div>
-                        <div class="modal-body">
-                            <asp:Label ID="DepositarLabel" runat="server" Text="Ingrese la cantidad"></asp:Label>
-                            <asp:TextBox ID="DepositarTextBox" runat="server"></asp:TextBox>
-                        </div>
-                        <div class="modal-footer">
-                          <asp:Button class="btn PopupCerrar" data-dismiss="modal" runat="server" Text="Close"></asp:Button>
-                          <asp:Button class="btn PopupAceptar" runat="server" Text="Aceptar" OnClick="PopUpAceptarDepositar"></asp:Button>
-                        </div>
-                   
-                    </asp:Panel>
-                    
-                    <asp:Button class="Botones" ID="Retirar" runat="server" Text="Retirar" />
-
-                    <ajaxToolkit:ModalPopupExtender ID="PopupRetirar" runat="server" Enabled="true" TargetControlID="Retirar" PopupControlID="PanelPopUpRetirar" BackgroundCssClass="fondoPopup"></ajaxToolkit:ModalPopupExtender>
-                   
-                    <asp:Panel ID="PanelPopUpRetirar" runat="server" stile="display: none;background-color: white;width: auto;height: auto">
-                        
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="PopupTitleRetirar">Ingrese el importe que quiera retirar en su cuenta</h5>
-                            <asp:Button type="button" class="close" data-dismiss="modal" runat="server" Text="X">
-                            </asp:Button>
-                        </div>
-                        <div class="modal-body">
-                            <asp:Label ID="RetirarLabel" runat="server" Text="Ingrese la cantidad"></asp:Label>
-                            <asp:TextBox ID="RetirarTextBox" runat="server"></asp:TextBox>
-                        </div>
-                        <div class="modal-footer">
-                          <asp:Button class="btn PopupCerrar" data-dismiss="modal" runat="server" Text="Close"></asp:Button>
-                          <asp:Button class="btn PopupAceptar" runat="server" Text="Aceptar" OnClick="PopUpAceptarRetirar"></asp:Button>
-                        </div>
-                   
-                    </asp:Panel>
-                </div>
             </div>
             <div class ="TransyCuentas">
                 <div class="Transacciones">
                     <label class ="Title2"> Historial de Transacciones: </label>
+                    <asp:ListBox ID="Historial" runat="server" Class="Historial" height="70%" width="100%"></asp:ListBox>
                 </div>
                 <div class ="divCuentas">
                     <label class=" Title"> Cuentas / Tarjetas Asociadas: </label>
                     <div class ="Cuentas">
                         <div class ="Cuenta">
-                            <label>Cuenta1</label>
+                            <asp:Label ID="Nombre_Usuario" runat="server" Text=""></asp:Label>
                             <div class="separador"></div>
                             <div class ="InfoCuentas">
                                  <label class="labels">Nº Tarjeta: </label>
@@ -103,7 +61,7 @@
 
                             </div>
                             <div class ="separador"></div>
-                                <asp:label ID="ErrorTarjetas"  runat="server" Class="ErrorTarjetas"></asp:label>
+                                <asp:label ID="ErrorTarjetas"  runat="server" Class="ErrorTarjetas" ForeColor="red"></asp:label>
                             <div class="separador"></div>
                             <div class ="divBotonesCuentas">
                                 <asp:Button class="BotonesCuentas" ID="EditarC1" runat="server" Text="Añadir" OnClick="Añadir" />

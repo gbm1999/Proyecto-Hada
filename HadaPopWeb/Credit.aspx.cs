@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using library;
 using System.Windows;
+using System.Collections;
 
 namespace HadaPopWeb
 {
@@ -23,12 +24,16 @@ namespace HadaPopWeb
                 {
                     Balance.Text = user.balance.ToString() + "€";
                     //IniciarLlenadoDropDown();
+                    Nombre_Usuario.Text =user.nombreUsuario;
                 }
                 else
                 {
                     PopupNoLogin.Show();
                 }
             }
+
+            ErrorTransacciones.Text = "";
+            ErrorTarjetas.Text = "";
         }
 
         protected ENUsuario obtencionNif()
@@ -40,94 +45,27 @@ namespace HadaPopWeb
             return (user);
         }
 
-        protected void PopUpAceptarDepositar(object sender, EventArgs e)
-        {
-            ENUsuario user = obtencionNif();
-
-            bool dato = true;
-
-            if(DepositarTextBox.Text == "")
-            {
-                dato = false;
-            }
-            else if(float.Parse(DepositarTextBox.Text) < 0)
-            {
-                DepositarTextBox.Text = "";
-                dato = false;
-            }
-
-
-            if(dato)
-            {
-                user.balance = (user.balance + float.Parse(DepositarTextBox.Text));
-
-                bool ok = false;
-
-                if (!ok/*!user.updateUsuario()*/)
-                {
-                    ErrorTransacciones.Text = "No se ha podido añadir el importe asignado, por favor vuelva a intentarlo";
-                }
-                else
-                {
-                    Balance.Text = user.balance.ToString() + "€";
-                }
-            }
-        }
-
-        protected void PopUpAceptarRetirar(object sender, EventArgs e)
-        {
-            ENUsuario user = obtencionNif();
-
-            bool dato = true;
-
-            if (DepositarTextBox.Text == "")
-            {
-                dato = false;
-            }
-            else if (float.Parse(DepositarTextBox.Text) < 0)
-            {
-                DepositarTextBox.Text = "";
-                dato = false;
-            }
-
-            if(dato)
-            {
-                bool ok = false;
-
-                user.balance = (user.balance - float.Parse(RetirarTextBox.Text));
-
-                if (!ok/*!user.updateUsuario()*/)
-                {
-                    ErrorTransacciones.Text = "No se ha podido eliminar el importe asignado, por favor vuelva a intentarlo";
-                }
-                else
-                {
-                    Balance.Text = user.balance.ToString() + "€";
-                }
-            }
-        }
-
         protected void PopUpLogin(object sender, EventArgs e)
         {
             Response.Redirect("Login.aspx");
         }
-        /*
+        
         private void IniciarLlenadoDropDown()
         {
             ENMonedero Monedero = new ENMonedero();
-            TBNombre.DataSource = Monedero.MostrarTarjetas();
-            TBNombre.DataTextField = "Tajeta";
+            TBNombre.DataSource = Monedero.MostrarTarjetasLibres();
+            TBNombre.DataTextField = "numnTarjeta";
             TBNombre.DataValueField = "numTarjerta";
             TBNombre.DataBind();
             TBNombre.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
         }
-        */
+        
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             ENMonedero monedero = new ENMonedero
             {
                 numTarjeta = TBNombre.Items[TBNombre.SelectedIndex].Text,
-                ContrasenaTarjeta = 5,
+                ContrasenaTarjeta = 2365,
                 SaldoTarjeta = 0
             };
         }
@@ -136,36 +74,39 @@ namespace HadaPopWeb
         {
             ENUsuario user = obtencionNif();
             ENMonedero monedero = new ENMonedero();
+            int numero = 0;
 
             monedero.numTarjeta = TBNombre.SelectedValue;
 
-            if(Contraseña.Text == "")
+            if (int.TryParse(Contraseña.Text, out numero))
             {
-                Contraseña.Text = "0";
-            }
+                monedero.ContrasenaTarjeta = int.Parse(Contraseña.Text);
 
-            monedero.ContrasenaTarjeta = int.Parse(Contraseña.Text);
+                bool ok = false;
 
-            bool ok = false;
-
-            if (ok/*monedero.AccesoSaldo()*/)
-            {
-                user.balance = (user.balance + monedero.SaldoTarjeta);
-
-                bool ok1 = false;
-
-                if (!ok1/*!user.updateUsuario()*/)
+                if (ok/*monedero.AccesoSaldo()*/)
                 {
-                    ErrorTransacciones.Text = "No se ha podido añadir el importe asignado, por favor vuelva a intentarlo";
+                    user.balance = (user.balance + monedero.SaldoTarjeta);
+
+                    bool ok1 = false;
+
+                    if (!ok1/*!user.updateUsuario()*/)
+                    {
+                        ErrorTransacciones.Text = "No se ha podido añadir el importe asignado, por favor vuelva a intentarlo";
+                    }
+                    else
+                    {
+                        Balance.Text = user.balance.ToString() + "€";
+                    }
                 }
                 else
                 {
-                    Balance.Text = user.balance.ToString() + "€";
+                    ErrorTarjetas.Text = "Alguno de los campos es incorrecto por favor vuelva a introducirlos.";
                 }
             }
             else
             {
-                ErrorTarjetas.Text = "Alguno de los campos es incorrecto por favor vuelva aintroducirlos.";
+                ErrorTarjetas.Text = "Por favor, introduzca solo numeros es la contraseña";
             }
         }
 
@@ -173,36 +114,34 @@ namespace HadaPopWeb
         {
             ENUsuario user = obtencionNif();
             ENMonedero monedero = new ENMonedero();
+            int numero = 0;
 
             monedero.numTarjeta = TBNombre.SelectedValue;
-            
-            if (Contraseña.Text == "")
+
+            if (int.TryParse(Contraseña.Text, out numero))
             {
-                Contraseña.Text = "0";
-            }
 
-            monedero.ContrasenaTarjeta = int.Parse(Contraseña.Text);
+                monedero.ContrasenaTarjeta = int.Parse(Contraseña.Text);
 
-            bool ok = false;
+                bool ok = false;
 
-            if (ok/*monedero.AccesoSaldo()*/)
-            {
-                user.balance = (user.balance - monedero.SaldoTarjeta);
-
-                bool ok1 = false;
-
-                if (!ok1/*!user.updateUsuario()*/)
+                if (ok/*monedero.AccesoSaldo()*/)
                 {
-                    ErrorTransacciones.Text = "No se ha podido añadir el importe asignado, por favor vuelva a intentarlo";
+                    bool ok1 = false;
+
+                    if (!ok1/*!user.updateUsuario()*/)
+                    {
+                        ErrorTransacciones.Text = "No se ha podido añadir el importe asignado, por favor vuelva a intentarlo";
+                    }
                 }
                 else
                 {
-                    Balance.Text = user.balance.ToString() + "€";
+                    ErrorTarjetas.Text = "Alguno de los campos es incorrecto por favor vuelva a introducirlos.";
                 }
             }
             else
             {
-                ErrorTarjetas.Text = "Alguno de los campos es incorrecto por favor vuelva aintroducirlos.";
+                ErrorTarjetas.Text = "Por favor, introduzca solo numeros es la contraseña";
             }
         }
     }

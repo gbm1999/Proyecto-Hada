@@ -25,7 +25,7 @@ namespace library
             try
             {
                 connectBD.Open();
-                SqlCommand command = new SqlCommand("Insert into Monedero(TarjetaC,Contrasena,Saldo) VALUES ('" + mon.numTarjeta + "', '" + mon.ContrasenaTarjeta + "', '" + mon.SaldoTarjeta + "')", connectBD);
+                SqlCommand command = new SqlCommand("Insert into Monedero(TarjetaC,Contrasena,Saldo, Usuario) VALUES ('" + mon.numTarjeta + "', '" + mon.ContrasenaTarjeta + "', '" + mon.SaldoTarjeta + "', '" + mon.usuario + "')", connectBD);
                 command.ExecuteNonQuery();
                 entra = true;
             }
@@ -56,6 +56,7 @@ namespace library
                         mon.numTarjeta = dataReader["TarjetaC"].ToString();
                         mon.ContrasenaTarjeta = (int)dataReader["Contrasena"];
                         mon.SaldoTarjeta = (float)dataReader["Saldo"];
+                        mon.usuario = dataReader["Usuario"].ToString();
                         entra = true;
                     }
                 }
@@ -81,10 +82,11 @@ namespace library
             try
             {
                 connectBD.Open();
-                SqlCommand command = new SqlCommand("UPDATE Monedero SET TarjetaC = @TarjetaC, Contrasena = @Contrasena, Saldo = @Saldo where TarjetaC = @TarjetaC", connectBD);
+                SqlCommand command = new SqlCommand("UPDATE Monedero SET TarjetaC = @TarjetaC, Contrasena = @Contrasena, Saldo = @Saldo, Usuario = @Usuario where TarjetaC = @TarjetaC", connectBD);
                 command.Parameters.AddWithValue("@TarjetaC", mon.numTarjeta);
                 command.Parameters.AddWithValue("@Contrasena", mon.ContrasenaTarjeta);
                 command.Parameters.AddWithValue("@Saldo", mon.SaldoTarjeta);
+                command.Parameters.AddWithValue("@Usuario", mon.usuario);
                 response = command.ExecuteNonQuery();
 
                 if (response == 1)
@@ -165,14 +167,14 @@ namespace library
             return entra;
 
         }
-        public ArrayList MostrarTarjetas()
+        public ArrayList MostrarTarjetasLibres()
         {
             ArrayList lista = new ArrayList();
 
             try
             {
                 connectBD.Open();
-                SqlCommand command = new SqlCommand("Select * from Monedero", connectBD);
+                SqlCommand command = new SqlCommand("Select * from Monedero where Usuario is null", connectBD);
                 SqlDataReader dataReader = command.ExecuteReader();
 
                 while (dataReader.Read())
@@ -181,6 +183,7 @@ namespace library
                     monedero.numTarjeta = dataReader["TarjetaC"].ToString();
                     monedero.ContrasenaTarjeta = (int)dataReader["Contrasena"];
                     monedero.SaldoTarjeta = (float)dataReader["Saldo"];
+                    monedero.usuario = dataReader["Usuario"].ToString();
 
                     lista.Add(monedero);
                 }
