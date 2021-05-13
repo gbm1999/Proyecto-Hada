@@ -88,8 +88,6 @@
     <Content Include="Credit.css" />
     <Content Include="images\add.png" />
     <Content Include="images\fondo_register.jpg" />
-    <Content Include="images\Imagen-Dolar.png" />
-    <Content Include="images\Imagen-Euro.png" />
     <Content Include="images\login.jpg" />
     <Content Include="images\logo_small.png" />
     <Content Include="images\plus.png" />
