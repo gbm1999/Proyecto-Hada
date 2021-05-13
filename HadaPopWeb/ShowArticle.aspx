@@ -20,24 +20,28 @@
              <div class="campos-izq">
                  PRECIO:
                  <!--<input type="text" class="parametro-introducido" name="Precio" id="Precio"/>-->
-                 <asp:TextBox id="Label2" runat="server"></asp:TextBox>
+                 <asp:TextBox id="precio" runat="server"></asp:TextBox>
              </div>
 
              <div class="campos-izq">
                  CIUDAD:
-                 <input type="text" class="parametro-introducido" name="Ciudad" id="Ciudad"/>
+                 <!--<input type="text" class="parametro-introducido" name="Ciudad" id="Ciudad"/>-->
+                 
+                 <asp:TextBox id="ciudad" runat="server"></asp:TextBox>
 
              </div>
          </div>
 
          <div class="descripcion">
-             <textarea  class="AddDescription text-cuadro" name="description" id="description"> </textarea>
+             <!--<textarea  class="AddDescription text-cuadro" name="description" id="description"> </textarea>-->
+             <asp:TextBox id="descripcion" runat="server" TextMode="MultiLine" Height="218px" Width="317px"></asp:TextBox>
          </div>
 
          <div class="vendedor">
              <div class="campos-izq">
                  VENDEDOR:
-                 <input type="text" class="parametro-introducido" name="Vendedor" id="Vendedor"/>
+                 <!--<input type="text" class="parametro-introducido" name="Vendedor" id="Vendedor"/>-->
+                <asp:TextBox id="vendedor" runat="server"></asp:TextBox>
 
              </div>
 
@@ -45,6 +49,5 @@
         
 
      </div>
-    <asp:Label ID="Label1" runat="server"></asp:Label>
-</asp:Content>
+    </asp:Content>
 

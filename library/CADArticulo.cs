@@ -421,7 +421,7 @@ namespace library
                     arti.codigoArticulo = (int)dataReader["codigo"];
                     arti.nombreArticulo = dataReader["Nombre"].ToString();
                     arti.descripcionArticulo = dataReader["Descripcion"].ToString();
-                    arti.categoriaArticulo = (int)dataReader["Categoria"];
+                    arti.categoriaArticulo = dataReader["Categoria"].ToString();
                     arti.precioArticulo = (float)dataReader["Precio"];
                     arti.imagenArticulo = (byte[])dataReader["Imagen"];
                     arti.ciudadArticulo = dataReader["Ciudad"].ToString();

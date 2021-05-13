@@ -12,15 +12,19 @@ namespace HadaPopWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            mostrarArticulo();
+
+            ENArticulo articulo = new ENArticulo();
+            articulo.nombreArticulo= Request.QueryString["Value"];
+            mostrarArticulo(articulo);
         }
 
-        private void mostrarArticulo()
+        private void mostrarArticulo(ENArticulo articulo)
         {
-            ENArticulo articulo = new ENArticulo();
             
-            Label1.Text = "pirulin";
-            Label2.Text = articulo.showOneArticle().nombreArticulo;
+            precio.Text = articulo.showOneArticle().precioArticulo.ToString();
+            ciudad.Text = articulo.showOneArticle().nombreArticulo;
+            descripcion.Text = articulo.showOneArticle().descripcionArticulo;
+            vendedor.Text = articulo.showOneArticle().vendedorArticulo;
         }
     }
 }
