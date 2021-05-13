@@ -42,13 +42,13 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.Button btnBuscar;
 
         /// <summary>
-        /// Control Image1.
+        /// Control ImageButton0.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage Image1;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton0;
 
         /// <summary>
         /// Control Label0.
@@ -60,22 +60,13 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.Label Label0;
 
         /// <summary>
-        /// Control Button1.
+        /// Control ImageButton1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-
-        /// <summary>
-        /// Control Img1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage Img1;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
 
         /// <summary>
         /// Control Label1.
@@ -87,22 +78,13 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// Control Button2.
+        /// Control ImageButton2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
-
-        /// <summary>
-        /// Control Img2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage Img2;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton2;
 
         /// <summary>
         /// Control Label2.
@@ -114,22 +96,13 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// Control Button3.
+        /// Control ImageButton3.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
-
-        /// <summary>
-        /// Control Img3.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage Img3;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton3;
 
         /// <summary>
         /// Control Label3.
@@ -141,22 +114,13 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// Control Button4.
+        /// Control ImageButton4.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button4;
-
-        /// <summary>
-        /// Control Img4.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage Img4;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton4;
 
         /// <summary>
         /// Control Label4.
@@ -168,22 +132,13 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// Control Button5.
+        /// Control ImageButton5.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button5;
-
-        /// <summary>
-        /// Control Img5.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage Img5;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton5;
 
         /// <summary>
         /// Control Label5.
@@ -195,22 +150,13 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.Label Label5;
 
         /// <summary>
-        /// Control Button6.
+        /// Control ImageButton6.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button6;
-
-        /// <summary>
-        /// Control Img6.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage Img6;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton6;
 
         /// <summary>
         /// Control Label6.
@@ -222,22 +168,13 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.Label Label6;
 
         /// <summary>
-        /// Control Button7.
+        /// Control ImageButton7.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button7;
-
-        /// <summary>
-        /// Control Img7.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage Img7;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton7;
 
         /// <summary>
         /// Control Label7.
@@ -249,22 +186,13 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.Label Label7;
 
         /// <summary>
-        /// Control Button8.
+        /// Control ImageButton8.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button8;
-
-        /// <summary>
-        /// Control Img8.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage Img8;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton8;
 
         /// <summary>
         /// Control Label8.
@@ -276,22 +204,13 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.Label Label8;
 
         /// <summary>
-        /// Control Button9.
+        /// Control ImageButton9.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button9;
-
-        /// <summary>
-        /// Control Img9.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage Img9;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton9;
 
         /// <summary>
         /// Control Label9.
@@ -303,22 +222,13 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.Label Label9;
 
         /// <summary>
-        /// Control Button10.
+        /// Control ImageButton10.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button10;
-
-        /// <summary>
-        /// Control Img10.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage Img10;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton10;
 
         /// <summary>
         /// Control Label10.
@@ -330,22 +240,13 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.Label Label10;
 
         /// <summary>
-        /// Control Button11.
+        /// Control ImageButton11.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button11;
-
-        /// <summary>
-        /// Control Img11.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage Img11;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton11;
 
         /// <summary>
         /// Control Label11.
@@ -355,14 +256,5 @@ namespace HadaPopWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label11;
-
-        /// <summary>
-        /// Control Button12.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button12;
     }
 }
