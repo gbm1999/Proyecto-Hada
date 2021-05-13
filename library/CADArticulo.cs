@@ -412,8 +412,8 @@ namespace library
             try
             {
                 connectBD.Open();
-                SqlCommand command = new SqlCommand("Select * from Articulo where codigo = @cod", connectBD);
-                command.Parameters.AddWithValue("@cod", art.codigoArticulo);
+                SqlCommand command = new SqlCommand("Select * from Articulo where nombre=@nombre", connectBD);
+                command.Parameters.AddWithValue("@nombre", art.nombreArticulo);
                 SqlDataReader dataReader = command.ExecuteReader();
 
                 if (dataReader.Read())
@@ -422,8 +422,11 @@ namespace library
                     arti.nombreArticulo = dataReader["Nombre"].ToString();
                     arti.descripcionArticulo = dataReader["Descripcion"].ToString();
                     arti.categoriaArticulo = dataReader["Categoria"].ToString();
-                    arti.precioArticulo = (float)dataReader["Precio"];
-                    arti.imagenArticulo = (byte[])dataReader["Imagen"];
+                    arti.precioArticulo = (float)Convert.ToDouble(dataReader["Precio"]);
+                    if (dataReader["Imagen"] != System.DBNull.Value)
+                    {
+                        arti.imagenArticulo = (byte[])dataReader["Imagen"];
+                    }
                     arti.ciudadArticulo = dataReader["Ciudad"].ToString();
                     arti.compradorArticulo = dataReader["Comprador"].ToString();
                     arti.vendedorArticulo = dataReader["vendedor"].ToString();

@@ -21,9 +21,9 @@ namespace HadaPopWeb
         private void mostrarArticulo(ENArticulo articulo)
         {
             
-            precio.Text = articulo.showOneArticle().precioArticulo.ToString();
-            ciudad.Text = articulo.showOneArticle().nombreArticulo;
-            descripcion.Text = articulo.showOneArticle().descripcionArticulo;
+            nombre.Text = articulo.showOneArticle().nombreArticulo;
+            Ciudad.Text = articulo.showOneArticle().ciudadArticulo;
+            Descripcion.Text = articulo.showOneArticle().descripcionArticulo;
             vendedor.Text = articulo.showOneArticle().vendedorArticulo;
         }
     }

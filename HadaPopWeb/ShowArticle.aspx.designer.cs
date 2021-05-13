@@ -15,31 +15,31 @@ namespace HadaPopWeb
     {
 
         /// <summary>
-        /// Control precio.
+        /// Control nombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox precio;
+        protected global::System.Web.UI.WebControls.TextBox nombre;
 
         /// <summary>
-        /// Control ciudad.
+        /// Control Ciudad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ciudad;
+        protected global::System.Web.UI.WebControls.TextBox Ciudad;
 
         /// <summary>
-        /// Control descripcion.
+        /// Control Descripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox descripcion;
+        protected global::System.Web.UI.WebControls.TextBox Descripcion;
 
         /// <summary>
         /// Control vendedor.
