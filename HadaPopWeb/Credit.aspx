@@ -10,13 +10,11 @@
                 <div class="DineroBalance">
                     <label class ="Title">Balance Total:</label>
                     <br />
-                    &nbsp&nbsp
-                    <label id = Balance class="Title"> 00.00€</label>
+                    <asp:Label id = "Balance" runat ="server" class="Title"> 00.00€</asp:Label>
                 </div>
                 <div class ="divBotones">
-                    <asp:Button class="Botones" ID="Depositar" runat="server" Text="Depositar" />
-                    &nbsp
-                    <asp:Button class="Botones" ID="Retirar" runat="server" Text="Retirar" />
+                    <asp:Button class="Botones" ID="Depositar" runat="server" Text="Depositar" OnClick="Depositar_Click" />
+                    <asp:Button class="Botones" ID="Retirar" runat="server" Text="Retirar" OnClick="Retirar_Click" />
                 </div>
             </div>
             <div class ="TransyCuentas">
@@ -42,7 +40,6 @@
                             <div class ="separador"></div>
                             <div class ="divBotonesCuentas">
                                 <asp:Button class="BotonesCuentas" ID="EditarC1" runat="server" Text="Editar" />
-                                &nbsp
                                 <asp:Button class="BotonesCuentas" ID="EditarC2" runat="server" Text="Eliminar" />
                             </div>
                         </div>
@@ -51,5 +48,4 @@
             </div>
         </div>
     </div>
-
 </asp:Content>
