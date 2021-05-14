@@ -115,6 +115,11 @@ namespace library
             }
             set
             {
+                if(value < 0)
+                {
+                    value = 0;
+                }
+
                 Balance = value;
             }
         }

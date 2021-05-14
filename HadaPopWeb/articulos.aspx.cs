@@ -8,6 +8,7 @@ namespace HadaPopWeb
 {
     public partial class articulos : System.Web.UI.Page
     {
+        private int conteo = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -23,9 +24,60 @@ namespace HadaPopWeb
             DropDownList1.DataTextField = "NombreCategoria";
             DropDownList1.DataValueField = "NombreCategoria";
             DropDownList1.DataBind();
-            DropDownList1.Items.Insert(0, new ListItem("[Seleccionar]", "0"));
+            DropDownList1.Items.Insert(0, new ListItem("Inicio", "0"));
         }
         private void CargarArticulos()
+        {
+            bool seLee1 = false;
+            ENArticulo art = new ENArticulo();
+            seLee1 = art.readFirstArticulo();
+            ENArticulo arti = new ENArticulo();
+            ArrayList lista = new ArrayList();
+            lista = arti.showArticles();
+            for (int i = 0; i < 12; i++)
+            {
+                ContentPlaceHolder Main = (ContentPlaceHolder)Page.Master.FindControl("ContentPlaceHolder1");
+                ImageButton im = (ImageButton)Main.FindControl("ImageButton" + i);
+                if (lista.Count > i)
+                {
+                    arti = (ENArticulo)lista[i];
+                    Label lb = (Label)Main.FindControl("Label" + i);
+                    lb.Text = arti.nombreArticulo;
+                    im.Style["Visibility"] = "visible";
+                    conteo = (Convert.ToInt32(Session["click"])) + 1;
+                }
+                else
+                {
+                    im.Style["Visibility"] = "hidden";
+                }
+            }
+
+            if (seLee1)
+            {
+                byte[] imagen = art.getImagen();
+                //Falta comprobar si hay datos en la base de datos
+                if (imagen != null)
+                {
+                    for (int i = 0; i < 12; i++)
+                    {
+                        string PROFILE_PIC = Convert.ToBase64String(imagen);
+                        ContentPlaceHolder Main = (ContentPlaceHolder)Page.Master.FindControl("ContentPlaceHolder1");
+                        ImageButton image = (ImageButton)Main.FindControl("ImageButton" + i);
+                        image.ImageUrl = String.Format("data:image/jpg;base64,{0}", PROFILE_PIC);
+                    }
+
+                }
+            }
+            else
+            {
+                /*
+                Label1.Text = " ";
+                Label2.Text = "**Error** no se ha encontrado al usuario con nif ";
+                */
+            }
+        }
+
+        private void CargarArticulos2()
         {
             bool seLee1 = false;
             ENArticulo art = new ENArticulo();
@@ -34,24 +86,32 @@ namespace HadaPopWeb
             ENArticulo arti = new ENArticulo();
             ArrayList lista = new ArrayList();
             lista = arti.showArticles();
-            for (int i = 0; i < lista.Count && i < 12; i++)
+            int lleva = conteo;
+            for (int i = lleva; i < lleva+12; i++)
             {
-                if (lista[i] != null)
+                ContentPlaceHolder Main = (ContentPlaceHolder)Page.Master.FindControl("ContentPlaceHolder1");
+                ImageButton im = (ImageButton)Main.FindControl("ImageButton" + i);
+                if (lista.Count > i)
                 {
                     arti = (ENArticulo)lista[i];
-                    ContentPlaceHolder Main = (ContentPlaceHolder)Page.Master.FindControl("ContentPlaceHolder1");
                     Label lb = (Label)Main.FindControl("Label" + i);
                     lb.Text = arti.nombreArticulo;
+                    im.Style["Visibility"] = "visible";
+                    conteo = (Convert.ToInt32(Session["click"])) + 1;
+                }
+                else
+                {
+                    im.Style["Visibility"] = "hidden";
                 }
             }
 
             if (seLee1)
             {
-            byte[] imagen = art.getImagen();
+                byte[] imagen = art.getImagen();
                 //Falta comprobar si hay datos en la base de datos
                 if (imagen != null)
                 {
-                    for (int i = 0; i < 12; i++)
+                    for (int i = conteo; i < conteo+12; i++)
                     {
                         string PROFILE_PIC = Convert.ToBase64String(imagen);
                         ContentPlaceHolder Main = (ContentPlaceHolder)Page.Master.FindControl("ContentPlaceHolder1");
@@ -129,28 +189,41 @@ namespace HadaPopWeb
         }
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ArrayList lista = new ArrayList();
-            ENCategoria cate = new ENCategoria
+            if (DropDownList1.SelectedValue == "0")
             {
-                NombreCategoria = DropDownList1.Items[DropDownList1.SelectedIndex].Text,
-                DescripCategoria = null
-            };
-            ENArticulo arti = new ENArticulo();
-            lista = arti.showArticlesFromCategory(cate);
-            for (int i = 0; i < 12; i++)
+                CargarArticulos();
+            }
+            else
             {
+                ArrayList lista = new ArrayList();
+                ENCategoria cate = new ENCategoria
+                {
+                    NombreCategoria = DropDownList1.Items[DropDownList1.SelectedIndex].Text,
+                    DescripCategoria = null
+                };
+                ENArticulo arti = new ENArticulo();
+                lista = arti.showArticlesFromCategory(cate);
+                for (int i = 0; i < 12; i++)
+                {
                     ContentPlaceHolder Main = (ContentPlaceHolder)Page.Master.FindControl("ContentPlaceHolder1");
                     Label lb = (Label)Main.FindControl("Label" + i);
                     lb.Text = "";
-            }
-            for (int i = 0; i < lista.Count && i < 12; i++)
-            {
-                if (lista[i] != null)
+                }
+                for (int i = 0; i < 12; i++)
                 {
-                    arti = (ENArticulo)lista[i];
                     ContentPlaceHolder Main = (ContentPlaceHolder)Page.Master.FindControl("ContentPlaceHolder1");
-                    Label lb = (Label)Main.FindControl("Label" + i);
-                    lb.Text = arti.nombreArticulo;
+                    ImageButton im = (ImageButton)Main.FindControl("ImageButton" + i);
+                    if (lista.Count > i)
+                    {
+                        arti = (ENArticulo)lista[i];
+                        Label lb = (Label)Main.FindControl("Label" + i);
+                        lb.Text = arti.nombreArticulo;
+                        im.Style["Visibility"] = "visible";
+                    }
+                    else
+                    {
+                        im.Style["Visibility"] = "hidden";
+                    }
                 }
             }
         }
@@ -184,20 +257,42 @@ namespace HadaPopWeb
             };
             ArrayList lista = new ArrayList();
             lista = arti.searchArticulo();
-            if(lista.Count > 0)
+            if (lista.Count > 0)
             {
                 arti = (ENArticulo)lista[0];
                 DropDownList1.SelectedValue = arti.categoriaArticulo;
             }
-            for (int i = 0; i < lista.Count && i < 12; i++)
+            for (int i = 0; i < 12; i++)
             {
-                if (lista[i] != null)
+                ContentPlaceHolder Main = (ContentPlaceHolder)Page.Master.FindControl("ContentPlaceHolder1");
+                ImageButton im = (ImageButton)Main.FindControl("ImageButton" + i);
+                if (lista.Count > i)
                 {
                     arti = (ENArticulo)lista[i];
-                    ContentPlaceHolder Main = (ContentPlaceHolder)Page.Master.FindControl("ContentPlaceHolder1");
                     Label lb = (Label)Main.FindControl("Label" + i);
                     lb.Text = arti.nombreArticulo;
+                    im.Style["Visibility"] = "visible";
                 }
+                else
+                {
+                    im.Style["Visibility"] = "hidden";
+                }
+            }
+        }
+        protected void Prev_Click(object sender, EventArgs e)
+        {
+            if(conteo >= 12 && conteo %12 == 0)
+            {
+                conteo = (Convert.ToInt32(Session["click"])) - 12;
+                CargarArticulos2();
+            }
+        }
+        protected void Next_Click(object sender, EventArgs e)
+        {
+            if (conteo >= 12 && conteo % 12 == 0)
+            {
+                conteo = (Convert.ToInt32(Session["click"])) + 12;
+                CargarArticulos2();
             }
         }
     }
