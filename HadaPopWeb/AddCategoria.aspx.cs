@@ -19,9 +19,8 @@ namespace HadaPopWeb
 
         protected void boton_crear(object sender, EventArgs e)
         {
-            Random n = new Random();
+            
             ENCategoria cat_new = new ENCategoria();
-            //cat_new.IdCategoria = n.Next(0, 10000);
             cat_new.NombreCategoria = nombre.Text;
             cat_new.DescripCategoria = description.Text;
 

@@ -34,7 +34,7 @@
                 <EmptyDataTemplate>
                     <table runat="server" style="background-color: #FFFFFF;border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;">
                         <tr>
-                            <td>No se han devuelto datos.</td>
+                            <td>No existe ninguna categoría.</td>
                         </tr>
                     </table>
                 </EmptyDataTemplate>
@@ -59,7 +59,7 @@
                     <table runat="server">
                         <tr runat="server">
                             <td runat="server">
-                                <table id="itemPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF; position:absolute; width: 100%; border-collapse: collapse;border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
+                                <table id="itemPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF; position:absolute; width: 100%; height:90%; border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
                                     <tr runat="server" style="background-color: #FFFBD6;color: #333333;">
                                         <th runat="server">Nombre</th>
                                         <th runat="server">Descripcion</th>
@@ -98,6 +98,7 @@
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Nombre], [Descripcion] FROM [Categoria]"></asp:SqlDataSource>
 
         </div>
+    
 
        
 

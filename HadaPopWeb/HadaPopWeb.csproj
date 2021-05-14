@@ -71,6 +71,7 @@
     <Content Include="AddArticle.aspx" />
     <Content Include="AddArticle.css" />
     <Content Include="AddCategoria.aspx" />
+    <Content Include="AddCategoria.css" />
     <Content Include="App_Data\Database.mdf" />
     <Content Include="App_Data\Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
@@ -83,7 +84,9 @@
     <Content Include="Credit.aspx" />
     <Content Include="Credit.css" />
     <Content Include="images\add.png" />
+    <Content Include="images\delete.png" />
     <Content Include="images\fondo_register.jpg" />
+    <Content Include="images\icons8-edit-64.png" />
     <Content Include="images\login.jpg" />
     <Content Include="images\logo_small.png" />
     <Content Include="images\plus.png" />
