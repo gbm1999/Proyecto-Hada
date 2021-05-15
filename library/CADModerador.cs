@@ -19,7 +19,7 @@ namespace library
             connectBD = new SqlConnection(connection);
         }
 
-        public bool nuevoModerador(ENModerador Mod)
+        public bool createModerador(ENModerador Mod)
         {
             bool ok = false;
 
@@ -41,6 +41,35 @@ namespace library
             }
 
             return (ok);
+        }
+
+        public bool isModerador(ENModerador mod)
+        {
+            bool entra = false;
+            try
+            {
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("Select * from Moderador", connectBD);
+                SqlDataReader dataReader = command.ExecuteReader();
+
+                while (!entra && dataReader.Read())
+                {
+                    if (dataReader["Usuario"].ToString().Equals(mod.mod))
+                    {
+                        entra = true;
+                    }
+                }
+                dataReader.Close();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+            return entra;
         }
 
         public bool baneo(ENModerador Mod)

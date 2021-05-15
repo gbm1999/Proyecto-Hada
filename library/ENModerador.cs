@@ -8,6 +8,7 @@ namespace library
 {
     public class ENModerador
     {
+        // Mod es la variable donde guardamos el nif del usuario que se desea hacer moderador
         private string Mod;
         public string mod
         {
@@ -20,6 +21,8 @@ namespace library
                 Mod = value;
             }
         }
+
+        // Usuario es la variable donde guardamos el usuario que sera baneado
         private string Usuario;
         public string usuario
         {
@@ -32,6 +35,8 @@ namespace library
                 Usuario = value;
             }
         }
+
+        // Fecha es la variable donde guardaremos hasta cuand sera baneado un usuario
         private string Fecha;
         public string fecha
         {
@@ -44,25 +49,26 @@ namespace library
                 Fecha = value;
             }
         }
-
+        // Constructor por defecto
         public ENModerador()
         {
             Mod = null;
             Usuario = null;
             Fecha = null;
         }
-        public ENModerador(string mod, string usuario, string fecha)
+        // Constructor sobrecargado
+        public ENModerador(string mod)
         {
             this.mod = mod;
-            this.usuario = usuario;
-            this.fecha = fecha;
         }
-        public bool nuevoModerador()
+        // Crea un nuevo moderador
+        public bool createModerador()
         {
             CADModerador Mod = new CADModerador();
 
-            return (Mod.nuevoModerador(this));
-        }
+            return (Mod.createModerador(this));
+        } 
+        // Baneo se encarga de añadir en una tabla el usuario y el tiempo que sera banedo
         public bool baneo()
         {
             CADModerador Mod = new CADModerador();
