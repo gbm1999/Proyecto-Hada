@@ -8,6 +8,7 @@ namespace library
 {
     class ENAdministrador
     {
+        // Administrador es la variable donde se guarara el nif del usuario que sera administrador
         private string Administrador;
         public string administrador
         {
@@ -20,6 +21,8 @@ namespace library
                 Administrador = value;
             }
         }
+
+        // Usuario es la variable donde ira el nif del usuario a expulsar
         private string Usuario;
         public string usuario
         {
@@ -32,22 +35,25 @@ namespace library
                 Usuario = value;
             }
         }
+        // Constructor por defecto
         public ENAdministrador()
         {
             Administrador = null;
             Usuario = null;
         }
-        public ENAdministrador(string Admin, string usuario)
+        // Constructor sobrecargado
+        public ENAdministrador(string Admin)
         {
             this.administrador = Admin;
-            this.usuario = usuario;
         }
-        public bool nuevoAdministrador()
+        // Crea un nuevo administrador
+        public bool createAdministrador()
         {
             CADAdministrador Admin = new CADAdministrador();
 
-            return (Admin.nuevoAdministrador(this));
+            return (Admin.createAdministrador(this));
         }
+        // Realiza la expulsion de un usario
         public bool expulsion()
         {
             CADAdministrador Admin = new CADAdministrador();
