@@ -5,11 +5,8 @@ using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
 
-
 namespace HadaPopWeb
 {
-   
-
     public class Global : System.Web.HttpApplication
     {
         public static string ADMINPASS { set; get; }
@@ -18,6 +15,7 @@ namespace HadaPopWeb
         {
             ADMINPASS = "HadaMola123";
         }
+
 
         protected void Session_Start(object sender, EventArgs e)
         {

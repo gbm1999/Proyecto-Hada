@@ -58,7 +58,7 @@ namespace HadaPopWeb
                                 user.nombreUsuario = name.Text;
                                 user.emailUsuario = email.Text;
                                 user.edadUsuario = Convert.ToInt32(age.Text);
-                                user.adminUsuario = admin;
+                                user. = admin;
                                 user.telefonoUsuario = Convert.ToInt32(phone.Text);
                                 user.contrasenaUsuario = password.Text;
 
@@ -212,12 +212,12 @@ namespace HadaPopWeb
         private bool CampoVálidoUser(string check) //Comprueba si la cadena pasada es válida para ser Nombre de User
         { 
             bool valido = true;
-            Regex r = new Regex(@"^[\p{L}\p{M}' \.\-]+$");
+            Regex r = new Regex(@"^[^±!@£$% ^&*_ +§¡€#¢§¶•ªº«\\/<>?:;|=.,]{1,20}$");
             if (check.Length < 2 || check.Length > 30)
             {
                 valido = false;
             }
-            else if (!r.IsMatch(check))  // Comprueba email
+            else if (r.IsMatch(check))  // Comprueba nombre
                 valido = false;
 
             return valido;
