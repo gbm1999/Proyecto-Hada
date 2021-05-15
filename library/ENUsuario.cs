@@ -197,5 +197,19 @@ namespace library
             CADModerador mod = new CADModerador();
             return mod.CountBan(this);
         }
+        public bool isModerador()
+        {
+            ENModerador moderador = new ENModerador();
+            moderador.mod = this.NIFUsuario;
+            CADModerador mod = new CADModerador();
+            return mod.isModerador(moderador);
+        }
+        public bool isAdministrador()
+        {
+            ENAdministrador administrador = new ENAdministrador();
+            administrador.administrador = this.NIFUsuario;
+            CADAdministrador admin = new CADAdministrador();
+            return admin.isAdministrador(administrador);
+        }
     }
 }
