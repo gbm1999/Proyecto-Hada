@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,8 +22,8 @@ namespace library
             }
         }
 
-        private string idComentario;
-        public string IDComentario
+        private int idComentario;
+        public int IDComentario
         {
             get
             {
@@ -74,10 +75,32 @@ namespace library
             }
         }
 
+        public ENComentario()
+        {
+            this.IDComentario = IDComentario + 1;
+            this.NifUsuario = null;
+            this.TituloComentario = null;
+            this.DescripcionComentario = null;
+            this.Emisor = null;
+        }
+        public ENComentario(string receptor, string titulo, string descripcion, string emisorCliente)
+        {
+            this.IDComentario = IDComentario + 1;
+            this.NifUsuario = receptor;
+            this.TituloComentario = titulo;
+            this.DescripcionComentario = descripcion;
+            this.Emisor = emisorCliente;
+        }
+
         public bool ponerComentario()
         {
             CADComentario comment = new CADComentario();
             return comment.createComentario(this);
+        }
+        public ArrayList findComentarios()
+        {
+            CADComentario comentario = new CADComentario();
+            return (comentario.findComentarios(this));
         }
     }
 }
