@@ -8,13 +8,14 @@ namespace HadaPopWeb
 {
     public partial class articulos : System.Web.UI.Page
     {
-        private int conteo = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                Session["click"] = 0;
                 IniciarLlenadoDropDown();
-                CargarArticulos();
+                ENArticulo arti = new ENArticulo();
+                CargarArticulos2(0,arti.showArticles());
             }
         }
         private void IniciarLlenadoDropDown()
@@ -26,47 +27,63 @@ namespace HadaPopWeb
             DropDownList1.DataBind();
             DropDownList1.Items.Insert(0, new ListItem("Inicio", "0"));
         }
-        private void CargarArticulos()
+
+        private void CargarArticulos2(int contador, ArrayList lista)
         {
-            bool seLee1 = false;
-            ENArticulo art = new ENArticulo();
-            seLee1 = art.readFirstArticulo();
-            ENArticulo arti = new ENArticulo();
-            ArrayList lista = new ArrayList();
-            lista = arti.showArticles();
+
             for (int i = 0; i < 12; i++)
             {
                 ContentPlaceHolder Main = (ContentPlaceHolder)Page.Master.FindControl("ContentPlaceHolder1");
-                ImageButton im = (ImageButton)Main.FindControl("ImageButton" + i);
+                Label lb = (Label)Main.FindControl("Label" + i);
+                lb.Text = "";
+            }
+
+
+            Session["click"] = contador;
+            bool seLee1 = false;
+            ENArticulo arti = new ENArticulo();
+            seLee1 = false;
+            int lleva = (int)Session["click"];
+            int j = 0;
+            for (int i = lleva; i < lleva+12; i++)
+            {
+                ContentPlaceHolder Main = (ContentPlaceHolder)Page.Master.FindControl("ContentPlaceHolder1");
+                ImageButton im = (ImageButton)Main.FindControl("ImageButton" + j);
                 if (lista.Count > i)
                 {
                     arti = (ENArticulo)lista[i];
-                    Label lb = (Label)Main.FindControl("Label" + i);
+                    Label lb = (Label)Main.FindControl("Label" + j);
                     lb.Text = arti.nombreArticulo;
                     im.Style["Visibility"] = "visible";
-                    conteo = (Convert.ToInt32(Session["click"])) + 1;
+                    Session["click"] = i;
                 }
                 else
                 {
                     im.Style["Visibility"] = "hidden";
                 }
+                j++;
             }
+            int p = Convert.ToInt32(Session["click"]);
 
             if (seLee1)
             {
+                /*
                 byte[] imagen = art.getImagen();
                 //Falta comprobar si hay datos en la base de datos
                 if (imagen != null)
                 {
+                    j = 0;
                     for (int i = 0; i < 12; i++)
                     {
                         string PROFILE_PIC = Convert.ToBase64String(imagen);
                         ContentPlaceHolder Main = (ContentPlaceHolder)Page.Master.FindControl("ContentPlaceHolder1");
-                        ImageButton image = (ImageButton)Main.FindControl("ImageButton" + i);
+                        ImageButton image = (ImageButton)Main.FindControl("ImageButton" + j);
                         image.ImageUrl = String.Format("data:image/jpg;base64,{0}", PROFILE_PIC);
+                        j++;
                     }
 
                 }
+                */
             }
             else
             {
@@ -76,58 +93,25 @@ namespace HadaPopWeb
                 */
             }
         }
-
-        private void CargarArticulos2()
+        private ArrayList ObtieneLista()
         {
-            bool seLee1 = false;
-            ENArticulo art = new ENArticulo();
-            seLee1 = art.readFirstArticulo();
-
-            ENArticulo arti = new ENArticulo();
             ArrayList lista = new ArrayList();
-            lista = arti.showArticles();
-            int lleva = conteo;
-            for (int i = lleva; i < lleva+12; i++)
+            ENArticulo arti = new ENArticulo();
+            if (DropDownList1.SelectedValue == "0")
             {
-                ContentPlaceHolder Main = (ContentPlaceHolder)Page.Master.FindControl("ContentPlaceHolder1");
-                ImageButton im = (ImageButton)Main.FindControl("ImageButton" + i);
-                if (lista.Count > i)
-                {
-                    arti = (ENArticulo)lista[i];
-                    Label lb = (Label)Main.FindControl("Label" + i);
-                    lb.Text = arti.nombreArticulo;
-                    im.Style["Visibility"] = "visible";
-                    conteo = (Convert.ToInt32(Session["click"])) + 1;
-                }
-                else
-                {
-                    im.Style["Visibility"] = "hidden";
-                }
-            }
-
-            if (seLee1)
-            {
-                byte[] imagen = art.getImagen();
-                //Falta comprobar si hay datos en la base de datos
-                if (imagen != null)
-                {
-                    for (int i = conteo; i < conteo+12; i++)
-                    {
-                        string PROFILE_PIC = Convert.ToBase64String(imagen);
-                        ContentPlaceHolder Main = (ContentPlaceHolder)Page.Master.FindControl("ContentPlaceHolder1");
-                        ImageButton image = (ImageButton)Main.FindControl("ImageButton" + i);
-                        image.ImageUrl = String.Format("data:image/jpg;base64,{0}", PROFILE_PIC);
-                    }
-
-                }
+                lista = arti.showArticles();
             }
             else
             {
-                /*
-                Label1.Text = " ";
-                Label2.Text = "**Error** no se ha encontrado al usuario con nif ";
-                */
+                ENCategoria cate = new ENCategoria
+                {
+                    NombreCategoria = DropDownList1.Items[DropDownList1.SelectedIndex].Text,
+                    DescripCategoria = null
+                };
+
+                lista = arti.showArticlesFromCategory(cate);
             }
+            return lista;
         }
 
         protected void imgArticle0_Click(object sender, EventArgs e)
@@ -189,43 +173,9 @@ namespace HadaPopWeb
         }
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (DropDownList1.SelectedValue == "0")
-            {
-                CargarArticulos();
-            }
-            else
-            {
-                ArrayList lista = new ArrayList();
-                ENCategoria cate = new ENCategoria
-                {
-                    NombreCategoria = DropDownList1.Items[DropDownList1.SelectedIndex].Text,
-                    DescripCategoria = null
-                };
-                ENArticulo arti = new ENArticulo();
-                lista = arti.showArticlesFromCategory(cate);
-                for (int i = 0; i < 12; i++)
-                {
-                    ContentPlaceHolder Main = (ContentPlaceHolder)Page.Master.FindControl("ContentPlaceHolder1");
-                    Label lb = (Label)Main.FindControl("Label" + i);
-                    lb.Text = "";
-                }
-                for (int i = 0; i < 12; i++)
-                {
-                    ContentPlaceHolder Main = (ContentPlaceHolder)Page.Master.FindControl("ContentPlaceHolder1");
-                    ImageButton im = (ImageButton)Main.FindControl("ImageButton" + i);
-                    if (lista.Count > i)
-                    {
-                        arti = (ENArticulo)lista[i];
-                        Label lb = (Label)Main.FindControl("Label" + i);
-                        lb.Text = arti.nombreArticulo;
-                        im.Style["Visibility"] = "visible";
-                    }
-                    else
-                    {
-                        im.Style["Visibility"] = "hidden";
-                    }
-                }
-            }
+            ArrayList lista = ObtieneLista();
+            Session["click"] = 0;
+            CargarArticulos2(0, lista);
         }
         protected void BtnBuscar_Click(object sender, EventArgs e)
         {
@@ -262,37 +212,24 @@ namespace HadaPopWeb
                 arti = (ENArticulo)lista[0];
                 DropDownList1.SelectedValue = arti.categoriaArticulo;
             }
-            for (int i = 0; i < 12; i++)
-            {
-                ContentPlaceHolder Main = (ContentPlaceHolder)Page.Master.FindControl("ContentPlaceHolder1");
-                ImageButton im = (ImageButton)Main.FindControl("ImageButton" + i);
-                if (lista.Count > i)
-                {
-                    arti = (ENArticulo)lista[i];
-                    Label lb = (Label)Main.FindControl("Label" + i);
-                    lb.Text = arti.nombreArticulo;
-                    im.Style["Visibility"] = "visible";
-                }
-                else
-                {
-                    im.Style["Visibility"] = "hidden";
-                }
-            }
+            CargarArticulos2(0, lista);
         }
         protected void Prev_Click(object sender, EventArgs e)
         {
-            if(conteo >= 12 && conteo %12 == 0)
+            int contador = Convert.ToInt32(Session["click"])-12;
+                if(contador >= 0)
             {
-                conteo = (Convert.ToInt32(Session["click"])) - 12;
-                CargarArticulos2();
+                ArrayList lista = ObtieneLista();
+                CargarArticulos2(contador, lista);
             }
         }
         protected void Next_Click(object sender, EventArgs e)
         {
-            if (conteo >= 12 && conteo % 12 == 0)
+            if ((int)Session["click"] >= 11 && (int)Session["click"] % 11 == 0)
             {
-                conteo = (Convert.ToInt32(Session["click"])) + 12;
-                CargarArticulos2();
+                int contador = Convert.ToInt32(Session["click"]) + 1;
+                ArrayList lista = ObtieneLista();
+                CargarArticulos2(contador, lista);
             }
         }
     }
