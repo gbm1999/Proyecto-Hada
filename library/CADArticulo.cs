@@ -28,7 +28,7 @@ namespace library
             try
             {
                 connectBD.Open();
-                SqlCommand command = new SqlCommand("Insert into Articulo(codigo, Nombre, Descripcion, Categoria, Precio, Imagen, Ciudad, Comprador, Vendedor) VALUES ('" + arti.codigoArticulo + "', '" + arti.nombreArticulo + "', '" + arti.descripcionArticulo + "', '" + arti.categoriaArticulo + "', '" + arti.precioArticulo + "', '" + arti.imagenArticulo + "', '" + arti.ciudadArticulo + "', '" + arti.compradorArticulo +"', '" + arti.vendedorArticulo + "' )", connectBD);
+                SqlCommand command = new SqlCommand("Insert into Articulo(codigo, Nombre, Descripcion, Categoria, Precio, Imagen, Ciudad, Vendedor) VALUES ('" + arti.codigoArticulo + "', '" + arti.nombreArticulo + "', '" + arti.descripcionArticulo + "', '" + arti.categoriaArticulo + "', '" + arti.precioArticulo + "', '" + arti.imagenArticulo + "', '" + arti.ciudadArticulo +"', '" + arti.vendedorArticulo + "' )", connectBD);
                 command.ExecuteNonQuery();
                 entra = true;
             }
@@ -299,31 +299,28 @@ namespace library
             int response = 0;
             SqlDataReader dataReader = null;
             bool entra = false;
-
             try
             {
                 connectBD.Open();
-                SqlCommand command = new SqlCommand("UPDATE Articulo SET codigo = @codigo, Nombre = @Nombre, Descripcion = @Descripcion, " +
-                                                    "Categoria = @Categoria, Precio = @Precio, Imagen = @Imagen, Ciudad = @Ciudad, " +
-                                                    "Comprador = @Comprador, Vendedor = @Vendedor where codigo = @codigo", connectBD);
+                SqlCommand command = new SqlCommand("UPDATE Articulo SET Nombre = @Nombre, Descripcion = @Descripcion, " +
+                                                    "Categoria = @Categoria, Precio = @Precio, Ciudad = @Ciudad, " +
+                                                    "Vendedor = @Vendedor where codigo = @codigo", connectBD);
                 command.Parameters.AddWithValue("@codigo", arti.codigoArticulo);
                 command.Parameters.AddWithValue("@Nombre", arti.nombreArticulo);
                 command.Parameters.AddWithValue("@Descripcion", arti.descripcionArticulo);
                 command.Parameters.AddWithValue("@Categoria", arti.categoriaArticulo);
                 command.Parameters.AddWithValue("@Precio", arti.precioArticulo);
-                command.Parameters.AddWithValue("@Imagen", arti.imagenArticulo);
+                //command.Parameters.AddWithValue("@Imagen", arti.imagenArticulo);
                 command.Parameters.AddWithValue("@Ciudad", arti.ciudadArticulo);
-                command.Parameters.AddWithValue("@Comprador", arti.compradorArticulo);
+                //command.Parameters.AddWithValue("@Comprador", arti.compradorArticulo);
                 command.Parameters.AddWithValue("@Vendedor", arti.vendedorArticulo);
                 response = command.ExecuteNonQuery();
-
-                if (response == 1)
-                {
-                    entra = true;
-                }
+                entra = true;
+                
             }
             catch (SqlException ex)
             {
+                entra = false;
                 Console.WriteLine("Article operation has failed. Error: {0}", ex.Message);
             }
             finally

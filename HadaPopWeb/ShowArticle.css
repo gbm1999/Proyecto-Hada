@@ -46,10 +46,10 @@
 
 .precio {
     position: absolute;
-    height: 6%;
-    top: 49%;
+    height: 108%;
+    top: 130%;
     width: 14%;
-    left: 8%;
+    left: 50%;
     text-align: center;
     color: black;
     font-size: 120%;
@@ -93,11 +93,11 @@
 
 .campos-izq {
     position: relative;
-    top: 3%;
-    height: 50%;
+    top: 4%;
+    height: 46%;
     font-size: 140%;
     width: 100%;
-    left: 0px;
+    left: 1px;
     margin-top: 0px;
 }
 
@@ -137,17 +137,35 @@
 .vendedor {
     position: absolute;
     width: 40%;
-    top: 70%;
-    height: 11%;
-    left: 50%;   
+    top: 61%;
+    height: 17%;
+    left: 50%;
+    right: 80px;
 }
 
 .precio {
     position: absolute;
-    width: 21%;
-    top: 74%;
-    height: 8%;
-    left: 50%;
+    width: 40%;
+    top: 55%;
+    height: 12%;
+    left: 2%;
+    font-size: 140%;
+    right: 482px;
 }
 
+.modificar{
+    position:absolute;
+    top: 0px;
+    left: 2px;
+    margin-top: 0px;
+}
+
+.texto_modificado {
+    position: absolute;
+    top: 93px;
+    left: 32px;
+    height: 24px;
+    width: 173px;
+    margin-top: 0px;
+}
 
