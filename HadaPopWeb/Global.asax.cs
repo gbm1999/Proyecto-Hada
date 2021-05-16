@@ -16,7 +16,6 @@ namespace HadaPopWeb
             ADMINPASS = "HadaMola123";
         }
 
-
         protected void Session_Start(object sender, EventArgs e)
         {
 

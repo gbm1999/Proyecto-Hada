@@ -58,9 +58,10 @@ namespace HadaPopWeb
                                 user.nombreUsuario = name.Text;
                                 user.emailUsuario = email.Text;
                                 user.edadUsuario = Convert.ToInt32(age.Text);
-                                user. = admin;
                                 user.telefonoUsuario = Convert.ToInt32(phone.Text);
                                 user.contrasenaUsuario = password.Text;
+                                if (admin)
+                                    Creadmin(user);
 
                                 user.createUsuario();
 
@@ -90,7 +91,12 @@ namespace HadaPopWeb
         {
             Admin.Visible = Admincheck.Checked;
         }
+        private void Creadmin(ENUsuario user)
+        {
+            ENAdministrador admin = new ENAdministrador(user.NIFUsuario,user.nombreUsuario);
 
+            admin.nuevoAdministrador();
+        }
         private bool CompruebaValores()
         {
             bool validos = true;
