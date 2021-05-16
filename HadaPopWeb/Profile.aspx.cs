@@ -15,9 +15,7 @@ namespace HadaPopWeb
 		{
 			ENUsuario user = obtencionNif();
 
-			bool ok = false;
-
-			if (!ok/*user.readUsuario()*/)
+			if (user.readUsuario())
 			{
 				string urlImage;
 				if (user.imagenUsuario != null)
@@ -30,19 +28,20 @@ namespace HadaPopWeb
 				}
 
 				ImageUser.ImageUrl = urlImage;
-				NumVenta.Text = "Hacer metodo que lo cuente";
-				NumCompra.Text = "Hacer metodo que lo cuente";
+				NumVenta.Text = user.CountSales().ToString();
+				NumCompra.Text = user.CountBuys().ToString();
 
 				ENComentario comentario = new ENComentario();
 
 				comentario.NifUsuario = user.NIFUsuario;
 
-				// LO comento para que no salte el fallo 
-				//ArrayList comentarios = comentario.findComentarios();
-				ArrayList comentarios = new ArrayList();
+				if(comentario.NifUsuario != null)
+                {
+					ArrayList comentarios = comentario.findComentarios();
 
-				Comentarios.DataSource = comentarios;
-				Comentarios.DataBind();
+					Comentarios.DataSource = comentarios;
+					Comentarios.DataBind();
+				}
 			}
 			else
             {
