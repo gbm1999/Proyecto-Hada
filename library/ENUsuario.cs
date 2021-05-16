@@ -115,6 +115,11 @@ namespace library
             }
             set
             {
+                if(value < 0)
+                {
+                    value = 0;
+                }
+
                 Balance = value;
             }
         }
@@ -128,7 +133,7 @@ namespace library
             contrasena = null;
             tarjeta = null;
             imagen = null;
-            Balance = 0;
+            Balance = 0.0f;
         }
         public ENUsuario(string NIF, string nombre, string email,int telefono, int edad, string contrasena, string tarjeta, byte[] imagen, float balance)
         {
@@ -191,6 +196,20 @@ namespace library
         {
             CADModerador mod = new CADModerador();
             return mod.CountBan(this);
+        }
+        public bool isModerador()
+        {
+            ENModerador moderador = new ENModerador();
+            moderador.mod = this.NIFUsuario;
+            CADModerador mod = new CADModerador();
+            return mod.isModerador(moderador);
+        }
+        public bool isAdministrador()
+        {
+            ENAdministrador administrador = new ENAdministrador();
+            administrador.administrador = this.NIFUsuario;
+            CADAdministrador admin = new CADAdministrador();
+            return admin.isAdministrador(administrador);
         }
     }
 }

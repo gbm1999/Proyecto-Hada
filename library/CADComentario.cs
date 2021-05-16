@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -38,6 +39,40 @@ namespace library
             }
 
             return (ok);
+        }
+
+        public ArrayList findComentarios(ENComentario comentario)
+        {
+            ArrayList lista = new ArrayList();
+
+            try
+            {
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("Select * from Comentario where Receptor = @Receptor", connectBD);
+                command.Parameters.AddWithValue("@Recetor", comentario.NifUsuario);
+                SqlDataReader dataReader = command.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    comentario.IDComentario = (int)dataReader["IDComentario"];
+                    comentario.TituloComentario = dataReader["Titulo"].ToString();
+                    comentario.DescripcionComentario = dataReader["Descripcion"].ToString();
+                    comentario.Emisor = dataReader["Cliente"].ToString();
+
+                    lista.Add(comentario);
+                }
+                dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Wallet operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+
+            return lista;
         }
     }
 }

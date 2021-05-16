@@ -1,16 +1,15 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="HadaPopWeb.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site1.Master" CodeBehind="Login.aspx.cs" Inherits="HadaPopWeb.WebForm1" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Login</title>
     <link rel="stylesheet" href="Login.css" />
-</head>
-<body>
-    <form id="form1" runat="server">
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <div>
+            
             <div class="central">
                 <div class="lateral-div-der">
                     <div class="lateral-izq-texto">
@@ -27,8 +26,9 @@
                            Text="Register"
                            class="boton-register"
                            CommandName="Submit"
-                           OnClick ="register_Click"
+                           OnClick ="Register_Click"
                            runat="server"/>
+                        
                         
                     </div>
 
@@ -40,7 +40,6 @@
                     </div>
                     <div class="logo">
                         <img src="images/logo_small.png" />
-
                     </div>
 
                     <div class="div-parametros">
@@ -48,14 +47,25 @@
                             <div class="texto">
                                Email
                             </div>
-                              <asp:TextBox ID="email" runat="server" name="email" class="input"/>
-                        </div>
+                           <div class="separadorvertical"></div>
+                            <div class="errorbox">
+                                <label id="errorname" runat ="server" class="errortext">Esto no deberías poder verlo :(</label>
+                            </div>
+                             
 
+                            <asp:TextBox ID="email" runat="server" TextMode="Email" name="email" class="input"/>
+                        </div>
+                        <div class="separadorvertical"></div>
                         <div class="div-parametro">
                             <div class="texto">
                                Password
                             </div>
-                              <asp:TextBox ID="password" runat="server" name="password" class="input"/>
+                            <div class="separadorvertical"></div>
+                            <div class="errorbox">
+                                <label id="errorpass" runat ="server" class="errortext">Esto no deberías poder verlo :(</label>
+                            </div>
+
+                              <asp:TextBox ID="password" runat="server" TextMode="Password" name="password" class="input"/>
 
 
                         </div>
@@ -70,7 +80,7 @@
                            Text="Login"
                            class="boton-login"
                            CommandName="Submit"
-                           OnClick="register_Click"
+                           OnClick="Login_Click"
                            runat="server" />
 
                 </div>
@@ -78,6 +88,4 @@
             </div>
 
         </div>
-    </form>
-</body>
-</html>
+</asp:Content>

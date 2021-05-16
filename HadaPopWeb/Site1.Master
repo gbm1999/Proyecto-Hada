@@ -14,49 +14,51 @@
 <body style="height: 519px">
     <form id="form1" runat="server">
     
-       
-        <asp:menu id="NavigationMenu"
-        disappearafter="2000"
-        staticdisplaylevels="2"
+        <div class="divmenu">
+            <asp:Image ID="Image1" ImageUrl="~/images/logo_small.png" CssClass="img" runat="server" />
+
+            <asp:menu id="NavigationMenu"
+            disappearafter="2000"
+            staticdisplaylevels="2"
         
-        orientation="Horizontal"
-        font-names="Arial" 
-        width="100%"
-         
-        font-size="140%"
-        CssClass="menu" 
+            orientation="Horizontal"
+            font-names="Arial" 
+            width="95%"
+            top=40%;
+            font-size="140%"
+            CssClass="navigator" 
         
         
-        runat="server">
+            runat="server">
            
         
-        <staticmenuitemstyle backcolor="Black"
-          borderstyle="Solid"
-          borderwidth="1"
-          forecolor="White"/>
+            <staticmenuitemstyle backcolor="Black"
+              borderstyle="Solid"
+              borderwidth="1"
+              forecolor="White"/>
           
-        <statichoverstyle backcolor="LightSkyBlue"/>
-        <dynamicmenuitemstyle backcolor="Black"
-          forecolor="Silver"/>
-        <dynamichoverstyle backcolor="LightSkyBlue"
-          forecolor="Black"/>
+            <statichoverstyle backcolor="LightSkyBlue"/>
+            <dynamicmenuitemstyle backcolor="Black"
+              forecolor="Silver"/>
+            <dynamichoverstyle backcolor="LightSkyBlue"
+              forecolor="Black"/>
 
-        <Items>
-            <asp:MenuItem NavigateUrl="~/Login.aspx" Text="Login"  Value="1" />
-            <asp:MenuItem NavigateUrl="~/Registro.aspx" Text="Registro" Value="2" />
-            <asp:MenuItem NavigateUrl="~/articulos.aspx" Text="Articulos" Value="3" />
-            <asp:MenuItem NavigateUrl="~/categoria.aspx" Text="Categorias" Value="4" />
-            <asp:MenuItem NavigateUrl="~/Credit.aspx" Text="Monedero" Value="5" />
-            <asp:MenuItem NavigateUrl="~/Info.aspx" Text="Información" Value="6" />
-            <asp:MenuItem NavigateUrl="~/Profile.aspx" Text="Perfil" Value="7" />
+            <Items>
+                <asp:MenuItem NavigateUrl="~/articulos.aspx" Text="Articulos" Value="3" />
+                <asp:MenuItem NavigateUrl="~/categoria.aspx" Text="Categorias" Value="4" />
+                <asp:MenuItem NavigateUrl="~/Credit.aspx" Text="Monedero" Value="5" />
+                <asp:MenuItem NavigateUrl="~/Info.aspx" Text="Información" Value="6" />
+                <asp:MenuItem NavigateUrl="~/Profile.aspx" Text="Perfil" Value="7" />
+                <asp:MenuItem NavigateUrl="~/Login.aspx" Text="Login"  Value="1" />
+                <asp:MenuItem NavigateUrl="~/Registro.aspx" Text="Registro" Value="2" />
 
 
-        </Items>
+            </Items>
         
       
-      </asp:menu>
-          
-            
+          </asp:menu>
+       </div>   
+       
        
       
            

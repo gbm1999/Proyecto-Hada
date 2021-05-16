@@ -7,15 +7,31 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link rel="stylesheet" href="Profile.css" />
     <div class="body">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+        <ajaxToolkit:ModalPopupExtender ID="PopupNoLogin" runat="server" Enabled="true" TargetControlID="Controltarget" PopupControlID="PanelPopUpNoLogin" BackgroundCssClass="fondoPopup"></ajaxToolkit:ModalPopupExtender>
+                   
+        <asp:Panel ID="PanelPopUpNoLogin" runat="server" stile="display: none;background-color: white;width: auto;height: auto">
+                        
+            <div class="modal-header">
+                <h5 class="modal-title" id="PopupTitleNoLogin">Error, no se puede operar de ninguna forma sin iniciar sesion.</h5>
+                    </div>
+                        <div class="modal-body">
+                            Por favor inicie sesion para poder acceder a esta parte.
+                        </div>
+                        <div class="modal-footer">
+                            <asp:Button class="btn PopupAceptar" runat="server" Text="Login" OnClick="PopUpLogin"></asp:Button>
+                        </div>               
+        </asp:Panel>
         <div class ="CuadroExt">
             <div class="divimgdatos">
                 <div class = "imgperfbox">
                     <div class="img">
-                        <img src="images/sinperfil.png"/>
-                
-                        <label id ="NumVentas" runat ="server">0</label>
+                        <asp:Image ID="ImageUser" runat="server"/>
+                        <asp:Label ID="Controltarget" runat="server" Text=""></asp:Label>
+                        <asp:Label ID="NumVenta" runat="server" Text=""></asp:Label>
                         <label>Ventas</label>
-                        <label id ="NumCompras" runat ="server">0</label>
+                        <asp:Label ID="NumCompra" runat="server" Text=""></asp:Label>
                         <label>Compras</label>
                     </div>
                 </div>
@@ -79,9 +95,11 @@
                 <div class="Comentarios">   
                     <h2>Comentarios del Usuario:</h2>
                     <div>
-                       <label class="TitleUsu">Usuario1:</label>
-                       <label class="TitleAccion">Vendió [Artículo 1] [5/5]</label>
-                       <p class="Coment">Esto es un comentario de Ejemplo Sobre como funcionan los comentarios en nuestra Web</p>
+                        <asp:ListBox ID="Comentarios" runat="server" Class="Comentarios" height="70%" width="100%"></asp:ListBox>
+                       
+                        <label class="TitleUsu">Usuario1:</label>
+                       <label class="TitleAccion">Vendió: </label><br />
+                        <asp:Label ID="articulos" runat="server"></asp:Label>
                     </div>
                     </div>
             </div>
