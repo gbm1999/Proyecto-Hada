@@ -112,7 +112,6 @@ namespace library
                 usu.telefonoUsuario = (int)dataReader["Telefono"];
                 usu.edadUsuario = (int)dataReader["Edad"];
                 usu.contrasenaUsuario = dataReader["Contrasena"].ToString();
-                usu.tarjetaUsuario = (int)dataReader["TarjetaCred"];
                 usu.imagenUsuario = (byte[])dataReader["Imagen"];
                 usu.balance = (float)dataReader["Balance"];
                 lista.Add(usu);
