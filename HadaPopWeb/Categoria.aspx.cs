@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using library;
+using System.Windows;
+using System.Collections;
+
 
 namespace HadaPopWeb
 {
@@ -15,5 +18,15 @@ namespace HadaPopWeb
             
     
         }
+
+        protected void acceder_categoria(object sender, EventArgs e)
+        {
+            Response.Redirect("Categoriaconcrete.aspx");
+            
+            
+        }
     }
+
+
+  
 }

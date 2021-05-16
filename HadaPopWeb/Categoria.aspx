@@ -48,7 +48,7 @@
                 <ItemTemplate>
                     <tr style="background-color:#FFFBD6; color: #333333">
                         <td>
-                            <asp:Label ID="NombreLabel" runat="server" Text='<%# Eval("Nombre") %>' />
+                            <asp:Label ID="NombreLabel" runat="server" role="button" OnClick="acceder_dato" Text='<%# Eval("Nombre") %>' />
                         </td>
                         <td>
                             <asp:Label ID="DescripcionLabel" runat="server" Text='<%# Eval("Descripcion") %>' />
@@ -59,7 +59,7 @@
                     <table runat="server">
                         <tr runat="server">
                             <td runat="server">
-                                <table id="itemPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF; position:absolute; width: 100%; height:90%; border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
+                                <table id="itemPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF; position:absolute; width: 100%;  border-color: #999999;border-style:none;border-width:1px;font-family: Verdana, Arial, Helvetica, sans-serif;">
                                     <tr runat="server" style="background-color: #FFFBD6;color: #333333;">
                                         <th runat="server">Nombre</th>
                                         <th runat="server">Descripcion</th>
@@ -70,7 +70,7 @@
                             </td>
                         </tr>
                         <tr runat="server">
-                            <td runat="server" style="text-align: center;background-color: #FFCC66;font-family: Verdana, Arial, Helvetica, sans-serif;color: #333333; position:absolute; width:100%; top:90%" >
+                            <td runat="server" style="text-align: center;background-color: #FFCC66;font-family: Verdana, Arial, Helvetica, sans-serif;color: #333333; position:absolute; width:100%; top: 80%" >
                                 <asp:DataPager ID="DataPager1" runat="server">
                                     <Fields>
                                         <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowLastPageButton="True" />
