@@ -15,7 +15,7 @@
         </div>
 
         <div class="tabla">
-            <div style="width:106px; float:left;">
+            <div class="Columna1">
     <asp:ImageButton ID="ImageButton0" CssClass="img-circle img img-rounded" runat="server" Height="53px" Width="108px"  OnClick="imgArticle0_Click"></asp:ImageButton>
                 <br>
             <asp:Label ID="Label0"
@@ -29,7 +29,7 @@
             <asp:Label ID="Label2"
            runat="server">
             </asp:Label><br><br>
-            </div><div style="width:106px; float:left; margin-left: 56px;">
+            </div><div class="RestoColumnas">
             <asp:ImageButton ID="ImageButton3" CssClass="img-circle img img-rounded" runat="server" Height="53px" Width="108px"  OnClick="imgArticle3_Click"></asp:ImageButton> <br>
             <asp:Label ID="Label3"
            runat="server">
@@ -42,7 +42,7 @@
             <asp:Label ID="Label5"
            runat="server">
             </asp:Label><br><br>
-            </div><div style="width:106px; float:left; margin-left: 56px;"> 
+            </div><div class="RestoColumnas"> 
                 <asp:ImageButton ID="ImageButton6" CssClass="img-circle img img-rounded" runat="server" Height="53px" Width="108px"  OnClick="imgArticle6_Click"></asp:ImageButton> <br>
             <asp:Label ID="Label6"
            runat="server">
@@ -55,7 +55,7 @@
             <asp:Label ID="Label8"
            runat="server">
             </asp:Label><br><br>
-            </div><div style="width:106px; float:left; margin-left: 56px;">  
+            </div><div class="RestoColumnas"> 
                 <asp:ImageButton ID="ImageButton9" CssClass="img-circle img img-rounded" runat="server" Height="53px" Width="108px"  OnClick="imgArticle9_Click"></asp:ImageButton> <br>
             <asp:Label ID="Label9"
            runat="server">
