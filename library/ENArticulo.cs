@@ -207,6 +207,11 @@ namespace library
             CADArticulo arti = new CADArticulo();
             return arti.showArticles();
         }
+        public ArrayList showArticlesFromUser(ENUsuario usu)
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.showArticlesFromUser(usu);
+        }
         public ArrayList showArticlesFromCategory(ENCategoria cate)
         {
             CADArticulo arti = new CADArticulo();

@@ -445,6 +445,46 @@ namespace library
             }
             return lista;
         }
+        public ArrayList showArticlesFromUser(ENUsuario usu)
+        {
+            try
+            {
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("Select * from Articulo where Vendedor = @Vendedor", connectBD);
+                command.Parameters.AddWithValue("@Vendedor", usu.nombreUsuario);
+                SqlDataReader dataReader = command.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    ENArticulo arti = new ENArticulo();
+                    arti.codigoArticulo = (int)dataReader["codigo"];
+                    arti.nombreArticulo = dataReader["Nombre"].ToString();
+                    arti.descripcionArticulo = dataReader["Descripcion"].ToString();
+                    arti.categoriaArticulo = dataReader["Categoria"].ToString();
+                    arti.precioArticulo = (float)Convert.ToDouble(dataReader["Precio"]);
+                    if (dataReader["Imagen"] != System.DBNull.Value)
+                    {
+                        arti.imagenArticulo = (byte[])dataReader["Imagen"];
+                    }
+                    arti.ciudadArticulo = dataReader["Ciudad"].ToString();
+                    arti.compradorArticulo = dataReader["Comprador"].ToString();
+                    arti.vendedorArticulo = dataReader["vendedor"].ToString();
+
+                    lista.Add(arti);
+                }
+                dataReader.Close();
+                connectBD.Close();
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Article operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+            return lista;
+        }
         public int CountSales(ENUsuario usu)
         {
             int count = 0;
