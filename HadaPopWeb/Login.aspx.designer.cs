@@ -24,15 +24,6 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.Button register;
 
         /// <summary>
-        /// Control volver.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button volver;
-
-        /// <summary>
         /// Control errorname.
         /// </summary>
         /// <remarks>

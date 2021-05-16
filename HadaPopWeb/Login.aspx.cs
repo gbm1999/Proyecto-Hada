@@ -20,13 +20,6 @@ namespace HadaPopWeb
         {
             Response.Redirect("Registro.aspx");
         }
-        protected void Volver_Click(object sender, EventArgs e)
-        {
-            if (PreviousPage != null)
-                Response.Redirect(PreviousPage.ToString());
-            else
-                errorname.Visible = true;
-        }
 
         protected void Login_Click(object sender, EventArgs e)
         {

@@ -28,11 +28,7 @@
                            CommandName="Submit"
                            OnClick ="Register_Click"
                            runat="server"/>
-                        <asp:Button id="volver"
-                           Text="← Seguir Comprando"
-                           class="boton-volver"
-                           OnClick ="Volver_Click"
-                           runat="server"/>
+                        
                         
                     </div>
 

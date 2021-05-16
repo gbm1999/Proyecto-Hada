@@ -63,9 +63,13 @@ namespace HadaPopWeb
                                 if (admin)
                                     Creadmin(user);
 
-                                user.createUsuario();
-
-                                Response.Redirect("Login.aspx");
+                                if (user.createUsuario())
+                                    Response.Redirect("Login.aspx");
+                                else
+                                {
+                                    errorname.Visible = true;
+                                    errorname.InnerText = "Vaya! Parece que algo ha ido mal :(";
+                                }
                             }
 
                         }
@@ -93,9 +97,9 @@ namespace HadaPopWeb
         }
         private void Creadmin(ENUsuario user)
         {
-            ENAdministrador admin = new ENAdministrador(user.NIFUsuario,user.nombreUsuario);
+            ENAdministrador admin = new ENAdministrador(user.NIFUsuario);
 
-            admin.nuevoAdministrador();
+            admin.createAdministrador();
         }
         private bool CompruebaValores()
         {
@@ -218,12 +222,12 @@ namespace HadaPopWeb
         private bool CampoVálidoUser(string check) //Comprueba si la cadena pasada es válida para ser Nombre de User
         { 
             bool valido = true;
-            Regex r = new Regex(@"^[^±!@£$% ^&*_ +§¡€#¢§¶•ªº«\\/<>?:;|=.,]{1,20}$");
+            Regex r = new Regex("^[A-Z][a-zA-Z]");
             if (check.Length < 2 || check.Length > 30)
             {
                 valido = false;
             }
-            else if (r.IsMatch(check))  // Comprueba nombre
+            else if (!r.IsMatch(check))  // Comprueba nombre
                 valido = false;
 
             return valido;
