@@ -42,6 +42,24 @@ namespace HadaPopWeb
 					Comentarios.DataSource = comentarios;
 					Comentarios.DataBind();
 				}
+				ArrayList lista = new ArrayList();
+				ENArticulo arti = new ENArticulo();
+				lista = arti.showArticlesFromUser(user);
+				String articles = "";
+				for(int i = 0;i < lista.Count; i++)
+                {
+					arti = (ENArticulo)lista[i];
+					if (arti.compradorArticulo != null)
+					{
+						articles += "[" + arti.nombreArticulo + "]";
+						if (arti.descripcionArticulo != null)
+						{
+							articles += " (" + arti.descripcionArticulo + ") ";
+						}
+						articles += '\n';
+					}
+                }
+				articulos.Text = articles; 
 			}
 			else
             {
