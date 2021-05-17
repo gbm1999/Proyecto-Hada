@@ -85,6 +85,7 @@
     <Content Include="categorias.css" />
     <Content Include="Credit.aspx" />
     <Content Include="Credit.css" />
+    <Content Include="Global.asax" />
     <Content Include="images\add.png" />
     <Content Include="images\fondo_register.jpg" />
     <Content Include="images\login.jpg" />
@@ -94,6 +95,7 @@
     <Content Include="Info.css" />
     <Content Include="Login.css" />
     <Content Include="menu.css" />
+    <Content Include="Navegador.css" />
     <Content Include="Profile.aspx" />
     <Content Include="Profile.css" />
     <Content Include="Registro.aspx" />
@@ -146,6 +148,9 @@
     </Compile>
     <Compile Include="Credit.aspx.designer.cs">
       <DependentUpon>Credit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Info.aspx.cs">
       <DependentUpon>Info.aspx</DependentUpon>
