@@ -60,3 +60,7 @@ C:\Users\Usuario\Desktop\Proyectos_VS\hada-grupo\Nueva\Proyecto-Hada\HadaPopWeb\
 C:\Users\Usuario\Desktop\Proyectos_VS\hada-grupo\Nueva\Proyecto-Hada\HadaPopWeb\obj\Debug\HadaPopWeb.dll
 C:\Users\Usuario\Desktop\Proyectos_VS\hada-grupo\Nueva\Proyecto-Hada\HadaPopWeb\obj\Debug\HadaPopWeb.pdb
 C:\Users\Usuario\Desktop\Proyectos_VS\hada-grupo\Nueva\Proyecto-Hada\HadaPopWeb\bin\AjaxControlToolkit.dll
+C:\Users\PC_\Source\Repos\gbm1999\Proyecto-Hada\HadaPopWeb\obj\Debug\HadaPopWeb.csprojAssemblyReference.cache
+C:\Users\PC_\Source\Repos\gbm1999\Proyecto-Hada\HadaPopWeb\obj\Debug\HadaPopWeb.csproj.CoreCompileInputs.cache
+C:\Users\PC_\Source\Repos\gbm1999\Proyecto-Hada\HadaPopWeb\obj\Debug\HadaPopWeb.dll
+C:\Users\PC_\Source\Repos\gbm1999\Proyecto-Hada\HadaPopWeb\obj\Debug\HadaPopWeb.pdb
