@@ -55,9 +55,12 @@ namespace library
                         usu.telefonoUsuario = (int)dataReader["Telefono"];
                         usu.edadUsuario = (int)dataReader["Edad"];
                         usu.contrasenaUsuario = dataReader["Contrasena"].ToString();
-                        usu.tarjetaUsuario = (int)dataReader["TarjetaCred"];
-                        usu.imagenUsuario = (byte[])dataReader["Imagen"];
-                        usu.balance = (float)dataReader["Balance"];
+                        usu.tarjetaUsuario = (string)dataReader["TarjetaCred"];
+                        if (dataReader["Imagen"] != System.DBNull.Value)
+                        {
+                            usu.imagenUsuario = (byte[])dataReader["Imagen"];
+                        }
+                        //usu.balance = (float)dataReader["Balance"];
                         entra = true;
                     }
                 }
