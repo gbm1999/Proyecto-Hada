@@ -12,36 +12,65 @@ namespace HadaPopWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                ENUsuario user = obtencionNif();
 
+                bool ok = false;
+
+                if (!ok/*user.readUsuario()*/)
+                {
+                    //Balance.Text = user.balance.ToString() + "€";
+                    //IniciarLlenadoDropDown();
+                    //Nombre_Usuario.Text = user.nombreUsuario;
+                }
+                else
+                {
+                    //PopupNoLogin.Show();
+                }
+            }
+
+            Label1.Text = "";
         }
 
-        /*
-        protected void add_article(object sender, EventArgs e)
+        protected ENUsuario obtencionNif()
         {
-            bool seCrea = false;
-            ENArticulo articulo = new ENArticulo
+            ENUsuario user = new ENUsuario();
+
+            user.NIFUsuario = (string)Session["nif"];
+
+            return (user);
+        }
+
+        protected void create_Click(object sender, EventArgs e)
+        {
+            ENUsuario user = obtencionNif();
+            ENArticulo articulo = new ENArticulo();
+            float numero = 0;
+
+            if(float.TryParse(precio.Text, out numero))
             {
-                codigoArticulo = ,
-                nombreArticulo = nombre.Text,
-                descripcionArticulo = description.Text,
-                categoriaArticulo = ,
-                precioArticulo = ,
-                imagenArticulo = ,
-                ciudadArticulo = ,
-                compradorArticulo = ,
-                vendedorArticulo = 
-            };
-            seCrea = articulo.createArticulo();
-            if (seCrea)
-            {
-                Label2.Text = " ";
-                Label1.Text = "(STATUS-OK) El articulo se ha creado con éxito";
+                articulo.nombreArticulo = name.Text;
+                articulo.descripcionArticulo = description.Text;
+                articulo.categoriaArticulo = categoria.Text;
+                articulo.precioArticulo = float.Parse(precio.Text);
+                articulo.ciudadArticulo = ciudad.Text;
+                articulo.vendedorArticulo = user.NIFUsuario;
+                articulo.imagenArticulo = photo.FileBytes;
+
+                if (articulo.createArticulo())
+                {
+                    Label1.Text = "El articulo se ha creado con éxito";
+                }
+                else
+                {
+                    Label1.Text = "**Error** El articulo ya existe";
+                }
             }
             else
             {
-                Label1.Text = " ";
-                Label2.Text = "**Error** El articulo ya existe";
+                Label1.Text = "Por favor en el campo de precio inserte numeros solo";
             }
-        }*/
+        }
     }
 }

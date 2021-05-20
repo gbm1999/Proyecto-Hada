@@ -631,6 +631,34 @@ namespace library
             }
             return Imagen;
         }
+
+        public int countArticulo(ENArticulo articulo)
+        {
+            int count = 0;
+
+            try
+            {
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("Select * from Articulo ", connectBD);
+                SqlDataReader dataReader = command.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    count++;
+                }
+                dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+
+            return count;
+        }
         public string ConnectString
         {
             get { return connection; }

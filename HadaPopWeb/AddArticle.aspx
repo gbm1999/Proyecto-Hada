@@ -62,7 +62,9 @@
                             <asp:FileUpload ID="photo" runat="server" />
                         </div>
 
-                  
+                  <div>
+                      <asp:Label runat="server" ID="Label1"></asp:Label>
+                  </div>
 
                         
                    
@@ -80,7 +82,7 @@
                            Text="Create"
                            CommandName="Submit"
                            class="boton"
-                           runat="server"/>
+                           runat="server" OnClick="create_Click"/>
                     </div>
               
                 

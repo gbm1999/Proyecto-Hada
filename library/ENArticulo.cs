@@ -134,7 +134,7 @@ namespace library
             //Futura mejora
             //aux.imgDefault(ref imagen);   
 
-            codigo = -1;
+            codigo = countArticulo() +1;
             nombre = null;
             descripcion = null;
             categoria = null;
@@ -145,15 +145,14 @@ namespace library
             vendedor = null;
             imagen = null;
         }
-        public ENArticulo(int codigo, string nombre, string descripcion, string categoria, float precio, string ciudad, string comprador, string vendedor, byte[] imagen)
+        public ENArticulo(string nombre, string descripcion, string categoria, float precio, string ciudad, string vendedor, byte[] imagen)
         {
-            this.codigo = codigo;
+            this.codigo = countArticulo() + 1;
             this.nombre = nombre;
             this.descripcion = descripcion;
             this.categoria = categoria;
             this.precio = precio;
             this.ciudad = ciudad;
-            this.comprador = comprador;
             this.vendedor = vendedor;
             this.imagen = imagen;
         }
@@ -233,6 +232,12 @@ namespace library
         {
             CADArticulo arti = new CADArticulo();
             return arti.GetImagenByArticle(this); ;
+        }
+
+        private int countArticulo()
+        {
+            CADArticulo articulo = new CADArticulo();
+            return (articulo.countArticulo(this));
         }
     }
 }
