@@ -11,7 +11,7 @@ namespace library
         private SqlConnection connectBD;
         public CADUsuario()
         {
-            connection = ConfigurationManager.ConnectionStrings["Database"].ToString();
+            connection = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
             connectBD = new SqlConnection(connection);
         }
         //Inserta un usuario en la BD
@@ -55,9 +55,12 @@ namespace library
                         usu.telefonoUsuario = (int)dataReader["Telefono"];
                         usu.edadUsuario = (int)dataReader["Edad"];
                         usu.contrasenaUsuario = dataReader["Contrasena"].ToString();
-                        usu.tarjetaUsuario = (int)dataReader["TarjetaCred"];
-                        usu.imagenUsuario = (byte[])dataReader["Imagen"];
-                        usu.balance = (float)dataReader["Balance"];
+                        usu.tarjetaUsuario = (string)dataReader["TarjetaCred"];
+                        if (dataReader["Imagen"] != System.DBNull.Value)
+                        {
+                            usu.imagenUsuario = (byte[])dataReader["Imagen"];
+                        }
+                        //usu.balance = (float)dataReader["Balance"];
                         entra = true;
                     }
                 }
@@ -173,6 +176,62 @@ namespace library
             }
             return entra;
 
+        }
+        public int CountSales(ENUsuario usu)
+        {
+            int count = 0;
+
+            try
+            {
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("Select * from Articulo ", connectBD);
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    if (usu.NIFUsuario == dataReader["Vendedor"].ToString())
+                    {
+                        count++;
+                    }
+                }
+                dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+            return count;
+        }
+        public int CountBuys(ENUsuario usu)
+        {
+            int count = 0;
+
+            try
+            {
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("Select * from Articulo ", connectBD);
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    if (usu.NIFUsuario == dataReader["comprador"].ToString())
+                    {
+                        count++;
+                    }
+                }
+                dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+            return count;
         }
         public void GuardarImagen(ENUsuario usu, byte[] imagen)
         {

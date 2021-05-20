@@ -98,8 +98,8 @@
                         <asp:ListBox ID="Comentarios" runat="server" Class="Comentarios" height="70%" width="100%"></asp:ListBox>
                        
                         <label class="TitleUsu">Usuario1:</label>
-                       <label class="TitleAccion">Vendió [Artículo 1] [5/5]</label>
-                       <p class="Coment">Esto es un comentario de Ejemplo Sobre como funcionan los comentarios en nuestra Web</p>
+                       <label class="TitleAccion">Vendió: </label><br />
+                        <asp:Label ID="articulos" runat="server"></asp:Label>
                     </div>
                     </div>
             </div>

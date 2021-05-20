@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class ENAdministrador
+    public class ENAdministrador
     {
         // Administrador es la variable donde se guarara el nif del usuario que sera administrador
         private string Administrador;
@@ -59,6 +60,14 @@ namespace library
             CADAdministrador Admin = new CADAdministrador();
 
             return (Admin.expulsion(this));
+        }
+        public ArrayList MostrarUsuarios()
+        {
+            ArrayList lista = new ArrayList();
+            CADAdministrador admin = new CADAdministrador();
+            lista = admin.MostrarUsers();
+
+            return lista;
         }
     }
 }

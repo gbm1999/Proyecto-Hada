@@ -49,7 +49,6 @@
     <Compile Include="CADModerador.cs" />
     <Compile Include="CADReporte.cs" />
     <Compile Include="CADUsuario.cs" />
-    <Compile Include="ENAdmin.cs" />
     <Compile Include="CADCategoria.cs" />
     <Compile Include="CADMonedero.cs" />
     <Compile Include="ENAdministrador.cs" />

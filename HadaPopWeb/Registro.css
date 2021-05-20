@@ -14,6 +14,30 @@
     height: 70%;
 }
 
+img {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+    
+}
+.errortext 
+{
+    color: red;
+    font-size: xx-small;
+    width: 100%;
+    height: fit-content();
+}
+
+.errorbox 
+{
+    height: 20%;
+    width: 100%;
+}
+.separadorvertical {
+    height: 35%;
+    width: 1px;
+}
+
 .left-container {
     position: relative;
     background-color: #469B4B;
