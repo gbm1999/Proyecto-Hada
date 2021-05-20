@@ -16,17 +16,9 @@ namespace HadaPopWeb
             {
                 ENUsuario user = obtencionNif();
 
-                bool ok = false;
-
-                if (!ok/*user.readUsuario()*/)
+                if (!user.readUsuario())
                 {
-                    //Balance.Text = user.balance.ToString() + "€";
-                    //IniciarLlenadoDropDown();
-                    //Nombre_Usuario.Text = user.nombreUsuario;
-                }
-                else
-                {
-                    //PopupNoLogin.Show();
+                    PopupNoLogin.Show();
                 }
             }
 
@@ -50,13 +42,19 @@ namespace HadaPopWeb
 
             if(float.TryParse(precio.Text, out numero))
             {
+                articulo.codigoArticulo = articulo.countArticulo() + 1;
                 articulo.nombreArticulo = name.Text;
                 articulo.descripcionArticulo = description.Text;
                 articulo.categoriaArticulo = categoria.Text;
                 articulo.precioArticulo = float.Parse(precio.Text);
                 articulo.ciudadArticulo = ciudad.Text;
                 articulo.vendedorArticulo = user.NIFUsuario;
-                articulo.imagenArticulo = photo.FileBytes;
+
+                // Obtener Imagen
+                int tamanio = photo.PostedFile.ContentLength; //Obtenemos el tamano de la imagen
+                byte[] ImagenOriginal = new byte[tamanio];          //Creo una imagen vacia con el tamano de la imagen importada
+                photo.PostedFile.InputStream.Read(ImagenOriginal, 0, tamanio);    //Introducimos la imagen importada en la imagen local
+                articulo.imagenArticulo = ImagenOriginal;
 
                 if (articulo.createArticulo())
                 {
@@ -64,13 +62,18 @@ namespace HadaPopWeb
                 }
                 else
                 {
-                    Label1.Text = "**Error** El articulo ya existe";
+                    Label1.Text = "**Error**";
                 }
             }
             else
             {
                 Label1.Text = "Por favor en el campo de precio inserte numeros solo";
             }
+        }
+
+        protected void PopUpLogin(object sender, EventArgs e)
+        {
+            Response.Redirect("Login.aspx");
         }
     }
 }

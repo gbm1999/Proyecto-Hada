@@ -28,7 +28,7 @@ namespace library
             try
             {
                 connectBD.Open();
-                SqlCommand command = new SqlCommand("Insert into Articulo(codigo, Nombre, Descripcion, Categoria, Precio, Imagen, Ciudad, Vendedor) VALUES ('" + arti.codigoArticulo + "', '" + arti.nombreArticulo + "', '" + arti.descripcionArticulo + "', '" + arti.categoriaArticulo + "', '" + arti.precioArticulo + "', '" + arti.imagenArticulo + "', '" + arti.ciudadArticulo +"', '" + arti.vendedorArticulo + "' )", connectBD);
+                SqlCommand command = new SqlCommand("Insert into Articulo(codigo, Nombre, Descripcion, Categoria, Precio, Imagen, Ciudad, Vendedor) VALUES ('" + arti.codigoArticulo + "', '" + arti.nombreArticulo + "', '" + arti.descripcionArticulo + "', '" + arti.categoriaArticulo + "', '" + arti.precioArticulo + "', '" + arti.imagenArticulo + "', '" + arti.ciudadArticulo + "', '" + arti.vendedorArticulo + "' )", connectBD);
                 command.ExecuteNonQuery();
                 entra = true;
             }
@@ -40,6 +40,7 @@ namespace library
             {
                 connectBD.Close();
             }
+
             return(entra);
         }
 

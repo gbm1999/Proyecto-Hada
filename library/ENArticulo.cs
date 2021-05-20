@@ -75,7 +75,7 @@ namespace library
             }
         }
 
-        private byte[] imagen;
+        private byte[] imagen = new byte[999];
         public byte[] imagenArticulo
         {
             get
@@ -134,20 +134,19 @@ namespace library
             //Futura mejora
             //aux.imgDefault(ref imagen);   
 
-            codigo = countArticulo() +1;
+            codigo = -1;
             nombre = null;
             descripcion = null;
             categoria = null;
             precio = -1.0f;
-            precio = -1;
             ciudad = null;
             comprador = null;
             vendedor = null;
             imagen = null;
         }
-        public ENArticulo(string nombre, string descripcion, string categoria, float precio, string ciudad, string vendedor, byte[] imagen)
+        public ENArticulo(int codigo, string nombre, string descripcion, string categoria, float precio, string ciudad, string vendedor, byte[] imagen)
         {
-            this.codigo = countArticulo() + 1;
+            this.codigo = codigo;
             this.nombre = nombre;
             this.descripcion = descripcion;
             this.categoria = categoria;
@@ -234,7 +233,7 @@ namespace library
             return arti.GetImagenByArticle(this); ;
         }
 
-        private int countArticulo()
+        public int countArticulo()
         {
             CADArticulo articulo = new CADArticulo();
             return (articulo.countArticulo(this));
