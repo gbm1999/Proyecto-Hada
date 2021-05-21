@@ -40,22 +40,27 @@ namespace HadaPopWeb
 
 
             Session["click"] = contador;
-            bool seLee1 = false;
             ENArticulo arti = new ENArticulo();
-            seLee1 = false;
             int lleva = (int)Session["click"];
             int j = 0;
+            int count = lista.Count;
             for (int i = lleva; i < lleva+12; i++)
             {
                 ContentPlaceHolder Main = (ContentPlaceHolder)Page.Master.FindControl("ContentPlaceHolder1");
                 ImageButton im = (ImageButton)Main.FindControl("ImageButton" + j);
                 if (lista.Count > i)
                 {
-                    arti = (ENArticulo)lista[i];
+                    arti = (ENArticulo)lista[count-1-i];
                     Label lb = (Label)Main.FindControl("Label" + j);
                     lb.Text = arti.nombreArticulo;
                     im.Style["Visibility"] = "visible";
-                    Session["click"] = i;
+                    byte[] imagen = arti.imagenArticulo;
+                    if (imagen != null)
+                    {
+                    string PROFILE_PIC = Convert.ToBase64String(imagen);
+                    ImageButton image = (ImageButton)Main.FindControl("ImageButton" + j);
+                    image.ImageUrl = String.Format("data:image/jpg;base64,{0}", PROFILE_PIC);
+                    }
                 }
                 else
                 {
@@ -63,35 +68,7 @@ namespace HadaPopWeb
                 }
                 j++;
             }
-            int p = Convert.ToInt32(Session["click"]);
 
-            if (seLee1)
-            {
-                /*
-                byte[] imagen = art.getImagen();
-                //Falta comprobar si hay datos en la base de datos
-                if (imagen != null)
-                {
-                    j = 0;
-                    for (int i = 0; i < 12; i++)
-                    {
-                        string PROFILE_PIC = Convert.ToBase64String(imagen);
-                        ContentPlaceHolder Main = (ContentPlaceHolder)Page.Master.FindControl("ContentPlaceHolder1");
-                        ImageButton image = (ImageButton)Main.FindControl("ImageButton" + j);
-                        image.ImageUrl = String.Format("data:image/jpg;base64,{0}", PROFILE_PIC);
-                        j++;
-                    }
-
-                }
-                */
-            }
-            else
-            {
-                /*
-                Label1.Text = " ";
-                Label2.Text = "**Error** no se ha encontrado al usuario con nif ";
-                */
-            }
         }
         private ArrayList ObtieneLista()
         {
@@ -216,8 +193,12 @@ namespace HadaPopWeb
         }
         protected void Prev_Click(object sender, EventArgs e)
         {
-            int contador = Convert.ToInt32(Session["click"])-12;
-                if(contador >= 0)
+            int contador = Convert.ToInt32(Session["click"])-11;
+            while (!(contador % 11 == 0))
+            {
+                contador--;
+            }
+            if (contador >= 0)
             {
                 ArrayList lista = ObtieneLista();
                 CargarArticulos2(contador, lista);
@@ -225,10 +206,23 @@ namespace HadaPopWeb
         }
         protected void Next_Click(object sender, EventArgs e)
         {
-            if ((int)Session["click"] >= 11 && (int)Session["click"] % 11 == 0)
+            int contador = 0;
+            ArrayList lista = ObtieneLista();
+            if (lista.Count > ((int)Session["click"]+12))
             {
-                int contador = Convert.ToInt32(Session["click"]) + 1;
-                ArrayList lista = ObtieneLista();
+                if ((int)Session["click"] == 0)
+                {
+                    contador = 12;
+                }
+                else if ((int)Session["click"] >= 12 && (int)Session["click"] % 12 == 0)
+                {
+
+                    contador = Convert.ToInt32(Session["click"]) + 12;
+                }
+                else
+                {
+                    contador = Convert.ToInt32(Session["click"]);
+                }
                 CargarArticulos2(contador, lista);
             }
         }
