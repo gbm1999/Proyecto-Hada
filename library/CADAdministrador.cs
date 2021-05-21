@@ -13,7 +13,6 @@ namespace library
     {
         private string connection;
         private SqlConnection connectBD;
-        ArrayList lista;
 
         public CADAdministrador()
         {
@@ -99,6 +98,7 @@ namespace library
         }
         public ArrayList MostrarUsers()
         {
+            ArrayList lista = new ArrayList();
             connectBD.Open();
             SqlCommand command = new SqlCommand("Select * from Usuario", connectBD);
             SqlDataReader dataReader = command.ExecuteReader();
@@ -112,7 +112,6 @@ namespace library
                 usu.telefonoUsuario = (int)dataReader["Telefono"];
                 usu.edadUsuario = (int)dataReader["Edad"];
                 usu.contrasenaUsuario = dataReader["Contrasena"].ToString();
-                usu.tarjetaUsuario = (int)dataReader["TarjetaCred"];
                 usu.imagenUsuario = (byte[])dataReader["Imagen"];
                 usu.balance = (float)dataReader["Balance"];
                 lista.Add(usu);

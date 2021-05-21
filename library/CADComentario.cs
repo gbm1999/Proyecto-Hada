@@ -15,7 +15,7 @@ namespace library
         private SqlConnection connectBD;
         public CADComentario()
         {
-            connection = ConfigurationManager.ConnectionStrings["Database"].ToString();
+            connection = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
             connectBD = new SqlConnection(connection);
         }
 
@@ -73,6 +73,34 @@ namespace library
             }
 
             return lista;
+        }
+
+        public int countComentarios(ENComentario comentario)
+        {
+            int count = 0;
+
+            try
+            {
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("Select * from Comentarios ", connectBD);
+                SqlDataReader dataReader = command.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    count++;
+                }
+                dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+
+            return count;
         }
     }
 }

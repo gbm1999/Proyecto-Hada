@@ -18,9 +18,7 @@ namespace HadaPopWeb
             {
                 ENUsuario user = obtencionNif();
 
-                bool ok = false;
-
-                if (!ok/*user.readUsuario()*/)
+                if (user.readUsuario())
                 {
                     Balance.Text = user.balance.ToString() + "€";
                     //IniciarLlenadoDropDown();

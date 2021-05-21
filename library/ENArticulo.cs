@@ -75,7 +75,7 @@ namespace library
             }
         }
 
-        private byte[] imagen;
+        private byte[] imagen = new byte[999];
         public byte[] imagenArticulo
         {
             get
@@ -139,13 +139,12 @@ namespace library
             descripcion = null;
             categoria = null;
             precio = -1.0f;
-            precio = -1;
             ciudad = null;
             comprador = null;
             vendedor = null;
             imagen = null;
         }
-        public ENArticulo(int codigo, string nombre, string descripcion, string categoria, float precio, string ciudad, string comprador, string vendedor, byte[] imagen)
+        public ENArticulo(int codigo, string nombre, string descripcion, string categoria, float precio, string ciudad, string vendedor, byte[] imagen)
         {
             this.codigo = codigo;
             this.nombre = nombre;
@@ -153,7 +152,6 @@ namespace library
             this.categoria = categoria;
             this.precio = precio;
             this.ciudad = ciudad;
-            this.comprador = comprador;
             this.vendedor = vendedor;
             this.imagen = imagen;
         }
@@ -207,6 +205,18 @@ namespace library
             CADArticulo arti = new CADArticulo();
             return arti.showArticles();
         }
+
+        public ENArticulo showOneArticle()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.showOneArticle(this);
+        }
+
+        public ArrayList showArticlesFromUser(ENUsuario usu)
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.showArticlesFromUser(usu);
+        }
         public ArrayList showArticlesFromCategory(ENCategoria cate)
         {
             CADArticulo arti = new CADArticulo();
@@ -221,6 +231,12 @@ namespace library
         {
             CADArticulo arti = new CADArticulo();
             return arti.GetImagenByArticle(this); ;
+        }
+
+        public int countArticulo()
+        {
+            CADArticulo articulo = new CADArticulo();
+            return (articulo.countArticulo(this));
         }
     }
 }

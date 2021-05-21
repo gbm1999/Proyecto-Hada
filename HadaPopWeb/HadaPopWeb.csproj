@@ -78,15 +78,21 @@
     <Content Include="App_Data\Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <Content Include="articles.aspx" />
+    <Content Include="articles.css" />
     <Content Include="articulos.aspx" />
+    <Content Include="bin\HadaPopWeb.dll" />
+    <Content Include="bin\HadaPopWeb.pdb" />
     <Content Include="categoria-articulos.css" />
     <Content Include="categoria.aspx" />
+    <Content Include="categoria.css" />
     <Content Include="Categoriaconcrete.aspx" />
     <Content Include="categorias.css" />
     <Content Include="Credit.aspx" />
     <Content Include="Credit.css" />
     <Content Include="Global.asax" />
     <Content Include="images\add.png" />
+    <Content Include="images\contact.png" />
     <Content Include="images\fondo_register.jpg" />
     <Content Include="images\login.jpg" />
     <Content Include="images\logo_small.png" />
@@ -120,6 +126,13 @@
     </Compile>
     <Compile Include="AddCategoria.aspx.designer.cs">
       <DependentUpon>AddCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="articles.aspx.cs">
+      <DependentUpon>articles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="articles.aspx.designer.cs">
+      <DependentUpon>articles.aspx</DependentUpon>
     </Compile>
     <Compile Include="articulos.aspx.cs">
       <DependentUpon>articulos.aspx</DependentUpon>

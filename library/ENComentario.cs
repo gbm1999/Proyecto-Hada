@@ -77,7 +77,7 @@ namespace library
 
         public ENComentario()
         {
-            this.IDComentario = IDComentario + 1;
+            this.IDComentario = countComentarios() + 1;
             this.NifUsuario = null;
             this.TituloComentario = null;
             this.DescripcionComentario = null;
@@ -85,7 +85,7 @@ namespace library
         }
         public ENComentario(string receptor, string titulo, string descripcion, string emisorCliente)
         {
-            this.IDComentario = IDComentario + 1;
+            this.IDComentario = countComentarios() + 1;
             this.NifUsuario = receptor;
             this.TituloComentario = titulo;
             this.DescripcionComentario = descripcion;
@@ -101,6 +101,12 @@ namespace library
         {
             CADComentario comentario = new CADComentario();
             return (comentario.findComentarios(this));
+        }
+
+        private int countComentarios()
+        {
+            CADComentario comentario = new CADComentario();
+            return (comentario.countComentarios(this));
         }
     }
 }

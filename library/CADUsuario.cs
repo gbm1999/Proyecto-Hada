@@ -21,7 +21,7 @@ namespace library
             try
             {
                 connectBD.Open();
-                SqlCommand command = new SqlCommand("Insert into Usuario(Nif,Nombre,Email,Telefono,Admin,Edad,Contrasena,TarjetaCred,Imagen,Balance) VALUES ('" + usu.NIFUsuario + "', '" + usu.nombreUsuario + "', '" + usu.emailUsuario + "', '" + usu.telefonoUsuario + "', '" + usu.edadUsuario + "', '" + usu.contrasenaUsuario + "', '" + usu.tarjetaUsuario + "', '" + usu.imagenUsuario + "', '" + usu.balance + "')", connectBD);
+                SqlCommand command = new SqlCommand("Insert into Usuario(Nif,Nombre,Email,Telefono,Admin,Edad,Contrasena,Imagen,Balance) VALUES ('" + usu.NIFUsuario + "', '" + usu.nombreUsuario + "', '" + usu.emailUsuario + "', '" + usu.telefonoUsuario + "', '" + usu.edadUsuario + "', '" + usu.contrasenaUsuario + "', '"  + usu.imagenUsuario + "', '" + usu.balance + "')", connectBD);
                 command.ExecuteNonQuery();
                 entra = true;
             }
@@ -47,7 +47,7 @@ namespace library
 
                 while (!entra && dataReader.Read())
                 {
-                    if (dataReader["Nif"].ToString().Equals(usu.NIFUsuario))
+                    if (dataReader["Nif"].ToString().Equals(usu.NIFUsuario) || dataReader["Email"].ToString().Equals(usu.emailUsuario))
                     {
                         usu.NIFUsuario = dataReader["Nif"].ToString();
                         usu.nombreUsuario = dataReader["Nombre"].ToString();
@@ -55,9 +55,11 @@ namespace library
                         usu.telefonoUsuario = (int)dataReader["Telefono"];
                         usu.edadUsuario = (int)dataReader["Edad"];
                         usu.contrasenaUsuario = dataReader["Contrasena"].ToString();
-                        usu.tarjetaUsuario = (int)dataReader["TarjetaCred"];
-                        usu.imagenUsuario = (byte[])dataReader["Imagen"];
-                        usu.balance = (float)dataReader["Balance"];
+                        if (dataReader["Imagen"] != System.DBNull.Value)
+                        {
+                            usu.imagenUsuario = (byte[])dataReader["Imagen"];
+                        }
+                        //usu.balance = (float)dataReader["Balance"];
                         entra = true;
                     }
                 }
@@ -85,14 +87,13 @@ namespace library
                 connectBD.Open();
                 SqlCommand command = new SqlCommand("UPDATE Usuario SET Nif = @Nif,Nombre = @Nombre,Email = @Email," +
                                                     "Telefono = @Telefono,Admin = @Admin, Edad = @Edad, Contrasena = @Contrasena," +
-                                                    "TarjetaCred = @TarjetaCred, Imagen = @Imagen, Balance = @Balance where nif = @nif", connectBD);
+                                                    "Imagen = @Imagen, Balance = @Balance where nif = @nif", connectBD);
                 command.Parameters.AddWithValue("@Nif", usu.NIFUsuario);
                 command.Parameters.AddWithValue("@Nombre", usu.nombreUsuario);
                 command.Parameters.AddWithValue("@Email", usu.emailUsuario);
                 command.Parameters.AddWithValue("@Telefono", usu.telefonoUsuario);
                 command.Parameters.AddWithValue("@Edad", usu.edadUsuario);
                 command.Parameters.AddWithValue("@Contrasena", usu.contrasenaUsuario);
-                command.Parameters.AddWithValue("@TarjetaCred", usu.tarjetaUsuario);
                 command.Parameters.AddWithValue("@Imagen", usu.imagenUsuario);
                 command.Parameters.AddWithValue("@Balance", usu.balance);
                 response = command.ExecuteNonQuery();
