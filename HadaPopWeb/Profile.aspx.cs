@@ -47,7 +47,7 @@ namespace HadaPopWeb
             {
 				string urlImage = "images/sinperfil.png";
 				ImageUser.ImageUrl = urlImage;
-				PopupNoLogin.Show();
+				//PopupNoLogin.Show();
 			}
 
 			Butt_Env.Visible = false;
