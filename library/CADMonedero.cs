@@ -15,7 +15,7 @@ namespace library
         private SqlConnection connectBD;
         public CADMonedero()
         {
-            connection = ConfigurationManager.ConnectionStrings["Database"].ToString();
+            connection = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
             connectBD = new SqlConnection(connection);
         }
         //Inserta un moendero en la BD

@@ -14,7 +14,7 @@ namespace library
         private SqlConnection connectBD;
         public CADReporte()
         {
-            connection = ConfigurationManager.ConnectionStrings["Database"].ToString();
+            connection = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
             connectBD = new SqlConnection(connection);
         }
 

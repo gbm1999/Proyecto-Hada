@@ -14,10 +14,11 @@ namespace HadaPopWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            ResetErrores();
-            Admin.Visible = false;
-            
+            if (!IsPostBack)
+            {
+                ResetErrores();
+                Admin.Visible = false;
+            }
         }
 
         protected void register_Click(object sender, EventArgs e)
@@ -51,28 +52,30 @@ namespace HadaPopWeb
                             else
                                 admin = true;
                         }
-                        else
+                        if (CompruebaValores()) // Si todo va bien Creo el Usuario
                         {
-                            if (CompruebaValores()) // Si todo va bien Creo el Usuario
+                            user.nombreUsuario = name.Text;
+                            user.emailUsuario = email.Text;
+                            user.edadUsuario = Convert.ToInt32(age.Text);
+                            user.telefonoUsuario = Convert.ToInt32(phone.Text);
+                            user.contrasenaUsuario = Global.Encrypt(password.Text);
+                            user.balance = 0;
+
+                            if (user.createUsuario())
                             {
-                                user.nombreUsuario = name.Text;
-                                user.emailUsuario = email.Text;
-                                user.edadUsuario = Convert.ToInt32(age.Text);
-                                user.telefonoUsuario = Convert.ToInt32(phone.Text);
-                                user.contrasenaUsuario = password.Text;
+                                Response.Redirect("Login.aspx");
                                 if (admin)
                                     Creadmin(user);
-
-                                if (user.createUsuario())
-                                    Response.Redirect("Login.aspx");
-                                else
-                                {
-                                    errorname.Visible = true;
-                                    errorname.InnerText = "Vaya! Parece que algo ha ido mal :(";
-                                }
                             }
 
+                            else
+                            {
+                                errorname.Visible = true;
+                                errorname.InnerText = "Vaya! Parece que algo ha ido mal :(";
+                            }
                         }
+
+                        
 
                     }
                     else
@@ -94,6 +97,8 @@ namespace HadaPopWeb
         protected void Admincheck_CheckedChanged(object sender, EventArgs e)
         {
             Admin.Visible = Admincheck.Checked;
+            if (!Admincheck.Checked)
+                Admin.Text = "";
         }
         private void Creadmin(ENUsuario user)
         {
@@ -223,7 +228,7 @@ namespace HadaPopWeb
         { 
             bool valido = true;
             Regex r = new Regex("^[A-Z][a-zA-Z]");
-            if (check.Length < 2 || check.Length > 30)
+            if (check.Length < 2 || Global.Encrypt(check).Length > 200)
             {
                 valido = false;
             }

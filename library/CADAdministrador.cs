@@ -17,7 +17,7 @@ namespace library
         public CADAdministrador()
         {
             ArrayList lista = new ArrayList();
-            connection = ConfigurationManager.ConnectionStrings["Database"].ToString();
+            connection = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
             connectBD = new SqlConnection(connection);
         }
 

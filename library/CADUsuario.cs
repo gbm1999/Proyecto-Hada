@@ -21,7 +21,7 @@ namespace library
             try
             {
                 connectBD.Open();
-                SqlCommand command = new SqlCommand("Insert into Usuario(Nif,Nombre,Email,Telefono,Admin,Edad,Contrasena,Imagen,Balance) VALUES ('" + usu.NIFUsuario + "', '" + usu.nombreUsuario + "', '" + usu.emailUsuario + "', '" + usu.telefonoUsuario + "', '" + usu.edadUsuario + "', '" + usu.contrasenaUsuario + "', '"  + usu.imagenUsuario + "', '" + usu.balance + "')", connectBD);
+                SqlCommand command = new SqlCommand("Insert into Usuario(Nif,Nombre,Email,Telefono,Edad,Contrasena,Imagen,Balance) VALUES ('" + usu.NIFUsuario + "', '" + usu.nombreUsuario + "', '" + usu.emailUsuario + "', '" + usu.telefonoUsuario + "', '" + usu.edadUsuario + "', '" + usu.contrasenaUsuario + "', '"  + usu.imagenUsuario + "', '" + usu.balance + "')", connectBD);
                 command.ExecuteNonQuery();
                 entra = true;
             }
