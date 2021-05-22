@@ -94,8 +94,8 @@ namespace library
                 imagen = value;
             }
         }
-        private float Balance;
-        public float balance
+        private double Balance;
+        public double balance
         {
             get
             {
@@ -131,7 +131,7 @@ namespace library
             this.edad = edad;
             this.contrasena = contrasena;
             this.imagen = imagen;
-            this.Balance = balance;
+            this.balance = balance;
         }
         public bool createUsuario()
         {

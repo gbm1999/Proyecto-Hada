@@ -59,7 +59,20 @@ namespace library
                         {
                             usu.imagenUsuario = (byte[])dataReader["Imagen"];
                         }
-                        //usu.balance = (float)dataReader["Balance"];
+                        else
+                        {
+                            usu.imagenUsuario = null;
+                        }
+
+                        if(dataReader["Balance"] != System.DBNull.Value)
+                        {
+                            usu.balance = (double)dataReader["Balance"];
+                        }
+                        else
+                        {
+                            usu.balance = 0;
+                        }
+                        
                         entra = true;
                     }
                 }
@@ -85,16 +98,29 @@ namespace library
             try
             {
                 connectBD.Open();
-                SqlCommand command = new SqlCommand("UPDATE Usuario SET Nif = @Nif,Nombre = @Nombre,Email = @Email," +
-                                                    "Telefono = @Telefono,Admin = @Admin, Edad = @Edad, Contrasena = @Contrasena," +
+                SqlCommand command;
+
+                if (usu.imagenUsuario == null)
+                {
+                    command = new SqlCommand("UPDATE Usuario SET Nif = @Nif,Nombre = @Nombre,Email = @Email," +
+                                                    "Telefono = @Telefono, Edad = @Edad, Contrasena = @Contrasena," +
+                                                    "Balance = @Balance where nif = @nif", connectBD);
+                }
+                else
+                {
+                    command = new SqlCommand("UPDATE Usuario SET Nif = @Nif,Nombre = @Nombre,Email = @Email," +
+                                                    "Telefono = @Telefono, Edad = @Edad, Contrasena = @Contrasena," +
                                                     "Imagen = @Imagen, Balance = @Balance where nif = @nif", connectBD);
+
+                    command.Parameters.AddWithValue("@Imagen", usu.imagenUsuario);
+                }
+                
                 command.Parameters.AddWithValue("@Nif", usu.NIFUsuario);
                 command.Parameters.AddWithValue("@Nombre", usu.nombreUsuario);
                 command.Parameters.AddWithValue("@Email", usu.emailUsuario);
                 command.Parameters.AddWithValue("@Telefono", usu.telefonoUsuario);
                 command.Parameters.AddWithValue("@Edad", usu.edadUsuario);
                 command.Parameters.AddWithValue("@Contrasena", usu.contrasenaUsuario);
-                command.Parameters.AddWithValue("@Imagen", usu.imagenUsuario);
                 command.Parameters.AddWithValue("@Balance", usu.balance);
                 response = command.ExecuteNonQuery();
 

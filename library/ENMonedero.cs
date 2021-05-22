@@ -33,8 +33,8 @@ namespace library
                 Contrasena = value;
             }
         }
-        private float Saldo;
-        public float SaldoTarjeta
+        private double Saldo;
+        public double SaldoTarjeta
         {
             get
             {

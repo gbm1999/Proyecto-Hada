@@ -114,7 +114,6 @@ namespace HadaPopWeb
             errorname.InnerText = "";
             errorpass.Visible = false;
             errorpass.InnerText = "";
-            
         }
     }
 }
