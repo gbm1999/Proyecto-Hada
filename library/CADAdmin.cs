@@ -16,7 +16,7 @@ namespace library
         private SqlConnection connectBD;
         public CADAdmin()
         {
-            connection = ConfigurationManager.ConnectionStrings["Database"].ToString();
+            connection = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
             connectBD = new SqlConnection(connection);
         }
         public ArrayList MostrarUsers()

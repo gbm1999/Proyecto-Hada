@@ -15,7 +15,7 @@ namespace library
         private SqlConnection connectBD;
         public CADMonedero()
         {
-            connection = ConfigurationManager.ConnectionStrings["Database"].ToString();
+            connection = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
             connectBD = new SqlConnection(connection);
         }
         //Inserta un moendero en la BD
@@ -150,7 +150,7 @@ namespace library
                 {
                     if (mon.numTarjeta == dataReader["TarjetaC"].ToString() && mon.ContrasenaTarjeta == (int)dataReader["Contrasena"])
                     {
-                        mon.SaldoTarjeta = (float)dataReader["Saldo"];
+                        mon.SaldoTarjeta = (double)dataReader["Saldo"];
                         entra = true;
                     }
                 }
@@ -182,8 +182,7 @@ namespace library
                     ENMonedero monedero = new ENMonedero();
                     monedero.numTarjeta = dataReader["TarjetaC"].ToString();
                     monedero.ContrasenaTarjeta = (int)dataReader["Contrasena"];
-                    monedero.SaldoTarjeta = (float)dataReader["Saldo"];
-                    monedero.usuario = dataReader["Usuario"].ToString();
+                    monedero.SaldoTarjeta = (double)dataReader["Saldo"];
 
                     lista.Add(monedero);
                 }

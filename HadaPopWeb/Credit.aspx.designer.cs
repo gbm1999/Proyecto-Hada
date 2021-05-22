@@ -51,13 +51,22 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.Panel PanelPopUpNoLogin;
 
         /// <summary>
-        /// Control ErrorTransacciones.
+        /// Control ErrorTransaccione.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ErrorTransacciones;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ErrorTransaccione;
+
+        /// <summary>
+        /// Control ErrorTarjeta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ErrorTarjeta;
 
         /// <summary>
         /// Control Controltarget.
@@ -87,13 +96,13 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.Label Nombre_Usuario;
 
         /// <summary>
-        /// Control TBNombre.
+        /// Control TBTarjeta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList TBNombre;
+        protected global::System.Web.UI.WebControls.TextBox TBTarjeta;
 
         /// <summary>
         /// Control Contraseña.
@@ -103,15 +112,6 @@ namespace HadaPopWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Contraseña;
-
-        /// <summary>
-        /// Control ErrorTarjetas.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ErrorTarjetas;
 
         /// <summary>
         /// Control EditarC1.
