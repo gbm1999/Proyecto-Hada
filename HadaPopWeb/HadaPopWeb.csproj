@@ -71,6 +71,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404Error.aspx" />
+    <Content Include="404Error.css" />
     <Content Include="AddArticle.aspx" />
     <Content Include="AddArticle.css" />
     <Content Include="AddCategoria.aspx" />
@@ -113,6 +115,13 @@
     <Content Include="Login.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="404Error.aspx.cs">
+      <DependentUpon>404Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="404Error.aspx.designer.cs">
+      <DependentUpon>404Error.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddArticle.aspx.cs">
       <DependentUpon>AddArticle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

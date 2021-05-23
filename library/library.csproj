@@ -42,7 +42,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CADAdmin.cs" />
     <Compile Include="CADAdministrador.cs" />
     <Compile Include="CADArticulo.cs" />
     <Compile Include="CADComentario.cs" />

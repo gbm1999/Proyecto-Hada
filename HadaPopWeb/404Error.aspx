@@ -14,7 +14,7 @@
              </h2>
             <p> Pero siempre puedes volver y mirar otros productos :D </p>
             </div>
-            <asp:Button ID="Button1" CssClass="button" runat="server" Text="Ver Productos" />
+            <asp:Button ID="Button1" CssClass="button" runat="server" OnClick="Click_Productos" Text="Ver Productos" />
         </div>
     </div>
         
