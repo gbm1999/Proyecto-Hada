@@ -6,7 +6,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" href="ShowArticle.css" />
+    <link rel="stylesheet" href="estilos/ShowArticle.css" />
 
      <div class="center-container">
          

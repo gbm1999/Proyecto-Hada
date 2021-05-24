@@ -5,7 +5,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2"  ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <link rel="stylesheet" href="Credit.css" />
+        <link rel="stylesheet" href="estilos/Credit.css" />
     <div class="body">
         <div class ="contentbody">
             <div class ="Balance">

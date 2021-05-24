@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <link rel="stylesheet" href="404Error.css" />
+        <link rel="stylesheet" href="estilos/404Error.css" />
     <div class="body">
        
         <div class = "imgbutt">
