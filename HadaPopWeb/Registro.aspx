@@ -69,7 +69,7 @@
                 <div class="campos-right">
                     <div class="campo">
                         <div class="texto">
-                            Contraseña Admin:<br />
+                            Administrador:<br />
                             <label id="erroradmin" runat ="server" class="errortext">Esto no deberías poder verlo :(</label>
                                 <asp:TextBox ID="Admin" runat="server" type="password" name="age" />
                                 <asp:CheckBox id="Admincheck" runat="server" OnCheckedChanged="Admincheck_CheckedChanged" AutoPostBack="true"/>
