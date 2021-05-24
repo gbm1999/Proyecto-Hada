@@ -114,6 +114,15 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.TextBox Contraseña;
 
         /// <summary>
+        /// Control TBDinero.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TBDinero;
+
+        /// <summary>
         /// Control EditarC1.
         /// </summary>
         /// <remarks>
@@ -130,5 +139,14 @@ namespace HadaPopWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button EditarC2;
+
+        /// <summary>
+        /// Control Depositar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Depositar;
     }
 }

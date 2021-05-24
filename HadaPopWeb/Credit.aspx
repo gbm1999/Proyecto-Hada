@@ -60,9 +60,16 @@
                                  <asp:TextBox ID="Contraseña" runat="server" TextMode="Password" Class="textboxes"></asp:TextBox>
 
                             </div>
+                            <div class="separador"></div>
+                            <div class ="InfoCuentas">
+                                 <label class="labels">Dinero: </label>
+                                 <asp:TextBox ID="TBDinero" runat="server" Class="textboxes"></asp:TextBox>
+
+                            </div>
                             <div class ="divBotonesCuentas">
                                 <asp:Button class="BotonesCuentas" ID="EditarC1" runat="server" Text="Añadir" OnClick="Añadir" />
                                 <asp:Button class="BotonesCuentas" ID="EditarC2" runat="server" Text="Eliminar" OnClick="Eliminar" />
+                                <asp:Button class="BotonesCuentas" ID="Depositar" runat="server" Text="Depositar" OnClick="Depositar_dinero" />
                             </div>
                         </div>
                     </div>

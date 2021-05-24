@@ -137,7 +137,7 @@ namespace library
             return entra;
         }
         //Comprueba si el numero de tarjeta y la contraseña son correctos para acceder al saldo
-        public bool AccesoSaldo(ENMonedero mon)
+        public bool Acceso(ENMonedero mon)
         {
             bool entra = false;
 
@@ -150,7 +150,6 @@ namespace library
                 {
                     if (mon.numTarjeta == dataReader["TarjetaC"].ToString() && mon.ContrasenaTarjeta == (int)dataReader["Contrasena"])
                     {
-                        mon.SaldoTarjeta = (double)dataReader["Saldo"];
                         entra = true;
                     }
                 }
@@ -198,6 +197,80 @@ namespace library
             }
 
             return lista;
+        }
+        public bool tieneTarjetas(ENMonedero mon)
+        {
+            bool entra = false;
+            int count = 0;
+
+            try
+            {
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("Select * from Monedero ", connectBD);
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (!entra && dataReader.Read())
+                {
+                    if (mon.usuario == dataReader["Usuario"].ToString())
+                    {
+                        count++;
+                    }
+                }
+
+                if(count > 0)
+                {
+                    entra = true;
+                }
+
+                dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Wallet operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+            return entra;
+        }
+
+        public bool deleteUser(ENMonedero mon)
+        {
+            bool entra = false;
+            int response = 0;
+
+            try
+            {
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("UPDATE Monedero SET TarjetaC = @TarjetaC, Contrasena = @Contrasena, Saldo = @Saldo, Usuario = @Usuario where TarjetaC = @TarjetaC", connectBD);
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (!entra && dataReader.Read())
+                {
+                    if (mon.Acceso())
+                    {
+                        command.Parameters.AddWithValue("@TarjetaC", mon.numTarjeta);
+                        command.Parameters.AddWithValue("@Contrasena", mon.ContrasenaTarjeta);
+                        command.Parameters.AddWithValue("@Saldo", mon.SaldoTarjeta);
+                        command.Parameters.AddWithValue("@Usuario", null);
+                        response = command.ExecuteNonQuery();
+
+                        if (response == 1)
+                        {
+                            entra = true;
+                        }
+                    }
+                }
+                dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Wallet operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+            return entra;
         }
         public string ConnectString
         {

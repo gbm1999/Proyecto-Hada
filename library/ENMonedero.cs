@@ -92,10 +92,10 @@ namespace library
             CADMonedero monedero = new CADMonedero();
             return monedero.deleteMonedero(this);
         }
-        public bool AccesoSaldo()
+        public bool Acceso()
         {
             CADMonedero monedero = new CADMonedero();
-            return monedero.AccesoSaldo(this);
+            return monedero.Acceso(this);
         }
 
         public ArrayList MostrarTarjetasLibres()
@@ -105,6 +105,12 @@ namespace library
             lista = Monedero.MostrarTarjetasLibres();
 
             return lista;
+        }
+
+        public bool deleteUser()
+        {
+            CADMonedero monedero = new CADMonedero();
+            return (monedero.deleteUser(this));
         }
     }
 }

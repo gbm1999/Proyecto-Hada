@@ -197,5 +197,12 @@ namespace library
             CADAdministrador admin = new CADAdministrador();
             return admin.isAdministrador(administrador);
         }
+        public bool tieneTarjetas()
+        {
+            ENMonedero mon = new ENMonedero();
+            mon.usuario = this.NIFUsuario;
+            CADMonedero monedero = new CADMonedero();
+            return monedero.tieneTarjetas(mon);
+        }
     }
 }
