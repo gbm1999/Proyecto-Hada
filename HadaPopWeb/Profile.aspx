@@ -5,7 +5,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" href="Profile.css" />
+    <link rel="stylesheet" href="estilos/Profile.css" />
     <div class="body">
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
