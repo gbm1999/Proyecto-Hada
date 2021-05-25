@@ -49,7 +49,7 @@ namespace HadaPopWeb
             if (articulo1.updateArticulo())
             {
 
-                Label1.Text = articulo1.precioArticulo.ToString();
+                Label1.Text = "El artículo se ha modificado correctamente.";
 
             }
             else
