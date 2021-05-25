@@ -123,6 +123,15 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.TextBox TBTelefono;
 
         /// <summary>
+        /// Control photo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload photo;
+
+        /// <summary>
         /// Control Butt_Edit.
         /// </summary>
         /// <remarks>

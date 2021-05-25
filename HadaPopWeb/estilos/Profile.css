@@ -186,3 +186,10 @@ img
     border-top-right-radius: .3rem;
     background-color: white;
 }
+
+.FileUpload 
+{
+    position: absolute;
+    left: 50%;
+    float: right;
+}

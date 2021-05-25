@@ -69,7 +69,14 @@
                      <div class = "labtext"> <!-- Tlfno -->
                         <label class="labels">Teléfono: </label>
                         <asp:TextBox ID="TBTelefono" class="textboxes" runat="server"></asp:TextBox>
-                    </div> 
+                    </div>
+                    
+                    <div class="separadorvert"></div>
+
+                    <div class="labtext">
+                            <label class="labels">Imagen: </label>
+                            <asp:FileUpload ID="photo" class="FileUpload" runat="server" />
+                        </div>
                     <!-- FIN DATOSUSU -->
                     <div class="separadorvert"></div>
             

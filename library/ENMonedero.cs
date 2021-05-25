@@ -33,18 +33,6 @@ namespace library
                 Contrasena = value;
             }
         }
-        private double Saldo;
-        public double SaldoTarjeta
-        {
-            get
-            {
-                return Saldo;
-            }
-            set
-            {
-                Saldo = value;
-            }
-        }
 
         private string Usuario;
         public string usuario
@@ -62,14 +50,12 @@ namespace library
         {
             Tarjeta = null;
             Contrasena = 0;
-            Saldo = 0;
             Usuario = null;
         }
-        public ENMonedero(string Tarjeta, int Contrasena, float Saldo, string Usuario)
+        public ENMonedero(string Tarjeta, int Contrasena, string Usuario)
         {
             this.Tarjeta = Tarjeta;
             this.Contrasena = Contrasena;
-            this.Saldo = Saldo;
             this.Usuario = Usuario;
         }
         public bool createMonedero()

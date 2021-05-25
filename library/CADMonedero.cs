@@ -25,7 +25,7 @@ namespace library
             try
             {
                 connectBD.Open();
-                SqlCommand command = new SqlCommand("Insert into Monedero(TarjetaC,Contrasena,Saldo, Usuario) VALUES ('" + mon.numTarjeta + "', '" + mon.ContrasenaTarjeta + "', '" + mon.SaldoTarjeta + "', '" + mon.usuario + "')", connectBD);
+                SqlCommand command = new SqlCommand("Insert into Monedero(TarjetaC,Contrasena, Usuario) VALUES ('" + mon.numTarjeta + "', '" + mon.ContrasenaTarjeta + "', '" + mon.usuario + "')", connectBD);
                 command.ExecuteNonQuery();
                 entra = true;
             }
@@ -55,7 +55,6 @@ namespace library
                     {
                         mon.numTarjeta = dataReader["TarjetaC"].ToString();
                         mon.ContrasenaTarjeta = (int)dataReader["Contrasena"];
-                        mon.SaldoTarjeta = (float)dataReader["Saldo"];
                         mon.usuario = dataReader["Usuario"].ToString();
                         entra = true;
                     }
@@ -82,10 +81,9 @@ namespace library
             try
             {
                 connectBD.Open();
-                SqlCommand command = new SqlCommand("UPDATE Monedero SET TarjetaC = @TarjetaC, Contrasena = @Contrasena, Saldo = @Saldo, Usuario = @Usuario where TarjetaC = @TarjetaC", connectBD);
+                SqlCommand command = new SqlCommand("UPDATE Monedero SET TarjetaC = @TarjetaC, Contrasena = @Contrasena, Usuario = @Usuario where TarjetaC = @TarjetaC", connectBD);
                 command.Parameters.AddWithValue("@TarjetaC", mon.numTarjeta);
                 command.Parameters.AddWithValue("@Contrasena", mon.ContrasenaTarjeta);
-                command.Parameters.AddWithValue("@Saldo", mon.SaldoTarjeta);
                 command.Parameters.AddWithValue("@Usuario", mon.usuario);
                 response = command.ExecuteNonQuery();
 
@@ -181,7 +179,6 @@ namespace library
                     ENMonedero monedero = new ENMonedero();
                     monedero.numTarjeta = dataReader["TarjetaC"].ToString();
                     monedero.ContrasenaTarjeta = (int)dataReader["Contrasena"];
-                    monedero.SaldoTarjeta = (double)dataReader["Saldo"];
 
                     lista.Add(monedero);
                 }
@@ -242,25 +239,16 @@ namespace library
             try
             {
                 connectBD.Open();
-                SqlCommand command = new SqlCommand("UPDATE Monedero SET TarjetaC = @TarjetaC, Contrasena = @Contrasena, Saldo = @Saldo, Usuario = @Usuario where TarjetaC = @TarjetaC", connectBD);
-                SqlDataReader dataReader = command.ExecuteReader();
-                while (!entra && dataReader.Read())
-                {
-                    if (mon.Acceso())
-                    {
-                        command.Parameters.AddWithValue("@TarjetaC", mon.numTarjeta);
-                        command.Parameters.AddWithValue("@Contrasena", mon.ContrasenaTarjeta);
-                        command.Parameters.AddWithValue("@Saldo", mon.SaldoTarjeta);
-                        command.Parameters.AddWithValue("@Usuario", null);
-                        response = command.ExecuteNonQuery();
+                SqlCommand command = new SqlCommand("UPDATE Monedero SET Usuario = @Usuario where TarjetaC = @TarjetaC", connectBD);
+                command.Parameters.AddWithValue("@TarjetaC", mon.numTarjeta);
+                command.Parameters.AddWithValue("@Usuario", DBNull.Value);
 
-                        if (response == 1)
-                        {
-                            entra = true;
-                        }
-                    }
+                response = command.ExecuteNonQuery();
+
+                if (response == 1)
+                {
+                    entra = true;
                 }
-                dataReader.Close();
             }
             catch (Exception ex)
             {

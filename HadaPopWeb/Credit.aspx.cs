@@ -71,7 +71,7 @@ namespace HadaPopWeb
                                 if (!user.updateUsuario())
                                 {
                                     ErrorTransaccione.Visible = true;
-                                    ErrorTransaccione.InnerText = "No se ha podido añadir el importe asignado, por favor vuelva a intentarlo";
+                                    ErrorTransaccione.InnerText = "No se ha podido añadir la tarjeta, por favor vuelva a intentarlo";
                                 }
                                 else
                                 {
@@ -111,7 +111,6 @@ namespace HadaPopWeb
 
             if (int.TryParse(Contraseña.Text, out numero))
             {
-
                 monedero.ContrasenaTarjeta = int.Parse(Contraseña.Text);
 
                 if (user.tieneTarjetas())
@@ -120,12 +119,6 @@ namespace HadaPopWeb
                     {
                         ErrorTarjeta.Visible = true;
                         ErrorTarjeta.InnerText = "La tarjeta no se ha podido eliminar de la cuenta";
-                    }
-
-                    if (!user.updateUsuario())
-                    {
-                        ErrorTransaccione.Visible = true;
-                        ErrorTransaccione.InnerText = "No se ha podido añadir el importe asignado, por favor vuelva a intentarlo";
                     }
                 }
                 else

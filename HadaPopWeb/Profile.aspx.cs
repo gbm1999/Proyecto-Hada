@@ -65,10 +65,19 @@ namespace HadaPopWeb
             {
 				string urlImage = "images/sinperfil.png";
 				ImageUser.ImageUrl = urlImage;
-				//PopupNoLogin.Show();
+				PopupNoLogin.Show();
 			}
 
 			Butt_Env.Visible = false;
+
+			if(!IsPostBack)
+            {
+				TBNombre.Text = user.nombreUsuario;
+				TBEmail.Text = user.emailUsuario;
+				TBNif.Text = user.NIFUsuario;
+				TBEdad.Text = user.edadUsuario.ToString();
+				TBTelefono.Text = user.telefonoUsuario.ToString();
+			}
 
 			TBNombre.ReadOnly = true;
 			TBEmail.ReadOnly = true;
@@ -100,6 +109,12 @@ namespace HadaPopWeb
 			user.NIFUsuario = TBNif.Text;
 			user.edadUsuario = int.Parse(TBEdad.Text);
 			user.telefonoUsuario = int.Parse(TBTelefono.Text);
+
+			// Obtener Imagen
+			int tamanio = photo.PostedFile.ContentLength; //Obtenemos el tamano de la imagen
+			byte[] ImagenOriginal = new byte[tamanio];          //Creo una imagen vacia con el tamano de la imagen importada
+			photo.PostedFile.InputStream.Read(ImagenOriginal, 0, tamanio);    //Introducimos la imagen importada en la imagen local
+			user.imagenUsuario = ImagenOriginal;
 
 			user.updateUsuario();
 		}
