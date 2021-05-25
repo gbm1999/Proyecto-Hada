@@ -304,12 +304,12 @@ namespace library
             {
                 connectBD.Open();
                 SqlCommand command = new SqlCommand("UPDATE Articulo SET Nombre = @Nombre, Descripcion = @Descripcion, " +
-                                                    "Categoria = @Categoria, Precio = @Precio, Ciudad = @Ciudad, " +
+                                                    "Precio = @Precio, Ciudad = @Ciudad, " +
                                                     "Vendedor = @Vendedor where codigo = @codigo", connectBD);
                 command.Parameters.AddWithValue("@codigo", arti.codigoArticulo);
                 command.Parameters.AddWithValue("@Nombre", arti.nombreArticulo);
                 command.Parameters.AddWithValue("@Descripcion", arti.descripcionArticulo);
-                command.Parameters.AddWithValue("@Categoria", arti.categoriaArticulo);
+                //command.Parameters.AddWithValue("@Categoria", arti.categoriaArticulo);
                 command.Parameters.AddWithValue("@Precio", arti.precioArticulo);
                 //command.Parameters.AddWithValue("@Imagen", arti.imagenArticulo);
                 command.Parameters.AddWithValue("@Ciudad", arti.ciudadArticulo);
