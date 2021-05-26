@@ -13,7 +13,7 @@ namespace library
     {
         private string connection;
         private SqlConnection connectBD;
-        ArrayList lista = new ArrayList();
+
         public CADArticulo()
         {
             connection = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
@@ -28,7 +28,7 @@ namespace library
             try
             {
                 connectBD.Open();
-                SqlCommand command = new SqlCommand("Insert into Articulo(codigo, Nombre, Descripcion, Categoria, Precio, Imagen, Ciudad, Vendedor) VALUES ('" + arti.codigoArticulo + "', '" + arti.nombreArticulo + "', '" + arti.descripcionArticulo + "', '" + arti.categoriaArticulo + "', '" + arti.precioArticulo + "', '" + arti.imagenArticulo + "', '" + arti.ciudadArticulo +"', '" + arti.vendedorArticulo + "' )", connectBD);
+                SqlCommand command = new SqlCommand("Insert into Articulo(codigo, Nombre, Descripcion, Categoria, Precio, Imagen, Ciudad, Vendedor) VALUES ('" + arti.codigoArticulo + "', '" + arti.nombreArticulo + "', '" + arti.descripcionArticulo + "', '" + arti.categoriaArticulo + "', '" + arti.precioArticulo + "', '" + arti.imagenArticulo + "', '" + arti.ciudadArticulo + "', '" + arti.vendedorArticulo + "' )", connectBD);
                 command.ExecuteNonQuery();
                 entra = true;
             }
@@ -40,6 +40,7 @@ namespace library
             {
                 connectBD.Close();
             }
+
             return(entra);
         }
 
@@ -88,6 +89,7 @@ namespace library
         }
         public ArrayList searchArticulo(ENArticulo arti)
         {
+            ArrayList lista = new ArrayList();
             try
             {
                 connectBD.Open();
@@ -303,12 +305,12 @@ namespace library
             {
                 connectBD.Open();
                 SqlCommand command = new SqlCommand("UPDATE Articulo SET Nombre = @Nombre, Descripcion = @Descripcion, " +
-                                                    "Categoria = @Categoria, Precio = @Precio, Ciudad = @Ciudad, " +
+                                                    "Precio = @Precio, Ciudad = @Ciudad, " +
                                                     "Vendedor = @Vendedor where codigo = @codigo", connectBD);
                 command.Parameters.AddWithValue("@codigo", arti.codigoArticulo);
                 command.Parameters.AddWithValue("@Nombre", arti.nombreArticulo);
                 command.Parameters.AddWithValue("@Descripcion", arti.descripcionArticulo);
-                command.Parameters.AddWithValue("@Categoria", arti.categoriaArticulo);
+                //command.Parameters.AddWithValue("@Categoria", arti.categoriaArticulo);
                 command.Parameters.AddWithValue("@Precio", arti.precioArticulo);
                 //command.Parameters.AddWithValue("@Imagen", arti.imagenArticulo);
                 command.Parameters.AddWithValue("@Ciudad", arti.ciudadArticulo);
@@ -365,6 +367,7 @@ namespace library
 
         public ArrayList showArticles()
         {
+            ArrayList lista = new ArrayList();
             try
             {
                 connectBD.Open();
@@ -445,6 +448,7 @@ namespace library
 
         public ArrayList showArticlesFromCategory(ENCategoria cate)
         {
+            ArrayList lista = new ArrayList();
             try
             {
                 connectBD.Open();
@@ -485,16 +489,18 @@ namespace library
         }
         public ArrayList showArticlesFromUser(ENUsuario usu)
         {
+            ArrayList lista = new ArrayList();
             try
             {
                 connectBD.Open();
                 SqlCommand command = new SqlCommand("Select * from Articulo where Vendedor = @Vendedor", connectBD);
-                command.Parameters.AddWithValue("@Vendedor", usu.nombreUsuario);
+                command.Parameters.AddWithValue("@Vendedor", usu.NIFUsuario);
                 SqlDataReader dataReader = command.ExecuteReader();
 
                 while (dataReader.Read())
                 {
                     ENArticulo arti = new ENArticulo();
+
                     arti.codigoArticulo = (int)dataReader["codigo"];
                     arti.nombreArticulo = dataReader["Nombre"].ToString();
                     arti.descripcionArticulo = dataReader["Descripcion"].ToString();
@@ -511,7 +517,6 @@ namespace library
                     lista.Add(arti);
                 }
                 dataReader.Close();
-                connectBD.Close();
             }
             catch (SqlException ex)
             {
@@ -630,6 +635,34 @@ namespace library
                 connectBD.Close();
             }
             return Imagen;
+        }
+
+        public int countArticulo(ENArticulo articulo)
+        {
+            int count = 0;
+
+            try
+            {
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("Select * from Articulo ", connectBD);
+                SqlDataReader dataReader = command.ExecuteReader();
+
+                while (dataReader.Read())
+                {
+                    count++;
+                }
+                dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+
+            return count;
         }
         public string ConnectString
         {

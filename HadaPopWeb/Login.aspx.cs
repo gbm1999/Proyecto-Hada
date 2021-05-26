@@ -45,10 +45,10 @@ namespace HadaPopWeb
                 ENUsuario user = new ENUsuario();
 
                 user.emailUsuario = name;
-
+                
                if( user.readUsuario() )     //  Existe? -> Es Correcto? -> Logeado
                 {
-                    if(user.contrasenaUsuario == pass)
+                    if(Global.Decrypt(user.contrasenaUsuario) == pass )
                     {
                         Session.Clear();
                         Session.Add("user", user.nombreUsuario);
@@ -114,7 +114,6 @@ namespace HadaPopWeb
             errorname.InnerText = "";
             errorpass.Visible = false;
             errorpass.InnerText = "";
-            
         }
     }
 }

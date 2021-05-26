@@ -19,7 +19,8 @@ namespace HadaPopWeb
             Precio.ReadOnly=false;
             articulo.nombreArticulo= Request.QueryString["Value"];
             articulo=articulo.showOneArticle();
-            mostrarArticulo(articulo);
+            if(!IsPostBack) mostrarArticulo(articulo);
+
         }
 
         private void mostrarArticulo(ENArticulo articulo)
@@ -41,17 +42,12 @@ namespace HadaPopWeb
 
         protected void modificar_Click(object sender, EventArgs e)
         {
-            bool updated = false;
-            articulo.ciudadArticulo = Ciudad.Text;
-            articulo.nombreArticulo = nombre.Text;
-            articulo.precioArticulo = (float)Convert.ToDouble(Precio.Text);
-            articulo.vendedorArticulo = vendedor.Text;
-            articulo.descripcionArticulo = Descripcion.Text;
-            updated = articulo.updateArticulo();  //No coge el texto nuevo de los textbox, si no el antiguo
 
-            if (updated)
+            ENArticulo articulo1 = new ENArticulo(articulo.codigoArticulo, nombre.Text, Descripcion.Text, articulo.categoriaArticulo, (float)Convert.ToDouble(Precio.Text),
+                Ciudad.Text, vendedor.Text, articulo.imagenArticulo);
+
+            if (articulo1.updateArticulo())
             {
-                articulo = articulo.showOneArticle();
 
                 Label1.Text = "El artículo se ha modificado correctamente.";
 
@@ -60,7 +56,7 @@ namespace HadaPopWeb
             {
                 Label1.Text = "El artículo no se ha podido modificar.";
             }
-            mostrarArticulo(articulo);
+            mostrarArticulo(articulo1);
 
         }
 

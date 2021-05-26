@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Register</title>
-    <link rel="stylesheet" href="Registro.css" />
+    <link rel="stylesheet" href="estilos/Registro.css" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -69,7 +69,7 @@
                 <div class="campos-right">
                     <div class="campo">
                         <div class="texto">
-                            Contraseña Admin:<br />
+                            Administrador:<br />
                             <label id="erroradmin" runat ="server" class="errortext">Esto no deberías poder verlo :(</label>
                                 <asp:TextBox ID="Admin" runat="server" type="password" name="age" />
                                 <asp:CheckBox id="Admincheck" runat="server" OnCheckedChanged="Admincheck_CheckedChanged" AutoPostBack="true"/>

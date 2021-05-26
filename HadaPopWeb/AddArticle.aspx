@@ -4,8 +4,24 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        
-            <link rel="stylesheet" href="AddArticle.css" />
+    <asp:Label ID="Controltarget" runat="server" Text=""></asp:Label>
+            <link rel="stylesheet" href="estilos/AddArticle.css" />
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+        <ajaxToolkit:ModalPopupExtender ID="PopupNoLogin" runat="server" Enabled="true" TargetControlID="Controltarget" PopupControlID="PanelPopUpNoLogin" BackgroundCssClass="fondoPopup"></ajaxToolkit:ModalPopupExtender>
+                   
+        <asp:Panel ID="PanelPopUpNoLogin" runat="server" stile="display: none;background-color: white;width: auto;height: auto">
+                        
+            <div class="modal-header">
+                <h5 class="modal-title" id="PopupTitleNoLogin">Error, no se puede operar de ninguna forma sin iniciar sesion.</h5>
+                    </div>
+                        <div class="modal-body">
+                            Por favor inicie sesion para poder acceder a esta parte.
+                        </div>
+                        <div class="modal-footer">
+                            <asp:Button class="PopupAceptar" runat="server" Text="Login" OnClick="PopUpLogin"></asp:Button>
+                        </div>               
+        </asp:Panel>
             <div class="centro">
                 <div class="titulo">
                     AÑADIR PRODUCTO
@@ -62,7 +78,9 @@
                             <asp:FileUpload ID="photo" runat="server" />
                         </div>
 
-                  
+                  <div>
+                      <asp:Label runat="server" ID="Label1"></asp:Label>
+                  </div>
 
                         
                    
@@ -80,7 +98,7 @@
                            Text="Create"
                            CommandName="Submit"
                            class="boton"
-                           runat="server"/>
+                           runat="server" OnClick="create_Click"/>
                     </div>
               
                 

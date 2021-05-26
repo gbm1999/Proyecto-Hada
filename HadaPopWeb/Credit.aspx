@@ -5,7 +5,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2"  ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <link rel="stylesheet" href="Credit.css" />
+        <link rel="stylesheet" href="estilos/Credit.css" />
     <div class="body">
         <div class ="contentbody">
             <div class ="Balance">
@@ -33,7 +33,8 @@
                     </asp:Panel>
                     
                 </div>
-                <asp:Label ID="ErrorTransacciones" runat="server" Class="ErrorTransaciones" ForeColor="red"></asp:Label>
+                <Label ID="ErrorTransaccione" runat="server" Class="ErrorTransaciones" ForeColor="red">Invisible</Label>
+                <label ID="ErrorTarjeta"  runat="server" Class="ErrorTarjetas" ForeColor="red">Invisible</label>
                 <asp:Label ID="Controltarget" runat="server" Text=""></asp:Label>
 
             </div>
@@ -50,22 +51,25 @@
                             <div class="separador"></div>
                             <div class ="InfoCuentas">
                                  <label class="labels">Nº Tarjeta: </label>
-                                <asp:DropDownList ID="TBNombre" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" Class="textboxes">
-                                    <asp:ListItem >Select</asp:ListItem>
-                                </asp:DropDownList>
+                                <asp:TextBox ID="TBTarjeta" runat="server" Class="textboxes">
+                                </asp:TextBox>
                             </div>
                             <div class="separador"></div>
                             <div class ="InfoCuentas">
                                  <label class="labels">Contraseña: </label>
-                                 <asp:TextBox ID="Contraseña" runat="server" Class="textboxes"></asp:TextBox>
+                                 <asp:TextBox ID="Contraseña" runat="server" TextMode="Password" Class="textboxes"></asp:TextBox>
 
                             </div>
-                            <div class ="separador"></div>
-                                <asp:label ID="ErrorTarjetas"  runat="server" Class="ErrorTarjetas" ForeColor="red"></asp:label>
                             <div class="separador"></div>
+                            <div class ="InfoCuentas">
+                                 <label class="labels">Dinero: </label>
+                                 <asp:TextBox ID="TBDinero" runat="server" Class="textboxes"></asp:TextBox>
+
+                            </div>
                             <div class ="divBotonesCuentas">
                                 <asp:Button class="BotonesCuentas" ID="EditarC1" runat="server" Text="Añadir" OnClick="Añadir" />
                                 <asp:Button class="BotonesCuentas" ID="EditarC2" runat="server" Text="Eliminar" OnClick="Eliminar" />
+                                <asp:Button class="BotonesCuentas" ID="Depositar" runat="server" Text="Depositar" OnClick="Depositar_dinero" />
                             </div>
                         </div>
                     </div>

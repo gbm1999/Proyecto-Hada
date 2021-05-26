@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <link rel="stylesheet" href="AddCategoria.css" />
+     <link rel="stylesheet" href="estilos/AddArticle.css" />
             <div class="centro">
                 <div class="titulo">
                     AÑADIR CATEGORIA
@@ -28,9 +28,5 @@
                            runat="server"/>
                     </div>
            </div>
-              
-                <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
-              
-       
-           
+           <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
 </asp:Content>

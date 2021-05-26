@@ -84,6 +84,13 @@ namespace library
             }
             set
             {
+                byte[] prueba = new byte[0];
+
+                if (value == prueba)
+                {
+                    value = null;
+
+                }
                 imagen = value;
             }
         }
@@ -139,13 +146,12 @@ namespace library
             descripcion = null;
             categoria = null;
             precio = -1.0f;
-            precio = -1;
             ciudad = null;
             comprador = null;
             vendedor = null;
             imagen = null;
         }
-        public ENArticulo(int codigo, string nombre, string descripcion, string categoria, float precio, string ciudad, string comprador, string vendedor, byte[] imagen)
+        public ENArticulo(int codigo, string nombre, string descripcion, string categoria, float precio, string ciudad, string vendedor, byte[] imagen)
         {
             this.codigo = codigo;
             this.nombre = nombre;
@@ -153,7 +159,6 @@ namespace library
             this.categoria = categoria;
             this.precio = precio;
             this.ciudad = ciudad;
-            this.comprador = comprador;
             this.vendedor = vendedor;
             this.imagen = imagen;
         }
@@ -216,8 +221,10 @@ namespace library
 
         public ArrayList showArticlesFromUser(ENUsuario usu)
         {
+            ArrayList lista = new ArrayList();
             CADArticulo arti = new CADArticulo();
-            return arti.showArticlesFromUser(usu);
+            lista = arti.showArticlesFromUser(usu);
+            return lista;
         }
         public ArrayList showArticlesFromCategory(ENCategoria cate)
         {
@@ -233,6 +240,12 @@ namespace library
         {
             CADArticulo arti = new CADArticulo();
             return arti.GetImagenByArticle(this); ;
+        }
+
+        public int countArticulo()
+        {
+            CADArticulo articulo = new CADArticulo();
+            return (articulo.countArticulo(this));
         }
     }
 }

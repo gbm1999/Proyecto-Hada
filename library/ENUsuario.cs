@@ -57,18 +57,6 @@ namespace library
                 contrasena = value;
             }
         }
-        private string tarjeta;
-        public string tarjetaUsuario
-        {
-            get
-            {
-                return tarjeta;
-            }
-            set
-            {
-                tarjeta = value;
-            }
-        }
         private int edad;
         public int edadUsuario
         {
@@ -103,11 +91,18 @@ namespace library
             }
             set
             {
+                byte[] prueba = new byte[0];
+
+                if(value == prueba)
+                {
+                    value = null;
+                }
+
                 imagen = value;
             }
         }
-        private float Balance;
-        public float balance
+        private double Balance;
+        public double balance
         {
             get
             {
@@ -131,11 +126,10 @@ namespace library
             telefono = 0;
             edad = 0;
             contrasena = null;
-            tarjeta = null;
             imagen = null;
             Balance = 0.0f;
         }
-        public ENUsuario(string NIF, string nombre, string email,int telefono, int edad, string contrasena, string tarjeta, byte[] imagen, float balance)
+        public ENUsuario(string NIF, string nombre, string email,int telefono, int edad, string contrasena, byte[] imagen, float balance)
         {
             this.NIF = NIF;
             this.nombre = nombre;
@@ -143,9 +137,8 @@ namespace library
             this.telefono = telefono;
             this.edad = edad;
             this.contrasena = contrasena;
-            this.tarjeta = tarjeta;
             this.imagen = imagen;
-            this.Balance = balance;
+            this.balance = balance;
         }
         public bool createUsuario()
         {
@@ -210,6 +203,13 @@ namespace library
             administrador.administrador = this.NIFUsuario;
             CADAdministrador admin = new CADAdministrador();
             return admin.isAdministrador(administrador);
+        }
+        public bool tieneTarjetas()
+        {
+            ENMonedero mon = new ENMonedero();
+            mon.usuario = this.NIFUsuario;
+            CADMonedero monedero = new CADMonedero();
+            return monedero.tieneTarjetas(mon);
         }
     }
 }
