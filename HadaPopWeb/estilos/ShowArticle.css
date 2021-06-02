@@ -68,7 +68,7 @@
 
 .foto {
     position: absolute;
-    height: 60%;
+    height: 50%;
     width: 35%;
     top: 5%;
     background-color: forestgreen;
@@ -84,21 +84,20 @@
 
 .debajo-imagen{
     position: absolute;
-    width: 30%;
-    top: 70%;
+    width: 35%;
+    top: 60%;
     
-    height: 25%;
-    left: 10%;
+    height: 35%;
+    left: 5%;
 }
 
 .campos-izq {
     position: relative;
-    top: 4%;
-    height: 46%;
+    
+    height: 35%;
     font-size: 140%;
     width: 100%;
-    left: 1px;
-    margin-top: 0px;
+    
 }
 
 .parametro-introducido {
@@ -113,11 +112,13 @@
 
 .descripcion{
     position: absolute;
-    top: 10%;
-    width: 40%;
-    left: 50%;
+    top: 5%;
+    width: 35%;
+    left: 55%;
     height: 50%;
     border-radius: 20px;
+    resize: none;
+    
 }
 
 .AddDescription {
@@ -136,28 +137,20 @@
 
 .vendedor {
     position: absolute;
-    width: 40%;
-    top: 61%;
-    height: 17%;
-    left: 50%;
-    right: 80px;
+    width: 35%;
+    top: 55%;
+    height: 20%;
+    left: 55%;  
 }
 
-.precio {
-    position: absolute;
-    width: 40%;
-    top: 55%;
-    height: 12%;
-    left: 2%;
-    font-size: 140%;
-    right: 482px;
-}
+
 
 .modificar{
     position:absolute;
-    top: 0px;
-    left: 2px;
-    margin-top: 0px;
+    top: 80%;
+    left: 55%;
+    width: 35%;
+    height: 15%;
 }
 
 .texto_modificado {
@@ -167,5 +160,46 @@
     height: 24px;
     width: 173px;
     margin-top: 0px;
+    align-content:center;
 }
 
+.borde{
+    border: 1px solid black;
+}
+
+.vendedor-parametros{
+    position:relative;
+    width: 50%;
+    left: 25%;
+    margin-top: 5%;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 100%;
+}
+
+.modificar-boton{
+    position: relative;
+    left: 25%;
+    
+    border-radius:20px;
+    background-color: black;
+    color: white;
+    font-size: 100%;
+    width: 60%;
+    left: 20%;
+    margin-top: 3%;
+    
+}
+
+.modificar-boton:hover{
+    background-color: lightskyblue;
+}
+
+.parametros{
+    position:relative;
+    float: right;
+    width: 60%;
+    border-radius: 20px;
+    font-size: 80%;
+    text-align: center;
+}

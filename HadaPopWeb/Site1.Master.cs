@@ -13,5 +13,10 @@ namespace HadaPopWeb
         {
 
         }
+
+        protected void NavigationMenu_MenuItemClick(object sender, MenuEventArgs e)
+        {
+
+        }
     }
 }

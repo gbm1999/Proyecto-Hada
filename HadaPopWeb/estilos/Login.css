@@ -39,7 +39,7 @@
     width: 35%;
     height: 100%;
     float: right;
-    background-color: #469B4B;
+    background-color: black;
     border-radius: 0px 20px 20px 0px;
 }
 
@@ -165,6 +165,10 @@
     margin-top: 0px;
 }
 
+.boton-login:hover{
+    background-color: lightskyblue;
+}
+
 .boton {
     position: absolute;
     top: -3%;
@@ -178,4 +182,8 @@
     font-size: 140%;
     margin-left: 2px;
     margin-bottom: 6px;
+}
+
+.boton:hover{
+    background-color: lightskyblue;
 }
