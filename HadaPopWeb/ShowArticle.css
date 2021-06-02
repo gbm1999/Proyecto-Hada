@@ -1,5 +1,5 @@
 ﻿body {
-    background-image: url("images/fondo_register.jpg");
+    background-image: url("../images/fondo_register.jpg");
 }
 
 .center-container {
@@ -46,10 +46,10 @@
 
 .precio {
     position: absolute;
-    height: 6%;
-    top: 49%;
+    height: 108%;
+    top: 130%;
     width: 14%;
-    left: 8%;
+    left: 50%;
     text-align: center;
     color: black;
     font-size: 120%;
@@ -70,7 +70,7 @@
     position: absolute;
     height: 60%;
     width: 35%;
-    top: 5%;
+    top: 2%;
     background-color: forestgreen;
     overflow: hidden;
     left: 5%;
@@ -85,18 +85,22 @@
 .debajo-imagen{
     position: absolute;
     width: 30%;
-    top: 70%;
+    top: 55%;
     
-    height: 25%;
+    
+    height: 35%;
     left: 10%;
 }
 
 .campos-izq {
     position: relative;
-    top: 0%;
-    height: 50%;
+    top: 4%;
+    height: 30%;
     font-size: 140%;
     width: 100%;
+
+   
+    font-family: Poppins;
 }
 
 .parametro-introducido {
@@ -135,11 +139,93 @@
 .vendedor {
     position: absolute;
     width: 40%;
-    top: 70%;
-    height: 25%;
-    left: 50%;   
+    top: 61%;
+    height: 17%;
+    left: 50%;
+    right: 80px;
+}
+
+.precio {
+    position: absolute;
+    width: 40%;
+    top: 55%;
+    height: 12%;
+    left: 2%;
+    font-size: 140%;
+    right: 482px;
+}
+
+.modificar{
+    position:absolute;
+    top: 80%;
+    left: 55%;
+    width: 30%;
+    border-radius: 20px;
+   
+    justify-content: center;
+    height: 15%;
+   
+  
+    
 }
 
 
 
+.dis-boton{
+    position: relative;
+    color: white;
+    background: black;
+    
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 5%;
+    font-family: Poppins;
+    font-weight: 500;
+}
 
+    .dis-boton:hover {
+        background: LightSkyBlue;
+        color: white;
+    }
+
+.desc{
+    resize: none;
+    border-radius: 20px;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-right: 5%;
+    text-align: justify;
+    font-size: 110%;
+    font-family: Roboto;
+    font-weight: 600;
+    
+}
+
+.input-d{
+    position: relative;
+ 
+    width: 60%;
+    border-radius: 20px;
+    font-family: Poppins;
+    text-align: center;
+    float: right;
+    margin-top: 2%;
+    
+
+}
+
+.datos{
+    position: relative;
+    width: 40%;
+   
+}
+
+.input-t {
+    position: relative;
+    width: 60%;
+    border-radius: 20px;
+    font-family: Poppins;
+    text-align: center;
+    
+    margin-top: 2%;
+}
