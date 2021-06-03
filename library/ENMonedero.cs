@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,29 +33,30 @@ namespace library
                 Contrasena = value;
             }
         }
-        private float Saldo;
-        public float SaldoTarjeta
+
+        private string Usuario;
+        public string usuario
         {
             get
             {
-                return Saldo;
+                return Usuario;
             }
             set
             {
-                Saldo = value;
+                Usuario = value;
             }
         }
         public ENMonedero()
         {
             Tarjeta = null;
             Contrasena = 0;
-            Saldo = 0;
+            Usuario = null;
         }
-        public ENMonedero(string Tarjeta, int Contrasena, float Saldo)
+        public ENMonedero(string Tarjeta, int Contrasena, string Usuario)
         {
             this.Tarjeta = Tarjeta;
             this.Contrasena = Contrasena;
-            this.Saldo = Saldo;
+            this.Usuario = Usuario;
         }
         public bool createMonedero()
         {
@@ -76,10 +78,25 @@ namespace library
             CADMonedero monedero = new CADMonedero();
             return monedero.deleteMonedero(this);
         }
-        public bool AccesoSaldo()
+        public bool Acceso()
         {
             CADMonedero monedero = new CADMonedero();
-            return monedero.AccesoSaldo(this);
+            return monedero.Acceso(this);
+        }
+
+        public ArrayList MostrarTarjetasLibres()
+        {
+            ArrayList lista = new ArrayList();
+            CADMonedero Monedero = new CADMonedero();
+            lista = Monedero.MostrarTarjetasLibres();
+
+            return lista;
+        }
+
+        public bool deleteUser()
+        {
+            CADMonedero monedero = new CADMonedero();
+            return (monedero.deleteUser(this));
         }
     }
 }

@@ -42,17 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CADAdmin.cs" />
+    <Compile Include="CADAdministrador.cs" />
     <Compile Include="CADArticulo.cs" />
     <Compile Include="CADComentario.cs" />
+    <Compile Include="CADModerador.cs" />
     <Compile Include="CADReporte.cs" />
     <Compile Include="CADUsuario.cs" />
-    <Compile Include="ENAdmin.cs" />
     <Compile Include="CADCategoria.cs" />
     <Compile Include="CADMonedero.cs" />
+    <Compile Include="ENAdministrador.cs" />
     <Compile Include="ENArticulo.cs" />
     <Compile Include="ENCategoria.cs" />
     <Compile Include="ENComentario.cs" />
+    <Compile Include="ENModerador.cs" />
     <Compile Include="ENMonedero.cs" />
     <Compile Include="ENReporte.cs" />
     <Compile Include="ENUsuario.cs" />

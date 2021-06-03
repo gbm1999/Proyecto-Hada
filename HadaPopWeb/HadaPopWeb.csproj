@@ -43,7 +43,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,40 +71,57 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404Error.aspx" />
+    <Content Include="estilos\404Error.css" />
     <Content Include="AddArticle.aspx" />
-    <Content Include="AddArticle.css" />
+    <Content Include="estilos\AddArticle.css" />
     <Content Include="AddCategoria.aspx" />
     <Content Include="App_Data\Database.mdf" />
     <Content Include="App_Data\Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <Content Include="articles.aspx" />
+    <Content Include="estilos\articles.css" />
     <Content Include="articulos.aspx" />
-    <Content Include="categoria-articulos.css" />
+    <Content Include="bin\HadaPopWeb.dll" />
+    <Content Include="bin\HadaPopWeb.pdb" />
+    <Content Include="estilos\categoria-articulos.css" />
     <Content Include="categoria.aspx" />
+    <Content Include="estilos\categoria.css" />
     <Content Include="Categoriaconcrete.aspx" />
-    <Content Include="categorias.css" />
+    <Content Include="estilos\categorias.css" />
     <Content Include="Credit.aspx" />
-    <Content Include="Credit.css" />
+    <Content Include="estilos\Credit.css" />
+    <Content Include="Global.asax" />
     <Content Include="images\add.png" />
+    <Content Include="images\contact.png" />
     <Content Include="images\fondo_register.jpg" />
     <Content Include="images\login.jpg" />
     <Content Include="images\logo_small.png" />
     <Content Include="images\plus.png" />
     <Content Include="Info.aspx" />
-    <Content Include="Info.css" />
-    <Content Include="Login.css" />
-    <Content Include="menu.css" />
+    <Content Include="estilos\Info.css" />
+    <Content Include="estilos\Login.css" />
+    <Content Include="estilos\menu.css" />
+    <Content Include="estilos\Navegador.css" />
     <Content Include="Profile.aspx" />
-    <Content Include="Profile.css" />
+    <Content Include="estilos\Profile.css" />
     <Content Include="Registro.aspx" />
-    <Content Include="Registro.css" />
+    <Content Include="estilos\Registro.css" />
     <Content Include="ShowArticle.aspx" />
-    <Content Include="ShowArticle.css" />
-    <Content Include="Site1.css" />
+    <Content Include="estilos\ShowArticle.css" />
+    <Content Include="estilos\Site1.css" />
     <Content Include="Web.config" />
     <Content Include="Login.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="404Error.aspx.cs">
+      <DependentUpon>404Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="404Error.aspx.designer.cs">
+      <DependentUpon>404Error.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddArticle.aspx.cs">
       <DependentUpon>AddArticle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -114,6 +135,13 @@
     </Compile>
     <Compile Include="AddCategoria.aspx.designer.cs">
       <DependentUpon>AddCategoria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="articles.aspx.cs">
+      <DependentUpon>articles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="articles.aspx.designer.cs">
+      <DependentUpon>articles.aspx</DependentUpon>
     </Compile>
     <Compile Include="articulos.aspx.cs">
       <DependentUpon>articulos.aspx</DependentUpon>
@@ -142,6 +170,9 @@
     </Compile>
     <Compile Include="Credit.aspx.designer.cs">
       <DependentUpon>Credit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Info.aspx.cs">
       <DependentUpon>Info.aspx</DependentUpon>
