@@ -38,7 +38,7 @@
 .seguridad-container{
     position: absolute;
     height: 10%;
-    width: 10%;
+    width: auto;
     top: 80%;
     overflow: hidden;
     left: 10%;
