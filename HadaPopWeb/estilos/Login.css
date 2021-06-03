@@ -39,7 +39,7 @@
     width: 35%;
     height: 100%;
     float: right;
-    background-color: #469B4B;
+    background-color: black;
     border-radius: 0px 20px 20px 0px;
 }
 
@@ -66,6 +66,10 @@
     font-weight: 600;
     font-size: 120%;
     border: 2px solid #FFFF;
+}
+
+.boton-register:hover{
+    background-color: lightskyblue;
 }
 .boton-volver {
     position: relative;
@@ -154,15 +158,19 @@
     top: 83%;
     width: 40%;
     height: 8%;
-    left: 21%;
+    left: 30%;
     text-align: center;
     border-radius: 20px;
-    background-color: #469B4B;
+    background-color: black;
     color: white;
     font-size: 140%;
     margin-left: 2px;
     margin-bottom: 6px;
     margin-top: 0px;
+}
+
+.boton-login:hover{
+    background-color: lightskyblue;
 }
 
 .boton {
@@ -178,4 +186,8 @@
     font-size: 140%;
     margin-left: 2px;
     margin-bottom: 6px;
+}
+
+.boton:hover{
+    background-color: lightskyblue;
 }

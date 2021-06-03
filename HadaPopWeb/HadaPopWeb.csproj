@@ -97,6 +97,8 @@
     <Content Include="images\contact.png" />
     <Content Include="images\fondo_register.jpg" />
     <Content Include="images\login.jpg" />
+    <Content Include="images\logo-blanco.png" />
+    <Content Include="images\logo-negro.png" />
     <Content Include="images\logo_small.png" />
     <Content Include="images\plus.png" />
     <Content Include="Info.aspx" />

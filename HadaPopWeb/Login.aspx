@@ -39,7 +39,7 @@
                         Welcome
                     </div>
                     <div class="logo">
-                        <img src="images/logo_small.png" />
+                        <img src="images/logo-negro.png" />
                     </div>
 
                     <div class="div-parametros">
