@@ -28,16 +28,12 @@
 
    
           
-    
-    <div class="atencion-container">
-        <asp:Image runat="server" src="images/logo_atencion.png" />
-       
-    </div> 
-
-    <div class="atencion-container">
-        <asp:ImageButton runat="server"  OnClick="Facebook_Click" src="images/logoFacebook.png" />
-    </div> 
-
+    <div>
+        
+        <div class="atencion-container">
+            <asp:ImageButton runat="server" CssClass="atimg" OnClick="Facebook_Click" src="images/logoFacebook.png" />
+        </div> 
+    </div>
     <div class="foto-empresa">
         <asp:Image runat="server" src="images/HRTrends-que-es-el-empowerment-en-una-empresa.jpg" />
     </div>

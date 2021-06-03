@@ -14,10 +14,6 @@
 }
 
 
-
-
-
-
 .foto {
     position: absolute;
     height: 30%;
@@ -54,18 +50,18 @@
 .atencion-container {
     position: absolute;
     height: 10%;
-    width: 10%;
+    width: 15%;
     top: 80%;
     overflow: hidden;
     left: 20%;
  
 }
 
-    .atencion-container img {
-        width: auto;
+    .atimg {
+        width: 40%;
         height: 100%;
-        display: block;
     }
+   
 
 .atencion {
     position: absolute;
