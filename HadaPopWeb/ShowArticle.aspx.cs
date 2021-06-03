@@ -15,7 +15,8 @@ namespace HadaPopWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            vendedor.ReadOnly = true;
+            numero.ReadOnly = true;
             Precio.ReadOnly=false;
             articulo.nombreArticulo= Request.QueryString["Value"];
             articulo=articulo.showOneArticle();
@@ -43,21 +44,46 @@ namespace HadaPopWeb
         protected void modificar_Click(object sender, EventArgs e)
         {
 
-            ENArticulo articulo1 = new ENArticulo(articulo.codigoArticulo, nombre.Text, Descripcion.Text, articulo.categoriaArticulo, (float)Convert.ToDouble(Precio.Text),
-                Ciudad.Text, vendedor.Text, articulo.imagenArticulo);
-
-            if (articulo1.updateArticulo())
+            if (!CampoValidoPrecio(Precio.Text))
             {
-
-                Label1.Text = "El artículo se ha modificado correctamente.";
-
+                errorprecio.Visible = true;
+                errorprecio.InnerText = "El precio Introducido no es un número";
             }
+
             else
             {
-                Label1.Text = "El artículo no se ha podido modificar.";
-            }
-            mostrarArticulo(articulo1);
 
+                errorprecio.InnerText = "";
+                ENArticulo articulo1 = new ENArticulo(articulo.codigoArticulo, nombre.Text, Descripcion.Text, articulo.categoriaArticulo, (float)Convert.ToDouble(Precio.Text),
+                Ciudad.Text, vendedor.Text, articulo.imagenArticulo);
+
+                if (articulo1.updateArticulo())
+                {
+
+                    Label1.Text = "El artículo se ha modificado correctamente.";
+
+                }
+                else
+                {
+                    Label1.Text = "El artículo no se ha podido modificar.";
+                }
+                mostrarArticulo(articulo1);
+            }
+            
+
+        }
+
+        private bool CampoValidoPrecio(string check) //Comprueba si la cadena pasada es válida para ser precio
+        {                                      // Para ser válida debe ser un número
+
+            bool valido = false;
+
+            if (int.TryParse(check, out _))
+            {
+                valido = true;
+            }
+           
+            return valido;
         }
 
     }

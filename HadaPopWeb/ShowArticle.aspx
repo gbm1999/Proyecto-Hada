@@ -45,6 +45,10 @@
 
             PRECIO:
             <asp:TextBox name="Precio" id="Precio" runat="server"></asp:TextBox>
+            
+            <div class="errorbox">
+                <label id="errorprecio" runat ="server" class="errortext"></label>
+            </div>
         </div>
          
          <div class="modificar">
