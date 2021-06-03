@@ -62,7 +62,7 @@
           
          <div class="modificar">
              <asp:Button runat="server" Text="MODIFICAR" ID="modificar" CssClass="dis-boton" OnClick="modificar_Click"/>
-             <asp:Button runat="server" Text="BORRAR" CssClass="dis-boton" ID="Button2" OnClick="borrar_Click" />
+             <asp:Button runat="server" Text="BORRAR" CssClass="dis-boton" ID="Borrar" OnClick="borrar_Click" />
          </div>
          
     </div>

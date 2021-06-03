@@ -15,7 +15,8 @@
     <form id="form1" runat="server">
     
         <nav class="divmenu">
-            <!--<asp:Image ID="Image1" ImageUrl="~/images/logo_small.png" CssClass="img" runat="server" /> -->
+            <asp:Image ID="ImageUser" runat="server" style="position: absolute; width: auto; height: 3%; left: 81%; border-radius: 20px;" /> 
+            <asp:Label ID="NombreUser" runat="server" Text="" style="position: absolute; width: auto; height: auto; left: 85%; top: 1.5%; background-color:white; border-radius: 20px; text-align:center;"></asp:Label>
 
             <asp:menu id="NavigationMenu"
             disappearafter="2000"
@@ -57,8 +58,6 @@
             </Items>
             </asp:menu>
        </nav>   
-       
-       
       
            
 

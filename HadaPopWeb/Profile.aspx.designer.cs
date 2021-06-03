@@ -87,6 +87,15 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.TextBox TBNombre;
 
         /// <summary>
+        /// Control ErrorNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ErrorNombre;
+
+        /// <summary>
         /// Control TBEmail.
         /// </summary>
         /// <remarks>
@@ -94,6 +103,15 @@ namespace HadaPopWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TBEmail;
+
+        /// <summary>
+        /// Control ErrorEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ErrorEmail;
 
         /// <summary>
         /// Control TBNif.
@@ -105,6 +123,15 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.TextBox TBNif;
 
         /// <summary>
+        /// Control ErrorNif.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ErrorNif;
+
+        /// <summary>
         /// Control TBEdad.
         /// </summary>
         /// <remarks>
@@ -114,6 +141,15 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.TextBox TBEdad;
 
         /// <summary>
+        /// Control ErrorEdad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ErrorEdad;
+
+        /// <summary>
         /// Control TBTelefono.
         /// </summary>
         /// <remarks>
@@ -121,6 +157,15 @@ namespace HadaPopWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TBTelefono;
+
+        /// <summary>
+        /// Control ErrorTelefono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ErrorTelefono;
 
         /// <summary>
         /// Control photo.
@@ -193,14 +238,5 @@ namespace HadaPopWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListBox Comentarios;
-
-        /// <summary>
-        /// Control articulos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label articulos;
     }
 }
