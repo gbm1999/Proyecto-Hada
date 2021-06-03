@@ -15,13 +15,34 @@ namespace HadaPopWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            ENUsuario user = obtencionNif();
+
+            if (user.NIFUsuario != articulo.vendedorArticulo || user.NIFUsuario == null)
+            {
+                nombre.ReadOnly = true;
+                Ciudad.ReadOnly = true;
+                Precio.ReadOnly = true;
+                Descripcion.ReadOnly = true;
+                modificar.Visible = false;
+                Borrar.Visible = false;
+            }
+
             vendedor.ReadOnly = true;
             numero.ReadOnly = true;
-            Precio.ReadOnly=false;
+
             articulo.nombreArticulo= Request.QueryString["Value"];
             articulo=articulo.showOneArticle();
             if(!IsPostBack) mostrarArticulo(articulo);
 
+        }
+
+        protected ENUsuario obtencionNif()
+        {
+            ENUsuario user = new ENUsuario();
+
+            user.NIFUsuario = (string)Session["nif"];
+
+            return (user);
         }
 
         private void mostrarArticulo(ENArticulo articulo)
@@ -132,9 +153,6 @@ namespace HadaPopWeb
                 Console.WriteLine("No tienes permiso para eliminar este artículo.", ex.Message);
             }
         }
-
-
-
 
     }
 }

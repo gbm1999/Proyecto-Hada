@@ -235,3 +235,28 @@
     left: 50%;
     top: 50%;
 }
+
+.ErrorNombre {
+    position: absolute;
+    top: 100%;
+}
+
+.ErrorEmail {
+    position: absolute;
+    top: 100%;
+}
+
+.ErrorNif {
+    position: absolute;
+    top: 100%;
+}
+
+.ErrorEdad {
+    position: absolute;
+    top:100%;
+}
+
+.ErrorTelefono {
+    position: absolute;
+    top: 100%;
+}
