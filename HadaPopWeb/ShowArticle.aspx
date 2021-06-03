@@ -33,9 +33,14 @@
              </div>
 
              <div class="campos-izq">
-                 PRECIO:
-                 <asp:TextBox name="Precio" id="Precio" CssClass="input-d" runat="server"></asp:TextBox>
 
+                    PRECIO:
+                    <asp:TextBox name="Precio" id="Precio" runat="server"></asp:TextBox>
+            
+                    <div class="errorbox">
+                        <label id="errorprecio" runat ="server" class="errortext"></label>
+                    </div>
+         
              </div>
          </div>
 
@@ -57,7 +62,7 @@
           
          <div class="modificar">
              <asp:Button runat="server" Text="MODIFICAR" ID="modificar" CssClass="dis-boton" OnClick="modificar_Click"/>
-             <asp:Button runat="server" Text="BORRAR" CssClass="dis-boton" ID="Button2" />
+             <asp:Button runat="server" Text="BORRAR" CssClass="dis-boton" ID="Button2" OnClick="borrar_Click" />
          </div>
          
     </div>
