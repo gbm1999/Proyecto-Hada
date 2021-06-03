@@ -21,9 +21,10 @@ namespace HadaPopWeb
 
         protected void acceder_categoria(object sender, EventArgs e)
         {
-            Response.Redirect("Categoriaconcrete.aspx");
+           
             
-            
+
+
         }
     }
 

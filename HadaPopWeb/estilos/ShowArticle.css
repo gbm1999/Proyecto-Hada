@@ -39,7 +39,7 @@
     height: 16%;
     border-bottom: 1px solid #000;
     outline: none;
-    left: 24px;
+    
 }
 
 
@@ -73,7 +73,7 @@
     top: 5%;
     background-color: forestgreen;
     overflow: hidden;
-    left: 5%;
+    left: 7%;
 }
 
 .foto img {
@@ -88,7 +88,7 @@
     top: 60%;
     
     height: 35%;
-    left: 5%;
+    left: 7%;
 }
 
 .campos-izq {
@@ -115,7 +115,7 @@
     top: 5%;
     width: 35%;
     left: 55%;
-    height: 50%;
+    height: 60%;
     border-radius: 20px;
     resize: none;
     

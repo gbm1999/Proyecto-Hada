@@ -67,6 +67,10 @@
     font-size: 120%;
     border: 2px solid #FFFF;
 }
+
+.boton-register:hover{
+    background-color: lightskyblue;
+}
 .boton-volver {
     position: relative;
     height: 20%;
@@ -154,10 +158,10 @@
     top: 83%;
     width: 40%;
     height: 8%;
-    left: 21%;
+    left: 30%;
     text-align: center;
     border-radius: 20px;
-    background-color: #469B4B;
+    background-color: black;
     color: white;
     font-size: 140%;
     margin-left: 2px;

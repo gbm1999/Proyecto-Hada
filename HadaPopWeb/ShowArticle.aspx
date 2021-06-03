@@ -10,11 +10,11 @@
 
      <div class="center-container">
          
-         <div class="foto borde">
+         <div class="foto ">
              <img src="images/depositphotos_324611040-stock-illustration-no-image-vector-icon-no.jpg" />
          </div>
 
-         <div class="debajo-imagen borde">
+         <div class="debajo-imagen ">
              
              <div class="campos-izq">
                  NOMBRE:
@@ -37,7 +37,7 @@
              <asp:TextBox name="Descripcion" CssClass="AddDescription" id="Descripcion" runat="server" TextMode="MultiLine" Height="218px" Width="317px"></asp:TextBox>
          </div>
 
-         <div class="vendedor borde">
+         <div class="vendedor">
                  DATOS DEL VENDEDOR:
                 
 
@@ -47,7 +47,7 @@
 
         
          
-         <div class="modificar borde">
+         <div class="modificar ">
              <asp:Button runat="server" CssClass="modificar-boton" Text="MODIFICAR" ID="modificar" OnClick="modificar_Click"/>
              <asp:Button runat="server" CssClass="modificar-boton" Text="BORRAR" ID="borrar" />
          </div>
