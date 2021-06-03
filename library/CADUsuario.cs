@@ -103,13 +103,13 @@ namespace library
                 if (usu.imagenUsuario == null)
                 {
                     command = new SqlCommand("UPDATE Usuario SET Nif = @Nif,Nombre = @Nombre,Email = @Email," +
-                                                    "Telefono = @Telefono, Edad = @Edad, Contrasena = @Contrasena," +
+                                                    "Telefono = @Telefono, Edad = @Edad," +
                                                     "Balance = @Balance where nif = @nif", connectBD);
                 }
                 else
                 {
                     command = new SqlCommand("UPDATE Usuario SET Nif = @Nif,Nombre = @Nombre,Email = @Email," +
-                                                    "Telefono = @Telefono, Edad = @Edad, Contrasena = @Contrasena," +
+                                                    "Telefono = @Telefono, Edad = @Edad," +
                                                     "Imagen = @Imagen, Balance = @Balance where nif = @nif", connectBD);
 
                     command.Parameters.AddWithValue("@Imagen", usu.imagenUsuario);
@@ -120,7 +120,6 @@ namespace library
                 command.Parameters.AddWithValue("@Email", usu.emailUsuario);
                 command.Parameters.AddWithValue("@Telefono", usu.telefonoUsuario);
                 command.Parameters.AddWithValue("@Edad", usu.edadUsuario);
-                command.Parameters.AddWithValue("@Contrasena", usu.contrasenaUsuario);
                 command.Parameters.AddWithValue("@Balance", usu.balance);
                 response = command.ExecuteNonQuery();
 

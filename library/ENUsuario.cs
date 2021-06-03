@@ -91,6 +91,13 @@ namespace library
             }
             set
             {
+                byte[] prueba = new byte[0];
+
+                if(value == prueba)
+                {
+                    value = null;
+                }
+
                 imagen = value;
             }
         }

@@ -25,16 +25,16 @@
         </asp:Panel>
         <div class ="CuadroExt">
             <div class="divimgdatos">
-                <div class = "imgperfbox">
-                    <div class="img">
-                        <asp:Image ID="ImageUser" runat="server"/>
+                    <div class="img_profileDiv">
+                        <asp:Image ID="ImageUser" runat="server" class="img_profile"/>
                         <asp:Label ID="Controltarget" runat="server" Text=""></asp:Label>
+                    </div>
+                    <div class="ventComp">
                         <asp:Label ID="NumVenta" runat="server" Text=""></asp:Label>
                         <label>Ventas</label>
                         <asp:Label ID="NumCompra" runat="server" Text=""></asp:Label>
                         <label>Compras</label>
                     </div>
-                </div>
                 <!-- COMIENZO DATOS USU -->
                 <div class="datosusu" runat ="server">
 
@@ -69,7 +69,14 @@
                      <div class = "labtext"> <!-- Tlfno -->
                         <label class="labels">Teléfono: </label>
                         <asp:TextBox ID="TBTelefono" class="textboxes" runat="server"></asp:TextBox>
-                    </div> 
+                    </div>
+                    
+                    <div class="separadorvert"></div>
+
+                    <div class="labtext">
+                            <label class="labels">Imagen: </label>
+                            <asp:FileUpload ID="photo" class="FileUpload" runat="server" />
+                        </div>
                     <!-- FIN DATOSUSU -->
                     <div class="separadorvert"></div>
             
@@ -84,13 +91,14 @@
                 <div class="Articulos">
                     <h2>Artículos del usuario: </h2>
                     <div class="Articulo">
-                        <div class="ArtImgDiv">
-                            <label class="TitleUsu"> Artículo1</label>
-                            <asp:Image ID="Article1Img" CssClass="ImgArticle" ImageUrl="~/images/depositphotos_324611040-stock-illustration-no-image-vector-icon-no.jpg" runat="server" />
-                        </div>
-                            <p class="Coment">Esta es la descripción del Artículo</p>
+                        <asp:ImageButton ID="Articulo" runat="server" class="imagenArticulo" OnClick="imgArticle1_Click"/>
+                        <br>
+                        <asp:Label ID="LabelArticulo1" runat="server" class="nombreArticulo"> </asp:Label>
                     </div>
-
+                    <div>
+                        <asp:Button ID="PrevButton" Text="Anterior" runat="server"  OnClick="Prev_Click" class="boton_ArticuloPrev"></asp:Button>
+                        <asp:Button ID="NextButton" Text="Siguiente" runat="server" OnClick="Next_Click" class="boton_ArticuloNext"></asp:Button>
+                    </div>
                 </div>
                 <div class="Comentarios">   
                     <h2>Comentarios del Usuario:</h2>

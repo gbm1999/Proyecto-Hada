@@ -75,7 +75,7 @@ namespace library
             }
         }
 
-        private byte[] imagen = new byte[999];
+        private byte[] imagen;
         public byte[] imagenArticulo
         {
             get
@@ -84,6 +84,13 @@ namespace library
             }
             set
             {
+                byte[] prueba = new byte[0];
+
+                if (value == prueba)
+                {
+                    value = null;
+
+                }
                 imagen = value;
             }
         }
@@ -214,8 +221,10 @@ namespace library
 
         public ArrayList showArticlesFromUser(ENUsuario usu)
         {
+            ArrayList lista = new ArrayList();
             CADArticulo arti = new CADArticulo();
-            return arti.showArticlesFromUser(usu);
+            lista = arti.showArticlesFromUser(usu);
+            return lista;
         }
         public ArrayList showArticlesFromCategory(ENCategoria cate)
         {
