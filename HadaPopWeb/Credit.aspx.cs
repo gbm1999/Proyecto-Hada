@@ -56,7 +56,7 @@ namespace HadaPopWeb
                 {
                     monedero.ContrasenaTarjeta = int.Parse(Contraseña.Text);
 
-                    if (monedero.AccesoSaldo())
+                    if (monedero.Acceso())
                     {
                         ArrayList lista = monedero.MostrarTarjetasLibres();
                         bool ok = false;
@@ -67,12 +67,11 @@ namespace HadaPopWeb
                             if (moneAux.numTarjeta == monedero.numTarjeta)
                             {
                                 ok = true;
-                                user.balance = (user.balance + monedero.SaldoTarjeta);
 
                                 if (!user.updateUsuario())
                                 {
                                     ErrorTransaccione.Visible = true;
-                                    ErrorTransaccione.InnerText = "No se ha podido añadir el importe asignado, por favor vuelva a intentarlo";
+                                    ErrorTransaccione.InnerText = "No se ha podido añadir la tarjeta, por favor vuelva a intentarlo";
                                 }
                                 else
                                 {
@@ -112,15 +111,14 @@ namespace HadaPopWeb
 
             if (int.TryParse(Contraseña.Text, out numero))
             {
-
                 monedero.ContrasenaTarjeta = int.Parse(Contraseña.Text);
 
-                if (monedero.AccesoSaldo())
+                if (user.tieneTarjetas())
                 {
-                    if (!user.updateUsuario())
+                    if (!monedero.deleteUser())
                     {
-                        ErrorTransaccione.Visible = true;
-                        ErrorTransaccione.InnerText = "No se ha podido añadir el importe asignado, por favor vuelva a intentarlo";
+                        ErrorTarjeta.Visible = true;
+                        ErrorTarjeta.InnerText = "La tarjeta no se ha podido eliminar de la cuenta";
                     }
                 }
                 else
@@ -136,6 +134,47 @@ namespace HadaPopWeb
             }
         }
 
+        protected void Depositar_dinero(object sender, EventArgs e)
+        {
+            ENUsuario user = obtencionNif();
+            ENMonedero monedero = new ENMonedero();
+            int numero = 0;
+
+            if (user.readUsuario())
+            {
+
+                if (int.TryParse(TBDinero.Text, out numero) && (int.Parse(TBDinero.Text) >= 0))
+                {
+                    if (user.tieneTarjetas())
+                    {
+                        user.balance = user.balance + int.Parse(TBDinero.Text);
+
+                        if (!user.updateUsuario())
+                        {
+                            ErrorTransaccione.Visible = true;
+                            ErrorTransaccione.InnerText = "No se ha podido añadir el importe asignado, por favor vuelva a intentarlo";
+                        }
+                        else
+                        {
+                            monedero.usuario = user.NIFUsuario;
+                            monedero.updateMonedero();
+                            Balance.Text = user.balance.ToString() + "€";
+                        }
+                    }
+                    else
+                    {
+                        ErrorTarjeta.Visible = true;
+                        ErrorTarjeta.InnerText = "No tienes tarjetas para poder depositar el importe requerido.";
+                    }
+                }
+                else
+                {
+                    ErrorTarjeta.Visible = true;
+                    ErrorTarjeta.InnerText = "Importe no valido.";
+                }
+            }
+        }
+    
         private void ResetErrores()
         {
             ErrorTransaccione.Visible = false;

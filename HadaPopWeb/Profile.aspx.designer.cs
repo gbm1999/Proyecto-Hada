@@ -123,6 +123,15 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.TextBox TBTelefono;
 
         /// <summary>
+        /// Control photo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload photo;
+
+        /// <summary>
         /// Control Butt_Edit.
         /// </summary>
         /// <remarks>
@@ -141,13 +150,40 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.Button Butt_Env;
 
         /// <summary>
-        /// Control Article1Img.
+        /// Control Articulo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Article1Img;
+        protected global::System.Web.UI.WebControls.ImageButton Articulo;
+
+        /// <summary>
+        /// Control LabelArticulo1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelArticulo1;
+
+        /// <summary>
+        /// Control PrevButton.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button PrevButton;
+
+        /// <summary>
+        /// Control NextButton.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button NextButton;
 
         /// <summary>
         /// Control Comentarios.

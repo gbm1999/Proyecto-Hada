@@ -91,6 +91,13 @@ namespace library
             }
             set
             {
+                byte[] prueba = new byte[0];
+
+                if(value == prueba)
+                {
+                    value = null;
+                }
+
                 imagen = value;
             }
         }
@@ -196,6 +203,13 @@ namespace library
             administrador.administrador = this.NIFUsuario;
             CADAdministrador admin = new CADAdministrador();
             return admin.isAdministrador(administrador);
+        }
+        public bool tieneTarjetas()
+        {
+            ENMonedero mon = new ENMonedero();
+            mon.usuario = this.NIFUsuario;
+            CADMonedero monedero = new CADMonedero();
+            return monedero.tieneTarjetas(mon);
         }
     }
 }

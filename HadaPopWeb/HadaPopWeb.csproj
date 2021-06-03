@@ -72,45 +72,47 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="404Error.aspx" />
-    <Content Include="404Error.css" />
+    <Content Include="estilos\404Error.css" />
     <Content Include="AddArticle.aspx" />
-    <Content Include="AddArticle.css" />
+    <Content Include="estilos\AddArticle.css" />
     <Content Include="AddCategoria.aspx" />
     <Content Include="App_Data\Database.mdf" />
     <Content Include="App_Data\Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
     <Content Include="articles.aspx" />
-    <Content Include="articles.css" />
+    <Content Include="estilos\articles.css" />
     <Content Include="articulos.aspx" />
     <Content Include="bin\HadaPopWeb.dll" />
     <Content Include="bin\HadaPopWeb.pdb" />
-    <Content Include="categoria-articulos.css" />
+    <Content Include="estilos\categoria-articulos.css" />
     <Content Include="categoria.aspx" />
-    <Content Include="categoria.css" />
+    <Content Include="estilos\categoria.css" />
     <Content Include="Categoriaconcrete.aspx" />
-    <Content Include="categorias.css" />
+    <Content Include="estilos\categorias.css" />
     <Content Include="Credit.aspx" />
-    <Content Include="Credit.css" />
+    <Content Include="estilos\Credit.css" />
     <Content Include="Global.asax" />
     <Content Include="images\add.png" />
     <Content Include="images\contact.png" />
     <Content Include="images\fondo_register.jpg" />
     <Content Include="images\login.jpg" />
+    <Content Include="images\logo-blanco.png" />
+    <Content Include="images\logo-negro.png" />
     <Content Include="images\logo_small.png" />
     <Content Include="images\plus.png" />
     <Content Include="Info.aspx" />
-    <Content Include="Info.css" />
-    <Content Include="Login.css" />
-    <Content Include="menu.css" />
-    <Content Include="Navegador.css" />
+    <Content Include="estilos\Info.css" />
+    <Content Include="estilos\Login.css" />
+    <Content Include="estilos\menu.css" />
+    <Content Include="estilos\Navegador.css" />
     <Content Include="Profile.aspx" />
-    <Content Include="Profile.css" />
+    <Content Include="estilos\Profile.css" />
     <Content Include="Registro.aspx" />
-    <Content Include="Registro.css" />
+    <Content Include="estilos\Registro.css" />
     <Content Include="ShowArticle.aspx" />
-    <Content Include="ShowArticle.css" />
-    <Content Include="Site1.css" />
+    <Content Include="estilos\ShowArticle.css" />
+    <Content Include="estilos\Site1.css" />
     <Content Include="Web.config" />
     <Content Include="Login.aspx" />
   </ItemGroup>

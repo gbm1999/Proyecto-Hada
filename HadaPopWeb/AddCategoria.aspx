@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <link rel="stylesheet" href="AddArticle.css" />
+     <link rel="stylesheet" href="estilos/AddArticle.css" />
             <div class="centro">
                 <div class="titulo">
                     AÑADIR CATEGORIA
@@ -17,7 +17,7 @@
                         DESCRIPCIÓN:
                     </div>
                     <div class="area-cat">
-                            <asp:TextBox runat="server"  class="AddDescription text-cuadro" name="description" id="description"> </asp:TextBox>
+                            <asp:TextBox runat="server" TextMode="MultiLine" class="AddDescription text-cuadro" name="description" id="description"> </asp:TextBox>
                         </div>
                 </div>
                  <div class="esp-boton">
@@ -28,5 +28,5 @@
                            runat="server"/>
                     </div>
            </div>
-           <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+           <asp:Label ID="Label1" CssClass="mensaje" runat="server" Text=""></asp:Label>
 </asp:Content>

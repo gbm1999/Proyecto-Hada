@@ -1,0 +1,231 @@
+﻿body {
+    background-image: url("../images/fondo_register.jpg");
+}
+
+.center-container {
+    position: absolute;
+    top: 16%;
+    left: 20%;
+    background-color: white;
+    border-radius: 30px;
+    width: 60%;
+    height: 70%;
+   
+}
+
+
+
+.campo {
+    position: relative;
+    height: 25%;
+    width: 90%;
+    top: 11px;
+    left: 11px;
+}
+
+.texto {
+    position: relative;
+    top: 13%;
+    height: 24%;
+    font-size: 140%;
+    width: 39%;
+    left: 339px;
+}
+
+.parametro-introducido {
+    position: absolute;
+    top: 39%;
+    width: 22%;
+    height: 16%;
+    border-bottom: 1px solid #000;
+    outline: none;
+    left: 24px;
+}
+
+
+
+.precio {
+    position: absolute;
+    height: 108%;
+    top: 130%;
+    width: 14%;
+    left: 50%;
+    text-align: center;
+    color: black;
+    font-size: 120%;
+}
+
+.ciudad {
+    position: absolute;
+    height: 6%;
+    top: 64%;
+    width: 14%;
+    left: 8%;
+    text-align: center;
+    color: black;
+    font-size: 120%;
+}
+
+.foto {
+    position: absolute;
+    height: 60%;
+    width: 35%;
+    top: 2%;
+    background-color: forestgreen;
+    overflow: hidden;
+    left: 5%;
+}
+
+.foto img {
+        width: 100%;
+        height: auto;
+        display: block;
+}
+
+.debajo-imagen{
+    position: absolute;
+    width: 30%;
+    top: 55%;
+    
+    
+    height: 35%;
+    left: 10%;
+}
+
+.campos-izq {
+    position: relative;
+    top: 4%;
+    height: 30%;
+    font-size: 140%;
+    width: 100%;
+
+   
+    font-family: Poppins;
+}
+
+.parametro-introducido {
+    position: relative;
+    float: right;
+    width: 50%;
+    transform: translateX(-20%) translateY(-80%);
+    border-radius: 20px;
+    height: 40%;
+}
+
+
+.descripcion{
+    position: absolute;
+    top: 10%;
+    width: 40%;
+    left: 50%;
+    height: 50%;
+    border-radius: 20px;
+}
+
+.AddDescription {
+    position: absolute;
+    border: 1px solid #000;
+    border-radius: 20px;
+    width: 90%;
+    height: 90%;  
+    outline: none;
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    resize: none;
+}
+
+
+.vendedor {
+    position: absolute;
+    width: 40%;
+    top: 61%;
+    height: 17%;
+    left: 50%;
+    right: 80px;
+}
+
+.precio {
+    position: absolute;
+    width: 40%;
+    top: 55%;
+    height: 12%;
+    left: 2%;
+    font-size: 140%;
+    right: 482px;
+}
+
+.modificar{
+    position:absolute;
+    top: 80%;
+    left: 55%;
+    width: 30%;
+    border-radius: 20px;
+   
+    justify-content: center;
+    height: 15%;
+   
+  
+    
+}
+
+
+
+.dis-boton{
+    position: relative;
+    color: white;
+    background: black;
+    
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 5%;
+    font-family: Poppins;
+    font-weight: 500;
+}
+
+    .dis-boton:hover {
+        background: LightSkyBlue;
+        color: white;
+    }
+
+.desc{
+    resize: none;
+    border-radius: 20px;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-right: 5%;
+    text-align: justify;
+    font-size: 110%;
+    font-family: Roboto;
+    font-weight: 600;
+    
+}
+
+.input-d{
+    position: relative;
+ 
+    width: 60%;
+    border-radius: 20px;
+    font-family: Poppins;
+    text-align: center;
+    float: right;
+    margin-top: 2%;
+    
+
+}
+
+.datos{
+    position: relative;
+    width: 40%;
+   
+}
+
+.input-t {
+    position: relative;
+    width: 60%;
+    border-radius: 20px;
+    font-family: Poppins;
+    text-align: center;
+    
+    margin-top: 2%;
+}

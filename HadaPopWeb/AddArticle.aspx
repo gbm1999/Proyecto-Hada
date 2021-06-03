@@ -5,7 +5,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <asp:Label ID="Controltarget" runat="server" Text=""></asp:Label>
-            <link rel="stylesheet" href="AddArticle.css" />
+            <link rel="stylesheet" href="estilos/AddArticle.css" />
     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
         <ajaxToolkit:ModalPopupExtender ID="PopupNoLogin" runat="server" Enabled="true" TargetControlID="Controltarget" PopupControlID="PanelPopUpNoLogin" BackgroundCssClass="fondoPopup"></ajaxToolkit:ModalPopupExtender>

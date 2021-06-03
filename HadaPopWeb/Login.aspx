@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Login</title>
-    <link rel="stylesheet" href="Login.css" />
+    <link rel="stylesheet" href="estilos/Login.css" />
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -39,7 +39,7 @@
                         Welcome
                     </div>
                     <div class="logo">
-                        <img src="images/logo_small.png" />
+                        <img src="images/logo-negro.png" />
                     </div>
 
                     <div class="div-parametros">

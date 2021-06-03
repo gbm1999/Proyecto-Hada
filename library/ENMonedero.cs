@@ -33,18 +33,6 @@ namespace library
                 Contrasena = value;
             }
         }
-        private double Saldo;
-        public double SaldoTarjeta
-        {
-            get
-            {
-                return Saldo;
-            }
-            set
-            {
-                Saldo = value;
-            }
-        }
 
         private string Usuario;
         public string usuario
@@ -62,14 +50,12 @@ namespace library
         {
             Tarjeta = null;
             Contrasena = 0;
-            Saldo = 0;
             Usuario = null;
         }
-        public ENMonedero(string Tarjeta, int Contrasena, float Saldo, string Usuario)
+        public ENMonedero(string Tarjeta, int Contrasena, string Usuario)
         {
             this.Tarjeta = Tarjeta;
             this.Contrasena = Contrasena;
-            this.Saldo = Saldo;
             this.Usuario = Usuario;
         }
         public bool createMonedero()
@@ -92,10 +78,10 @@ namespace library
             CADMonedero monedero = new CADMonedero();
             return monedero.deleteMonedero(this);
         }
-        public bool AccesoSaldo()
+        public bool Acceso()
         {
             CADMonedero monedero = new CADMonedero();
-            return monedero.AccesoSaldo(this);
+            return monedero.Acceso(this);
         }
 
         public ArrayList MostrarTarjetasLibres()
@@ -105,6 +91,12 @@ namespace library
             lista = Monedero.MostrarTarjetasLibres();
 
             return lista;
+        }
+
+        public bool deleteUser()
+        {
+            CADMonedero monedero = new CADMonedero();
+            return (monedero.deleteUser(this));
         }
     }
 }

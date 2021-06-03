@@ -12,14 +12,11 @@ namespace HadaPopWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {
-                ENUsuario user = obtencionNif();
+            ENUsuario user = obtencionNif();
 
-                if (!user.readUsuario())
-                {
-                    PopupNoLogin.Show();
-                }
+            if (!user.readUsuario())
+            {
+                PopupNoLogin.Show();
             }
 
             Label1.Text = "";

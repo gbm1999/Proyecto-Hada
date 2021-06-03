@@ -6,16 +6,16 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <link rel="stylesheet" href="Site1.css" />
-    <link rel="stylesheet" href="menu.css" />
+    
+    <link rel="stylesheet" href="estilos/menu.css" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body style="height: 519px">
     <form id="form1" runat="server">
     
-        <div class="divmenu">
-            <asp:Image ID="Image1" ImageUrl="~/images/logo_small.png" CssClass="img" runat="server" />
+        <nav class="divmenu">
+            <!--<asp:Image ID="Image1" ImageUrl="~/images/logo_small.png" CssClass="img" runat="server" /> -->
 
             <asp:menu id="NavigationMenu"
             disappearafter="2000"
@@ -23,28 +23,29 @@
         
             orientation="Horizontal"
             font-names="Arial" 
-            width="95%"
+            width="100%"
             top=40%;
             font-size="140%"
-            CssClass="navigator" 
+            CssClass="divmenu" 
         
         
             runat="server">
            
         
-            <staticmenuitemstyle backcolor="Green"
+            <staticmenuitemstyle backcolor="Black"
               borderstyle="Solid"
               borderwidth="1"
               forecolor="White"/>
           
             <statichoverstyle backcolor="LightSkyBlue"/>
-            <dynamicmenuitemstyle backcolor="Black"
-              forecolor="Silver"/>
-            <dynamichoverstyle backcolor="LightSkyBlue"
-              forecolor="Black"/>
+
+            <StaticMenuItemStyle 
+              Width="100%"
+                />
+            
 
             <Items>
-                <asp:MenuItem NavigateUrl="~/articulos.aspx" Text="Articulos" Value="3" />
+                <asp:MenuItem NavigateUrl="~/articulos.aspx"  Text="Articulos" Value="3" />
                 <asp:MenuItem NavigateUrl="~/categoria.aspx" Text="Categorias" Value="4" />
                 <asp:MenuItem NavigateUrl="~/Credit.aspx" Text="Monedero" Value="5" />
                 <asp:MenuItem NavigateUrl="~/Info.aspx" Text="Información" Value="6" />
@@ -54,10 +55,8 @@
 
 
             </Items>
-        
-      
-          </asp:menu>
-       </div>   
+            </asp:menu>
+       </nav>   
        
        
       
