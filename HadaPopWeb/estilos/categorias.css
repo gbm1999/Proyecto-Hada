@@ -26,10 +26,9 @@
 .tabla {
     position: absolute;
     top: 25%;
-    height: 69%;
+    height: 85%;
     left: 10%;
     width: 80%;
-    background-color: #eeee;
     border-radius: 20px;
 }
 
@@ -58,3 +57,11 @@
     }
 
   
+.titulo-tam{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    border: 0;
+    font-size: 200%;
+}

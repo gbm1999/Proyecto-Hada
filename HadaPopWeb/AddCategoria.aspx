@@ -17,7 +17,7 @@
                         DESCRIPCIÓN:
                     </div>
                     <div class="area-cat">
-                            <asp:TextBox runat="server"  class="AddDescription text-cuadro" name="description" id="description"> </asp:TextBox>
+                            <asp:TextBox runat="server" TextMode="MultiLine" class="AddDescription text-cuadro" name="description" id="description"> </asp:TextBox>
                         </div>
                 </div>
                  <div class="esp-boton">
@@ -28,5 +28,5 @@
                            runat="server"/>
                     </div>
            </div>
-           <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+           <asp:Label ID="Label1" CssClass="mensaje" runat="server" Text=""></asp:Label>
 </asp:Content>
