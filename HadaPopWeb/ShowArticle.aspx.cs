@@ -16,15 +16,23 @@ namespace HadaPopWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             ENUsuario user = obtencionNif();
-
-            if (user.NIFUsuario != articulo.vendedorArticulo || user.NIFUsuario == null)
+            try
             {
-                nombre.ReadOnly = true;
-                Ciudad.ReadOnly = true;
-                Precio.ReadOnly = true;
-                Descripcion.ReadOnly = true;
-                modificar.Visible = false;
-                Borrar.Visible = false;
+                if (Session["nif"] != null && Session["nif"].ToString() == articulo.vendedorArticulo)
+                {
+                    nombre.ReadOnly = true;
+                    Ciudad.ReadOnly = true;
+                    Precio.ReadOnly = true;
+                    Descripcion.ReadOnly = true;
+                    modificar.Visible = false;
+                    Borrar.Visible = false;
+                }
+                
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("No tienes permiso para eliminar este artículo.", ex.Message);
             }
 
             vendedor.ReadOnly = true;

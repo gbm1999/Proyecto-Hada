@@ -23,13 +23,17 @@
                             <asp:Button class="btn PopupAceptar" runat="server" Text="Login" OnClick="PopUpLogin"></asp:Button>
                         </div>               
         </asp:Panel>
-        <div class ="CuadroExt">
-            <div class="divimgdatos">
-                    <div class="img_profileDiv">
-                        <asp:Image ID="ImageUser" runat="server" class="img_profile"/>
-                        <asp:Label ID="Controltarget" runat="server" Text=""></asp:Label>
+        <div class ="CuadroExt ">
+            <div class="divimgdatos ">
+                    <div class="img_profileDiv ">
+                      
+                        <asp:Image ID="ImageUser" runat="server" CssClass="img_profile borde"/>                   
+                        <asp:Label ID="Controltarget" runat="server"  Text=""></asp:Label>
+                       
+                        
                     </div>
-                    <div class="ventComp">
+               
+                    <div class="ventComp ">
                         <asp:Label ID="NumVenta" runat="server" Text=""></asp:Label>
                         <label>Ventas</label>
                         <asp:Label ID="NumCompra" runat="server" Text=""></asp:Label>
@@ -92,8 +96,8 @@
                 </div>
         </div>
 <!-- Por el momento y dado que es solo la interfaz, hemos puesto ejemplos de prueba sobre como se verían algunas funciones-->
-            <div class ="ComentArticulos">
-                <div class="Articulos">
+            <div class ="ComentArticulos ">
+                <div class="Articulos ">
                     <h2>Artículos del usuario: </h2>
                     <div class="Articulo">
                         <asp:ImageButton ID="Articulo" runat="server" class="imagenArticulo" OnClick="imgArticle1_Click"/>
@@ -108,7 +112,7 @@
                 <div class="Comentarios">   
                     <h2>Comentarios del Usuario:</h2>
                     <div>
-                        <asp:ListBox ID="Comentarios" runat="server" Class="Comentarios" height="70%" width="100%"></asp:ListBox>
+                        <asp:ListBox ID="Comentarios" runat="server" Class="comentarios-box" height="70%" width="100%"></asp:ListBox>
                     </div>
                     </div>
             </div>
