@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <link rel="stylesheet" href="estilos/AddArticle.css" />
+     <link rel="stylesheet" href="estilos/categoria.css" />
             <div class="centro">
                 <div class="titulo">
                     AÑADIR CATEGORIA
@@ -26,7 +26,7 @@
                            OnClick="boton_crear"
                            class="boton"
                            runat="server"/>
-                    </div>
+                 </div>
            </div>
            <asp:Label ID="Label1" CssClass="mensaje" runat="server" Text=""></asp:Label>
 </asp:Content>

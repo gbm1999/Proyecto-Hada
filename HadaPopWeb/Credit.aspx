@@ -6,13 +6,14 @@
 
 <asp:Content ID="Content2"  ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <link rel="stylesheet" href="estilos/Credit.css" />
-    <div class="body">
+    
         <div class ="contentbody">
-            <div class ="Balance">
-                <div class="DineroBalance">
-                    <label class ="Title">Balance Total:</label>
-                    <br />
-                    <asp:Label id = "Balance" runat ="server" class="Title"> 00.00€</asp:Label>
+            <div class ="Balance ">
+                    <div class ="Title ">
+                    <label >Balance Total:</label>
+                    
+                    <asp:Label id = "Balance" runat ="server" > 00.00€</asp:Label>
+                        </div>
 
                     <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
 
@@ -32,7 +33,7 @@
                    
                     </asp:Panel>
                     
-                </div>
+                
                 <Label ID="ErrorTransaccione" runat="server" Class="ErrorTransaciones" ForeColor="red">Invisible</Label>
                 <label ID="ErrorTarjeta"  runat="server" Class="ErrorTarjetas" ForeColor="red">Invisible</label>
                 <asp:Label ID="Controltarget" runat="server" Text=""></asp:Label>
@@ -76,5 +77,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    
 </asp:Content>
