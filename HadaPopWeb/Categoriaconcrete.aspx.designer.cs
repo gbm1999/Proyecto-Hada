@@ -33,6 +33,24 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.TextBox description;
 
         /// <summary>
+        /// Control edit.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button edit;
+
+        /// <summary>
+        /// Control delete.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button delete;
+
+        /// <summary>
         /// Control Label1.
         /// </summary>
         /// <remarks>
