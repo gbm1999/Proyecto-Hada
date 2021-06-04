@@ -20,9 +20,9 @@ label {
     width: 100%;
 }
 .DineroBalance {
-    position: absolute;
+    position: relative;
     height: 9%;
-    width: 30%;
+    width: 100%;
     left: 5%;
     text-align: left;
     font-size: 250%;
@@ -39,9 +39,14 @@ label {
     height: 50%;
     width: 45%;
 }
-.Title
-{
-   font-size:xx-large;
+.Title {
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    top: 10%;
+    margin-left: 5%;
+    color: darkgoldenrod;
+    font-size: 200%;
 }
 .Title2
 {
@@ -180,4 +185,8 @@ label {
     width: 35%;
     left: 5%;
     top: 15%;
+}
+
+.borde{
+    border: 1px solid black;
 }
