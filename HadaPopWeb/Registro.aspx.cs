@@ -227,13 +227,11 @@ namespace HadaPopWeb
         private bool CampoVálidoUser(string check) //Comprueba si la cadena pasada es válida para ser Nombre de User
         { 
             bool valido = true;
-            Regex r = new Regex("^[A-Z][a-zA-Z]");
-            if (check.Length < 2 || Global.Encrypt(check).Length > 200)
+            if (check.Length < 2 || check.Length > 30)
             {
                 valido = false;
             }
-            else if (!r.IsMatch(check))  // Comprueba nombre
-                valido = false;
+            
 
             return valido;
         }
@@ -276,7 +274,7 @@ namespace HadaPopWeb
             Regex mayus = new Regex(@"[A-Z]+");
             Regex minus = new Regex(@"[a-z]+");
 
-            if (check.Length < 7 || check.Length > 16)
+            if (check.Length < 7 || Global.Encrypt(check).Length > 200)
             {
                 valido = false;
             }

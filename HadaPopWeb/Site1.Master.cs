@@ -23,8 +23,15 @@ namespace HadaPopWeb
 		protected ENUsuario obtencionNif()
 		{
 			ENUsuario user = new ENUsuario();
+            try
+            {
+				user.NIFUsuario = (string)Session["nif"];
+			}
+			catch (Exception)
+            {
 
-			user.NIFUsuario = (string)Session["nif"];
+                throw;
+            }
 
 			return (user);
 		}
