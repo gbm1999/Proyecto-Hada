@@ -46,11 +46,11 @@ namespace HadaPopWeb
          
         protected void editar_categoria(object sender, EventArgs e)
         {
-            ENCategoria cat_new = new ENCategoria();
-            cat_new.NombreCategoria = nombre.Text;
-            cat_new.DescripCategoria = description.Text;
+            
+            cat.NombreCategoria = nombre.Text;
+            cat.DescripCategoria = description.Text;
 
-            if (cat_new.updateCategoria())
+            if (cat.updateCategoria())
             {
                 Label1.Text = "Categoría actualizada correctamente.";
             }
