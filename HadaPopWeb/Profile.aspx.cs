@@ -55,7 +55,7 @@ namespace HadaPopWeb
 						articles += '\n';
 					}
                 }
-				articulos.Text = articles; 
+				//articulos.Text = articles; 
 			}
 			else
             {
@@ -81,7 +81,6 @@ namespace HadaPopWeb
 			TBEdad.ReadOnly = true;
 			TBTelefono.ReadOnly = true;
 			photo.Enabled = false;
-			
 
 			Cambiacolor(System.Drawing.Color.LightGray);
 		}
@@ -128,16 +127,89 @@ namespace HadaPopWeb
 			Butt_Edit.Enabled = true;
 			SwitchRead(true);
 			Cambiacolor(System.Drawing.Color.LightGray);
+			int numero = 0;
 
 			ENUsuario user = obtencionNif();
 
 			if(user.readUsuario())
             {
-				user.nombreUsuario = TBNombre.Text;
-				user.emailUsuario = TBEmail.Text;
-				user.NIFUsuario = TBNif.Text;
-				user.edadUsuario = int.Parse(TBEdad.Text);
-				user.telefonoUsuario = int.Parse(TBTelefono.Text);
+				if(TBNombre.Text == "")
+                {
+					TBNombre.Text = user.nombreUsuario;
+                }
+				else
+                {
+					user.nombreUsuario = TBNombre.Text;
+				}
+
+				if (TBEmail.Text == "")
+                {
+					TBEmail.Text = user.emailUsuario;
+                }
+				else
+                {
+					user.emailUsuario = TBEmail.Text;
+				}				
+
+				if(TBNif.Text.Length > 9)
+                {
+					ErrorNif.Visible = true;
+					ErrorNif.Text = "Este campo tiene que tener menos de 9 caracteres.";
+					TBNif.Text = user.NIFUsuario;
+				}
+				else if (TBEdad.Text == "")
+				{
+					TBNif.Text = user.NIFUsuario;
+				}
+				else
+                {
+					user.NIFUsuario = TBNif.Text;
+					ErrorNif.Visible = false;
+				}
+
+				if (!int.TryParse(TBEdad.Text, out numero))
+				{
+					ErrorEdad.Visible = true;
+					ErrorEdad.Text = "Solo son validos numero.";
+					TBEdad.Text = user.edadUsuario.ToString();
+				}
+				else if (int.Parse(TBEdad.Text) < 0)
+                {
+					ErrorEdad.Visible = true;
+					ErrorEdad.Text = "La edad no puede ser negativa.";
+					TBEdad.Text = user.edadUsuario.ToString();
+				}
+				else if(int.Parse(TBEdad.Text) > 120)
+                {
+					ErrorEdad.Visible = true;
+					ErrorEdad.Text = "La edad no puede ser superior a 120 años.";
+					TBEdad.Text = user.edadUsuario.ToString();
+				}
+				else if (TBEdad.Text == "")
+				{
+					TBEdad.Text = user.edadUsuario.ToString();
+				}
+				else
+                {
+					user.edadUsuario = int.Parse(TBEdad.Text);
+					ErrorEdad.Visible = false;
+				}
+
+				if(!int.TryParse(TBTelefono.Text, out numero))
+                {
+					ErrorTelefono.Visible = true;
+					ErrorTelefono.Text = "Solo son validos numero.";
+					TBTelefono.Text = user.telefonoUsuario.ToString();
+				}
+				else if(TBTelefono.Text == "")
+                {
+					TBTelefono.Text = user.telefonoUsuario.ToString();
+				}
+				else
+                {
+					user.telefonoUsuario = int.Parse(TBTelefono.Text);
+					ErrorTelefono.Visible = false;
+				}
 
 				// Obtener Imagen
 				if (photo.PostedFile.ContentLength > 0)
@@ -149,6 +221,7 @@ namespace HadaPopWeb
 				}
 
 				user.updateUsuario();
+
 				actualizaFoto(user);
 			}
 		}
@@ -215,7 +288,7 @@ namespace HadaPopWeb
 
         protected void Prev_Click(object sender, EventArgs e)
         {
-			if ((int)Session["contador"] >= 0)
+			if ((int)Session["contador"] > 0)
 			{
 				Session["contador"] = (int)Session["contador"] - 1;
 			}

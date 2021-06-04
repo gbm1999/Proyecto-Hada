@@ -42,6 +42,15 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.TextBox Precio;
 
         /// <summary>
+        /// Control errorprecio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorprecio;
+
+        /// <summary>
         /// Control Descripcion.
         /// </summary>
         /// <remarks>
@@ -78,13 +87,13 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.Button modificar;
 
         /// <summary>
-        /// Control borrar.
+        /// Control Borrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button borrar;
+        protected global::System.Web.UI.WebControls.Button Borrar;
 
         /// <summary>
         /// Control Label1.

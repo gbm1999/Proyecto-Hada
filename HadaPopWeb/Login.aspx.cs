@@ -53,6 +53,12 @@ namespace HadaPopWeb
                         Session.Clear();
                         Session.Add("user", user.nombreUsuario);
                         Session.Add("nif", user.NIFUsuario);
+
+                        Site1 masterPage = Page.Master as Site1;
+
+                        masterPage.actualizaFoto(user);
+
+                        
                         Response.Redirect("articulos.aspx");
                     }
                     else

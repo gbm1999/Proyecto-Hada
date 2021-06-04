@@ -89,7 +89,6 @@ namespace library
                 if (value == prueba)
                 {
                     value = null;
-
                 }
                 imagen = value;
             }

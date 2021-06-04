@@ -41,6 +41,7 @@
                     <div class = "labtext"> <!-- Nombre -->
                         <label class="labels">Nombre: </label>
                         <asp:TextBox ID="TBNombre" class="textboxes" runat="server"></asp:TextBox>
+                        <asp:Label ID="ErrorNombre" runat="server" class="ErrorNombre" Text=""></asp:Label>
                     </div>
 
                     <div class="separadorvert"></div>
@@ -48,6 +49,7 @@
                      <div class = "labtext"> <!-- Email -->
                         <label class="labels">Email: </label>
                         <asp:TextBox ID="TBEmail" class="textboxes" runat="server"></asp:TextBox>
+                         <asp:Label ID="ErrorEmail" runat="server" class="ErrorEmail" Text=""></asp:Label>
                     </div>  
 
                     <div class="separadorvert"></div>
@@ -55,6 +57,7 @@
                      <div class = "labtext"> <!-- NIF -->
                         <label class="labels">NIF: </label>
                         <asp:TextBox ID="TBNif" class="textboxes" runat="server"></asp:TextBox>
+                         <asp:Label ID="ErrorNif" runat="server" class="ErrorNif" Text=""></asp:Label>
                     </div> 
 
                     <div class="separadorvert"></div>
@@ -62,6 +65,7 @@
                      <div class = "labtext"> <!-- Edad -->
                         <label class="labels">Edad: </label>
                         <asp:TextBox ID="TBEdad" class="textboxes" runat="server"></asp:TextBox>
+                         <asp:Label ID="ErrorEdad" runat="server" class="ErrorEdad" Text=""></asp:Label>
                     </div> 
 
                     <div class="separadorvert"></div>
@@ -69,6 +73,7 @@
                      <div class = "labtext"> <!-- Tlfno -->
                         <label class="labels">Teléfono: </label>
                         <asp:TextBox ID="TBTelefono" class="textboxes" runat="server"></asp:TextBox>
+                         <asp:Label ID="ErrorTelefono" runat="server" class="ErrorTelefono" Text=""></asp:Label>
                     </div>
                     
                     <div class="separadorvert"></div>
@@ -104,10 +109,6 @@
                     <h2>Comentarios del Usuario:</h2>
                     <div>
                         <asp:ListBox ID="Comentarios" runat="server" Class="Comentarios" height="70%" width="100%"></asp:ListBox>
-                       
-                        <label class="TitleUsu">Usuario1:</label>
-                       <label class="TitleAccion">Vendió: </label><br />
-                        <asp:Label ID="articulos" runat="server"></asp:Label>
                     </div>
                     </div>
             </div>

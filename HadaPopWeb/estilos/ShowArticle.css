@@ -39,7 +39,7 @@
     height: 16%;
     border-bottom: 1px solid #000;
     outline: none;
-    
+    left: 24px;
 }
 
 
@@ -68,12 +68,12 @@
 
 .foto {
     position: absolute;
-    height: 50%;
+    height: 60%;
     width: 35%;
-    top: 5%;
+    top: 2%;
     background-color: forestgreen;
     overflow: hidden;
-    left: 7%;
+    left: 5%;
 }
 
 .foto img {
@@ -84,20 +84,23 @@
 
 .debajo-imagen{
     position: absolute;
-    width: 35%;
-    top: 60%;
+    width: 30%;
+    top: 55%;
+    
     
     height: 35%;
-    left: 7%;
+    left: 10%;
 }
 
 .campos-izq {
     position: relative;
-    
-    height: 35%;
+    top: 4%;
+    height: 30%;
     font-size: 140%;
     width: 100%;
-    
+
+   
+    font-family: Poppins;
 }
 
 .parametro-introducido {
@@ -112,13 +115,11 @@
 
 .descripcion{
     position: absolute;
-    top: 5%;
-    width: 35%;
-    left: 55%;
-    height: 60%;
+    top: 10%;
+    width: 40%;
+    left: 50%;
+    height: 50%;
     border-radius: 20px;
-    resize: none;
-    
 }
 
 .AddDescription {
@@ -137,69 +138,94 @@
 
 .vendedor {
     position: absolute;
-    width: 35%;
-    top: 55%;
-    height: 20%;
-    left: 55%;  
+    width: 40%;
+    top: 61%;
+    height: 17%;
+    left: 50%;
+    right: 80px;
 }
 
-
+.precio {
+    position: absolute;
+    width: 40%;
+    top: 55%;
+    height: 12%;
+    left: 2%;
+    font-size: 140%;
+    right: 482px;
+}
 
 .modificar{
     position:absolute;
     top: 80%;
     left: 55%;
-    width: 35%;
+    width: 30%;
+    border-radius: 20px;
+   
+    justify-content: center;
     height: 15%;
+   
+  
+    
 }
 
-.texto_modificado {
-    position: absolute;
-    top: 93px;
-    left: 32px;
-    height: 24px;
-    width: 173px;
-    margin-top: 0px;
-    align-content:center;
-}
 
-.borde{
-    border: 1px solid black;
-}
 
-.vendedor-parametros{
-    position:relative;
-    width: 50%;
-    left: 25%;
-    margin-top: 5%;
-    border-radius: 20px;
-    text-align: center;
-    font-size: 100%;
-}
-
-.modificar-boton{
+.dis-boton{
     position: relative;
-    left: 25%;
-    
-    border-radius:20px;
-    background-color: black;
     color: white;
-    font-size: 100%;
-    width: 60%;
-    left: 20%;
-    margin-top: 3%;
+    background: black;
+    
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 5%;
+    font-family: Poppins;
+    font-weight: 500;
+}
+
+    .dis-boton:hover {
+        background: LightSkyBlue;
+        color: white;
+    }
+
+.desc{
+    resize: none;
+    border-radius: 20px;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-right: 5%;
+    text-align: justify;
+    font-size: 110%;
+    font-family: Roboto;
+    font-weight: 600;
     
 }
 
-.modificar-boton:hover{
-    background-color: lightskyblue;
-}
-
-.parametros{
-    position:relative;
-    float: right;
+.input-d{
+    position: relative;
+ 
     width: 60%;
     border-radius: 20px;
-    font-size: 80%;
+    font-family: Poppins;
     text-align: center;
+    float: right;
+    margin-top: 2%;
+    
+
+}
+
+.datos{
+    position: relative;
+    width: 40%;
+   
+}
+
+.input-t {
+    position: relative;
+    width: 60%;
+    border-radius: 20px;
+    font-family: Poppins;
+    text-align: center;
+    
+    margin-top: 2%;
 }

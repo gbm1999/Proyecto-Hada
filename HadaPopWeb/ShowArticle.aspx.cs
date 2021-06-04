@@ -15,12 +15,42 @@ namespace HadaPopWeb
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            ENUsuario user = obtencionNif();
+            try
+            {
+                if (Session["nif"] != null && Session["nif"].ToString() == articulo.vendedorArticulo)
+                {
+                    nombre.ReadOnly = true;
+                    Ciudad.ReadOnly = true;
+                    Precio.ReadOnly = true;
+                    Descripcion.ReadOnly = true;
+                    modificar.Visible = false;
+                    Borrar.Visible = false;
+                }
+                
+                
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("No tienes permiso para eliminar este artículo.", ex.Message);
+            }
 
-            Precio.ReadOnly=false;
+            vendedor.ReadOnly = true;
+            numero.ReadOnly = true;
+
             articulo.nombreArticulo= Request.QueryString["Value"];
             articulo=articulo.showOneArticle();
             if(!IsPostBack) mostrarArticulo(articulo);
 
+        }
+
+        protected ENUsuario obtencionNif()
+        {
+            ENUsuario user = new ENUsuario();
+
+            user.NIFUsuario = (string)Session["nif"];
+
+            return (user);
         }
 
         private void mostrarArticulo(ENArticulo articulo)
@@ -42,25 +72,95 @@ namespace HadaPopWeb
 
         protected void modificar_Click(object sender, EventArgs e)
         {
-
-            ENArticulo articulo1 = new ENArticulo(articulo.codigoArticulo, nombre.Text, Descripcion.Text, articulo.categoriaArticulo, (float)Convert.ToDouble(Precio.Text),
-                Ciudad.Text, vendedor.Text, articulo.imagenArticulo);
-
-            if (articulo1.updateArticulo())
+            try
             {
+                
+                if (Session["nif"]!=null && Session["nif"].ToString() == articulo.vendedorArticulo)
+                {
+                    if (!CampoValidoPrecio(Precio.Text))
+                    {
+                        errorprecio.Visible = true;
+                        errorprecio.InnerText = "El precio Introducido no es un número";
+                    }
 
-                Label1.Text = "El artículo se ha modificado correctamente.";
+                    else
+                    {
 
+                        errorprecio.InnerText = "";
+                        ENArticulo articulo1 = new ENArticulo(articulo.codigoArticulo, nombre.Text, Descripcion.Text, articulo.categoriaArticulo, (float)Convert.ToDouble(Precio.Text),
+                        Ciudad.Text, vendedor.Text, articulo.imagenArticulo);
+
+                        if (articulo1.updateArticulo())
+                        {
+
+                            Label1.Text = "El artículo se ha modificado correctamente.";
+
+                        }
+                        else
+                        {
+                            Label1.Text = "El artículo no se ha podido modificar.";
+                        }
+                        mostrarArticulo(articulo1);
+                    }
+                }
+                else Label1.Text = "No tienes permiso para modificar este artículo.";
             }
-            else
+            catch(Exception ex)
             {
-                Label1.Text = "El artículo no se ha podido modificar.";
+                Label1.Text = "No tienes permiso para modificar este artículo.";
+                Console.WriteLine("No tienes permiso para modificar este artículo.", ex.Message);
             }
-            mostrarArticulo(articulo1);
+            
+            
 
         }
 
-      
+        private bool CampoValidoPrecio(string check) //Comprueba si la cadena pasada es válida para ser precio
+        {                                      // Para ser válida debe ser un número
+
+            bool valido = false;
+
+            if (int.TryParse(check, out _))
+            {
+                valido = true;
+            }
+           
+            return valido;
+        }
+        protected void borrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (Session["nif"] != null && Session["nif"].ToString() == articulo.vendedorArticulo)
+                {
+
+                    ENArticulo articulo1 = new ENArticulo(articulo.codigoArticulo, nombre.Text, Descripcion.Text, articulo.categoriaArticulo, (float)Convert.ToDouble(Precio.Text),
+                    Ciudad.Text, vendedor.Text, articulo.imagenArticulo);
+
+                    if (articulo1.deleteArticulo())
+                    {
+
+                        Label1.Text = "El artículo se ha borrado correctamente.";
+
+                    }
+                    else
+                    {
+                        Label1.Text = "El artículo no se ha podido eliminar.";
+                    }
+
+                    Response.Redirect("articulos.aspx");
+
+
+                }
+                else Label1.Text = "No tienes permiso para eliminar este artículo.";
+            }
+            catch (Exception ex)
+            {
+                Label1.Text = "No tienes permiso para eliminar este artículo.";
+                Console.WriteLine("No tienes permiso para eliminar este artículo.", ex.Message);
+            }
+        }
 
     }
 }
