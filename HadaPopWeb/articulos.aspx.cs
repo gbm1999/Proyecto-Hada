@@ -54,13 +54,13 @@ namespace HadaPopWeb
                     Label lb = (Label)Main.FindControl("Label" + j);
                     lb.Text = arti.nombreArticulo;
                     im.Style["Visibility"] = "visible";
-                    byte[] imagen = arti.imagenArticulo;
-                    if (imagen != null)
+                    //byte[] imagen = arti.imagenArticulo;
+                    /*if (imagen != null)
                     {
                     string PROFILE_PIC = Convert.ToBase64String(imagen);
                     ImageButton image = (ImageButton)Main.FindControl("ImageButton" + j);
                     image.ImageUrl = String.Format("data:image/jpg;base64,{0}", PROFILE_PIC);
-                    }
+                    }*/
                 }
                 else
                 {

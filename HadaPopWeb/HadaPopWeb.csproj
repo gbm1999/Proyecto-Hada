@@ -100,6 +100,7 @@
     <Content Include="images\logo-blanco.png" />
     <Content Include="images\logo-negro.png" />
     <Content Include="images\logo_small.png" />
+    <Content Include="images\no-foto.jpg" />
     <Content Include="images\plus.png" />
     <Content Include="Info.aspx" />
     <Content Include="estilos\Info.css" />

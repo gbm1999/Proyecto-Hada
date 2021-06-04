@@ -100,7 +100,7 @@
                 <div class="Articulos ">
                     <h2>Artículos del usuario: </h2>
                     <div class="Articulo">
-                        <asp:ImageButton ID="Articulo" runat="server" class="imagenArticulo" OnClick="imgArticle1_Click"/>
+                        <asp:ImageButton ID="Articulo" runat="server" class="imagenArticulo" OnClick="imgArticle1_Click" ImageUrl="~/images/no-foto.jpg" />
                         <br>
                         <asp:Label ID="LabelArticulo1" runat="server" class="nombreArticulo"> </asp:Label>
                     </div>

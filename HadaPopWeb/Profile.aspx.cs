@@ -17,7 +17,18 @@ namespace HadaPopWeb
 
 			if (user.readUsuario())
 			{
+				ArrayList lista = new ArrayList();
+				ENArticulo arti = new ENArticulo();
+				lista = arti.showArticlesFromUser(user);
+
 				if(!IsPostBack)
+                {
+					Session["contador"] = 0;
+				}
+
+				int i = (int)Session["contador"];
+				
+				if(i <= 0 || i > lista.Count)
                 {
 					Session["contador"] = 0;
 				}
@@ -38,24 +49,6 @@ namespace HadaPopWeb
 					Comentarios.DataSource = comentarios;
 					Comentarios.DataBind();
 				}
-				ArrayList lista = new ArrayList();
-				ENArticulo arti = new ENArticulo();
-				lista = arti.showArticlesFromUser(user);
-				String articles = "";
-				for(int i = 0;i < lista.Count; i++)
-                {
-					arti = (ENArticulo)lista[i];
-					if (arti.compradorArticulo != null)
-					{
-						articles += "[" + arti.nombreArticulo + "]";
-						if (arti.descripcionArticulo != null)
-						{
-							articles += " (" + arti.descripcionArticulo + ") ";
-						}
-						articles += '\n';
-					}
-                }
-				//articulos.Text = articles; 
 			}
 			else
             {
@@ -110,16 +103,13 @@ namespace HadaPopWeb
 		protected void actualizaFotoArticulo(ENArticulo articulo)
 		{
 			string urlImage;
+
 			if (articulo.imagenArticulo != null)
 			{
 				urlImage = "data:image/jpg;base64," + Convert.ToBase64String(articulo.imagenArticulo);
-			}
-			else
-			{
-				urlImage = "images/depositphotos_324611040-stock-illustration-no-image-vector-icon-no.jpg";
-			}
 
-			Articulo.ImageUrl = urlImage;
+				Articulo.ImageUrl = urlImage;
+			}
 		}
 		protected void Enviar(object sender, EventArgs e)
 		{
@@ -265,7 +255,7 @@ namespace HadaPopWeb
 
 				ENArticulo artiAux = (ENArticulo)lista[i];
 
-				actualizaFotoArticulo(artiAux);
+				//actualizaFotoArticulo(artiAux);
 				LabelArticulo1.Text = artiAux.nombreArticulo;
 			}
 			else
@@ -288,9 +278,15 @@ namespace HadaPopWeb
 
         protected void Prev_Click(object sender, EventArgs e)
         {
-			if ((int)Session["contador"] > 0)
+			int i = (int)Session["contador"];
+
+			if (i > 0)
 			{
-				Session["contador"] = (int)Session["contador"] - 1;
+				Session["contador"] = i - 1;
+			}
+			else
+            {
+				Session["contador"] = i + 1;
 			}
 		}
 
@@ -299,10 +295,15 @@ namespace HadaPopWeb
 			ENUsuario user = obtencionNif();
 			ENArticulo articulo = new ENArticulo();
 			ArrayList lista = articulo.showArticlesFromUser(user);
+			int i = (int)Session["contador"];
 
-			if (lista.Count > (int)Session["contador"])
+			if (lista.Count > i)
 			{
-				Session["contador"] = (int)Session["contador"] + 1;
+				Session["contador"] = i + 1;
+			}
+			else
+            {
+				Session["contador"] = i - 1;
 			}
 		}
     }
