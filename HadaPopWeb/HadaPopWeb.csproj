@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="404Error.aspx" />
+    <Content Include="AddCategoria.css" />
     <Content Include="estilos\404Error.css" />
     <Content Include="AddArticle.aspx" />
     <Content Include="estilos\AddArticle.css" />

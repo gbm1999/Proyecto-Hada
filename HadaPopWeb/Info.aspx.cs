@@ -13,5 +13,10 @@ namespace HadaPopWeb
         {
 
         }
+
+        protected void Facebook_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("https://www.facebook.com/HadaPop-110052567942091");
+        }
     }
 }
