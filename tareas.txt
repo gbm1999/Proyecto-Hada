@@ -1,0 +1,10 @@
+- (2 personas) PowerPoint: Realizar el powerpoint las diapositivas con el contenido y organizar o asignar a los compañeros a diapositivas (Paco y falta1)
+- (1 persona por 2 vistas) Funcionalidad de la vista junto a la validación de datos. 
+   Vistas a escoger:  Login (dani), Register(dani), Artículos (Germán), Show Artículo, Categorías (paco), Categoría(paco), Credit, Profile(Germán)
+- (1 persona) Añadir ENCAD Moderador y Administrador
+- (1 persona) Añadir 1 o 2 posibles mejoras (para sustituir un ENCAD) (Dani y Paco)
+- (1 persona) Creación de Artículos, Usuarios... items de la Base de Datos de ejemplo
+- (1 persona) Documentar todo el trabajo
+- OPCIONAL (1 persona): Traducción de página a idiomas (Paco)
+- OPCIONAL (1 persona): Redes Sociales, Localización.(dani)
+- OPCIONAL (1 persona): Encriptar constraseñas
