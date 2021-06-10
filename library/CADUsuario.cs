@@ -11,7 +11,7 @@ namespace library
         private SqlConnection connectBD;
         public CADUsuario()
         {
-            connection = ConfigurationManager.ConnectionStrings["Database"].ToString();
+            connection = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
             connectBD = new SqlConnection(connection);
         }
         //Inserta un usuario en la BD
@@ -21,7 +21,7 @@ namespace library
             try
             {
                 connectBD.Open();
-                SqlCommand command = new SqlCommand("Insert into Usuario(Nif,Nombre,Email,Telefono,Admin,Edad,Contrasena) VALUES ('" + usu.NIFUsuario + "', '" + usu.nombreUsuario + "', '" + usu.emailUsuario + "', '" + usu.telefonoUsuario + "', '" + usu.adminUsuario + "', '" + usu.edadUsuario + "', '" + usu.contrasenaUsuario + "')", connectBD);
+                SqlCommand command = new SqlCommand("Insert into Usuario(Nif,Nombre,Email,Telefono,Edad,Contrasena,Imagen,Balance) VALUES ('" + usu.NIFUsuario + "', '" + usu.nombreUsuario + "', '" + usu.emailUsuario + "', '" + usu.telefonoUsuario + "', '" + usu.edadUsuario + "', '" + usu.contrasenaUsuario + "', '"  + usu.imagenUsuario + "', '" + usu.balance + "')", connectBD);
                 command.ExecuteNonQuery();
                 entra = true;
             }
@@ -47,16 +47,32 @@ namespace library
 
                 while (!entra && dataReader.Read())
                 {
-                    if (dataReader["Nif"].ToString().Equals(usu.NIFUsuario))
+                    if (dataReader["Nif"].ToString().Equals(usu.NIFUsuario) || dataReader["Email"].ToString().Equals(usu.emailUsuario))
                     {
                         usu.NIFUsuario = dataReader["Nif"].ToString();
                         usu.nombreUsuario = dataReader["Nombre"].ToString();
                         usu.emailUsuario = dataReader["Email"].ToString();
                         usu.telefonoUsuario = (int)dataReader["Telefono"];
-                        usu.adminUsuario = (bool)dataReader["Admin"];
                         usu.edadUsuario = (int)dataReader["Edad"];
                         usu.contrasenaUsuario = dataReader["Contrasena"].ToString();
-                        usu.tarjetaUsuario = (int)dataReader["TarjetaCred"];
+                        if (dataReader["Imagen"] != System.DBNull.Value)
+                        {
+                            usu.imagenUsuario = (byte[])dataReader["Imagen"];
+                        }
+                        else
+                        {
+                            usu.imagenUsuario = null;
+                        }
+
+                        if(dataReader["Balance"] != System.DBNull.Value)
+                        {
+                            usu.balance = (double)dataReader["Balance"];
+                        }
+                        else
+                        {
+                            usu.balance = 0;
+                        }
+                        
                         entra = true;
                     }
                 }
@@ -82,17 +98,29 @@ namespace library
             try
             {
                 connectBD.Open();
-                SqlCommand command = new SqlCommand("UPDATE Usuario SET Nif = @Nif,Nombre = @Nombre,Email = @Email," +
-                                                    "Telefono = @Telefono,Admin = @Admin, Edad = @Edad, Contrasena = @Contrasena," +
-                                                    "TarjetaCred = @TarjetaCred where nif = @nif", connectBD);
+                SqlCommand command;
+
+                if (usu.imagenUsuario == null)
+                {
+                    command = new SqlCommand("UPDATE Usuario SET Nif = @Nif,Nombre = @Nombre,Email = @Email," +
+                                                    "Telefono = @Telefono, Edad = @Edad," +
+                                                    "Balance = @Balance where nif = @nif", connectBD);
+                }
+                else
+                {
+                    command = new SqlCommand("UPDATE Usuario SET Nif = @Nif,Nombre = @Nombre,Email = @Email," +
+                                                    "Telefono = @Telefono, Edad = @Edad," +
+                                                    "Imagen = @Imagen, Balance = @Balance where nif = @nif", connectBD);
+
+                    command.Parameters.AddWithValue("@Imagen", usu.imagenUsuario);
+                }
+                
                 command.Parameters.AddWithValue("@Nif", usu.NIFUsuario);
                 command.Parameters.AddWithValue("@Nombre", usu.nombreUsuario);
                 command.Parameters.AddWithValue("@Email", usu.emailUsuario);
                 command.Parameters.AddWithValue("@Telefono", usu.telefonoUsuario);
-                command.Parameters.AddWithValue("@Admin", usu.adminUsuario);
                 command.Parameters.AddWithValue("@Edad", usu.edadUsuario);
-                command.Parameters.AddWithValue("@Contrasena", usu.contrasenaUsuario);
-                command.Parameters.AddWithValue("@TarjetaCred", usu.tarjetaUsuario);
+                command.Parameters.AddWithValue("@Balance", usu.balance);
                 response = command.ExecuteNonQuery();
 
                 if (response == 1)
@@ -171,6 +199,114 @@ namespace library
             }
             return entra;
 
+        }
+        public int CountSales(ENUsuario usu)
+        {
+            int count = 0;
+
+            try
+            {
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("Select * from Articulo ", connectBD);
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    if (usu.NIFUsuario == dataReader["Vendedor"].ToString())
+                    {
+                        count++;
+                    }
+                }
+                dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+            return count;
+        }
+        public int CountBuys(ENUsuario usu)
+        {
+            int count = 0;
+
+            try
+            {
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("Select * from Articulo ", connectBD);
+                SqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    if (usu.NIFUsuario == dataReader["comprador"].ToString())
+                    {
+                        count++;
+                    }
+                }
+                dataReader.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+            return count;
+        }
+        public void GuardarImagen(ENUsuario usu, byte[] imagen)
+        {
+            try
+            {
+                int response = 0;
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("UPDATE Usuario SET Imagen = @Imagen where nif = @nif",connectBD);
+                SqlParameter imageParam = command.Parameters.Add("@Imagen", System.Data.SqlDbType.Image);
+                command.Parameters.AddWithValue("@Nif", usu.NIFUsuario);
+                response = command.ExecuteNonQuery();
+
+                if (response == 1)
+                {
+                    imageParam.Value = imagen;
+                }
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+        }
+        public byte[] GetImagenByUser(ENUsuario usu)
+        {
+            byte[] Imagen = null;
+            try
+            {
+                connectBD.Open();
+                SqlCommand command = new SqlCommand("SELECT Imagen FROM Usuario where nif = @nif", connectBD);
+                command.Parameters.AddWithValue("@nif", usu.NIFUsuario);
+                SqlDataReader dataReader = command.ExecuteReader();
+                if (dataReader.Read())
+                {
+                    Imagen = (byte[])dataReader["Imagen"];
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed. Error: {0}", ex.Message);
+            }
+            finally
+            {
+                connectBD.Close();
+            }
+            return Imagen;
         }
         public string ConnectString
         {

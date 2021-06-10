@@ -3,7 +3,7 @@
    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-            <link rel="stylesheet" href="Info.css" />
+            <link rel="stylesheet" href="estilos/Info.css" />
             <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 
@@ -27,26 +27,19 @@
         Nosotros proporcionamos la plataforma, la seguridad, privacidad de datos y la gestión del transporte de los productos.</div>
 
    
-    
-    
-    <div class="seguridad-container">
-        <img src="images/logo_seguridad.png" ></div>
-   
-       
-    
-    <div class="atencion-container">
-      
-        <img src="images/logo_atencion.png"/>
-     
-       
-    </div> 
-
+          
+    <div>
+        
+        <div class="atencion-container">
+            <asp:ImageButton runat="server" CssClass="atimg" OnClick="Facebook_Click" src="images/logoFacebook.png" />
+        </div> 
+    </div>
     <div class="foto-empresa">
-        <img src="images/HRTrends-que-es-el-empowerment-en-una-empresa.jpg" />
+        <asp:Image runat="server" src="images/HRTrends-que-es-el-empowerment-en-una-empresa.jpg" />
     </div>
 
     <div class="oficinas">
-        <img src="images/oficinas.jpg" />
+        <asp:Image runat="server" src="images/oficinas.jpg" />
     </div>"
     
 

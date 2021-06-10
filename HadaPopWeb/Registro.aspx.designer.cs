@@ -15,13 +15,13 @@ namespace HadaPopWeb
     {
 
         /// <summary>
-        /// Control form1.
+        /// Control errorname.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorname;
 
         /// <summary>
         /// Control name.
@@ -33,6 +33,15 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.TextBox name;
 
         /// <summary>
+        /// Control errornif.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errornif;
+
+        /// <summary>
         /// Control NIF.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,15 @@ namespace HadaPopWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox NIF;
+
+        /// <summary>
+        /// Control errorpass.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorpass;
 
         /// <summary>
         /// Control password.
@@ -51,6 +69,15 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.TextBox password;
 
         /// <summary>
+        /// Control errorage.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorage;
+
+        /// <summary>
         /// Control age.
         /// </summary>
         /// <remarks>
@@ -60,13 +87,40 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.TextBox age;
 
         /// <summary>
-        /// Control admin.
+        /// Control erroradmin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox admin;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl erroradmin;
+
+        /// <summary>
+        /// Control Admin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Admin;
+
+        /// <summary>
+        /// Control Admincheck.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox Admincheck;
+
+        /// <summary>
+        /// Control errortlf.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errortlf;
 
         /// <summary>
         /// Control phone.
@@ -78,6 +132,15 @@ namespace HadaPopWeb
         protected global::System.Web.UI.WebControls.TextBox phone;
 
         /// <summary>
+        /// Control errorcpass.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl errorcpass;
+
+        /// <summary>
         /// Control password2.
         /// </summary>
         /// <remarks>
@@ -85,6 +148,15 @@ namespace HadaPopWeb
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox password2;
+
+        /// <summary>
+        /// Control erroremail.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl erroremail;
 
         /// <summary>
         /// Control email.

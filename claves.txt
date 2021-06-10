@@ -1,0 +1,5 @@
+10780589Y	Javier Sanchis Bernabeu	javier.sanchis@ua.es	657384921	27	TbNKDPBJ14bDkGp4Csi1oueRIApw7s-p1_LMgZSWjHB-NGCw-RpjJLuqkxcUaaKXNxOH9drHP2qFBG1lqs9-MA2	0x	0
+29845923S	Pedro	Pedrit@gmail.com	692384698	40	52Gp.wef356	NULL	800
+34808237K	Laura	lauraR@gmail.com	697529357	20	gtr9.T4564H	NULL	400
+57374789P	David	deivid@gmail.com	686493749	32	659ht6.83Jl	NULL	600
+61234802H	Luis	luis45@gmail.com	692493742	35	579kg6.27Ll	NULL	NULL

@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
+using library;
 using System.Web.UI.WebControls;
+using System.Windows;
+using System.Collections;
+
 
 namespace HadaPopWeb
 {
@@ -11,7 +11,20 @@ namespace HadaPopWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+    
+        }
+
+        protected void acceder_categoria(object sender, EventArgs e)
+        {
+
+            LinkButton b = (LinkButton)sender;
+
+            Response.Redirect("Categoriaconcrete.aspx?Value=" + b.Text);
 
         }
     }
+
+
+  
 }

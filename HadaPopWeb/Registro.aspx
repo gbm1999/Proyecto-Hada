@@ -1,15 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Registro.aspx.cs" Inherits="HadaPopWeb.Registro" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site1.Master" CodeBehind="Registro.aspx.cs" Inherits="HadaPopWeb.Registro" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Register</title>
-    <link rel="stylesheet" href="Registro.css" />
-</head>
-<body>
-    <form id="form1" runat="server">
+    <link rel="stylesheet" href="estilos/Registro.css" />
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <div class="center-container">
             <div class="left-container">
                 <div class="texto-logo">
@@ -23,7 +20,7 @@
 
                 <div class="logo">
                      
-                     <img src="images/logo_small.png" />
+                     <img src="images/logo-blanco.png" />
                 </div>
 
             </div>
@@ -32,32 +29,37 @@
                 <div class="campos-left">
                     <div class="campo">
                         <div class="texto">
-                            Nombre:
-                         
-                                <asp:TextBox ID="name" runat="server" name="name" />
+                            Nombre: <br />
+                            <label id="errorname" runat ="server" class="errortext">Esto no deberías poder verlo :(</label>
+                                
+                                <asp:TextBox ID="name" CssClass="input-estilo" runat="server" name="name" />
                            
-                        </div>
+                        </div>                        
+                         
 
                     </div>
 
                     <div class="campo">
                         <div class="texto">
-                            NIF:
-                                <asp:TextBox ID="NIF" runat="server" name="nif" />
+                            NIF:<br />
+                            <label id="errornif" runat ="server" class="errortext">Esto no deberías poder verlo :(</label>
+                                <asp:TextBox ID="NIF" CssClass="input-estilo" runat="server" name="nif" />
                         </div>
                     </div>
 
                     <div class="campo">
                         <div class="texto">
-                            Contraseña:
-                            <asp:TextBox ID="password" type="password" runat="server" name="password" />
+                            Contraseña:<br />
+                            <label id="errorpass" runat ="server" class="errortext">Esto no deberías poder verlo :(</label>
+                            <asp:TextBox ID="password" CssClass="input-estilo" type="password" runat="server" name="password" />
                         </div>
                     </div>
 
                     <div class="campo">
                         <div class="texto">
-                            Edad:
-                                <asp:TextBox ID="age" runat="server" name="age" />
+                            Edad:<br />
+                            <label id="errorage" runat ="server" class="errortext">Esto no deberías poder verlo :(</label>
+                                <asp:TextBox ID="age" CssClass="input-estilo" runat="server" name="age" />
                         </div>
                     </div>
 
@@ -67,31 +69,35 @@
                 <div class="campos-right">
                     <div class="campo">
                         <div class="texto">
-                            Admin:
-                            <br />
-                            <asp:CheckBox ID="admin" runat="server" />
+                            Administrador:<br />
+                            <label id="erroradmin" runat ="server" class="errortext">Esto no deberías poder verlo :(</label>
+                                <asp:TextBox ID="Admin" runat="server" CssClass="input-estilo" type="password" name="age" />
+                                <asp:CheckBox id="Admincheck" runat="server"  OnCheckedChanged="Admincheck_CheckedChanged" AutoPostBack="true"/>
                         </div>
 
                     </div>
 
                     <div class="campo">
                         <div class="texto">
-                            Teléfono:
-                            <asp:TextBox ID="phone" runat="server" name="phone" />
+                            Teléfono:<br />
+                            <label id="errortlf" runat ="server" class="errortext">Esto no deberías poder verlo :(</label>
+                            <asp:TextBox ID="phone" CssClass="input-estilo" runat="server" name="phone" />
                         </div>
                     </div>
 
                     <div class="campo">
                         <div class="texto">
-                            Confirmar contraseña:
-                            <asp:TextBox ID="password2" runat="server" name="password2" />
+                            Repetir contraseña:<br />
+                            <label id="errorcpass" runat ="server" class="errortext">Esto no deberías poder verlo :(</label>
+                            <asp:TextBox ID="password2" CssClass="input-estilo" runat="server" type="password" name="password2" />
                         </div>
                     </div>
 
                     <div class="campo">
                         <div class="texto">
-                            email:
-                            <asp:TextBox ID="email" runat="server" name="email" />
+                            Email:<br />
+                            <label id="erroremail" runat ="server" class="errortext">Esto no deberías poder verlo :(</label>
+                            <asp:TextBox ID="email" CssClass="input-estilo" runat="server" name="email" />
                         </div>
                     </div>
 
@@ -103,7 +109,7 @@
                      <asp:Button id="register"
                            Text="Register"
                            class="boton"
-                           CommandName="Submit"
+                           OnClick="register_Click"
                            
                            runat="server"/>
                          
@@ -112,6 +118,5 @@
                 </div>
             </div>
         </div>
-    </form>
-</body>
-</html>
+</asp:Content>
+

@@ -16,7 +16,7 @@ namespace library
         private SqlConnection connectBD;
         public CADCategoria()
         {
-            connection = ConfigurationManager.ConnectionStrings["Database"].ToString();
+            connection = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
             connectBD = new SqlConnection(connection);
         }
         public ArrayList MostrarCategorias()
@@ -28,7 +28,6 @@ namespace library
             while (dataReader.Read())
             {
                 ENCategoria cat = new ENCategoria();
-                cat.IdCategoria = (int)dataReader["Id"];
                 cat.NombreCategoria = dataReader["Nombre"].ToString();
                 cat.DescripCategoria = dataReader["Descripcion"].ToString();
 
@@ -45,7 +44,7 @@ namespace library
             try
             {
                 connectBD.Open();
-                SqlCommand command = new SqlCommand("Insert into Categoria(Id,Nombre,Descripcion) VALUES ('" + cat.IdCategoria + "', '" + cat.NombreCategoria + "', '" + cat.DescripCategoria + "')", connectBD);
+                SqlCommand command = new SqlCommand("Insert into Categoria(Nombre,Descripcion) VALUES ('" + cat.NombreCategoria + "', '" + cat.DescripCategoria + "')", connectBD);
                 command.ExecuteNonQuery();
                 entra = true;
             }
@@ -71,9 +70,8 @@ namespace library
 
                 while (!entra && dataReader.Read())
                 {
-                    if (dataReader["Id"].ToString().Equals(cat.IdCategoria))
+                    if (dataReader["Nombre"].ToString().Equals(cat.NombreCategoria))
                     {
-                        cat.IdCategoria = (int)dataReader["Id"];
                         cat.NombreCategoria = dataReader["Nombre"].ToString();
                         cat.DescripCategoria = dataReader["Descripcion"].ToString();
                         entra = true;
@@ -101,8 +99,7 @@ namespace library
             try
             {
                 connectBD.Open();
-                SqlCommand command = new SqlCommand("UPDATE Categoria SET Id = @Id, Nombre = @Nombre, Descripcion = @Descripcion where Id = @Id", connectBD);
-                command.Parameters.AddWithValue("@Id", cat.IdCategoria);
+                SqlCommand command = new SqlCommand("UPDATE Categoria SET Nombre = @Nombre, Descripcion = @Descripcion where Nombre = @Nombre", connectBD);
                 command.Parameters.AddWithValue("@Nombre", cat.NombreCategoria);
                 command.Parameters.AddWithValue("@Descripcion", cat.DescripCategoria);
                 response = command.ExecuteNonQuery();
@@ -135,8 +132,8 @@ namespace library
             try
             {
                 connectBD.Open();
-                SqlCommand command = new SqlCommand("Delete from Categoria where Id = @Id", connectBD);
-                command.Parameters.AddWithValue("@Id", cat.IdCategoria);
+                SqlCommand command = new SqlCommand("Delete from Categoria where Nombre = @Nombre", connectBD);
+                command.Parameters.AddWithValue("@Nombre", cat.NombreCategoria);
                 response = command.ExecuteNonQuery();
 
                 if (response == 1)

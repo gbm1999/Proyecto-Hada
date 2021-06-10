@@ -5,30 +5,47 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" href="Profile.css" />
+    <link rel="stylesheet" href="estilos/Profile.css" />
     <div class="body">
-        <div class ="CuadroExt">
-            <div class="divimgdatos">
-                <div class = "imgperfbox">
-                    <div class="img">
-                        <img src="images/sinperfil.png"/>
-                
-                        &nbsp
-                        <label id ="NumVentas" runat ="server">0</label>
-                        &nbsp
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+        <ajaxToolkit:ModalPopupExtender ID="PopupNoLogin" runat="server" Enabled="true" TargetControlID="Controltarget" PopupControlID="PanelPopUpNoLogin" BackgroundCssClass="fondoPopup"></ajaxToolkit:ModalPopupExtender>
+                   
+        <asp:Panel ID="PanelPopUpNoLogin" runat="server" stile="display: none;background-color: white;width: auto;height: auto">
+                        
+            <div class="modal-header">
+                <h5 class="modal-title" id="PopupTitleNoLogin">Error, no se puede operar de ninguna forma sin iniciar sesion.</h5>
+                    </div>
+                        <div class="modal-body">
+                            Por favor inicie sesion para poder acceder a esta parte.
+                        </div>
+                        <div class="modal-footer">
+                            <asp:Button class="btn PopupAceptar" runat="server" Text="Login" OnClick="PopUpLogin"></asp:Button>
+                        </div>               
+        </asp:Panel>
+        <div class ="CuadroExt ">
+            <div class="divimgdatos ">
+                    <div class="img_profileDiv ">
+                      
+                        <asp:Image ID="ImageUser" runat="server" CssClass="img_profile borde"/>                   
+                        <asp:Label ID="Controltarget" runat="server"  Text=""></asp:Label>
+                       
+                        
+                    </div>
+               
+                    <div class="ventComp ">
+                        <asp:Label ID="NumVenta" runat="server" Text=""></asp:Label>
                         <label>Ventas</label>
-                        &nbsp&nbsp
-                        <label id ="NumCompras" runat ="server">0</label>
-                        &nbsp
+                        <asp:Label ID="NumCompra" runat="server" Text=""></asp:Label>
                         <label>Compras</label>
                     </div>
-                </div>
                 <!-- COMIENZO DATOS USU -->
                 <div class="datosusu" runat ="server">
 
                     <div class = "labtext"> <!-- Nombre -->
                         <label class="labels">Nombre: </label>
                         <asp:TextBox ID="TBNombre" class="textboxes" runat="server"></asp:TextBox>
+                        <asp:Label ID="ErrorNombre" runat="server" class="ErrorNombre" Text=""></asp:Label>
                     </div>
 
                     <div class="separadorvert"></div>
@@ -36,6 +53,7 @@
                      <div class = "labtext"> <!-- Email -->
                         <label class="labels">Email: </label>
                         <asp:TextBox ID="TBEmail" class="textboxes" runat="server"></asp:TextBox>
+                         <asp:Label ID="ErrorEmail" runat="server" class="ErrorEmail" Text=""></asp:Label>
                     </div>  
 
                     <div class="separadorvert"></div>
@@ -43,6 +61,7 @@
                      <div class = "labtext"> <!-- NIF -->
                         <label class="labels">NIF: </label>
                         <asp:TextBox ID="TBNif" class="textboxes" runat="server"></asp:TextBox>
+                         <asp:Label ID="ErrorNif" runat="server" class="ErrorNif" Text=""></asp:Label>
                     </div> 
 
                     <div class="separadorvert"></div>
@@ -50,6 +69,7 @@
                      <div class = "labtext"> <!-- Edad -->
                         <label class="labels">Edad: </label>
                         <asp:TextBox ID="TBEdad" class="textboxes" runat="server"></asp:TextBox>
+                         <asp:Label ID="ErrorEdad" runat="server" class="ErrorEdad" Text=""></asp:Label>
                     </div> 
 
                     <div class="separadorvert"></div>
@@ -57,7 +77,15 @@
                      <div class = "labtext"> <!-- Tlfno -->
                         <label class="labels">Teléfono: </label>
                         <asp:TextBox ID="TBTelefono" class="textboxes" runat="server"></asp:TextBox>
-                    </div> 
+                         <asp:Label ID="ErrorTelefono" runat="server" class="ErrorTelefono" Text=""></asp:Label>
+                    </div>
+                    
+                    <div class="separadorvert"></div>
+
+                    <div class="labtext">
+                            <label class="labels">Imagen: </label>
+                            <asp:FileUpload ID="photo" class="FileUpload" runat="server" />
+                        </div>
                     <!-- FIN DATOSUSU -->
                     <div class="separadorvert"></div>
             
@@ -68,24 +96,23 @@
                 </div>
         </div>
 <!-- Por el momento y dado que es solo la interfaz, hemos puesto ejemplos de prueba sobre como se verían algunas funciones-->
-            <div class ="ComentArticulos">
-                <div class="Articulos">
+            <div class ="ComentArticulos ">
+                <div class="Articulos ">
                     <h2>Artículos del usuario: </h2>
                     <div class="Articulo">
-                        <div class="ArtImgDiv">
-                            <label class="TitleUsu"> Artículo1</label>
-                            <asp:Image ID="Article1Img" CssClass="ImgArticle" ImageUrl="~/images/depositphotos_324611040-stock-illustration-no-image-vector-icon-no.jpg" runat="server" />
-                        </div>
-                            <p class="Coment">Esta es la descripción del Artículo</p>
+                        <asp:ImageButton ID="Articulo" runat="server" class="imagenArticulo" OnClick="imgArticle1_Click" ImageUrl="~/images/no-foto.jpg" />
+                        <br>
+                        <asp:Label ID="LabelArticulo1" runat="server" class="nombreArticulo"> </asp:Label>
                     </div>
-
+                    <div>
+                        <asp:Button ID="PrevButton" Text="Anterior" runat="server"  OnClick="Prev_Click" class="boton_ArticuloPrev"></asp:Button>
+                        <asp:Button ID="NextButton" Text="Siguiente" runat="server" OnClick="Next_Click" class="boton_ArticuloNext"></asp:Button>
+                    </div>
                 </div>
                 <div class="Comentarios">   
                     <h2>Comentarios del Usuario:</h2>
                     <div>
-                       <label class="TitleUsu">Usuario1:</label>
-                       <label class="TitleAccion">Vendió [Artículo 1] [5/5]</label>
-                       <p class="Coment">Esto es un comentario de Ejemplo Sobre como funcionan los comentarios en nuestra Web</p>
+                        <asp:ListBox ID="Comentarios" runat="server" Class="comentarios-box" height="70%" width="100%"></asp:ListBox>
                     </div>
                     </div>
             </div>

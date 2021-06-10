@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,18 +57,6 @@ namespace library
                 contrasena = value;
             }
         }
-        private int tarjeta;
-        public int tarjetaUsuario
-        {
-            get
-            {
-                return tarjeta;
-            }
-            set
-            {
-                tarjeta = value;
-            }
-        }
         private int edad;
         public int edadUsuario
         {
@@ -92,16 +81,41 @@ namespace library
                 telefono = value;
             }
         }
-        private bool admin;
-        public bool adminUsuario
+
+        private byte[] imagen;
+        public byte[] imagenUsuario
         {
             get
             {
-                return admin;
+                return imagen;
             }
             set
             {
-                admin = value;
+                byte[] prueba = new byte[0];
+
+                if(value == prueba)
+                {
+                    value = null;
+                }
+
+                imagen = value;
+            }
+        }
+        private double Balance;
+        public double balance
+        {
+            get
+            {
+                return Balance;
+            }
+            set
+            {
+                if(value < 0)
+                {
+                    value = 0;
+                }
+
+                Balance = value;
             }
         }
         public ENUsuario()
@@ -110,21 +124,21 @@ namespace library
             nombre = null;
             email = null;
             telefono = 0;
-            admin = false;
             edad = 0;
             contrasena = null;
-            tarjeta = 0;
+            imagen = null;
+            Balance = 0.0f;
         }
-        public ENUsuario(string NIF, string nombre, string email,int telefono, bool admin, int edad, string contrasena, int tarjeta)
+        public ENUsuario(string NIF, string nombre, string email,int telefono, int edad, string contrasena, byte[] imagen, float balance)
         {
             this.NIF = NIF;
             this.nombre = nombre;
             this.email = email;
             this.telefono = telefono;
-            this.admin = admin;
             this.edad = edad;
             this.contrasena = contrasena;
-            this.tarjeta = tarjeta;
+            this.imagen = imagen;
+            this.balance = balance;
         }
         public bool createUsuario()
         {
@@ -150,6 +164,52 @@ namespace library
         {
             CADUsuario user = new CADUsuario();
             return user.InicioSesion(this);
+        }
+        public int CountSales()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.CountSales(this);
+        }
+        public int CountBuys()
+        {
+            CADArticulo arti = new CADArticulo();
+            return arti.CountBuys(this);
+        }
+        public void guardaImagen(byte[] imagen)
+        {
+            CADUsuario user = new CADUsuario();
+            user.GuardarImagen(this,imagen); ;
+        }
+        public byte[] getImagen()
+        {
+            CADUsuario user = new CADUsuario();
+            return user.GetImagenByUser(this); ;
+        }
+        public int CountBan()
+        {
+            CADModerador mod = new CADModerador();
+            return mod.CountBan(this);
+        }
+        public bool isModerador()
+        {
+            ENModerador moderador = new ENModerador();
+            moderador.mod = this.NIFUsuario;
+            CADModerador mod = new CADModerador();
+            return mod.isModerador(moderador);
+        }
+        public bool isAdministrador()
+        {
+            ENAdministrador administrador = new ENAdministrador();
+            administrador.administrador = this.NIFUsuario;
+            CADAdministrador admin = new CADAdministrador();
+            return admin.isAdministrador(administrador);
+        }
+        public bool tieneTarjetas()
+        {
+            ENMonedero mon = new ENMonedero();
+            mon.usuario = this.NIFUsuario;
+            CADMonedero monedero = new CADMonedero();
+            return monedero.tieneTarjetas(mon);
         }
     }
 }
