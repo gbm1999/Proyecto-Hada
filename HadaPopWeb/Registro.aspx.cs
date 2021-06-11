@@ -19,19 +19,20 @@ namespace HadaPopWeb
                 ResetErrores();
                 Admin.Visible = false;
             }
+
+            ResetErrores();
         }
 
         protected void register_Click(object sender, EventArgs e)
         {
-
-            if (!isVacio())  // No hay nada Vacío        ↓↓↓ 
+            if (true)//!isVacio())  // No hay nada Vacío        ↓↓↓ 
             {
                 if (password.Text != password2.Text) // Contraseñas Coinciden       ↓↓↓
                 {
                     errorpass.Visible = true;
-                    errorpass.InnerText = "Las Contraseñas No coinciden";
+                    errorpass.Text = "Las Contraseñas No coinciden";
                     errorcpass.Visible = true;
-                    errorcpass.InnerText = "Revisa las Mayúsculas o.o";
+                    errorcpass.Text = "Revisa las Mayúsculas o.o";
                 }
                 else if(CampoVálidoPass(password.Text))
                 {
@@ -46,7 +47,7 @@ namespace HadaPopWeb
                             if (Admin.Text != Global.ADMINPASS)
                             {
                                 erroradmin.Visible = true;
-                                erroradmin.InnerText = "Vaya! ¿Estás seguro de ser un Administrador?";
+                                erroradmin.Text = "Vaya! ¿Estás seguro de ser un Administrador?";
                                 Admincheck.Checked = false;
                             }
                             else
@@ -71,25 +72,20 @@ namespace HadaPopWeb
                             else
                             {
                                 errorname.Visible = true;
-                                errorname.InnerText = "Vaya! Parece que algo ha ido mal :(";
+                                errorname.Text = "Vaya! Parece que algo ha ido mal :(";
                             }
                         }
-
-                        
-
                     }
                     else
                     {
                         errornif.Visible = true;
-                        errornif.InnerText = "Vaya! Parece que ya eres de la familia!";
+                        errornif.Text = "Vaya! Parece que ya eres de la familia!";
                     }
-
-
                 }
                 else
                 {
                     errorpass.Visible = true;
-                    errorpass.InnerText = "7 a 16 Caracteres y al menos 1 Mayúscula Símbolo y Número.";
+                    errorpass.Text = "7 a 16 Caracteres y al menos 1 Mayúscula Símbolo y Número.";
 
                 }
             }
@@ -116,50 +112,50 @@ namespace HadaPopWeb
                 {
                     validos = false;
                     errorname.Visible = true;
-                    errorname.InnerText = "Eres un Robot? :/";
+                    errorname.Text = "Eres un Robot? :/";
                 }
                 else if (!CampoVálidoNif(NIF.Text))
                 {
                     validos = false;
                     errornif.Visible = true;
-                    errornif.InnerText = "Vaya! Ese Nif es Incorrecto";
+                    errornif.Text = "Vaya! Ese Nif es Incorrecto";
                 }
                 else if (!CampoVálidoPass(password.Text))
                 {
                     validos = false;
                     errorpass.Visible = true;
-                    errorpass.InnerText = "7 a 16 Caracteres y al menos 1 Mayúscula Símbolo y Número.";
+                    errorpass.Text = "7 a 16 Caracteres y al menos 1 Mayúscula Símbolo y Número.";
                 }
                 else if (!CampoVálidoAge(Convert.ToInt32(age.Text)))
                 {
                     validos = false;
                     errorage.Visible = true;
-                    errorage.InnerText = "Vaya! Parece que Tu edad es errónea :/";
+                    errorage.Text = "Vaya! Parece que Tu edad es errónea :/";
                 }
                 else if(!CampoVálidoEmail(email.Text))
                 {
                     validos = false;
                     erroremail.Visible = true;
-                    erroremail.InnerText = "Vaya! Ese email no es correcto D:";
+                    erroremail.Text = "Vaya! Ese email no es correcto D:";
                 }
                 else if(!CampoVálidoTlf(phone.Text))
                 {
                     validos = false;
                     errortlf.Visible = true;
-                    errortlf.InnerText = "Vaya! Ese Teléfono no es correcto :(";
+                    errortlf.Text = "Vaya! Ese Teléfono no es correcto :(";
                 }
                 else if (!CampoVálidoPass(Admin.Text) && Admincheck.Checked)
                 {
                     validos = false;
                     erroradmin.Visible = true;
-                    erroradmin.InnerText = "7 a 16 Caracteres y al menos 1 Mayúscula Símbolo y Número.";
+                    erroradmin.Text = "7 a 16 Caracteres y al menos 1 Mayúscula Símbolo y Número.";
                 }
             }
             catch (Exception)
             {
                 validos = false;
                 errorage.Visible = true;
-                errorage.InnerText = "Vaya! Parece que Tu edad es errónea :/";
+                errorage.Text = "Vaya! Parece que Tu edad es errónea :/";
             }
            
             return validos;
@@ -168,46 +164,32 @@ namespace HadaPopWeb
         {
             bool vacio = false;
 
-            if (name.Text.Length == 0)
-            {
-                errorname.Visible = true;
-                errorname.InnerText = "Campo Obligatorio*";
+            if (RequiredFieldValidator1.IsValid)
+            {   
                 vacio = true;
             }
-            else if (NIF.Text.Length == 0)
+            else if (RequiredFieldValidator2.IsValid)
             {
-                errornif.Visible = true;
-                errornif.InnerText = "Campo Obligatorio*";
                 vacio = true;
             }
-            else if (password.Text.Length == 0)
+            else if (RequiredFieldValidator3.IsValid)
             {
-                errorpass.Visible = true;
-                errorpass.InnerText = "Campo Obligatorio*";
                 vacio = true;
             }
-            else if (age.Text.Length == 0)
+            else if (RequiredFieldValidator4.IsValid)
             {
-                errorage.Visible = true;
-                errorage.InnerText = "Campo Obligatorio*";
                 vacio = true;
             }
-            else if (phone.Text.Length == 0)
+            else if (RequiredFieldValidator5.IsValid)
             {
-                errortlf.Visible = true;
-                errortlf.InnerText = "Campo Obligatorio*";
                 vacio = true;
             }
-            else if (password2.Text.Length == 0)
+            else if (RequiredFieldValidator6.IsValid)
             {
-                errorcpass.Visible = true;
-                errorcpass.InnerText = "Campo Obligatorio*";
                 vacio = true;
             }
-            else if (email.Text.Length == 0)
+            else if (RequiredFieldValidator7.IsValid)
             {
-                erroremail.Visible = true;
-                erroremail.InnerText = "Campo Obligatorio*";
                 vacio = true;
             }
 

@@ -30,36 +30,41 @@
                     <div class="campo">
                         <div class="texto">
                             Nombre: <br />
-                            <label id="errorname" runat ="server" class="errortext">Esto no deberías poder verlo :(</label>
+                            
+                            <asp:Label ID="errorname" runat="server"  class="errortext" Text=""/>
                                 
-                                <asp:TextBox ID="name" CssClass="input-estilo" runat="server" name="name" />
-                           
+                                <asp:TextBox ID="name" CssClass="input-estilo" runat="server"/>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Campo obligatorio*" ControlToValidate="name"></asp:RequiredFieldValidator>
                         </div>                        
-                         
-
                     </div>
 
                     <div class="campo">
                         <div class="texto">
                             NIF:<br />
-                            <label id="errornif" runat ="server" class="errortext">Esto no deberías poder verlo :(</label>
-                                <asp:TextBox ID="NIF" CssClass="input-estilo" runat="server" name="nif" />
+                            <asp:Label ID="errornif" runat="server"  class="errortext" Text=""/>
+
+                                <asp:TextBox ID="NIF" CssClass="input-estilo" runat="server"/>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Campo obligatorio*" ControlToValidate="NIF"></asp:RequiredFieldValidator>
+                                
                         </div>
                     </div>
 
                     <div class="campo">
                         <div class="texto">
                             Contraseña:<br />
-                            <label id="errorpass" runat ="server" class="errortext">Esto no deberías poder verlo :(</label>
-                            <asp:TextBox ID="password" CssClass="input-estilo" type="password" runat="server" name="password" />
+                            <asp:Label ID="errorpass" runat="server"  class="errortext" Text=""/>
+                            
+                            <asp:TextBox ID="password" CssClass="input-estilo" type="password" runat="server" ValidateRequestMode="Enabled"/>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Campo obligatorio*" ControlToValidate="password"></asp:RequiredFieldValidator>
                         </div>
                     </div>
 
                     <div class="campo">
                         <div class="texto">
                             Edad:<br />
-                            <label id="errorage" runat ="server" class="errortext">Esto no deberías poder verlo :(</label>
-                                <asp:TextBox ID="age" CssClass="input-estilo" runat="server" name="age" />
+                            <asp:Label ID="errorage" runat="server"  class="errortext" Text=""/>
+                                <asp:TextBox ID="age" CssClass="input-estilo" runat="server"/>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Campo obligatorio*" ControlToValidate="age"></asp:RequiredFieldValidator>
                         </div>
                     </div>
 
@@ -70,8 +75,8 @@
                     <div class="campo">
                         <div class="texto">
                             Administrador:<br />
-                            <label id="erroradmin" runat ="server" class="errortext">Esto no deberías poder verlo :(</label>
-                                <asp:TextBox ID="Admin" runat="server" CssClass="input-estilo" type="password" name="age" />
+                            <asp:Label ID="erroradmin" runat="server"  class="errortext" Text=""/>
+                                <asp:TextBox ID="Admin" runat="server" CssClass="input-estilo" type="password"/>
                                 <asp:CheckBox id="Admincheck" runat="server"  OnCheckedChanged="Admincheck_CheckedChanged" AutoPostBack="true"/>
                         </div>
 
@@ -80,24 +85,27 @@
                     <div class="campo">
                         <div class="texto">
                             Teléfono:<br />
-                            <label id="errortlf" runat ="server" class="errortext">Esto no deberías poder verlo :(</label>
-                            <asp:TextBox ID="phone" CssClass="input-estilo" runat="server" name="phone" />
+                            <asp:Label ID="errortlf" runat="server"  class="errortext" Text=""/>
+                            <asp:TextBox ID="phone" CssClass="input-estilo" runat="server"/>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Campo obligatorio*" ControlToValidate="phone"></asp:RequiredFieldValidator>
                         </div>
                     </div>
 
                     <div class="campo">
                         <div class="texto">
                             Repetir contraseña:<br />
-                            <label id="errorcpass" runat ="server" class="errortext">Esto no deberías poder verlo :(</label>
-                            <asp:TextBox ID="password2" CssClass="input-estilo" runat="server" type="password" name="password2" />
+                            <asp:Label ID="errorcpass" runat="server"  class="errortext" Text=""/>
+                            <asp:TextBox ID="password2" CssClass="input-estilo" runat="server" type="password"/>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Campo obligatorio*" ControlToValidate="password2"></asp:RequiredFieldValidator>
                         </div>
                     </div>
 
                     <div class="campo">
                         <div class="texto">
                             Email:<br />
-                            <label id="erroremail" runat ="server" class="errortext">Esto no deberías poder verlo :(</label>
-                            <asp:TextBox ID="email" CssClass="input-estilo" runat="server" name="email" />
+                            <asp:Label ID="erroremail" runat="server"  class="errortext" Text=""/>
+                            <asp:TextBox ID="email" CssClass="input-estilo" runat="server"/>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Campo obligatorio*" ControlToValidate="email"></asp:RequiredFieldValidator>
                         </div>
                     </div>
 
